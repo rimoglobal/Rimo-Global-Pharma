@@ -29,8 +29,7 @@
             <!-- Navigation Links -->
             <nav class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-600">
                 <a href="#home" class="hover:text-amber-600 transition">Oncology Medicine</a>
-                <a href="#upload" class="hover:text-amber-600 transition">Upload Prescription</a>
-                <a href="#products" class="hover:text-amber-600 transition">Products Portfolio</a>
+                <a href="#products-grid" class="hover:text-amber-600 transition">Products Catalogue</a>
                 <a href="#global-reach" class="hover:text-amber-600 transition">Global Reach</a>
                 <a href="#about" class="hover:text-amber-600 transition">About us</a>
                 <a href="#contact" class="hover:text-amber-600 transition">Contact us</a>
@@ -48,25 +47,25 @@
     <div class="container mx-auto px-6 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <!-- Left Sidebar: Product List & Manufacturers -->
+            <!-- Left Sidebar: Product Manufacturers -->
             <aside id="products" class="lg:col-span-1 bg-white text-slate-800 rounded-xl shadow-md overflow-hidden h-fit border border-slate-200">
                 <div class="bg-slate-900 text-amber-400 px-5 py-4 font-bold text-base border-b border-slate-800 flex items-center justify-between">
                     <span>Product Portfolio</span>
                     <span>📂</span>
                 </div>
                 <ul class="divide-y divide-slate-100 text-sm">
-                    <li><a href="#everest" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Everest Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">54 Items</span></a></li>
-                    <li><a href="#ziska" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Ziska Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">40 Items</span></a></li>
-                    <li><a href="#drugs" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Drugs International <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">10 Items</span></a></li>
-                    <li><a href="#incepta" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Incepta Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">6 Items</span></a></li>
-                    <li><a href="#general" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">General Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">2 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Everest Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">54 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Ziska Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">40 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Drugs International <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">10 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Incepta Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">6 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">General Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">2 Items</span></a></li>
                 </ul>
             </aside>
 
-            <!-- Right Main Banner & Content Area -->
+            <!-- Right Main Banner & Product Cards Grid Area -->
             <main class="lg:col-span-3 space-y-8">
                 
-                <!-- Hero Banner with Pure Clean Water-White & Oncology Medicine Background Theme -->
+                <!-- Hero Banner -->
                 <section id="home" class="relative rounded-2xl shadow-md overflow-hidden p-8 md:p-14 text-center border border-slate-200 bg-cover bg-center" style="background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80');">
                     <div class="max-w-2xl mx-auto relative z-10">
                         <span class="bg-amber-100 text-amber-800 text-xs uppercase px-3 py-1 rounded-full font-bold tracking-widest border border-amber-300">Verified Export Catalogue</span>
@@ -76,8 +75,137 @@
                         </p>
                         <div class="flex flex-wrap justify-center gap-4">
                             <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-7 py-3 rounded-xl font-extrabold shadow transition">Contact Us</a>
-                            <a href="#upload" class="bg-slate-900 hover:bg-slate-800 text-white px-7 py-3 rounded-xl font-bold shadow transition">Upload Prescription</a>
+                            <a href="#products-grid" class="bg-slate-900 hover:bg-slate-800 text-white px-7 py-3 rounded-xl font-bold shadow transition">View Products</a>
                         </div>
+                    </div>
+                </section>
+
+                <!-- Product Cards Grid (Like your screenshot style) -->
+                <section id="products-grid" class="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-200">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-slate-900">Featured Oncology Medicines</h2>
+                            <p class="text-xs text-slate-500 mt-1">Export quality certified oncology and specialty medications.</p>
+                        </div>
+                        <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg font-bold border">Total: 112 Items</span>
+                    </div>
+
+                    <!-- Product Grid (4 items per row layout) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        
+                        <!-- Product Card 1 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <!-- Replace with your medicine image if available -->
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Anti-Cancer</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Afanix 40 Mg (Afatinib)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 2 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Anti-Cancer</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Alecnib 150 Mg (Alectinib)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 3 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Anti-Cancer</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Alkixen 250 Mg (Crizotinib)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 4 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Oncology Medicine</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Anacare 1 Mg (Anastrozole)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 5 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Anti-Cancer</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Abiraxen 250 Mg (Abiraterone)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Product Card 6 -->
+                        <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                            <div class="bg-blue-950 p-4 text-center relative">
+                                <div class="bg-white p-2 rounded-lg inline-block shadow-inner mb-2">
+                                    <span class="text-3xl">💊</span>
+                                </div>
+                                <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+                            </div>
+                            <div class="p-4 text-center flex-1 flex flex-col justify-between">
+                                <div>
+                                    <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">Lung Cancer</span>
+                                    <h3 class="font-bold text-slate-900 text-sm mt-1">Adakras 200 Mg (Adagrasib)</h3>
+                                </div>
+                                <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Pagination / Page Numbers -->
+                    <div class="flex justify-center items-center space-x-2 mt-8 pt-6 border-t">
+                        <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold rounded text-sm">1</span>
+                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">2</a>
+                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">3</a>
+                        <span class="px-2 text-slate-400">...</span>
+                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">19</a>
+                        <a href="#" class="px-3 py-1 bg-slate-900 text-white rounded text-sm font-semibold">Next &rarr;</a>
                     </div>
                 </section>
 
