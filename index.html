@@ -1,39 +1,117 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rimo Global Pharma Ltd</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background-color: #004085; color: white; padding: 20px; text-align: center; }
-        nav { background-color: #0056b3; padding: 10px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .hero { padding: 50px 20px; text-align: center; background-color: #e9ecef; }
-        .btn { background-color: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 15px; }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800">
 
-    <header>
-        <h1>Rimo Global Pharma Ltd</h1>
-        <p>International Quality Pharmaceutical Solutions</p>
+    <!-- Header & Navigation -->
+    <header class="bg-teal-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl font-bold tracking-wide text-teal-100">🌿 Rimo Global Pharma</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#home" class="hover:text-teal-200 transition">Home</a>
+                <a href="#about" class="hover:text-teal-200 transition">About Us</a>
+                <a href="#services" class="hover:text-teal-200 transition">Services</a>
+                <a href="#products" class="hover:text-teal-200 transition">Products</a>
+                <a href="#contact" class="hover:text-teal-200 transition">Contact</a>
+            </nav>
+            <a href="https://wa.me/" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg font-semibold text-sm shadow transition">Contact on WhatsApp</a>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Products</a>
-        <a href="#">Export</a>
-        <a href="#">Catalog</a>
-        <a href="#">Contact</a>
-    </nav>
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-teal-950 via-teal-900 to-teal-800 text-white py-24 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="inline-block bg-teal-800 text-teal-200 text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4 font-semibold">International Quality</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Welcome to Rimo Global Pharma Ltd</h1>
+            <p class="text-lg text-teal-100 mb-8 max-w-2xl mx-auto">Leading provider of oncology and specialized healthcare products globally.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-white text-teal-900 font-bold px-8 py-3 rounded-lg shadow hover:bg-slate-100 transition">Explore Products</a>
+                <a href="https://wa.me/" target="_blank" class="bg-emerald-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-emerald-700 transition">Get In Touch</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="hero">
-        <h2>Welcome to Rimo Global Pharma Ltd</h2>
-        <p>Leading provider of oncology and specialized healthcare products globally.</p>
-        <a href="https://wa.me/" class="btn">Contact on WhatsApp</a>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="py-20 container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-teal-900 mb-3">About Us</h2>
+            <div class="w-16 h-1 bg-teal-600 mx-auto mb-6 rounded"></div>
+            <p class="text-slate-600 text-lg leading-relaxed mb-4">
+                <strong>Rimo Global Pharma Ltd</strong> is a trusted global provider of high-grade oncology formulations and specialized medical supplies. We are dedicated to ensuring safety, efficacy, and strict quality standards worldwide.
+            </p>
+        </div>
+    </section>
+
+    <!-- Core Services -->
+    <section id="services" class="bg-slate-100 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-teal-900 mb-3">Our Core Focus</h2>
+            <div class="w-16 h-1 bg-teal-600 mx-auto mb-12 rounded"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-teal-700">
+                    <div class="text-4xl mb-4">💊</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-800">Oncology Products</h3>
+                    <p class="text-slate-600 text-sm">Certified and reliable supply of critical oncology and specialty medicines.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-teal-700">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-800">Global Export</h3>
+                    <p class="text-slate-600 text-sm">Efficient, temperature-controlled, and secure logistics network worldwide.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-teal-700">
+                    <div class="text-4xl mb-4">📑</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-800">Product Catalog</h3>
+                    <p class="text-slate-600 text-sm">Comprehensive range of premium formulations designed for medical institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 container mx-auto px-6">
+        <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow border border-slate-200">
+            <h2 class="text-3xl font-bold text-center text-teal-900 mb-2">Contact Us</h2>
+            <p class="text-center text-slate-500 mb-8">Send us an inquiry or reach out for business consultations.</p>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-slate-700">Your Name</label>
+                    <input type="text" placeholder="Enter your full name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-teal-700">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-slate-700">Email Address / Phone</label>
+                    <input type="text" placeholder="Enter your contact info" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-teal-700">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-slate-700">Message</label>
+                    <textarea rows="4" placeholder="How can we help you?" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-teal-700"></textarea>
+                </div>
+                <button type="button" class="w-full bg-teal-800 hover:bg-teal-900 text-white font-bold py-3 rounded-lg shadow transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-950 text-slate-300 py-8 text-center text-sm">
+        <p class="mb-2"><strong>Rimo Global Pharma Ltd</strong> &copy; 2026. All rights reserved.</p>
+        <p class="text-teal-400">International Quality Pharmaceutical Solutions</p>
+    </footer>
 
 </body>
 </html>
