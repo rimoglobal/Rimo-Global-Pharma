@@ -13,13 +13,13 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <!-- Top Header & Navigation with Custom Logo -->
+    <!-- Top Header & Navigation -->
     <header class="bg-white shadow-md sticky top-0 z-50 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             
-            <!-- Logo & Brand Name Section -->
+            <!-- Logo & Brand Name Section (Clean logo without box background) -->
             <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="Rimo Global Pharma Logo" class="w-12 h-12 object-contain rounded-lg shadow-sm border border-amber-200 bg-slate-900 p-1">
+                <img src="logo.png" alt="Rimo Global Pharma Logo" class="w-12 h-12 object-contain">
                 <div>
                     <span class="text-xl font-extrabold text-slate-900 tracking-tight block">RIMO GLOBAL PHARMA</span>
                     <span class="text-xs font-semibold text-amber-600 tracking-wider uppercase">Ltd. Global Supplier</span>
@@ -30,9 +30,8 @@
             <nav class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-600">
                 <a href="#home" class="hover:text-blue-600 transition">Oncology Medicine</a>
                 <a href="#upload" class="hover:text-blue-600 transition">Upload Prescription</a>
-                <a href="#articles" class="hover:text-blue-600 transition">Articles</a>
+                <a href="#products" class="hover:text-blue-600 transition">Products Portfolio</a>
                 <a href="#about" class="hover:text-blue-600 transition">About us</a>
-                <a href="#faq" class="hover:text-blue-600 transition">FAQ</a>
                 <a href="#contact" class="hover:text-blue-600 transition">Contact us</a>
             </nav>
 
@@ -48,22 +47,18 @@
     <div class="container mx-auto px-6 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <!-- Left Sidebar: Categories -->
+            <!-- Left Sidebar: Manufacturer Categories based on Portfolio -->
             <aside class="lg:col-span-1 bg-slate-900 text-white rounded-xl shadow-lg overflow-hidden h-fit border border-slate-800">
                 <div class="bg-slate-950 px-5 py-4 font-bold text-base border-b border-slate-800 flex items-center justify-between text-amber-400">
-                    <span>Product Categories</span>
+                    <span>Manufacturers</span>
                     <span>📂</span>
                 </div>
                 <ul class="divide-y divide-slate-800 text-sm">
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Anti Cancer Drugs <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Anti Diabetic Drugs <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Breast Cancer <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Colorectal Cancer <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Endometrial Cancer <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Hepatitis C Virus <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Kidney Cancer <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Leukemia <span class="text-xs">💊</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between font-bold text-amber-400 bg-slate-800/50">All Products <span class="text-xs">👉</span></a></li>
+                    <li><a href="#everest" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Everest Pharmaceuticals <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">54</span></a></li>
+                    <li><a href="#ziska" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Ziska Pharmaceuticals <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">40</span></a></li>
+                    <li><a href="#drugs-intl" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Drugs International <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">10</span></a></li>
+                    <li><a href="#incepta" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">Incepta Pharmaceuticals <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">6</span></a></li>
+                    <li><a href="#general" class="block px-5 py-3.5 hover:bg-slate-800 transition flex items-center justify-between text-slate-200 hover:text-white">General Pharmaceuticals <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded">2</span></a></li>
                 </ul>
             </aside>
 
@@ -73,7 +68,7 @@
                 <!-- Hero Banner -->
                 <section id="home" class="relative bg-slate-900 text-white rounded-2xl shadow-xl overflow-hidden p-8 md:p-14 text-center bg-cover bg-center border border-slate-800" style="background-image: linear-gradient(rgba(15, 23, 42, 0.90), rgba(15, 23, 42, 0.90)), url('https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1200&q=80');">
                     <div class="max-w-2xl mx-auto">
-                        <span class="bg-amber-500/20 text-amber-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-widest border border-amber-500/40">Global Supplier</span>
+                        <span class="bg-amber-500/20 text-amber-300 text-xs uppercase px-3 py-1 rounded-full font-semibold tracking-widest border border-amber-500/40">Verified Export Catalogue</span>
                         <h1 class="text-3xl md:text-5xl font-extrabold mt-4 mb-4 tracking-tight text-white">RIMO GLOBAL PHARMA</h1>
                         <p class="text-base md:text-lg text-slate-300 mb-8 leading-relaxed">Best Oncology Medicines Supplier Worldwide with Guaranteed Quality and Safety Standards.</p>
                         <div class="flex flex-wrap justify-center gap-4">
@@ -102,15 +97,38 @@
                     </div>
                 </div>
 
+                <!-- About Section -->
+                <section id="about" class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                    <h2 class="text-2xl font-extrabold text-slate-900 mb-4">About Rimo Global Pharma</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh[cite: 1]. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients[cite: 1].
+                    </p>
+                </section>
+
             </main>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-slate-950 text-slate-400 py-10 mt-16 text-center text-sm border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <p class="mb-2 text-white font-semibold text-base">Rimo Global Pharma Ltd</p>
-            <p class="text-xs text-slate-500">Professional Oncology & Healthcare Product Distribution System &copy; 2026</p>
+    <!-- Footer with Exact Contact Information -->
+    <footer id="contact" class="bg-slate-950 text-slate-400 py-12 mt-16 border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <h3 class="text-white font-bold text-base mb-3">Rimo Global Pharma Ltd</h3>
+                <p class="text-xs text-slate-400 mb-4">Professional Oncology & Healthcare Product Distribution System.</p>
+                <p class="text-xs text-slate-500">&copy; 2026 All Rights Reserved.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-3">Direct Contact</h3>
+                <p class="mb-2">📧 Email: <a href="mailto:rimoglobalpharma@gmail.com" class="text-amber-400 hover:underline">rimoglobalpharma@gmail.com</a></p>
+                <p class="mb-2">📱 WhatsApp / Phone: <a href="tel:+8801944887517" class="text-amber-400 hover:underline">+8801944887517</a></p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-3">Social Connect</h3>
+                <p class="mb-3">Facebook Page:</p>
+                <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold text-xs transition">
+                    Visit Facebook Page
+                </a>
+            </div>
         </div>
     </footer>
 
