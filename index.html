@@ -93,7 +93,7 @@
 
                     <!-- Dynamic Product Grid Container -->
                     <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        <!-- Products will load dynamically here in exact serial order -->
+                        <!-- All 112 products from the PDF will load here dynamically in exact serial order -->
                     </div>
 
                     <!-- Pagination -->
@@ -145,7 +145,7 @@
             </div>
             <div>
                 <h3 class="text-white font-bold text-base mb-3">Direct Contact</h3>
-                <p class="mb-2">📧 Email: <a href="mailto:rimoglobalpharma@gmail.com" class="text-amber-400 hover:underline">rimoglobalpharma@gmail.com</a></p>
+                <p class="mb-2">📧 Email: <a href="mailto:rimoglobalcompany@gmail.com" class="text-amber-400 hover:underline">rimoglobalcompany@gmail.com</a></p>
                 <p class="mb-2">📱 WhatsApp / Phone: <a href="tel:+8801944887517" class="text-amber-400 hover:underline">+8801944887517</a></p>
             </div>
             <div>
@@ -158,16 +158,130 @@
         </div>
     </footer>
 
-    <!-- JavaScript Handling Serial Order & Images -->
+    <!-- JavaScript Handling All 112 Products from PDF in Exact Serial Order -->
     <script>
         const productsData = [
-            { serial: 1, brand: "Acalixen", generic: "Acalabrutinib INN", strength: "100 mg", category: "Anti-Cancer", image: "assets/images/acalixen.jpg" },
-            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "Lung Cancer", image: "assets/images/adakras.jpg" },
-            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", category: "Anti-Cancer", image: "assets/images/alecnib.jpg" },
-            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", category: "Anti-Cancer", image: "assets/images/alkixen.jpg" },
-            { serial: 5, brand: "Anacare", generic: "Anastrozole", strength: "1 Mg", category: "Oncology Medicine", image: "assets/images/anacare.jpg" },
-            { serial: 6, brand: "Abiraxen", generic: "Abiraterone", strength: "250 Mg", category: "Anti-Cancer", image: "assets/images/abiraxen.jpg" }
-            // You can continue adding items sequentially up to 112 here
+            // Everest Pharmaceuticals Ltd. (1 - 54)
+            { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "Everest Pharmaceuticals", image: "assets/images/acaluxen.jpg" },
+            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "Everest Pharmaceuticals", image: "assets/images/adakras.jpg" },
+            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", category: "Everest Pharmaceuticals", image: "assets/images/alecnib.jpg" },
+            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", category: "Everest Pharmaceuticals", image: "assets/images/alkixen.jpg" },
+            { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "20 mg", category: "Everest Pharmaceuticals", image: "assets/images/alpesib.jpg" },
+            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", category: "Everest Pharmaceuticals", image: "assets/images/ascimib.jpg" },
+            { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", category: "Everest Pharmaceuticals", image: "assets/images/avapag.jpg" },
+            { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", category: "Everest Pharmaceuticals", image: "assets/images/azarest.jpg" },
+            { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", category: "Everest Pharmaceuticals", image: "assets/images/caboxen20.jpg" },
+            { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", category: "Everest Pharmaceuticals", image: "assets/images/caboxen80.jpg" },
+            { serial: 11, brand: "Capivast", generic: "Capivasertib", strength: "200 mg", category: "Everest Pharmaceuticals", image: "assets/images/capivast.jpg" },
+            { serial: 12, brand: "Capmaxen", generic: "Capmatinib INN", strength: "200 mg", category: "Everest Pharmaceuticals", image: "assets/images/capmaxen.jpg" },
+            { serial: 13, brand: "Elopag 25", generic: "Eltrombopag INN", strength: "25 mg", category: "Everest Pharmaceuticals", image: "assets/images/elopag25.jpg" },
+            { serial: 14, brand: "Elopag 50", generic: "Eltrombopag INN", strength: "50 mg", category: "Everest Pharmaceuticals", image: "assets/images/elopag50.jpg" },
+            { serial: 15, brand: "Enasinib", generic: "Enasidenib", strength: "50 mg", category: "Everest Pharmaceuticals", image: "assets/images/enasinib.jpg" },
+            { serial: 16, brand: "Erdafixen", generic: "Erdafitinib INN", strength: "4 mg", category: "Everest Pharmaceuticals", image: "assets/images/erdafixen.jpg" },
+            { serial: 17, brand: "Eudaxen", generic: "Diazoxide BP", strength: "50 mg", category: "Everest Pharmaceuticals", image: "assets/images/eudaxen.jpg" },
+            { serial: 18, brand: "Fruquin", generic: "Fruquintinib INN", strength: "5 mg", category: "Everest Pharmaceuticals", image: "assets/images/fruquin.jpg" },
+            { serial: 19, brand: "Gilternib", generic: "Gilteritinib", strength: "40 mg", category: "Everest Pharmaceuticals", image: "assets/images/gilternib.jpg" },
+            { serial: 20, brand: "Ibruxen", generic: "Ibrutinib", strength: "140 mg", category: "Everest Pharmaceuticals", image: "assets/images/ibruxen.jpg" },
+            { serial: 21, brand: "Ivosenib", generic: "Ivosidenib", strength: "250 mg", category: "Everest Pharmaceuticals", image: "assets/images/ivosenib.jpg" },
+            { serial: 22, brand: "Laronib 100", generic: "Larotrectinib", strength: "100 mg", category: "Everest Pharmaceuticals", image: "assets/images/laronib100.jpg" },
+            { serial: 23, brand: "Lazerib", generic: "Lazertinib", strength: "80 mg", category: "Everest Pharmaceuticals", image: "assets/images/lazerib.jpg" },
+            { serial: 24, brand: "Lenvaxen 10", generic: "Lenvatinib", strength: "10 mg", category: "Everest Pharmaceuticals", image: "assets/images/lenvaxen10.jpg" },
+            { serial: 25, brand: "Lenvaxen 4", generic: "Lenvatinib", strength: "4 mg", category: "Everest Pharmaceuticals", image: "assets/images/lenvaxen4.jpg" },
+            { serial: 26, brand: "Lorbrexen", generic: "Lorlatinib", strength: "100 mg", category: "Everest Pharmaceuticals", image: "assets/images/lorbrexen.jpg" },
+            { serial: 27, brand: "Moboxen", generic: "Mobocertinib", strength: "40 mg", category: "Everest Pharmaceuticals", image: "assets/images/moboxen.jpg" },
+            { serial: 28, brand: "Niranib", generic: "Niraparib", strength: "100 mg", category: "Everest Pharmaceuticals", image: "assets/images/niranib.jpg" },
+            { serial: 29, brand: "Olanib", generic: "Olaparib", strength: "50 mg", category: "Everest Pharmaceuticals", image: "assets/images/olanib.jpg" },
+            { serial: 30, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", category: "Everest Pharmaceuticals", image: "assets/images/olanib150.jpg" },
+            { serial: 31, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", category: "Everest Pharmaceuticals", image: "assets/images/pazorest.jpg" },
+            { serial: 32, brand: "Pemitinib", generic: "Pemigatinib", strength: "13.5 mg", category: "Everest Pharmaceuticals", image: "assets/images/pemitinib.jpg" },
+            { serial: 33, brand: "Palboxen", generic: "Palbociclib", strength: "125 mg", category: "Everest Pharmaceuticals", image: "assets/images/palboxen.jpg" },
+            { serial: 34, brand: "Ponaxen 15", generic: "Ponatinib", strength: "15 mg", category: "Everest Pharmaceuticals", image: "assets/images/ponaxen15.jpg" },
+            { serial: 35, brand: "Ponaxen 45", generic: "Ponatinib", strength: "45 mg", category: "Everest Pharmaceuticals", image: "assets/images/ponaxen45.jpg" },
+            { serial: 36, brand: "Prostaxen", generic: "Apalutamide", strength: "60 mg", category: "Everest Pharmaceuticals", image: "assets/images/prostaxen.jpg" },
+            { serial: 37, brand: "Quizar 17.7", generic: "Quizartinib", strength: "17.7 mg", category: "Everest Pharmaceuticals", image: "assets/images/quizar17.7.jpg" },
+            { serial: 38, brand: "Quizar 26.5", generic: "Quizartinib", strength: "26.5 mg", category: "Everest Pharmaceuticals", image: "assets/images/quizar26.5.jpg" },
+            { serial: 39, brand: "Repotrex", generic: "Repotrectinib", strength: "40 mg", category: "Everest Pharmaceuticals", image: "assets/images/repotrex.jpg" },
+            { serial: 40, brand: "Resiliva", generic: "Resmetirom", strength: "80 mg", category: "Everest Pharmaceuticals", image: "assets/images/resiliva.jpg" },
+            { serial: 41, brand: "Ribokis", generic: "Ribociclib", strength: "200 mg", category: "Everest Pharmaceuticals", image: "assets/images/ribokis.jpg" },
+            { serial: 42, brand: "Ruxotor 10", generic: "Ruxolitinib", strength: "10 mg", category: "Everest Pharmaceuticals", image: "assets/images/ruxotor10.jpg" },
+            { serial: 43, brand: "Ruxotor Cream", generic: "Ruxolitinib Cream", strength: "1.50%", category: "Everest Pharmaceuticals", image: "assets/images/ruxotorcream.jpg" },
+            { serial: 44, brand: "Ruxotor S", generic: "Ruxolitinib", strength: "5 mg", category: "Everest Pharmaceuticals", image: "assets/images/ruxotors.jpg" },
+            { serial: 45, brand: "Selcaxen 30's", generic: "Selpercatinib", strength: "40 mg", category: "Everest Pharmaceuticals", image: "assets/images/selcaxen.jpg" },
+            { serial: 46, brand: "Selinex", generic: "Selinexor", strength: "20 mg", category: "Everest Pharmaceuticals", image: "assets/images/selinex.jpg" },
+            { serial: 47, brand: "Sotoxen", generic: "Sotorasib", strength: "120 mg", category: "Everest Pharmaceuticals", image: "assets/images/sotoxen.jpg" },
+            { serial: 48, brand: "Talaparib", generic: "Talazoparib", strength: "1 mg", category: "Everest Pharmaceuticals", image: "assets/images/talaparib.jpg" },
+            { serial: 49, brand: "Tivoxen", generic: "Tivozanib", strength: "1.34 mg", category: "Everest Pharmaceuticals", image: "assets/images/tivoxen.jpg" },
+            { serial: 50, brand: "Tofaxen", generic: "Tofacitinib", strength: "5 mg", category: "Everest Pharmaceuticals", image: "assets/images/tofaxen.jpg" },
+            { serial: 51, brand: "Trifluxen", generic: "Trifluridine & Tipiracil", strength: "15 mg & 6.14 mg", category: "Everest Pharmaceuticals", image: "assets/images/trifluxen.jpg" },
+            { serial: 52, brand: "Tucaxen", generic: "Tucatinib", strength: "150 mg", category: "Everest Pharmaceuticals", image: "assets/images/tucaxen.jpg" },
+            { serial: 53, brand: "Upajak", generic: "Upadacitinib", strength: "15 mg", category: "Everest Pharmaceuticals", image: "assets/images/upajak.jpg" },
+            { serial: 54, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", category: "Everest Pharmaceuticals", image: "assets/images/ventoxen.jpg" },
+
+            // Drugs International Ltd. (55 - 64)
+            { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", category: "Drugs International", image: "assets/images/osinib.jpg" },
+            { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", category: "Drugs International", image: "assets/images/avalet20.jpg" },
+            { serial: 57, brand: "Tocit-5", generic: "Tofacitinib", strength: "5 mg", category: "Drugs International", image: "assets/images/tocit5.jpg" },
+            { serial: 58, brand: "Tocit-XR", generic: "Tofacitinib", strength: "11 mg", category: "Drugs International", image: "assets/images/tocitxr.jpg" },
+            { serial: 59, brand: "Barinib 2", generic: "Baricitinib", strength: "2 mg", category: "Drugs International", image: "assets/images/barinib2.jpg" },
+            { serial: 60, brand: "Cerinib", generic: "Ceritinib", strength: "150 mg", category: "Drugs International", image: "assets/images/cerinib.jpg" },
+            { serial: 61, brand: "Rematib 15", generic: "Upadacitinib", strength: "15 mg", category: "Drugs International", image: "assets/images/rematib15.jpg" },
+            { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", category: "Drugs International", image: "assets/images/venex100.jpg" },
+            { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", category: "Drugs International", image: "assets/images/rutinib5.jpg" },
+            { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", category: "Drugs International", image: "assets/images/rutinibcream.jpg" },
+
+            // Incepta Pharmaceuticals Ltd. (65 - 70)
+            { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", category: "Incepta Pharmaceuticals", image: "assets/images/crizocent250.jpg" },
+            { serial: 66, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "Incepta Pharmaceuticals", image: "assets/images/ibrucent140.jpg" },
+            { serial: 67, brand: "Osicent 80", generic: "Osimertinib", strength: "80 mg", category: "Incepta Pharmaceuticals", image: "assets/images/osicent80.jpg" },
+            { serial: 68, brand: "Palbocent 125", generic: "Palbociclib", strength: "125 mg", category: "Incepta Pharmaceuticals", image: "assets/images/palbocent125.jpg" },
+            { serial: 69, brand: "Panovir", generic: "Sofosbuvir & Velpatasvir", strength: "400 mg/100 mg", category: "Incepta Pharmaceuticals", image: "assets/images/panovir.jpg" },
+            { serial: 70, brand: "Tofacent 5", generic: "Tofacitinib", strength: "5 mg", category: "Incepta Pharmaceuticals", image: "assets/images/tofacent5.jpg" },
+
+            // General Pharmaceuticals Ltd. (71 - 72)
+            { serial: 71, brand: "Barigen 2", generic: "Baricitinib", strength: "2 mg", category: "General Pharmaceuticals", image: "assets/images/barigen2.jpg" },
+            { serial: 72, brand: "Barigen 4", generic: "Baricitinib", strength: "4 mg", category: "General Pharmaceuticals", image: "assets/images/barigen4.jpg" },
+
+            // Ziska Pharmaceuticals Ltd. (73 - 112)
+            { serial: 73, brand: "Upanib 15", generic: "Upadacitinib", strength: "15 mg", category: "Ziska Pharmaceuticals", image: "assets/images/upanib15.jpg" },
+            { serial: 74, brand: "Pmatinib 200", generic: "Capmatinib", strength: "200 mg", category: "Ziska Pharmaceuticals", image: "assets/images/pmatinib200.jpg" },
+            { serial: 75, brand: "Crizona 250", generic: "Crizotinib", strength: "250 mg", category: "Ziska Pharmaceuticals", image: "assets/images/crizona250.jpg" },
+            { serial: 76, brand: "Enacitib 50", generic: "Enasidenib", strength: "50 mg", category: "Ziska Pharmaceuticals", image: "assets/images/enacitib50.jpg" },
+            { serial: 77, brand: "Lornatib 100", generic: "Lorlatinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/lornatib100.jpg" },
+            { serial: 78, brand: "Peribac 100", generic: "Niraparib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/peribac100.jpg" },
+            { serial: 79, brand: "Selpecta 40", generic: "Selpercatinib", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "assets/images/selpecta40.jpg" },
+            { serial: 80, brand: "Sotakras 120", generic: "Sotorasib", strength: "120 mg", category: "Ziska Pharmaceuticals", image: "assets/images/sotakras120.jpg" },
+            { serial: 81, brand: "Tractoni 100", generic: "Larotrectinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/tractoni100.jpg" },
+            { serial: 82, brand: "Avatropag 20", generic: "Avatrombopag", strength: "20 mg", category: "Ziska Pharmaceuticals", image: "assets/images/avatropag20.jpg" },
+            { serial: 83, brand: "Tukanic 150", generic: "Tucatinib", strength: "150 mg", category: "Ziska Pharmaceuticals", image: "assets/images/tukanic150.jpg" },
+            { serial: 84, brand: "Ventex 100", generic: "Venetoclax", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/ventex100.jpg" },
+            { serial: 85, brand: "Tirzepatide 2.5", generic: "Tirzepatide", strength: "2.5 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide2.5.jpg" },
+            { serial: 86, brand: "Tirzepatide 5", generic: "Tirzepatide", strength: "5 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide5.jpg" },
+            { serial: 87, brand: "Tirzepatide 7.5", generic: "Tirzepatide", strength: "7.5 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide7.5.jpg" },
+            { serial: 88, brand: "Tirzepatide 10", generic: "Tirzepatide", strength: "10 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide10.jpg" },
+            { serial: 89, brand: "Tirzepatide 12.5", generic: "Tirzepatide", strength: "12.5 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide12.5.jpg" },
+            { serial: 90, brand: "Tirzepatide 15", generic: "Tirzepatide", strength: "15 mg/0.5 ml", category: "Ziska Pharmaceuticals", image: "assets/images/tirzepatide15.jpg" },
+            { serial: 91, brand: "Lenvakin 4", generic: "Lenvatinib", strength: "4 mg", category: "Ziska Pharmaceuticals", image: "assets/images/lenvakin4.jpg" },
+            { serial: 92, brand: "Lenvakin 10", generic: "Lenvatinib", strength: "10 mg", category: "Ziska Pharmaceuticals", image: "assets/images/lenvakin10.jpg" },
+            { serial: 93, brand: "Palbokin 125", generic: "Palbociclib", strength: "125 mg", category: "Ziska Pharmaceuticals", image: "assets/images/palbokin125.jpg" },
+            { serial: 94, brand: "Osikin 80", generic: "Osimertinib", strength: "80 mg", category: "Ziska Pharmaceuticals", image: "assets/images/osikin80.jpg" },
+            { serial: 95, brand: "Filgotin 100", generic: "Filgotinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/filgotin100.jpg" },
+            { serial: 96, brand: "Peminib 13.5", generic: "Pemigatinib", strength: "13.5 mg", category: "Ziska Pharmaceuticals", image: "assets/images/peminib13.5.jpg" },
+            { serial: 97, brand: "Ascimib 40", generic: "Asciminib", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "assets/images/ascimib40.jpg" },
+            { serial: 98, brand: "Prestoni 100", generic: "Pralsetinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/prestoni100.jpg" },
+            { serial: 99, brand: "Acatinib 100", generic: "Acalabrutinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/acatinib100.jpg" },
+            { serial: 100, brand: "Deucrava 6", generic: "Deucravacitinib", strength: "6 mg", category: "Ziska Pharmaceuticals", image: "assets/images/deucrava6.jpg" },
+            { serial: 101, brand: "Caboxib 20", generic: "Cabozantinib", strength: "20 mg", category: "Ziska Pharmaceuticals", image: "assets/images/caboxib20.jpg" },
+            { serial: 102, brand: "Caboxib 80", generic: "Cabozantinib", strength: "80 mg", category: "Ziska Pharmaceuticals", image: "assets/images/caboxib80.jpg" },
+            { serial: 103, brand: "Olakin 150", generic: "Olaparib", strength: "150 mg", category: "Ziska Pharmaceuticals", image: "assets/images/olakin150.jpg" },
+            { serial: 104, brand: "Brutini 140", generic: "Ibrutinib", strength: "140 mg", category: "Ziska Pharmaceuticals", image: "assets/images/brutini140.jpg" },
+            { serial: 105, brand: "Anlotib 12", generic: "Anlotinib", strength: "12 mg", category: "Ziska Pharmaceuticals", image: "assets/images/anlotib12.jpg" },
+            { serial: 106, brand: "Trombola 25", generic: "Eltrombopag", strength: "25 mg", category: "Ziska Pharmaceuticals", image: "assets/images/trombola25.jpg" },
+            { serial: 107, brand: "Trombola 50", generic: "Eltrombopag", strength: "50 mg", category: "Ziska Pharmaceuticals", image: "assets/images/trombola50.jpg" },
+            { serial: 108, brand: "Mobonib 40", generic: "Mobocertinib", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "assets/images/mobonib40.jpg" },
+            { serial: 109, brand: "Ruxonib Cream", generic: "Ruxolitinib", strength: "1.5%", category: "Ziska Pharmaceuticals", image: "assets/images/ruxonibcream.jpg" },
+            { serial: 110, brand: "Nivomab 100", generic: "Nivolumab", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/nivomab100.jpg" },
+            { serial: 111, brand: "Nivomab 40", generic: "Nivolumab", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "assets/images/nivomab40.jpg" },
+            { serial: 112, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/pemromab100.jpg" }
         ];
 
         function renderProducts() {
