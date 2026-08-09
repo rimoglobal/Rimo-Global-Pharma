@@ -37,7 +37,7 @@
 
             <!-- Search Bar -->
             <div class="w-full md:w-auto flex">
-                <input type="text" placeholder="Search medicine..." class="px-4 py-2 border border-slate-300 rounded-l-lg focus:outline-none focus:border-amber-500 text-sm w-full md:w-52">
+                <input type="text" id="search-input" placeholder="Search medicine..." class="px-4 py-2 border border-slate-300 rounded-l-lg focus:outline-none focus:border-amber-500 text-sm w-full md:w-52">
                 <button class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">🔍</button>
             </div>
         </div>
@@ -93,17 +93,12 @@
 
                     <!-- Dynamic Product Grid Container -->
                     <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        <!-- All 112 products from the PDF will load here dynamically in exact serial order -->
+                        <!-- Products will load dynamically via JavaScript -->
                     </div>
 
-                    <!-- Pagination -->
-                    <div class="flex justify-center items-center space-x-2 mt-8 pt-6 border-t">
-                        <span class="px-3 py-1 bg-amber-500 text-slate-950 font-bold rounded text-sm">1</span>
-                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">2</a>
-                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">3</a>
-                        <span class="px-2 text-slate-400">...</span>
-                        <a href="#" class="px-3 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-sm font-semibold">19</a>
-                        <a href="#" class="px-3 py-1 bg-slate-900 text-white rounded text-sm font-semibold">Next &rarr;</a>
+                    <!-- Dynamic Pagination Container -->
+                    <div id="pagination-container" class="flex justify-center items-center space-x-2 mt-8 pt-6 border-t flex-wrap gap-2">
+                        <!-- Pagination buttons will load dynamically here -->
                     </div>
                 </section>
 
@@ -158,7 +153,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript Handling All 112 Products from PDF in Exact Serial Order -->
+    <!-- JavaScript Handling Pagination and Products Rendering -->
     <script>
         const productsData = [
             // Everest Pharmaceuticals Ltd. (1 - 54)
@@ -284,33 +279,90 @@
             { serial: 112, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "assets/images/pemromab100.jpg" }
         ];
 
-        function renderProducts() {
-            const container = document.getElementById('product-grid-container');
-            container.innerHTML = "";
+        let currentPage = 1;
+        const itemsPerPage = 12; // প্রতি পেজে ১২টি করে প্রোডাক্ট দেখাবে
 
-            productsData.forEach(product => {
-                const cardHTML = `
-                    <div class="bg-white border-2 border-blue-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
-                        <div class="bg-blue-950 p-4 text-center relative">
-                            <div class="bg-white w-24 h-24 mx-auto p-1 rounded-lg flex items-center justify-center shadow-inner mb-2 overflow-hidden">
-                                <img src="${product.image}" alt="${product.brand} ${product.strength}" class="w-full h-full object-contain">
-                            </div>
-                            <div class="text-[10px] text-amber-400 font-bold uppercase tracking-wider">Call/WhatsApp: +8801944887517</div>
+        function displayProducts(page) {
+            const container = document.getElementById('product-grid-container');
+            container.innerHTML = '';
+
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const paginatedItems = productsData.slice(startIndex, endIndex);
+
+            paginatedItems.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 border border-slate-200 p-4 rounded-xl shadow-sm flex flex-col justify-between";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-36 bg-white rounded-lg flex items-center justify-center border mb-3 overflow-hidden">
+                            <img src="${product.image}" alt="${product.brand}" class="h-full object-contain p-2" onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
                         </div>
-                        <div class="p-4 text-center flex-1 flex flex-col justify-between">
-                            <div>
-                                <span class="text-[11px] text-slate-400 uppercase tracking-wide block font-semibold">${product.category} (SL: ${product.serial})</span>
-                                <h3 class="font-bold text-slate-900 text-sm mt-1">${product.brand} ${product.strength} (${product.generic})</h3>
-                            </div>
-                            <a href="#contact" class="mt-4 block w-full bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white text-xs font-bold py-2 rounded-lg transition">Enquire Now</a>
-                        </div>
+                        <span class="text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded">${product.category}</span>
+                        <h3 class="font-extrabold text-slate-900 text-base mt-1">${product.brand}</h3>
+                        <p class="text-xs text-slate-600">Generic: <span class="font-semibold">${product.generic}</span></p>
+                        <p class="text-xs text-slate-600">Strength: <span class="font-semibold">${product.strength}</span></p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-200 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-400 font-bold">Serial: #${product.serial}</span>
+                        <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white text-xs px-3 py-1.5 rounded font-semibold transition">Inquire</a>
                     </div>
                 `;
-                container.innerHTML += cardHTML;
+                container.appendChild(card);
             });
+
+            setupPagination();
         }
 
-        window.addEventListener('DOMContentLoaded', renderProducts);
+        function setupPagination() {
+            const paginationContainer = document.getElementById('pagination-container');
+            paginationContainer.innerHTML = '';
+
+            const pageCount = Math.ceil(productsData.length / itemsPerPage);
+
+            // Previous Button
+            const prevButton = document.createElement('button');
+            prevButton.innerText = '« Prev';
+            prevButton.className = `px-3 py-1 rounded text-sm font-semibold border ${currentPage === 1 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}`;
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayProducts(currentPage);
+                }
+            });
+            paginationContainer.appendChild(prevButton);
+
+            // Page Number Buttons
+            for (let i = 1; i <= pageCount; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = `px-3 py-1 rounded text-sm font-bold ${i === currentPage ? 'bg-amber-500 text-slate-950' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}`;
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    displayProducts(currentPage);
+                });
+                paginationContainer.appendChild(btn);
+            }
+
+            // Next Button
+            const nextButton = document.createElement('button');
+            nextButton.innerText = 'Next »';
+            nextButton.className = `px-3 py-1 rounded text-sm font-semibold border ${currentPage === pageCount ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-slate-900 text-white hover:bg-slate-800'}`;
+            nextButton.disabled = currentPage === pageCount;
+            nextButton.addEventListener('click', () => {
+                if (currentPage < pageCount) {
+                    currentPage++;
+                    displayProducts(currentPage);
+                }
+            });
+            paginationContainer.appendChild(nextButton);
+        }
+
+        // Initial Load
+        window.onload = () => {
+            displayProducts(currentPage);
+        };
     </script>
 </body>
 </html>
