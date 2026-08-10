@@ -47,18 +47,22 @@
     <div class="container mx-auto px-6 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
-            <!-- Left Sidebar: Product Manufacturers -->
+            <!-- Left Sidebar: Product Categories -->
             <aside id="products" class="lg:col-span-1 bg-white text-slate-800 rounded-xl shadow-md overflow-hidden h-fit border border-slate-200">
                 <div class="bg-slate-900 text-amber-400 px-5 py-4 font-bold text-base border-b border-slate-800 flex items-center justify-between">
                     <span>Product Portfolio</span>
                     <span>📂</span>
                 </div>
                 <ul class="divide-y divide-slate-100 text-sm">
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Everest Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">54 Items</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Ziska Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">40 Items</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Drugs International <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">10 Items</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">Incepta Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">6 Items</span></a></li>
-                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center justify-between text-slate-700 font-medium">General Pharmaceuticals <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-bold">2 Items</span></a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Anti Cancer Drugs</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Anti Diabetic Drugs</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Breast Cancer</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Colorectal Cancer</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Endometrial Cancer</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Hepatitis C Virus</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Kidney Cancer</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> Leukemia</a></li>
+                    <li><a href="#" class="block px-5 py-3.5 hover:bg-slate-50 transition flex items-center gap-3 text-slate-700 font-medium"><span class="text-amber-600">💊</span> All Products</a></li>
                 </ul>
             </aside>
 
@@ -83,7 +87,7 @@
 
                 <!-- Product Cards Grid Section -->
                 <section id="products-grid" class="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-slate-200">
-                    <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4">
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-6 border-b pb-4 gap-4">
                         <div>
                             <h2 class="text-2xl font-extrabold text-slate-900">Featured Oncology Medicines</h2>
                             <p class="text-xs text-slate-500 mt-1">Export quality certified oncology and specialty medications.</p>
@@ -140,7 +144,7 @@
             </div>
             <div>
                 <h3 class="text-white font-bold text-base mb-3">Direct Contact</h3>
-                <p class="mb-2">📧 Email: <a href="mailto:rimoglobalcompany@gmail.com" class="text-amber-400 hover:underline">rimoglobalcompany@gmail.com</a></p>
+                <p class="mb-2">📧 Email: <a href="mailto:rimoglobalpharma@gmail.com" class="text-amber-400 hover:underline">rimoglobalpharma@gmail.com</a></p>
                 <p class="mb-2">📱 WhatsApp / Phone: <a href="tel:+8801944887517" class="text-amber-400 hover:underline">+8801944887517</a></p>
             </div>
             <div>
@@ -156,7 +160,6 @@
     <!-- JavaScript Handling Pagination and Products Rendering -->
     <script>
         const productsData = [
-            // Everest Pharmaceuticals Ltd. (1 - 54)
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "Everest Pharmaceuticals", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "Everest Pharmaceuticals", image: "Adakras 200 mg.jpg" },
             { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", category: "Everest Pharmaceuticals", image: "alecnib 150 mg.jpg" },
@@ -211,8 +214,6 @@
             { serial: 52, brand: "Tucaxen", generic: "Tucatinib", strength: "150 mg", category: "Everest Pharmaceuticals", image: "tucaxen.jpg" },
             { serial: 53, brand: "Upajak", generic: "Upadacitinib", strength: "15 mg", category: "Everest Pharmaceuticals", image: "upajak.jpg" },
             { serial: 54, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", category: "Everest Pharmaceuticals", image: "ventoxen.jpg" },
-
-            // Drugs International Ltd. (55 - 64)
             { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", category: "Drugs International", image: "osinib.jpg" },
             { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", category: "Drugs International", image: "avalet20.jpg" },
             { serial: 57, brand: "Tocit-5", generic: "Tofacitinib", strength: "5 mg", category: "Drugs International", image: "tocit5.jpg" },
@@ -223,20 +224,14 @@
             { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", category: "Drugs International", image: "venex100.jpg" },
             { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", category: "Drugs International", image: "rutinib5.jpg" },
             { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", category: "Drugs International", image: "rutinibcream.jpg" },
-
-            // Incepta Pharmaceuticals Ltd. (65 - 70)
             { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", category: "Incepta Pharmaceuticals", image: "crizocent250.jpg" },
             { serial: 66, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "Incepta Pharmaceuticals", image: "ibrucent140.jpg" },
             { serial: 67, brand: "Osicent 80", generic: "Osimertinib", strength: "80 mg", category: "Incepta Pharmaceuticals", image: "osicent80.jpg" },
             { serial: 68, brand: "Palbocent 125", generic: "Palbociclib", strength: "125 mg", category: "Incepta Pharmaceuticals", image: "palbocent125.jpg" },
             { serial: 69, brand: "Panovir", generic: "Sofosbuvir & Velpatasvir", strength: "400 mg/100 mg", category: "Incepta Pharmaceuticals", image: "panovir.jpg" },
             { serial: 70, brand: "Tofacent 5", generic: "Tofacitinib", strength: "5 mg", category: "Incepta Pharmaceuticals", image: "tofacent5.jpg" },
-
-            // General Pharmaceuticals Ltd. (71 - 72)
             { serial: 71, brand: "Barigen 2", generic: "Baricitinib", strength: "2 mg", category: "General Pharmaceuticals", image: "barigen2.jpg" },
             { serial: 72, brand: "Barigen 4", generic: "Baricitinib", strength: "4 mg", category: "General Pharmaceuticals", image: "barigen4.jpg" },
-
-            // Ziska Pharmaceuticals Ltd. (73 - 112)
             { serial: 73, brand: "Upanib 15", generic: "Upadacitinib", strength: "15 mg", category: "Ziska Pharmaceuticals", image: "upanib15.jpg" },
             { serial: 74, brand: "Pmatinib 200", generic: "Capmatinib", strength: "200 mg", category: "Ziska Pharmaceuticals", image: "pmatinib200.jpg" },
             { serial: 75, brand: "Crizona 250", generic: "Crizotinib", strength: "250 mg", category: "Ziska Pharmaceuticals", image: "crizona250.jpg" },
@@ -311,28 +306,28 @@
                 container.appendChild(card);
             });
 
-            setupPagination();
+            setupPaginationControls();
         }
 
-        function setupPagination() {
+        function setupPaginationControls() {
             const paginationContainer = document.getElementById('pagination-container');
             paginationContainer.innerHTML = '';
+            const totalPages = Math.ceil(productsData.length / itemsPerPage);
 
-            const pageCount = Math.ceil(productsData.length / itemsPerPage);
-
-            for (let i = 1; i <= pageCount; i++) {
+            for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
                 btn.innerText = i;
-                btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-bold transition ${i === currentPage ? 'bg-amber-500 text-slate-950 shadow' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}`;
+                btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-bold transition ${i === currentPage ? 'bg-amber-500 text-slate-950 shadow' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`;
                 btn.addEventListener('click', () => {
                     currentPage = i;
                     displayProducts(currentPage);
-                    window.scrollTo({ top: document.getElementById('products-grid').offsetTop - 100, behavior: 'smooth' });
+                    document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
                 });
                 paginationContainer.appendChild(btn);
             }
         }
 
+        // Initial Load
         displayProducts(currentPage);
     </script>
 </body>
