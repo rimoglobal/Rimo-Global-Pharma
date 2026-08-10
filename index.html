@@ -156,7 +156,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript with Pagination & Without "112 Items" Text -->
+    <!-- JavaScript with Pagination & Message Option Added -->
     <script>
         const productsData = [
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "Everest Pharmaceuticals", image: "Acaluxen 100 mg.jpg" },
@@ -298,9 +298,12 @@
                         <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Generic:</span> ${product.generic}</p>
                         <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Strength:</span> ${product.strength}</p>
                     </div>
-                    <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between">
-                        <span class="text-[10px] sm:text-[11px] font-bold text-slate-400">#${product.serial}</span>
-                        <a href="#contact" class="bg-slate-900 hover:bg-slate-800 text-white text-[11px] sm:text-xs px-3 py-1.5 rounded-lg font-semibold transition">Inquire</a>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-400 font-mono">#${product.serial}</span>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/8801944887517?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-bold transition">Message</a>
+                            <a href="#contact" class="bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">Inquire</a>
+                        </div>
                     </div>
                 `;
                 container.appendChild(card);
@@ -312,27 +315,84 @@
         function renderPagination() {
             const paginationContainer = document.getElementById('pagination-container');
             paginationContainer.innerHTML = '';
-
+            
             const totalPages = Math.ceil(productsData.length / itemsPerPage);
 
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === 1 ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
+            prevBtn.innerText = 'Prev';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => { if (currentPage > 1) renderProducts(currentPage - 1); };
+            paginationContainer.appendChild(prevBtn);
+
+            // Page numbers
             for (let i = 1; i <= totalPages; i++) {
-                const btn = document.createElement('button');
-                btn.innerText = i;
-                btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-bold transition border ${
-                    i === currentPage 
-                    ? 'bg-slate-900 text-white border-slate-900' 
-                    : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'
-                }`;
-                btn.onclick = () => {
-                    renderProducts(i);
-                    document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
-                };
-                paginationContainer.appendChild(btn);
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === i ? 'bg-amber-500 text-slate-950 border-amber-500' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
+                pageBtn.innerText = i;
+                pageBtn.onclick = () => renderProducts(i);
+                paginationContainer.appendChild(pageBtn);
             }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === totalPages ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
+            nextBtn.innerText = 'Next';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => { if (currentPage < totalPages) renderProducts(currentPage + 1); };
+            paginationContainer.appendChild(nextBtn);
         }
 
-        // Initial Load
-        renderProducts(1);
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = productsData.filter(p => 
+                p.brand.toLowerCase().includes(query) || 
+                p.generic.toLowerCase().includes(query) || 
+                p.category.toLowerCase().includes(query)
+            );
+            
+            const container = document.getElementById('product-grid-container');
+            container.innerHTML = '';
+
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 text-sm">No medicines found matching your search.</div>`;
+                document.getElementById('pagination-container').innerHTML = '';
+                return;
+            }
+
+            filtered.slice(0, itemsPerPage).forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-36 sm:h-48 bg-slate-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center p-2">
+                            <img src="${product.image}" alt="${product.brand}" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <span class="text-[9px] sm:text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md uppercase tracking-wider block w-fit truncate max-w-full">${product.category}</span>
+                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-lg mt-2">${product.brand}</h3>
+                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Generic:</span> ${product.generic}</p>
+                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Strength:</span> ${product.strength}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
+                        <span class="text-[10px] text-slate-400 font-mono">#${product.serial}</span>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/8801944887517?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-bold transition">Message</a>
+                            <a href="#contact" class="bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">Inquire</a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            document.getElementById('pagination-container').innerHTML = '';
+        });
+
+        // Initial render on load
+        window.onload = () => {
+            renderProducts(1);
+        };
     </script>
 </body>
 </html>
