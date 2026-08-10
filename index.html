@@ -1,113 +1,48 @@
-<!-- Floating Contact Widget Start -->
-<div class="floating-chat-widget">
-    <!-- Main Toggle Button -->
-    <div class="chat-toggle-btn" id="chatToggle">
-        <svg class="chat-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-        </svg>
-        <svg class="close-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" style="display:none;">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-        </svg>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif Pharma</title>
+    <style>
+        /* আপনার আগের ওয়েবসাইটের স্টাইল এখানে থাকবে */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        
+        /* ফ্লোটিং উইজেট এর স্টাইল (নিচে যোগ করা হয়েছে) */
+        .floating-chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+        .chat-toggle-btn { width: 60px; height: 60px; background-color: #25d366; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; }
+        .chat-options-list { position: absolute; bottom: 75px; right: 5px; display: flex; flex-direction: column; gap: 12px; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .chat-options-list.active { opacity: 1; visibility: visible; }
+        .chat-option-item { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
+        .phone { background-color: #007bff; }
+        .whatsapp { background-color: #25d366; }
+        .messenger { background-color: #0084ff; }
+        .email { background-color: #ea4335; }
+    </style>
+</head>
+<body>
+
+    <!-- এখানে আপনার ওয়েবসাইটের আগের মূল কনটেন্টগুলো থাকবে -->
+    <h1>SAIF PHARMA</h1>
+    <p>Welcome to our official website.</p>
+
+    <!-- ফ্লোটিং চ্যাট বাটন (এটি কোডের শেষে বসবে) -->
+    <div class="floating-chat-widget">
+        <div class="chat-toggle-btn" id="chatToggle">Menu</div>
+        <div class="chat-options-list" id="chatOptions">
+            <a href="tel:+8801944887517" class="chat-option-item phone">Call</a>
+            <a href="https://wa.me/8801944887517" target="_blank" class="chat-option-item whatsapp">WA</a>
+            <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="chat-option-item messenger">FB</a>
+            <a href="mailto:rimoglobalpharma@gmail.com" class="chat-option-item email">Mail</a>
+        </div>
     </div>
 
-    <!-- Options List (Initially Hidden / Toggled) -->
-    <div class="chat-options-list" id="chatOptions">
-        <!-- Call -->
-        <a href="tel:+8801944887517" class="chat-option-item phone" title="Call Us">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-        </a>
-        <!-- WhatsApp -->
-        <a href="https://wa.me/8801944887517" target="_blank" class="chat-option-item whatsapp" title="WhatsApp">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        </a>
-        <!-- Facebook Page -->
-        <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="chat-option-item messenger" title="Facebook Page">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.145 2 11.243c0 2.91 1.453 5.5 3.718 7.156V22l3.435-1.884c.907.252 1.875.387 2.847.387 5.523 0 10-4.145 10-9.243S17.523 2 12 2zm1.053 12.393l-2.571-2.744-5.018 2.744 5.518-5.85 2.625 2.744 4.964-2.744-5.518 5.85z"/></svg>
-        </a>
-        <!-- Email -->
-        <a href="mailto:rimoglobalpharma@gmail.com" class="chat-option-item email" title="Email Us">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-    </div>
-</div>
-
-<style>
-.floating-chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    font-family: sans-serif;
-}
-.chat-toggle-btn {
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.chat-toggle-btn:hover {
-    transform: scale(1.05);
-}
-.chat-options-list {
-    position: absolute;
-    bottom: 75px;
-    right: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-}
-.chat-options-list.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-.chat-option-item {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    transition: transform 0.2s;
-    text-decoration: none;
-}
-.chat-option-item:hover {
-    transform: scale(1.1);
-}
-.chat-option-item.phone { background-color: #007bff; }
-.chat-option-item.whatsapp { background-color: #25d366; }
-.chat-option-item.messenger { background-color: #0084ff; }
-.chat-option-item.email { background-color: #ea4335; }
-</style>
-
-<script>
-const chatToggle = document.getElementById('chatToggle');
-const chatOptions = document.getElementById('chatOptions');
-const chatIcon = chatToggle.querySelector('.chat-icon');
-const closeIcon = chatToggle.querySelector('.close-icon');
-
-chatToggle.addEventListener('click', () => {
-    chatOptions.classList.toggle('active');
-    if(chatOptions.classList.contains('active')) {
-        chatIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-    } else {
-        chatIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-    }
-});
-</script>
-<!-- Floating Contact Widget End -->
+    <script>
+        const toggle = document.getElementById('chatToggle');
+        const options = document.getElementById('chatOptions');
+        toggle.addEventListener('click', () => {
+            options.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
