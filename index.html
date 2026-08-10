@@ -315,57 +315,46 @@
             { serial: 95, brand: "Filgotin 100", generic: "Filgotinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "filgotin100.jpg" },
             { serial: 96, brand: "Peminib 13.5", generic: "Pemigatinib", strength: "13.5 mg", category: "Ziska Pharmaceuticals", image: "peminib13.5.jpg" },
             { serial: 97, brand: "Ascimib 40", generic: "Asciminib", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "ascimib40.jpg" },
-            { serial: 98, brand: "Prestoni 100", generic: "Pralsetinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "prestoni100.jpg" },
-            { serial: 99, brand: "Acatinib 100", generic: "Acalabrutinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "acatinib100.jpg" },
-            { serial: 100, brand: "Deucrava 6", generic: "Deucravacitinib", strength: "6 mg", category: "Ziska Pharmaceuticals", image: "deucrava6.jpg" },
-            { serial: 101, brand: "Caboxib 20", generic: "Cabozantinib", strength: "20 mg", category: "Ziska Pharmaceuticals", image: "caboxib20.jpg" },
-            { serial: 102, brand: "Caboxib 80", generic: "Cabozantinib", strength: "80 mg", category: "Ziska Pharmaceuticals", image: "caboxib80.jpg" },
-            { serial: 103, brand: "Olakin 150", generic: "Olaparib", strength: "150 mg", category: "Ziska Pharmaceuticals", image: "olakin150.jpg" },
-            { serial: 104, brand: "Brutini 140", generic: "Ibrutinib", strength: "140 mg", category: "Ziska Pharmaceuticals", image: "brutini140.jpg" },
-            { serial: 105, brand: "Anlotib 12", generic: "Anlotinib", strength: "12 mg", category: "Ziska Pharmaceuticals", image: "anlotib12.jpg" },
-            { serial: 106, brand: "Trombola 25", generic: "Eltrombopag", strength: "25 mg", category: "Ziska Pharmaceuticals", image: "trombola25.jpg" },
-            { serial: 107, brand: "Trombola 50", generic: "Eltrombopag", strength: "50 mg", category: "Ziska Pharmaceuticals", image: "trombola50.jpg" },
-            { serial: 108, brand: "Mobonib 40", generic: "Mobocertinib", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "mobonib40.jpg" },
-            { serial: 109, brand: "Ruxonib Cream", generic: "Ruxolitinib", strength: "1.5%", category: "Ziska Pharmaceuticals", image: "ruxonibcream.jpg" },
-            { serial: 110, brand: "Nivomab 100", generic: "Nivolumab", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "nivomab100.jpg" },
-            { serial: 111, brand: "Nivomab 40", generic: "Nivolumab", strength: "40 mg", category: "Ziska Pharmaceuticals", image: "nivomab40.jpg" },
-            { serial: 112, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "pemromab100.jpg" }
+            { serial: 98, brand: "Prestoni 100", generic: "Pralsetinib", strength: "100 mg", category: "Ziska Pharmaceuticals", image: "prestoni100.jpg" }
         ];
 
         let currentPage = 1;
-        const itemsPerPage = 12;
+        const itemsPerPage = 6;
+        let filteredProducts = [...productsData];
 
-        function renderProducts(page) {
-            currentPage = page;
-            const container = document.getElementById('product-grid-container');
-            container.innerHTML = '';
+        function renderProducts() {
+            const gridContainer = document.getElementById('product-grid-container');
+            gridContainer.innerHTML = '';
 
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const paginatedItems = productsData.slice(startIndex, endIndex);
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const currentItems = filteredProducts.slice(start, end);
 
-            paginatedItems.forEach(product => {
+            if (currentItems.length === 0) {
+                gridContainer.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 font-medium">No medicines found matching your search.</div>`;
+                document.getElementById('pagination-container').innerHTML = '';
+                return;
+            }
+
+            currentItems.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition";
+                card.className = "bg-white border border-slate-200 rounded-2xl p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition";
                 card.innerHTML = `
                     <div>
-                        <div class="h-36 sm:h-48 bg-slate-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center p-2">
-                            <img src="${product.image}" alt="${product.brand}" class="max-h-full max-w-full object-contain">
+                        <div class="w-full h-40 bg-slate-100 rounded-xl overflow-hidden mb-3 flex items-center justify-center p-2">
+                            <img src="${product.image}" alt="${product.brand}" class="w-full h-full object-contain" onerror="this.src='https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80'">
                         </div>
-                        <span class="text-[9px] sm:text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md uppercase tracking-wider block w-fit truncate max-w-full">${product.category}</span>
-                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-lg mt-2">${product.brand}</h3>
-                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Generic:</span> ${product.generic}</p>
-                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Strength:</span> ${product.strength}</p>
+                        <!-- Company Name Tag with Light Pastel Blue Color -->
+                        <span class="inline-block bg-sky-100 text-sky-800 text-[10px] font-bold px-2.5 py-1 rounded-md mb-2">${product.category}</span>
+                        <h3 class="text-base font-extrabold text-slate-900">${product.brand}</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Generic: <span class="text-slate-700 font-medium">${product.generic}</span></p>
+                        <p class="text-xs text-slate-500 mt-0.5">Strength: <span class="text-slate-700 font-medium">${product.strength}</span></p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
-                        <span class="text-[10px] text-slate-400 font-mono">#${product.serial}</span>
-                        <div class="flex gap-2">
-                            <a href="https://wa.me/8801944887517?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-bold transition">Message</a>
-                            <a href="#contact" class="bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">Inquire</a>
-                        </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <a href="https://wa.me/8801944887517?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="w-full bg-slate-900 hover:bg-slate-800 text-white text-center py-2 rounded-lg text-xs font-bold transition">Inquire Now</a>
                     </div>
                 `;
-                container.appendChild(card);
+                gridContainer.appendChild(card);
             });
 
             renderPagination();
@@ -374,79 +363,36 @@
         function renderPagination() {
             const paginationContainer = document.getElementById('pagination-container');
             paginationContainer.innerHTML = '';
-            
-            const totalPages = Math.ceil(productsData.length / itemsPerPage);
 
-            const prevBtn = document.createElement('button');
-            prevBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === 1 ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
-            prevBtn.innerText = 'Prev';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.onclick = () => { if (currentPage > 1) renderProducts(currentPage - 1); };
-            paginationContainer.appendChild(prevBtn);
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            if (totalPages <= 1) return;
 
             for (let i = 1; i <= totalPages; i++) {
-                const pageBtn = document.createElement('button');
-                pageBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === i ? 'bg-amber-500 text-slate-950 border-amber-500' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
-                pageBtn.innerText = i;
-                pageBtn.onclick = () => renderProducts(i);
-                paginationContainer.appendChild(pageBtn);
+                const btn = document.createElement('button0' || 'button');
+                btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-bold transition ${i === currentPage ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`;
+                btn.innerText = i;
+                btn.onclick = () => {
+                    currentPage = i;
+                    renderProducts();
+                    window.scrollTo({ top: document.getElementById('products-grid').offsetTop - 100, behavior: 'smooth' });
+                };
+                paginationContainer.appendChild(btn);
             }
-
-            const nextBtn = document.createElement('button');
-            nextBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold border transition ${currentPage === totalPages ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-900 hover:text-white'}`;
-            nextBtn.innerText = 'Next';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.onclick = () => { if (currentPage < totalPages) renderProducts(currentPage + 1); };
-            paginationContainer.appendChild(nextBtn);
         }
 
-        document.getElementById('search-input').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase();
-            const filtered = productsData.filter(p => 
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) || 
                 p.generic.toLowerCase().includes(query) || 
                 p.category.toLowerCase().includes(query)
             );
-            
-            const container = document.getElementById('product-grid-container');
-            container.innerHTML = '';
-
-            if (filtered.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500 text-sm">No medicines found matching your search.</div>`;
-                document.getElementById('pagination-container').innerHTML = '';
-                return;
-            }
-
-            filtered.slice(0, itemsPerPage).forEach(product => {
-                const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl p-3 sm:p-4 flex flex-col justify-between shadow-sm hover:shadow-md transition";
-                card.innerHTML = `
-                    <div>
-                        <div class="h-36 sm:h-48 bg-slate-100 rounded-lg overflow-hidden mb-3 flex items-center justify-center p-2">
-                            <img src="${product.image}" alt="${product.brand}" class="max-h-full max-w-full object-contain">
-                        </div>
-                        <span class="text-[9px] sm:text-[10px] font-bold bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md uppercase tracking-wider block w-fit truncate max-w-full">${product.category}</span>
-                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-lg mt-2">${product.brand}</h3>
-                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Generic:</span> ${product.generic}</p>
-                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5"><span class="font-semibold text-slate-700">Strength:</span> ${product.strength}</p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center">
-                        <span class="text-[10px] text-slate-400 font-mono">#${product.serial}</span>
-                        <div class="flex gap-2">
-                            <a href="https://wa.me/8801944887517?text=I%20want%20to%20inquire%20about%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-bold transition">Message</a>
-                            <a href="#contact" class="bg-slate-900 hover:bg-amber-500 hover:text-slate-950 text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">Inquire</a>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-
-            document.getElementById('pagination-container').innerHTML = '';
+            currentPage = 1;
+            renderProducts();
         });
 
-        window.onload = () => {
-            renderProducts(1);
-        };
+        // Initial render
+        renderProducts();
     </script>
 </body>
 </html>
