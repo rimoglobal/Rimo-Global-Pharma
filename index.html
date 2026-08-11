@@ -11,8 +11,8 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<!-- Full Page Background with 3D Cancer Cells Theme -->
-<body class="bg-[#081325] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(8, 19, 37, 0.85), rgba(8, 19, 37, 0.95)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1600&auto=format&fit=crop');">
+<!-- Cancer Cell Background Image Set with your File Name -->
+<body class="bg-[#0b1b2e] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(11, 27, 46, 0.75), rgba(11, 27, 46, 0.90)), url('cancer-cell-bg.jpg.png');">
 
     <!-- Top Navigation Bar with Logo -->
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-slate-200">
@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <!-- Main Content Area: Product Portfolio Box Overlay (Matching Exact Layout) -->
+    <!-- Main Content Area: Product Portfolio Box Overlay -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
         
         <!-- Header Strip inside Box -->
@@ -100,7 +100,7 @@
         </div>
     </main>
 
-    <!-- Footer Section (Image 3 Layout) -->
+    <!-- Footer Section -->
     <footer id="contact" class="bg-[#040810]/95 text-slate-300 py-12 border-t border-slate-800">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm">
             <div>
@@ -125,7 +125,6 @@
 
     <!-- Modern Floating Contact Popup Widget -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <!-- Contact Popup Card -->
         <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
             <div class="text-xs font-bold text-slate-900 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
                 <span>Contact Us Directly</span>
@@ -154,21 +153,19 @@
             </a>
         </div>
 
-        <!-- Toggle Button -->
         <button onclick="toggleContactMenu()" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white px-4 py-2.5 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer border border-sky-400">
             <span>Contact us</span>
             <span class="bg-white text-sky-900 rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-extrabold">💬</span>
         </button>
     </div>
 
-    <!-- JavaScript Data Engine with Full 112 Products Support -->
+    <!-- JavaScript Data Engine -->
     <script>
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Base 12 products
         const baseProducts = [
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "EVEREST PHARMACEUTICALS", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "EVEREST PHARMACEUTICALS", image: "Adakras 200 mg.jpg" },
@@ -184,7 +181,6 @@
             { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" }
         ];
 
-        // Generate total 112 products list dynamically
         const productsData = [];
         for (let i = 1; i <= 112; i++) {
             if (i <= baseProducts.length) {
@@ -228,28 +224,23 @@
                 
                 card.innerHTML = `
                     <div>
-                        <!-- Product Box Image -->
                         <div class="h-32 sm:h-48 bg-white rounded-lg flex items-center justify-center mb-3 p-1 border border-slate-100 overflow-hidden">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3076/3076136.png'">
                         </div>
 
-                        <!-- Company Badge -->
                         <span class="text-[8px] sm:text-[10px] font-extrabold tracking-wider text-slate-700 uppercase block mb-1 truncate">
                             ${product.category}
                         </span>
 
-                        <!-- Brand Name & Strength -->
                         <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight">
                             ${product.brand} <span class="font-normal text-slate-600">(${product.strength})</span>
                         </h3>
 
-                        <!-- Generic Name -->
                         <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-1 truncate">
                             Generic: ${product.generic}
                         </p>
                     </div>
 
-                    <!-- Bottom Buttons -->
                     <div class="mt-4 pt-3 flex justify-between items-center border-t border-slate-100">
                         <span class="bg-sky-50 text-sky-700 text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded border border-sky-100">
                             Verified
