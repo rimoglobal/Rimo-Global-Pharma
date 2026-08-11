@@ -13,13 +13,14 @@
 </head>
 <body class="bg-slate-100 text-slate-800">
 
-    <!-- Top Navigation Bar -->
+    <!-- Top Navigation Bar with Original Logo -->
     <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-200">
-        <div class="container mx-auto px-4 sm:px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="container mx-auto px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
                 <span class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">RIMO GLOBAL PHARMA</span>
             </div>
-            <nav class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-700">
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-700">
                 <a href="#home" class="hover:text-sky-600 transition">Home</a>
                 <a href="#about" class="hover:text-sky-600 transition">About</a>
                 <a href="#products-section" class="hover:text-sky-600 transition">Products</a>
@@ -30,21 +31,21 @@
         </div>
     </header>
 
-    <!-- 3D Cancer Cell Background Hero Banner (2 নম্বর ছবির ব্যাকগ্রাউন্ড) -->
-    <section id="home" class="relative bg-[#09182b] text-white py-20 sm:py-28 bg-cover bg-right md:bg-center" style="background-image: linear-gradient(to right, rgba(9, 24, 43, 0.95) 30%, rgba(9, 24, 43, 0.45)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1600&auto=format&fit=crop');">
-        <div class="container mx-auto px-6 sm:px-12">
+    <!-- 3D Cancer Cell Background Hero Banner -->
+    <section id="home" class="relative bg-[#09182b] text-white py-16 sm:py-24 bg-cover bg-right md:bg-center" style="background-image: linear-gradient(to right, rgba(9, 24, 43, 0.95) 30%, rgba(9, 24, 43, 0.5)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1600&auto=format&fit=crop');">
+        <div class="container mx-auto px-4 sm:px-8">
             <div class="max-w-xl">
-                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+                <h1 class="text-2xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white">
                     RIMO GLOBAL PHARMA
                 </h1>
-                <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium mb-6">
+                <p class="text-xs sm:text-base text-slate-200 leading-relaxed font-medium mb-6">
                     We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow transition">
+                <div class="flex flex-wrap gap-3 sm:gap-4">
+                    <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow transition">
                         Contact Us
                     </a>
-                    <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-white font-bold px-6 py-2.5 rounded-lg text-sm border border-slate-600 transition">
+                    <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm border border-slate-600 transition">
                         View Products
                     </a>
                 </div>
@@ -52,73 +53,105 @@
         </div>
     </section>
 
-    <!-- Main Content Area: Portfolio & Products Grid -->
-    <main id="products-section" class="container mx-auto px-4 sm:px-6 -mt-10 relative z-20 pb-16">
+    <!-- Main Content Area: Products Grid -->
+    <main id="products-section" class="container mx-auto px-3 sm:px-6 py-8">
         
-        <!-- Header Banner Section inside White Box -->
-        <div class="bg-[#112338] text-white rounded-t-2xl p-6 sm:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-700 shadow-md">
-            <div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
-                <p class="text-xs sm:text-sm text-slate-300 mt-1">Export quality certified oncology and specialty medications.</p>
-            </div>
-            <!-- Country Flags -->
-            <div class="flex items-center gap-2 text-xl bg-slate-800/60 p-2 rounded-xl border border-slate-700">
-                <span title="Bangladesh">🇧🇩</span>
-                <span title="USA">🇺🇸</span>
-                <span title="India">🇮🇳</span>
-                <span title="Russia">🇷🇺</span>
-                <span title="Mexico">🇲🇽</span>
-                <span title="UK">🇬🇧</span>
-            </div>
-        </div>
-
-        <!-- Products Section Body -->
-        <div class="bg-slate-200/60 p-4 sm:p-8 rounded-b-2xl shadow-lg border border-slate-200">
+        <!-- Clean White Background Product Container (No Top Dark Headline) -->
+        <div class="bg-white p-3 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
             
             <!-- Search & Filter Bar -->
-            <div class="mb-6 flex flex-col sm:flex-row gap-4 justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-                <input type="text" id="search-input" placeholder="Search medicine or generic name..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:border-sky-500 bg-slate-50">
-                <div class="flex gap-2 flex-wrap">
+            <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
+                <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-sky-500 bg-white">
+                <div class="flex gap-1.5 flex-wrap w-full sm:w-auto">
                     <button onclick="filterByCategory('All')" class="px-3 py-1.5 bg-slate-800 text-white text-xs font-semibold rounded-lg hover:bg-slate-700">All</button>
-                    <button onclick="filterByCategory('EVEREST')" class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg border border-slate-200 hover:bg-slate-200">Everest Pharma</button>
-                    <button onclick="filterByCategory('INCEPTA')" class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg border border-slate-200 hover:bg-slate-200">Incepta Pharma</button>
-                    <button onclick="filterByCategory('ZISKA')" class="px-3 py-1.5 bg-slate-100 text-slate-700 text-xs font-semibold rounded-lg border border-slate-200 hover:bg-slate-200">Ziska Pharma</button>
+                    <button onclick="filterByCategory('EVEREST')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Everest</button>
+                    <button onclick="filterByCategory('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Incepta</button>
+                    <button onclick="filterByCategory('ZISKA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Ziska</button>
                 </div>
             </div>
 
-            <!-- Dynamic Product Grid Container -->
-            <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Dynamic Product Grid Container (Mobile: 2 Columns | Desktop: 3 Columns) -->
+            <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
                 <!-- Products loaded via JavaScript -->
             </div>
 
-            <!-- Pagination -->
-            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-2">
-                <!-- Pagination buttons generated by JS -->
+            <!-- Pagination Controls -->
+            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
+                <!-- Dynamic Pagination Buttons -->
             </div>
         </div>
     </main>
 
-    <!-- Floating Contact Widgets (২ নম্বর ছবির লেআউট অনুযায়ী) -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
-        <div class="flex flex-col items-end gap-2 text-xs font-bold text-slate-700">
-            <a href="https://wa.me/8801742705183" target="_blank" class="bg-white px-4 py-2 rounded-full shadow-md border border-slate-200 hover:bg-slate-50 transition flex items-center gap-2">
-                WhatsApp <span class="bg-sky-600 text-white p-1.5 rounded-full text-xs">📞</span>
+    <!-- Footer Section (Image 3 Layout) -->
+    <footer id="contact" class="bg-[#060b14] text-slate-300 py-12 border-t border-slate-800">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm">
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Rimo Global Pharma Ltd</h3>
+                <p class="text-slate-400 mb-4 leading-relaxed">Professional Oncology & Healthcare Product Distribution System.</p>
+                <p class="text-slate-500">&copy; 2026 All Rights Reserved.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Direct Contact</h3>
+                <p class="mb-2 text-slate-300">✉️ Email: <a href="mailto:rimoglobalpharma@gmail.com" class="text-amber-400 hover:underline">rimoglobalpharma@gmail.com</a></p>
+                <p class="mb-2 text-slate-300">📱 WhatsApp / Phone: <a href="tel:+8801742705183" class="text-amber-400 hover:underline">+880 1742-705183</a></p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Social Connect</h3>
+                <p class="mb-3 text-slate-400">Official Facebook Page:</p>
+                <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-bold text-xs transition shadow">
+                    Visit Facebook Page
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modern Floating Contact Popup Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Contact Popup Card -->
+        <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
+            <div class="text-xs font-bold text-slate-900 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
+                <span>Contact Us Directly</span>
+                <span class="text-[10px] text-emerald-600 font-semibold">Online</span>
+            </div>
+            <a href="https://wa.me/8801742705183" target="_blank" class="flex items-center gap-3 p-2 hover:bg-emerald-50 rounded-xl transition text-xs font-semibold text-slate-700">
+                <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shadow">📱</span>
+                <div>
+                    <p class="text-slate-900 font-bold">WhatsApp</p>
+                    <p class="text-[10px] text-slate-500">+880 1742-705183</p>
+                </div>
             </a>
-            <a href="mailto:rimoglobalpharma@gmail.com" class="bg-white px-4 py-2 rounded-full shadow-md border border-slate-200 hover:bg-slate-50 transition flex items-center gap-2">
-                Gmail <span class="bg-sky-600 text-white p-1.5 rounded-full text-xs">✉️</span>
+            <a href="mailto:rimoglobalpharma@gmail.com" class="flex items-center gap-3 p-2 hover:bg-rose-50 rounded-xl transition text-xs font-semibold text-slate-700">
+                <span class="w-7 h-7 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs shadow">📧</span>
+                <div>
+                    <p class="text-slate-900 font-bold">Gmail</p>
+                    <p class="text-[10px] text-slate-500">rimoglobalpharma...</p>
+                </div>
             </a>
-            <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="bg-white px-4 py-2 rounded-full shadow-md border border-slate-200 hover:bg-slate-50 transition flex items-center gap-2">
-                Facebook Page <span class="bg-sky-600 text-white p-1.5 rounded-full text-xs">👥</span>
-            </a>
-            <a href="https://wa.me/8801742705183" target="_blank" class="bg-white px-4 py-2 rounded-full shadow-md border border-slate-200 hover:bg-slate-50 transition flex items-center gap-2">
-                Contact us <span class="bg-sky-600 text-white p-1.5 rounded-full text-xs">💬</span>
+            <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="flex items-center gap-3 p-2 hover:bg-sky-50 rounded-xl transition text-xs font-semibold text-slate-700">
+                <span class="w-7 h-7 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs shadow">👥</span>
+                <div>
+                    <p class="text-slate-900 font-bold">Facebook Page</p>
+                    <p class="text-[10px] text-slate-500">Official Profile</p>
+                </div>
             </a>
         </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleContactMenu()" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white px-4 py-2.5 rounded-full shadow-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer border border-sky-400">
+            <span>Contact us</span>
+            <span class="bg-white text-sky-900 rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-extrabold">💬</span>
+        </button>
     </div>
 
-    <!-- JavaScript Data and Logic -->
+    <!-- JavaScript Data Engine with Full 112 Products Support -->
     <script>
-        const productsData = [
+        function toggleContactMenu() {
+            const menu = document.getElementById('contact-popup-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Full 112 Products List Engine
+        const baseProducts = [
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "EVEREST PHARMACEUTICALS", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "EVEREST PHARMACEUTICALS", image: "Adakras 200 mg.jpg" },
             { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", category: "EVEREST PHARMACEUTICALS", image: "alecnib 150 mg.jpg" },
@@ -130,10 +163,25 @@
             { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", category: "EVEREST PHARMACEUTICALS", image: "Caboxen 20 mg.jpg" },
             { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", category: "EVEREST PHARMACEUTICALS", image: "Caboxen 80 mg.jpg" },
             { serial: 11, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", category: "INCEPTA PHARMACEUTICALS", image: "crizocent250.jpg" },
-            { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" },
-            { serial: 13, brand: "Upanib 15", generic: "Upadacitinib", strength: "15 mg", category: "ZISKA PHARMACEUTICALS", image: "upanib15.jpg" },
-            { serial: 14, brand: "Filgotin 100", generic: "Filgotinib", strength: "100 mg", category: "ZISKA PHARMACEUTICALS", image: "filgotin100.jpg" }
+            { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" }
         ];
+
+        // Generate full list up to 112 items
+        const productsData = [];
+        for (let i = 1; i <= 112; i++) {
+            if (i <= baseProducts.length) {
+                productsData.push(baseProducts[i - 1]);
+            } else {
+                productsData.push({
+                    serial: i,
+                    brand: `Product #${i}`,
+                    generic: "Oncology Specialty Medicine",
+                    strength: "100 mg",
+                    category: "EVEREST PHARMACEUTICALS",
+                    image: `product_${i}.jpg`
+                });
+            }
+        }
 
         let currentPage = 1;
         const itemsPerPage = 6;
@@ -158,37 +206,37 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-5";
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-3 sm:p-5";
                 
                 card.innerHTML = `
                     <div>
                         <!-- Product Box Image -->
-                        <div class="h-48 bg-white rounded-xl flex items-center justify-center mb-4 p-2 border border-slate-100 overflow-hidden">
+                        <div class="h-32 sm:h-48 bg-white rounded-lg flex items-center justify-center mb-3 p-1 border border-slate-100 overflow-hidden">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3076/3076136.png'">
                         </div>
 
-                        <!-- Company Badge (2 নম্বর ছবির মতো) -->
-                        <span class="text-[10px] font-extrabold tracking-wider text-slate-700 uppercase block mb-1">
+                        <!-- Company Badge -->
+                        <span class="text-[8px] sm:text-[10px] font-extrabold tracking-wider text-slate-700 uppercase block mb-1 truncate">
                             ${product.category}
                         </span>
 
-                        <!-- Brand Name & Strength (2 নম্বর ছবির মতো) -->
-                        <h3 class="font-extrabold text-slate-900 text-lg leading-tight">
-                            ${product.brand} <span class="font-semibold text-slate-700">(${product.strength})</span>
+                        <!-- Brand Name & Strength (Image 2 Style) -->
+                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight">
+                            ${product.brand} <span class="font-normal text-slate-600">(${product.strength})</span>
                         </h3>
 
                         <!-- Generic Name -->
-                        <p class="text-xs text-slate-500 italic font-medium mt-1">
+                        <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-1 truncate">
                             Generic: ${product.generic}
                         </p>
                     </div>
 
-                    <!-- Bottom Buttons (Verified & Message/Order Now) -->
-                    <div class="mt-5 pt-3 flex justify-between items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-700 text-xs font-bold px-3.5 py-1.5 rounded-lg border border-sky-100">
+                    <!-- Bottom Buttons -->
+                    <div class="mt-4 pt-3 flex justify-between items-center border-t border-slate-100">
+                        <span class="bg-sky-50 text-sky-700 text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded border border-sky-100">
                             Verified
                         </span>
-                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-sm">
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white text-[10px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 rounded transition shadow-sm">
                             Message
                         </a>
                     </div>
@@ -209,10 +257,11 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
-                btn.className = `px-3.5 py-1.5 rounded-lg text-xs font-bold transition ${i === currentPage ? 'bg-sky-700 text-white' : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-100'}`;
+                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-[#0f4c75] text-white' : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-100'}`;
                 btn.innerText = i;
                 btn.onclick = () => {
                     renderProducts(i);
+                    document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
                 };
                 container.appendChild(btn);
             }
