@@ -30,24 +30,84 @@
         </div>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section id="home" class="relative text-white py-12 sm:py-16">
+    <!-- Hero Banner Section (With Therapeutic Categories Menu on Right Side) -->
+    <section id="home" class="relative text-white py-10 sm:py-14">
         <div class="container mx-auto px-4 sm:px-8">
-            <div class="max-w-2xl">
-                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
-                    RIMO GLOBAL PHARMA
-                </h1>
-                <p class="text-xs sm:text-base text-sky-100 leading-relaxed font-medium mb-6 drop-shadow">
-                    We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
-                </p>
-                <div class="flex flex-wrap gap-3 sm:gap-4">
-                    <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow-lg transition">
-                        Contact Us
-                    </a>
-                    <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm border border-sky-400/30 backdrop-blur-sm transition">
-                        View Products
-                    </a>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Side (7 Columns): Title, Text & Buttons -->
+                <div class="lg:col-span-7">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
+                        RIMO GLOBAL PHARMA
+                    </h1>
+                    <p class="text-xs sm:text-base text-sky-100 leading-relaxed font-medium mb-6 drop-shadow">
+                        We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
+                    </p>
+                    <div class="flex flex-wrap gap-3 sm:gap-4">
+                        <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow-lg transition">
+                            Contact Us
+                        </a>
+                        <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm border border-sky-400/30 backdrop-blur-sm transition">
+                            View Products
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right Side (5 Columns): Therapeutic Categories Menu Matched with Background -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-2xl p-3 sm:p-4 border border-sky-300/40 space-y-1.5">
+                        <div class="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-2 flex items-center justify-between">
+                            <span>Therapeutic Categories</span>
+                            <span class="text-xs">📂</span>
+                        </div>
+
+                        <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Cancer Drugs</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Anti Diabetic')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Diabetic Drugs</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Breast Cancer')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Breast Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Colorectal')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Colorectal Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Endometrial')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Endometrial Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Hepatitis')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Hepatitis C Virus</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Kidney')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Kidney Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Leukemia')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Leukemia</span>
+                        </button>
+
+                        <button onclick="filterByDisease('All')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-950/80 hover:bg-sky-900 text-xs font-bold text-sky-100 transition flex items-center gap-2.5 border border-sky-400/30 mt-2">
+                            <span class="text-sm">💊</span>
+                            <span>All Products</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -96,75 +156,14 @@
                 </div>
             </div>
 
-            <!-- Two-Column Grid: Left Products (75%), Right Sidebar Category Menu (25%) -->
-            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                
-                <!-- Left Side: Product Grid -->
-                <div class="lg:col-span-3">
-                    <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                        <!-- Dynamic Products loaded via JavaScript -->
-                    </div>
+            <!-- Product Grid Area (Full Width) -->
+            <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Dynamic Products loaded via JavaScript -->
+            </div>
 
-                    <!-- Pagination Controls -->
-                    <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
-                        <!-- Dynamic Pagination Buttons -->
-                    </div>
-                </div>
-
-                <!-- Right Side: Disease & Category Sidebar Menu (Water / Sky Theme) -->
-                <div class="lg:col-span-1">
-                    <div class="bg-sky-700 text-white rounded-xl shadow-lg p-2.5 space-y-1 border border-sky-800">
-                        <div class="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-500/40 mb-1">
-                            Therapeutic Categories
-                        </div>
-
-                        <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Anti Cancer Drugs</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Anti Diabetic')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Anti Diabetic Drugs</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Breast Cancer')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Breast Cancer</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Colorectal')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Colorectal Cancer</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Endometrial')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Endometrial Cancer</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Hepatitis')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Hepatitis C Virus</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Kidney')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Kidney Cancer</span>
-                        </button>
-
-                        <button onclick="filterByDisease('Leukemia')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-600 hover:bg-sky-800 text-xs font-bold transition flex items-center gap-2.5">
-                            <span class="text-sm">💊</span>
-                            <span>Leukemia</span>
-                        </button>
-
-                        <button onclick="filterByDisease('All')" class="w-full text-left px-3 py-2 rounded-lg bg-sky-900 hover:bg-sky-950 text-xs font-bold transition flex items-center gap-2.5 text-sky-100 mt-2">
-                            <span class="text-sm">💊</span>
-                            <span>All Products</span>
-                        </button>
-                    </div>
-                </div>
-
+            <!-- Pagination Controls -->
+            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
+                <!-- Dynamic Pagination Buttons -->
             </div>
         </div>
     </main>
@@ -267,7 +266,7 @@
         }
 
         let currentPage = 1;
-        const itemsPerPage = 6;
+        const itemsPerPage = 8;
         let filteredProducts = [...productsData];
 
         function renderProducts(page = 1) {
@@ -375,6 +374,7 @@
                 );
             }
             renderProducts(1);
+            document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
         }
 
         document.getElementById('search-input')?.addEventListener('input', function(e) {
