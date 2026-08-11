@@ -11,10 +11,11 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-800">
+<!-- Full Page Background with 3D Cancer Cells Theme -->
+<body class="bg-[#081325] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(8, 19, 37, 0.85), rgba(8, 19, 37, 0.95)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1600&auto=format&fit=crop');">
 
-    <!-- Top Navigation Bar with Original Logo -->
-    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-200">
+    <!-- Top Navigation Bar with Logo -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-slate-200">
         <div class="container mx-auto px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
@@ -31,18 +32,18 @@
         </div>
     </header>
 
-    <!-- 3D Cancer Cell Background Hero Banner -->
-    <section id="home" class="relative bg-[#09182b] text-white py-16 sm:py-24 bg-cover bg-right md:bg-center" style="background-image: linear-gradient(to right, rgba(9, 24, 43, 0.95) 30%, rgba(9, 24, 43, 0.5)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1600&auto=format&fit=crop');">
+    <!-- Hero Banner Section over Cancer Cell Background -->
+    <section id="home" class="relative text-white py-14 sm:py-20">
         <div class="container mx-auto px-4 sm:px-8">
-            <div class="max-w-xl">
-                <h1 class="text-2xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white">
+            <div class="max-w-2xl">
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-md">
                     RIMO GLOBAL PHARMA
                 </h1>
-                <p class="text-xs sm:text-base text-slate-200 leading-relaxed font-medium mb-6">
+                <p class="text-xs sm:text-base text-slate-200 leading-relaxed font-medium mb-6 drop-shadow">
                     We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
                 </p>
                 <div class="flex flex-wrap gap-3 sm:gap-4">
-                    <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow transition">
+                    <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow-lg transition">
                         Contact Us
                     </a>
                     <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm border border-slate-600 transition">
@@ -53,11 +54,28 @@
         </div>
     </section>
 
-    <!-- Main Content Area: Products Grid -->
-    <main id="products-section" class="container mx-auto px-3 sm:px-6 py-8">
+    <!-- Main Content Area: Product Portfolio Box Overlay (Matching Exact Layout) -->
+    <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
         
-        <!-- Clean White Background Product Container (No Top Dark Headline) -->
-        <div class="bg-white p-3 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
+        <!-- Header Strip inside Box -->
+        <div class="bg-[#0d2038]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-700 shadow-xl backdrop-blur-md">
+            <div>
+                <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
+                <p class="text-[10px] sm:text-xs text-slate-300 mt-1">Export quality certified oncology and specialty medications.</p>
+            </div>
+            <!-- Country Flags -->
+            <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-slate-800/80 p-2 rounded-xl border border-slate-700">
+                <span title="Bangladesh">🇧🇩</span>
+                <span title="USA">🇺🇸</span>
+                <span title="India">🇮🇳</span>
+                <span title="Russia">🇷🇺</span>
+                <span title="Mexico">🇲🇽</span>
+                <span title="UK">🇬🇧</span>
+            </div>
+        </div>
+
+        <!-- Clean White Overlay Container for Product Cards -->
+        <div class="bg-white/95 backdrop-blur-md p-3 sm:p-8 rounded-b-2xl shadow-2xl border border-slate-200">
             
             <!-- Search & Filter Bar -->
             <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
@@ -83,7 +101,7 @@
     </main>
 
     <!-- Footer Section (Image 3 Layout) -->
-    <footer id="contact" class="bg-[#060b14] text-slate-300 py-12 border-t border-slate-800">
+    <footer id="contact" class="bg-[#040810]/95 text-slate-300 py-12 border-t border-slate-800">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm">
             <div>
                 <h3 class="text-white font-bold text-base mb-2">Rimo Global Pharma Ltd</h3>
@@ -137,7 +155,7 @@
         </div>
 
         <!-- Toggle Button -->
-        <button onclick="toggleContactMenu()" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white px-4 py-2.5 rounded-full shadow-xl font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer border border-sky-400">
+        <button onclick="toggleContactMenu()" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white px-4 py-2.5 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer border border-sky-400">
             <span>Contact us</span>
             <span class="bg-white text-sky-900 rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-extrabold">💬</span>
         </button>
@@ -150,7 +168,7 @@
             menu.classList.toggle('hidden');
         }
 
-        // Full 112 Products List Engine
+        // Base 12 products
         const baseProducts = [
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "EVEREST PHARMACEUTICALS", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "EVEREST PHARMACEUTICALS", image: "Adakras 200 mg.jpg" },
@@ -166,7 +184,7 @@
             { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" }
         ];
 
-        // Generate full list up to 112 items
+        // Generate total 112 products list dynamically
         const productsData = [];
         for (let i = 1; i <= 112; i++) {
             if (i <= baseProducts.length) {
@@ -220,7 +238,7 @@
                             ${product.category}
                         </span>
 
-                        <!-- Brand Name & Strength (Image 2 Style) -->
+                        <!-- Brand Name & Strength -->
                         <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight">
                             ${product.brand} <span class="font-normal text-slate-600">(${product.strength})</span>
                         </h3>
