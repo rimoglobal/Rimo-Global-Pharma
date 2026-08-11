@@ -11,10 +11,10 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<!-- Cancer Cell Background Image Set with your File Name -->
+<!-- Cancer Cell Background Image -->
 <body class="bg-[#0b1b2e] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(11, 27, 46, 0.75), rgba(11, 27, 46, 0.90)), url('cancer-cell-bg.jpg.png');">
 
-    <!-- Top Navigation Bar with Logo -->
+    <!-- Top Navigation Bar -->
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-slate-200">
         <div class="container mx-auto px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
@@ -23,17 +23,15 @@
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-700">
                 <a href="#home" class="hover:text-sky-600 transition">Home</a>
-                <a href="#about" class="hover:text-sky-600 transition">About</a>
+                <a href="#about-section" class="hover:text-sky-600 transition">About Us</a>
                 <a href="#products-section" class="hover:text-sky-600 transition">Products</a>
-                <a href="#companies" class="hover:text-sky-600 transition">Companies</a>
-                <a href="#news" class="hover:text-sky-600 transition">News</a>
                 <a href="#contact" class="hover:text-sky-600 transition">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Section over Cancer Cell Background -->
-    <section id="home" class="relative text-white py-14 sm:py-20">
+    <!-- Hero Banner Section -->
+    <section id="home" class="relative text-white py-12 sm:py-16">
         <div class="container mx-auto px-4 sm:px-8">
             <div class="max-w-2xl">
                 <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-md">
@@ -54,10 +52,20 @@
         </div>
     </section>
 
-    <!-- Main Content Area: Product Portfolio Box Overlay -->
+    <!-- About Rimo Global Pharma Section (New Model Style) -->
+    <section id="about-section" class="container mx-auto px-3 sm:px-6 mb-8">
+        <div class="bg-white/95 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma</h2>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Area (Layout: Left Products, Right Disease Menu) -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
         
-        <!-- Header Strip inside Box -->
+        <!-- Header Strip -->
         <div class="bg-[#0d2038]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-slate-700 shadow-xl backdrop-blur-md">
             <div>
                 <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
@@ -74,28 +82,89 @@
             </div>
         </div>
 
-        <!-- Clean White Overlay Container for Product Cards -->
-        <div class="bg-white/95 backdrop-blur-md p-3 sm:p-8 rounded-b-2xl shadow-2xl border border-slate-200">
+        <!-- Clean White Overlay Container -->
+        <div class="bg-white/95 backdrop-blur-md p-3 sm:p-6 rounded-b-2xl shadow-2xl border border-slate-200">
             
-            <!-- Search & Filter Bar -->
+            <!-- Search & Manufacturer Filter Bar -->
             <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
                 <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-sky-500 bg-white">
                 <div class="flex gap-1.5 flex-wrap w-full sm:w-auto">
-                    <button onclick="filterByCategory('All')" class="px-3 py-1.5 bg-slate-800 text-white text-xs font-semibold rounded-lg hover:bg-slate-700">All</button>
-                    <button onclick="filterByCategory('EVEREST')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Everest</button>
-                    <button onclick="filterByCategory('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Incepta</button>
-                    <button onclick="filterByCategory('ZISKA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Ziska</button>
+                    <button onclick="filterByCompany('All')" class="px-3 py-1.5 bg-slate-800 text-white text-xs font-semibold rounded-lg hover:bg-slate-700">All Manufacturers</button>
+                    <button onclick="filterByCompany('EVEREST')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Everest</button>
+                    <button onclick="filterByCompany('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Incepta</button>
+                    <button onclick="filterByCompany('ZISKA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Ziska</button>
                 </div>
             </div>
 
-            <!-- Dynamic Product Grid Container (Mobile: 2 Columns | Desktop: 3 Columns) -->
-            <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
-                <!-- Products loaded via JavaScript -->
-            </div>
+            <!-- Two-Column Grid: Left Products (75%), Right Sidebar Category Menu (25%) -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                
+                <!-- Left Side: Product Grid (3 columns on large screens) -->
+                <div class="lg:col-span-3">
+                    <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <!-- Dynamic Products loaded via JavaScript -->
+                    </div>
 
-            <!-- Pagination Controls -->
-            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
-                <!-- Dynamic Pagination Buttons -->
+                    <!-- Pagination Controls -->
+                    <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
+                        <!-- Dynamic Pagination Buttons -->
+                    </div>
+                </div>
+
+                <!-- Right Side: Disease & Category Sidebar Menu (Bluish Theme with Pill Icons) -->
+                <div class="lg:col-span-1">
+                    <div class="bg-[#1e5288] text-white rounded-xl shadow-lg p-2.5 space-y-1 border border-blue-900">
+                        <div class="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-blue-100 border-b border-blue-400/30 mb-1">
+                            Therapeutic Categories
+                        </div>
+
+                        <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Cancer Drugs</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Anti Diabetic')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Diabetic Drugs</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Breast Cancer')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Breast Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Colorectal')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Colorectal Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Endometrial')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Endometrial Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Hepatitis')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Hepatitis C Virus</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Kidney')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Kidney Cancer</span>
+                        </button>
+
+                        <button onclick="filterByDisease('Leukemia')" class="w-full text-left px-3 py-2 rounded-lg bg-[#2764a3] hover:bg-[#1a4877] text-xs font-bold transition flex items-center gap-2.5">
+                            <span class="text-sm">💊</span>
+                            <span>Leukemia</span>
+                        </button>
+
+                        <button onclick="filterByDisease('All')" class="w-full text-left px-3 py-2 rounded-lg bg-[#143960] hover:bg-[#0e2a47] text-xs font-bold transition flex items-center gap-2.5 text-blue-100 mt-2">
+                            <span class="text-sm">💊</span>
+                            <span>All Products</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
@@ -123,7 +192,7 @@
         </div>
     </footer>
 
-    <!-- Modern Floating Contact Popup Widget -->
+    <!-- Floating Contact Popup Widget -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
             <div class="text-xs font-bold text-slate-900 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
@@ -159,7 +228,7 @@
         </button>
     </div>
 
-    <!-- JavaScript Data Engine -->
+    <!-- JavaScript Data & Render Engine -->
     <script>
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
@@ -167,18 +236,18 @@
         }
 
         const baseProducts = [
-            { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", category: "EVEREST PHARMACEUTICALS", image: "Acaluxen 100 mg.jpg" },
-            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", category: "EVEREST PHARMACEUTICALS", image: "Adakras 200 mg.jpg" },
-            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", category: "EVEREST PHARMACEUTICALS", image: "alecnib 150 mg.jpg" },
-            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", category: "EVEREST PHARMACEUTICALS", image: "alkixen 150 mg.jpg" },
-            { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "20 mg", category: "EVEREST PHARMACEUTICALS", image: "alpesib 150 mg.jpg" },
-            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", category: "EVEREST PHARMACEUTICALS", image: "asciminib 40 mg.jpg" },
-            { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", category: "EVEREST PHARMACEUTICALS", image: "avapag 20 mg.jpg" },
-            { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", category: "EVEREST PHARMACEUTICALS", image: "azarest 300 mg.jpg" },
-            { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", category: "EVEREST PHARMACEUTICALS", image: "Caboxen 20 mg.jpg" },
-            { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", category: "EVEREST PHARMACEUTICALS", image: "Caboxen 80 mg.jpg" },
-            { serial: 11, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", category: "INCEPTA PHARMACEUTICALS", image: "crizocent250.jpg" },
-            { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", category: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" }
+            { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS", image: "Acaluxen 100 mg.jpg" },
+            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS", image: "Adakras 200 mg.jpg" },
+            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS", image: "alecnib 150 mg.jpg" },
+            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", company: "EVEREST PHARMACEUTICALS", image: "alkixen 150 mg.jpg" },
+            { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS", image: "alpesib 150 mg.jpg" },
+            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS", image: "asciminib 40 mg.jpg" },
+            { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", company: "EVEREST PHARMACEUTICALS", image: "avapag 20 mg.jpg" },
+            { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", company: "EVEREST PHARMACEUTICALS", image: "azarest 300 mg.jpg" },
+            { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", company: "EVEREST PHARMACEUTICALS", image: "Caboxen 20 mg.jpg" },
+            { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", company: "EVEREST PHARMACEUTICALS", image: "Caboxen 80 mg.jpg" },
+            { serial: 11, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS", image: "crizocent250.jpg" },
+            { serial: 12, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", company: "INCEPTA PHARMACEUTICALS", image: "ibrucent140.jpg" }
         ];
 
         const productsData = [];
@@ -191,7 +260,7 @@
                     brand: `Product #${i}`,
                     generic: "Oncology Specialty Medicine",
                     strength: "100 mg",
-                    category: "EVEREST PHARMACEUTICALS",
+                    company: i % 2 === 0 ? "ZISKA PHARMACEUTICALS" : "EVEREST PHARMACEUTICALS",
                     image: `product_${i}.jpg`
                 });
             }
@@ -220,32 +289,35 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-3 sm:p-5";
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-4";
                 
                 card.innerHTML = `
                     <div>
-                        <div class="h-32 sm:h-48 bg-white rounded-lg flex items-center justify-center mb-3 p-1 border border-slate-100 overflow-hidden">
-                            <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3076/3076136.png'">
+                        <!-- Medical Bullet + Bold Royal Blue Company Name -->
+                        <div class="flex items-center gap-1.5 mb-2">
+                            <span class="text-xs">💊</span>
+                            <span class="text-[11px] font-extrabold text-[#1a56db] uppercase tracking-wide truncate">
+                                ${product.company}
+                            </span>
                         </div>
 
-                        <span class="text-[8px] sm:text-[10px] font-extrabold tracking-wider text-slate-700 uppercase block mb-1 truncate">
-                            ${product.category}
-                        </span>
-
-                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight">
-                            ${product.brand} <span class="font-normal text-slate-600">(${product.strength})</span>
+                        <!-- Product Title and Strength -->
+                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-tight">
+                            ${product.brand} <span class="font-normal text-slate-500">(${product.strength})</span>
                         </h3>
 
-                        <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-1 truncate">
+                        <!-- Generic Name -->
+                        <p class="text-xs text-slate-500 italic font-medium mt-1 truncate">
                             Generic: ${product.generic}
                         </p>
                     </div>
 
-                    <div class="mt-4 pt-3 flex justify-between items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-700 text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-1 rounded border border-sky-100">
+                    <!-- Bottom Bar: Verified Badge + Message Button -->
+                    <div class="mt-5 pt-3 flex justify-between items-center border-t border-slate-100">
+                        <span class="bg-sky-50 text-sky-700 text-[11px] font-bold px-2.5 py-1 rounded border border-sky-100">
                             Verified
                         </span>
-                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white text-[10px] sm:text-xs font-bold px-3 sm:px-4 py-1.5 rounded transition shadow-sm">
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-[#0f4c75] hover:bg-[#0b3c5d] text-white text-xs font-bold px-3.5 py-1.5 rounded transition shadow-sm">
                             Message
                         </a>
                     </div>
@@ -276,14 +348,25 @@
             }
         }
 
-        function filterByCategory(categoryKeyword) {
-            if (categoryKeyword === 'All') {
+        function filterByCompany(companyKeyword) {
+            if (companyKeyword === 'All') {
                 filteredProducts = [...productsData];
             } else {
                 filteredProducts = productsData.filter(p => 
-                    p.category.toLowerCase().includes(categoryKeyword.toLowerCase()) || 
-                    p.brand.toLowerCase().includes(categoryKeyword.toLowerCase()) ||
-                    p.generic.toLowerCase().includes(categoryKeyword.toLowerCase())
+                    p.company.toLowerCase().includes(companyKeyword.toLowerCase())
+                );
+            }
+            renderProducts(1);
+        }
+
+        function filterByDisease(diseaseKeyword) {
+            if (diseaseKeyword === 'All') {
+                filteredProducts = [...productsData];
+            } else {
+                filteredProducts = productsData.filter(p => 
+                    p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
+                    p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase()) ||
+                    p.company.toLowerCase().includes(diseaseKeyword.toLowerCase())
                 );
             }
             renderProducts(1);
@@ -294,7 +377,7 @@
             filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) || 
                 p.generic.toLowerCase().includes(query) ||
-                p.category.toLowerCase().includes(query)
+                p.company.toLowerCase().includes(query)
             );
             renderProducts(1);
         });
