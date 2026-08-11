@@ -56,15 +56,16 @@
                     <span>📂</span>
                 </div>
                 <ul class="divide-y divide-slate-800/60 text-xs sm:text-sm font-medium">
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Anti Cancer Drugs</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Anti Diabetic Drugs</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Breast Cancer</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Colorectal Cancer</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Endometrial Cancer</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Hepatitis C Virus</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Kidney Cancer</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Leukemia</a></li>
-                    <li><a href="#" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-sky-400 font-bold bg-slate-800/30"><span class="text-rose-500">💊</span> All Products</a></li>
+                    <li><a href="#" onclick="filterByCategory('Cancer'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Anti Cancer Drugs</a></li>
+                    <li><a href="#" onclick="filterByCategory('Diabetic'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Anti Diabetic Drugs</a></li>
+                    <li><a href="#" onclick="filterByCategory('Breast'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Breast Cancer</a></li>
+                    <li><a href="#" onclick="filterByCategory('Colorectal'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Colorectal Cancer</a></li>
+                    <li><a href="#" onclick="filterByCategory('Hepatitis'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Hepatitis C Virus</a></li>
+                    <li><a href="#" onclick="filterByCategory('Leukemia'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">💊</span> Leukemia</a></li>
+                    <li><a href="#" onclick="filterByCategory('EVEREST'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">🏢</span> Everest Pharma</a></li>
+                    <li><a href="#" onclick="filterByCategory('INCEPTA'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">🏢</span> Incepta Pharma</a></li>
+                    <li><a href="#" onclick="filterByCategory('ZISKA'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-slate-300"><span class="text-rose-500">🏢</span> Ziska Pharma</a></li>
+                    <li><a href="#" onclick="filterByCategory('All'); return false;" class="block px-5 py-3 hover:bg-slate-800/50 transition flex items-center gap-3 text-sky-400 font-bold bg-slate-800/30"><span class="text-rose-500">💊</span> All Products</a></li>
                 </ul>
             </aside>
 
@@ -96,7 +97,7 @@
                     </div>
 
                     <!-- Dynamic Product Grid Container -->
-                    <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+                    <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                         <!-- Products loaded via JS -->
                     </div>
 
@@ -201,7 +202,7 @@
         </div>
     </div>
 
-    <!-- JavaScript with Pagination & Product Grid -->
+    <!-- JavaScript Implementation -->
     <script>
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
@@ -309,57 +310,119 @@
             { serial: 98, brand: "Prestoni 100", generic: "Pralsetinib", strength: "100 mg", category: "ZISKA PHARMACEUTICALS", image: "prestoni100.jpg" }
         ];
 
+        let filteredProducts = [...productsData];
         let currentPage = 1;
         const itemsPerPage = 6;
 
         function renderProducts(page) {
             const container = document.getElementById('product-grid-container');
             container.innerHTML = '';
+
+            if (filteredProducts.length === 0) {
+                container.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">No products found matching your search.</div>`;
+                document.getElementById('pagination-container').innerHTML = '';
+                return;
+            }
+
             const start = (page - 1) * itemsPerPage;
             const end = start + itemsPerPage;
-            const paginatedItems = productsData.slice(start, end);
+            const pageProducts = filteredProducts.slice(start, end);
 
-            paginatedItems.forEach(product => {
-                container.innerHTML += `
-                    <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                        <div>
-                            <div class="bg-slate-50 rounded-lg p-2 mb-3 h-48 flex items-center justify-center overflow-hidden border border-slate-100">
-                                <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/200x200?text=Medicine'">
-                            </div>
-                            <span class="text-[10px] font-bold text-sky-600 tracking-wider uppercase block mb-1">${product.category}</span>
-                            <h3 class="text-base font-bold text-slate-900">${product.brand} <span class="text-xs text-slate-500 font-normal">(${product.strength})</span></h3>
-                            <p class="text-xs text-slate-500 mt-0.5">Generic: ${product.generic}</p>
+            pageProducts.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white border border-slate-200 rounded-2xl p-4 shadow-sm hover:shadow-md transition flex flex-col justify-between group";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-44 w-full bg-slate-50 rounded-xl mb-4 overflow-hidden flex items-center justify-center p-2 relative border border-slate-100">
+                            <img src="${product.image}" alt="${product.brand}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-300" onerror="this.src='https://cdn-icons-png.flaticon.com/512/883/883407.png'">
+                            <span class="absolute top-2 left-2 bg-sky-100 text-sky-800 text-[10px] font-bold px-2 py-0.5 rounded-full border border-sky-200">${product.category}</span>
                         </div>
-                        <div class="mt-4 flex items-center justify-between gap-2 pt-3 border-t border-slate-100">
-                            <span class="bg-sky-50 text-sky-600 border border-sky-200 text-[10px] font-bold px-2 py-0.5 rounded">Verified</span>
-                            <a href="#contact" class="bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">Order Now</a>
-                        </div>
+                        <span class="text-[11px] font-bold text-sky-600 block uppercase tracking-wider mb-1">${product.strength}</span>
+                        <h3 class="font-bold text-slate-900 text-lg group-hover:text-sky-600 transition">${product.brand}</h3>
+                        <p class="text-slate-500 text-xs mt-1 italic font-medium">${product.generic}</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-xs text-slate-400 font-semibold">#${product.serial}</span>
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}%20(${encodeURIComponent(product.strength)})" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition flex items-center gap-1 shadow-sm">
+                            <span>💬</span> Inquire
+                        </a>
                     </div>
                 `;
+                container.appendChild(card);
             });
 
-            renderPagination();
+            renderPagination(filteredProducts.length);
         }
 
-        function renderPagination() {
-            const paginationContainer = document.getElementById('pagination-container');
-            paginationContainer.innerHTML = '';
-            const totalPages = Math.ceil(productsData.length / itemsPerPage);
+        function renderPagination(totalItems) {
+            const container = document.getElementById('pagination-container');
+            container.innerHTML = '';
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
 
+            if (totalPages <= 1) return;
+
+            // Prev Button
+            const prevBtn = document.createElement('button');
+            prevBtn.innerText = '« Prev';
+            prevBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition ${currentPage === 1 ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-white border border-slate-300 hover:bg-slate-100 text-slate-700'}`;
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; renderProducts(currentPage); scrollToGrid(); } };
+            container.appendChild(prevBtn);
+
+            // Page Numbers
             for (let i = 1; i <= totalPages; i++) {
-                const btn = document.createElement('button');
-                btn.innerText = i;
-                btn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer ${i === currentPage ? 'bg-sky-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}`;
-                btn.onclick = () => {
-                    currentPage = i;
-                    renderProducts(currentPage);
-                };
-                paginationContainer.appendChild(btn);
+                const pageBtn = document.createElement('button');
+                pageBtn.innerText = i;
+                pageBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition ${i === currentPage ? 'bg-sky-600 text-white shadow-sm' : 'bg-white border border-slate-300 hover:bg-slate-100 text-slate-700'}`;
+                pageBtn.onclick = () => { currentPage = i; renderProducts(currentPage); scrollToGrid(); };
+                container.appendChild(pageBtn);
             }
+
+            // Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.innerText = 'Next »';
+            nextBtn.className = `px-3 py-1.5 rounded-lg text-xs font-bold transition ${currentPage === totalPages ? 'bg-slate-100 text-slate-400 cursor-not-allowed' : 'bg-white border border-slate-300 hover:bg-slate-100 text-slate-700'}`;
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; renderProducts(currentPage); scrollToGrid(); } };
+            container.appendChild(nextBtn);
         }
 
-        // Initial rendering call
-        renderProducts(currentPage);
+        function scrollToGrid() {
+            document.getElementById('products-grid').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Search Input Logic
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            filteredProducts = productsData.filter(p => 
+                p.brand.toLowerCase().includes(query) || 
+                p.generic.toLowerCase().includes(query) || 
+                p.category.toLowerCase().includes(query)
+            );
+            currentPage = 1;
+            renderProducts(currentPage);
+        });
+
+        // Category Filter Logic
+        function filterByCategory(categoryName) {
+            if (!categoryName || categoryName === 'All') {
+                filteredProducts = [...productsData];
+            } else {
+                filteredProducts = productsData.filter(p => 
+                    p.generic.toLowerCase().includes(categoryName.toLowerCase()) || 
+                    p.category.toLowerCase().includes(categoryName.toLowerCase()) ||
+                    p.brand.toLowerCase().includes(categoryName.toLowerCase())
+                );
+            }
+            currentPage = 1;
+            renderProducts(currentPage);
+            scrollToGrid();
+        }
+
+        // Initialize Products
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(currentPage);
+        });
     </script>
 </body>
 </html>
