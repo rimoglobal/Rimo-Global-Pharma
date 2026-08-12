@@ -141,7 +141,7 @@
         </div>
 
         <!-- Clean White Overlay Container -->
-        <div class="bg-white/95 backdrop-blur-md p-3 sm:p-6 rounded-b-2xl shadow-2xl border border-sky-100">
+        <div class="bg-white/95 backdrop-blur-md p-2.5 sm:p-6 rounded-b-2xl shadow-2xl border border-sky-100">
             
             <!-- Search & Manufacturer Filter Bar -->
             <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-sky-50/70 p-3 sm:p-4 rounded-xl border border-sky-100">
@@ -154,8 +154,8 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area (Full Width) -->
-            <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Product Grid Area (Updated to grid-cols-2 for Mobile View) -->
+            <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
 
@@ -395,40 +395,40 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-4";
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-2.5 sm:p-4";
                 
                 card.innerHTML = `
                     <div>
                         <!-- Medicine Image Container -->
-                        <div class="w-full h-36 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-2">
+                        <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
                         </div>
 
                         <!-- Medical Bullet + Medical Blue Company Name -->
-                        <div class="flex items-center gap-1.5 mb-2">
-                            <span class="text-xs">💊</span>
-                            <span class="text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
+                        <div class="flex items-center gap-1 mb-1">
+                            <span class="text-[10px] sm:text-xs">💊</span>
+                            <span class="text-[9px] sm:text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
                                 ${product.company}
                             </span>
                         </div>
 
                         <!-- Product Title and Strength -->
-                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-tight">
-                            ${product.brand} <span class="font-normal text-slate-500">(${product.strength})</span>
+                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight truncate">
+                            ${product.brand} <span class="font-normal text-slate-500 block sm:inline text-[10px] sm:text-xs">(${product.strength})</span>
                         </h3>
 
                         <!-- Generic Name -->
-                        <p class="text-xs text-slate-500 italic font-medium mt-1 truncate">
+                        <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-0.5 truncate">
                             Generic: ${product.generic}
                         </p>
                     </div>
 
                     <!-- Bottom Bar: Verified Badge + Message Button -->
-                    <div class="mt-5 pt-3 flex justify-between items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-700 text-[11px] font-bold px-2.5 py-1 rounded border border-sky-100">
+                    <div class="mt-3 sm:mt-5 pt-2 sm:pt-3 flex flex-col sm:flex-row gap-1.5 sm:gap-0 justify-between items-stretch sm:items-center border-t border-slate-100">
+                        <span class="bg-sky-50 text-sky-700 text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded border border-sky-100 text-center">
                             Verified
                         </span>
-                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold px-3.5 py-1.5 rounded transition shadow-sm">
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3.5 py-1 sm:py-1.5 rounded transition shadow-sm text-center">
                             Message
                         </a>
                     </div>
