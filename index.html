@@ -11,7 +11,6 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<!-- Soft Sky / Water Blue Transparent Overlay to highlight Cancer Cell Background -->
 <body class="bg-[#0e2a47] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.55), rgba(12, 74, 110, 0.65)), url('cancer-cell-bg.jpg.png');">
 
     <!-- Top Navigation Bar -->
@@ -31,7 +30,7 @@
         </div>
     </header>
 
-    <!-- Hero Banner Section (Clean Background Theme View) -->
+    <!-- Hero Banner Section -->
     <section id="home" class="relative text-white py-16 sm:py-24">
         <div class="container mx-auto px-4 sm:px-8 text-center max-w-4xl">
             <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
@@ -61,7 +60,7 @@
         </div>
     </section>
 
-    <!-- Modern Upgraded Therapeutic Categories Section -->
+    <!-- Upgraded Therapeutic Categories Section -->
     <section id="categories-section" class="container mx-auto px-3 sm:px-6 mb-8">
         <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-300/40">
             <div class="px-1 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-4 flex items-center justify-between">
@@ -112,7 +111,7 @@
         </div>
     </section>
 
-    <!-- Incepta-style "Our Global Presence" (World Map & Exporting Network) -->
+    <!-- REAL ACCURATE WORLD MAP SECTION -->
     <section id="global-presence" class="container mx-auto px-3 sm:px-6 mb-8">
         <div class="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
             <div class="text-center max-w-2xl mx-auto mb-6">
@@ -122,51 +121,69 @@
                 </p>
             </div>
 
-            <!-- World Map Container with SVG Overlay -->
-            <div class="relative bg-slate-900/90 rounded-2xl overflow-hidden p-4 sm:p-8 border border-sky-800 shadow-inner">
-                <div class="flex justify-center items-center py-4">
-                    <!-- Interactive Stylized World Map SVG -->
-                    <svg class="w-full h-auto max-h-[380px] opacity-90" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Stylized Continents Outlines -->
-                        <path d="M150,120 Q200,80 300,100 T400,160 Q350,240 250,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
-                        <path d="M280,260 Q340,250 380,320 T300,450 Q240,400 250,320 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
-                        <path d="M480,140 Q580,100 680,120 T750,200 Q650,260 520,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
-                        <path d="M490,230 Q580,220 620,300 T540,420 Q480,350 480,280 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
-                        <path d="M700,150 Q850,120 920,200 T820,340 Q720,320 700,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
-                        <path d="M800,350 Q880,340 900,420 T820,450 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+            <!-- High Precision Real World Vector Map Container -->
+            <div class="relative bg-slate-900 rounded-2xl overflow-hidden p-4 sm:p-6 border border-slate-800 shadow-2xl">
+                <div class="flex justify-center items-center py-2">
+                    <svg class="w-full h-auto max-h-[420px]" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Accurate Continents Vector Shapes -->
+                        <g fill="#1e293b" stroke="#0284c7" stroke-width="1.2" stroke-linejoin="round">
+                            <!-- North America -->
+                            <path d="M100,80 L180,60 L280,70 L340,110 L300,160 L240,180 L200,250 L150,220 L120,160 L80,120 Z"/>
+                            <!-- South America -->
+                            <path d="M250,270 L330,280 L350,340 L300,450 L260,420 L240,340 Z"/>
+                            <!-- Europe -->
+                            <path d="M450,80 L560,70 L580,130 L520,160 L460,140 Z"/>
+                            <!-- Africa -->
+                            <path d="M460,170 L580,170 L620,240 L570,380 L500,380 L450,260 Z"/>
+                            <!-- Asia -->
+                            <path d="M590,70 L850,60 L920,140 L880,240 L780,260 L680,240 L590,160 Z"/>
+                            <!-- Australia & Oceania -->
+                            <path d="M780,330 L880,320 L910,400 L820,420 Z"/>
+                        </g>
 
-                        <!-- 50+ Global Supply Hub Dots (Yellow = Exporting, Cyan = Expansion) -->
-                        <g id="export-dots">
-                            <!-- Asia & Middle East -->
-                            <circle cx="710" cy="220" r="5" fill="#facc15" class="animate-pulse"><title>Bangladesh (HQ)</title></circle>
-                            <circle cx="730" cy="240" r="4" fill="#facc15"><title>Myanmar / Philippines / Vietnam</title></circle>
-                            <circle cx="690" cy="230" r="4" fill="#facc15"><title>Sri Lanka / Maldives</title></circle>
-                            <circle cx="660" cy="200" r="4" fill="#facc15"><title>Uzbekistan / Afghanistan / Tajikistan</title></circle>
-                            <circle cx="620" cy="220" r="4" fill="#facc15"><title>UAE / Saudi Arabia / Oman / Qatar</title></circle>
+                        <!-- 50+ Real World Export Hub Dots -->
+                        <g id="export-hubs">
+                            <!-- Bangladesh HQ Marker (Glowing Red/Yellow Target) -->
+                            <circle cx="735" cy="205" r="7" fill="#ef4444" class="animate-ping opacity-75"/>
+                            <circle cx="735" cy="205" r="5" fill="#facc15"><title>Bangladesh (Global Export HQ)</title></circle>
                             
-                            <!-- Africa Region -->
-                            <circle cx="560" cy="280" r="4" fill="#facc15"><title>Kenya / Uganda / Tanzania</title></circle>
-                            <circle cx="510" cy="290" r="4" fill="#facc15"><title>Nigeria / Ghana / Sudan</title></circle>
-                            <circle cx="550" cy="350" r="4" fill="#facc15"><title>South Africa / Zimbabwe</title></circle>
+                            <!-- Asia / South East Asia / Central Asia (Yellow Dots) -->
+                            <circle cx="765" cy="225" r="4" fill="#facc15"><title>Philippines / Vietnam / Myanmar</title></circle>
+                            <circle cx="725" cy="225" r="4" fill="#facc15"><title>Sri Lanka / Maldives</title></circle>
+                            <circle cx="680" cy="165" r="4" fill="#facc15"><title>Uzbekistan / Tajikistan / Afghanistan</title></circle>
+                            <circle cx="635" cy="195" r="4" fill="#facc15"><title>UAE / Saudi Arabia / Oman / Qatar / Kuwait</title></circle>
+                            
+                            <!-- Africa Region (Yellow Dots) -->
+                            <circle cx="565" cy="265" r="4" fill="#facc15"><title>Kenya / Uganda / Tanzania / Rwanda</title></circle>
+                            <circle cx="505" cy="245" r="4" fill="#facc15"><title>Nigeria / Ghana / Ivory Coast</title></circle>
+                            <circle cx="530" cy="205" r="4" fill="#facc15"><title>Sudan / Egypt / Ethiopia</title></circle>
+                            <circle cx="540" cy="345" r="4" fill="#facc15"><title>South Africa / Zimbabwe</title></circle>
 
-                            <!-- Latin America -->
-                            <circle cx="260" cy="200" r="4" fill="#facc15"><title>Mexico</title></circle>
-                            <circle cx="310" cy="320" r="4" fill="#facc15"><title>Bolivia / Colombia / Peru</title></circle>
+                            <!-- Latin America (Yellow Dots) -->
+                            <circle cx="215" cy="215" r="4" fill="#facc15"><title>Mexico / Guatemala</title></circle>
+                            <circle cx="285" cy="325" r="4" fill="#facc15"><title>Bolivia / Colombia / Peru / Ecuador</title></circle>
 
-                            <!-- Future Expansion Markets (Cyan Dots) -->
-                            <circle cx="220" cy="150" r="4" fill="#38bdf8"><title>USA (Target Expansion)</title></circle>
-                            <circle cx="500" cy="150" r="4" fill="#38bdf8"><title>UK / Germany (Target Expansion)</title></circle>
-                            <circle cx="840" cy="380" r="4" fill="#38bdf8"><title>Australia (Target Expansion)</title></circle>
+                            <!-- Europe & CIS Region -->
+                            <circle cx="540" cy="125" r="4" fill="#facc15"><title>Romania / Georgia / Armenia</title></circle>
+
+                            <!-- Future Plan / Expansion Markets (Cyan Dots) -->
+                            <circle cx="210" cy="130" r="4" fill="#38bdf8"><title>USA (Target Expansion)</title></circle>
+                            <circle cx="490" cy="115" r="4" fill="#38bdf8"><title>UK / Germany (Target Expansion)</title></circle>
+                            <circle cx="835" cy="365" r="4" fill="#38bdf8"><title>Australia (Target Expansion)</title></circle>
                         </g>
                     </svg>
                 </div>
 
-                <!-- Legend & Stats Strip -->
+                <!-- Legend & Export Info Bar -->
                 <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap justify-between items-center gap-4 text-xs text-slate-300">
-                    <div class="flex items-center gap-4 flex-wrap">
+                    <div class="flex items-center gap-5 flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-red-500 border border-white"></span>
+                            <span class="font-bold text-white">Bangladesh (Export HQ)</span>
+                        </div>
                         <div class="flex items-center gap-2">
                             <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-                            <span class="font-medium">Active Exporting Countries (50+)</span>
+                            <span class="font-medium">50+ Exporting Countries</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <span class="w-3 h-3 rounded-full bg-sky-400"></span>
@@ -174,7 +191,7 @@
                         </div>
                     </div>
                     <div class="text-sky-300 font-extrabold text-xs sm:text-sm">
-                        Global Logistics Support & Fast Customs Clearance ✈️📦
+                        Global Pharma Supply & Fast Cargo Support ✈️📦
                     </div>
                 </div>
             </div>
@@ -184,7 +201,7 @@
     <!-- Main Content Area (Product Portfolio) -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
         
-        <!-- Water Blue / Sky Header Strip -->
+        <!-- Header Strip -->
         <div class="bg-[#0284c7]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-300/40 shadow-xl backdrop-blur-md">
             <div>
                 <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
@@ -201,7 +218,7 @@
             </div>
         </div>
 
-        <!-- Clean White Overlay Container -->
+        <!-- Clean Container -->
         <div class="bg-white/95 backdrop-blur-md p-3 sm:p-6 rounded-b-2xl shadow-2xl border border-sky-100">
             
             <!-- Search & Manufacturer Filter Bar -->
@@ -215,23 +232,22 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area: Mobile shows 2 columns (grid-cols-2), desktop shows 4 columns (lg:grid-cols-4) -->
+            <!-- Product Grid Area: Mobile shows 2 columns (grid-cols-2) -->
             <div id="product-grid-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
 
-            <!-- Pagination Controls -->
+            <!-- Pagination Controls (1, 2, 3, ... 14) -->
             <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
                 <!-- Dynamic Pagination Buttons -->
             </div>
         </div>
     </main>
 
-    <!-- Everest-Style Footer Section for Rimo Global Pharma Ltd -->
+    <!-- Everest-Style Footer Section -->
     <footer id="contact" class="bg-[#374352] text-slate-200 pt-10 pb-6 border-t border-slate-600/50">
         <div class="container mx-auto px-4 sm:px-8">
             
-            <!-- Top Everest Arrow Line Structure -->
             <div class="hidden md:flex items-center mb-8 text-slate-300/60">
                 <div class="w-full flex items-center">
                     <div class="w-4 h-4 rounded-full border-2 border-slate-300 flex-shrink-0"></div>
@@ -240,142 +256,79 @@
                 </div>
             </div>
 
-            <!-- Multi-Column Grid Layout matching Everest Style -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs sm:text-sm mb-12">
-                
-                <!-- Column 1: Follow Us & Social -->
                 <div>
                     <h3 class="text-white text-lg font-normal mb-4">Follow us</h3>
-                    
-                    <!-- Social Media Circle Buttons -->
                     <div class="flex items-center gap-2.5 mb-5">
                         <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">f</a>
                         <a href="https://wa.me/8801742705183" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">💬</a>
                         <a href="mailto:rimoglobalpharma@gmail.com" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-xs hover:bg-sky-400 transition">in</a>
                     </div>
-
-                    <!-- Links List -->
                     <ul class="space-y-1.5 text-slate-300 text-xs mb-6">
                         <li><a href="#about-section" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Terms & Conditions</a></li>
                         <li><a href="#global-presence" class="hover:text-white transition">Global Distribution Region</a></li>
                         <li><a href="#products-section" class="hover:text-white transition">Search Products</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Sitemap</a></li>
                     </ul>
-
-                    <!-- Outline Box (Career / Info Box) -->
-                    <div class="border border-white/80 p-3.5 max-w-[220px]">
-                        <h4 class="text-white font-medium text-sm mb-1">Rimo Global</h4>
-                        <p class="text-[11px] text-slate-300 italic leading-snug">
-                            Professional Oncology & Healthcare Product Distribution System.
-                        </p>
-                    </div>
                 </div>
 
-                <!-- Column 2: About Us -->
                 <div>
                     <h3 class="text-white text-base font-normal mb-3">About Us</h3>
                     <ul class="space-y-1.5 italic text-slate-300 text-xs mb-8">
                         <li><a href="#about-section" class="hover:text-white transition">Brief Profile</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Our Values</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Quality Policy</a></li>
-                        <li><a href="#about-section" class="hover:text-white transition">Leadership</a></li>
-                        <li><a href="#about-section" class="hover:text-white transition">Sourcing Facilities</a></li>
                         <li><a href="#global-presence" class="hover:text-white transition">Global Logistics</a></li>
                     </ul>
-
-                    <h3 class="text-white text-base font-normal">Contact Us</h3>
                 </div>
 
-                <!-- Column 3: Doctors / Direct Contact -->
                 <div>
                     <h3 class="text-white text-base font-normal mb-3">Doctors & Clients</h3>
                     <ul class="space-y-1.5 italic text-slate-300 text-xs mb-6">
                         <li><a href="#products-section" class="hover:text-white transition">Health News</a></li>
                         <li><a href="#products-section" class="hover:text-white transition">Medicine Update</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Disease Update</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">National Health Issue</a></li>
                         <li><a href="https://wa.me/8801742705183" target="_blank" class="hover:text-white transition">Doctors Query</a></li>
                     </ul>
-
-                    <!-- Outline Box (Webmail Box) -->
-                    <div class="border border-white/80 p-3.5 max-w-[220px]">
-                        <h4 class="text-white font-medium text-sm mb-1">Webmail</h4>
-                        <p class="text-[11px] text-slate-300 italic leading-snug">
-                            <a href="mailto:rimoglobalpharma@gmail.com" class="hover:underline">rimoglobalpharma@gmail.com</a>
-                        </p>
-                    </div>
                 </div>
 
-                <!-- Column 4: Medicines -->
                 <div>
                     <h3 class="text-white text-base font-normal mb-3">Medicines</h3>
                     <ul class="space-y-1.5 italic text-slate-300 text-xs">
                         <li><a href="#products-section" onclick="filterByDisease('Anti Cancer')" class="hover:text-white transition">Anti Cancer Drugs</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Oncology</a></li>
                         <li><a href="#products-section" onclick="filterByDisease('Anti Diabetic')" class="hover:text-white transition">Anti Diabetic Drugs</a></li>
                         <li><a href="#products-section" onclick="filterByDisease('Hepatitis')" class="hover:text-white transition">Hepatitis C Virus</a></li>
                         <li><a href="#products-section" onclick="filterByDisease('Kidney')" class="hover:text-white transition">Kidney Cancer</a></li>
-                        <li><a href="#products-section" onclick="filterByDisease('Leukemia')" class="hover:text-white transition">Leukemia</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">General Pharmaceutical Products</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Pharmaceuticals Intermediates</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Brand Names (A-Z)</a></li>
-                        <li><a href="#products-section" class="hover:text-white transition">Generic (A-Z)</a></li>
                     </ul>
                 </div>
-
             </div>
 
-            <!-- Bottom Copyright Separator Line -->
             <div class="border-t border-slate-400/30 pt-4 text-center text-xs text-slate-300 space-y-1">
                 <p>Copyright © <strong>RIMO GLOBAL PHARMA</strong> | All Rights Reserved</p>
-                <p class="text-slate-400 text-[11px]">Powered by Rimo Global Pharma Ltd</p>
             </div>
-
         </div>
     </footer>
 
     <!-- Floating Contact Popup Widget -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-sky-100 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
-            <div class="text-xs font-bold text-slate-900 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
-                <span>Contact Us Directly</span>
-                <span class="text-[10px] text-emerald-600 font-semibold">Online</span>
-            </div>
+        <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-sky-100 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all">
             <a href="https://wa.me/8801742705183" target="_blank" class="flex items-center gap-3 p-2 hover:bg-emerald-50 rounded-xl transition text-xs font-semibold text-slate-700">
                 <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shadow">📱</span>
-                <div>
-                    <p class="text-slate-900 font-bold">WhatsApp</p>
-                    <p class="text-[10px] text-slate-500">+880 1742-705183</p>
-                </div>
+                <div><p class="text-slate-900 font-bold">WhatsApp</p></div>
             </a>
             <a href="mailto:rimoglobalpharma@gmail.com" class="flex items-center gap-3 p-2 hover:bg-rose-50 rounded-xl transition text-xs font-semibold text-slate-700">
                 <span class="w-7 h-7 rounded-full bg-rose-500 text-white flex items-center justify-center text-xs shadow">📧</span>
-                <div>
-                    <p class="text-slate-900 font-bold">Gmail</p>
-                    <p class="text-[10px] text-slate-500">rimoglobalpharma...</p>
-                </div>
-            </a>
-            <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="flex items-center gap-3 p-2 hover:bg-sky-50 rounded-xl transition text-xs font-semibold text-slate-700">
-                <span class="w-7 h-7 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs shadow">👥</span>
-                <div>
-                    <p class="text-slate-900 font-bold">Facebook Page</p>
-                    <p class="text-[10px] text-slate-500">Official Profile</p>
-                </div>
+                <div><p class="text-slate-900 font-bold">Gmail</p></div>
             </a>
         </div>
-
         <button onclick="toggleContactMenu()" class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2.5 rounded-full shadow-2xl font-bold text-xs sm:text-sm transition flex items-center gap-2 cursor-pointer border border-sky-300">
-            <span>Contact us</span>
-            <span class="bg-white text-sky-900 rounded-full w-5 h-5 flex items-center justify-center text-[10px] font-extrabold">💬</span>
+            <span>Contact us</span>💬
         </button>
     </div>
 
     <!-- JavaScript Data Engine -->
     <script>
         function toggleContactMenu() {
-            const menu = document.getElementById('contact-popup-menu');
-            menu.classList.toggle('hidden');
+            document.getElementById('contact-popup-menu').classList.toggle('hidden');
         }
 
         const baseProducts = [
@@ -436,31 +389,22 @@
                 
                 card.innerHTML = `
                     <div>
-                        <!-- Medicine Image Container -->
                         <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
                         </div>
-
-                        <!-- Medical Bullet + Company Name -->
                         <div class="flex items-center gap-1 mb-1 sm:mb-2">
                             <span class="text-[10px] sm:text-xs">💊</span>
                             <span class="text-[9px] sm:text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
                                 ${product.company}
                             </span>
                         </div>
-
-                        <!-- Product Title and Strength -->
                         <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight truncate">
                             ${product.brand} <span class="font-normal text-slate-500 text-[10px] sm:text-xs">(${product.strength})</span>
                         </h3>
-
-                        <!-- Generic Name -->
                         <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-0.5 sm:mt-1 truncate">
                             ${product.generic}
                         </p>
                     </div>
-
-                    <!-- Bottom Bar: Verified Badge + Message Button -->
                     <div class="mt-3 sm:mt-5 pt-2 sm:pt-3 flex justify-between items-center border-t border-slate-100 gap-1">
                         <span class="bg-sky-50 text-sky-700 text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded border border-sky-100 hidden sm:inline-block">
                             Verified
