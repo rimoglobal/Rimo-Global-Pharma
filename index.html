@@ -1,293 +1,504 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rimo Global Pharma Ltd - Oncology & Specialty Medicine</title>
-    <!-- Bootstrap 5 CSS CDN (Always works reliably) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Inter', sans-serif;
-            background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.85), rgba(12, 74, 110, 0.9)), url('cancer-cell-bg.jpg.png');
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            background-attachment: fixed !important;
-            background-position: center !important;
-            background-color: #0e2a47;
-            color: #333;
-        }
-        .navbar-brand img {
-            max-height: 45px;
-            width: auto;
-        }
-        .category-btn {
-            background: rgba(2, 132, 199, 0.8);
-            color: #fff;
-            border: 1px solid rgba(255,255,255,0.2);
-            text-align: left;
-            padding: 8px 12px;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 8px;
-            margin-bottom: 6px;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .category-btn:hover {
-            background: #0284c7;
-            color: #fff;
-        }
-        .product-card {
-            background: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .product-img-box {
-            height: 180px;
-            background: #f8fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        .product-img-box img {
-            max-height: 100%;
-            max-width: 100%;
-            object-fit: contain;
-        }
-        .floating-widget {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-        .contact-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            text-decoration: none;
-            margin-bottom: 8px;
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-[#0e2a47] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.55), rgba(12, 74, 110, 0.65)), url('cancer-cell-bg.jpg.png');">
 
-    <!-- Header Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm py-2">
-        <div class="container">
-            <a class="navbar-brand d-flex items-center gap-2 font-weight-bold fw-bold text-dark" href="#">
-                <img src="logo.png" alt="Rimo Logo" onerror="this.style.display='none'">
-                <span>RIMO GLOBAL PHARMA</span>
-            </a>
-            <div class="ms-auto d-flex gap-3 fw-bold text-secondary text-uppercase fs-6">
-                <a href="#home" class="text-decoration-none text-dark">Home</a>
-                <a href="#about" class="text-decoration-none text-dark">About</a>
-                <a href="#products" class="text-decoration-none text-dark">Products</a>
+    <!-- Top Navigation Bar -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-sky-100">
+        <div class="container mx-auto px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
+                <span class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">RIMO GLOBAL PHARMA</span>
             </div>
+            <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-700">
+                <a href="#home" class="hover:text-sky-600 transition">Home</a>
+                <a href="#about-section" class="hover:text-sky-600 transition">About Us</a>
+                <a href="#products-section" class="hover:text-sky-600 transition">Products</a>
+                <a href="#contact" class="hover:text-sky-600 transition">Contact</a>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <div class="container py-5 text-white" id="home">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-                <h1 class="fw-bold display-5 mb-3">RIMO GLOBAL PHARMA</h1>
-                <p class="lead text-light mb-4 fs-6">
-                    We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
-                </p>
-                <a href="https://wa.me/8801742705183" target="_blank" class="btn btn-info text-white fw-bold px-4 py-2 me-2">Contact Us</a>
-                <a href="#products" class="btn btn-outline-light fw-bold px-4 py-2">View Products</a>
-            </div>
-            <div class="col-lg-5">
-                <div class="p-3 rounded-3" style="background: rgba(2, 132, 199, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2);">
-                    <h6 class="text-uppercase fw-bold text-light border-bottom border-light pb-2 mb-3">Therapeutic Categories</h6>
-                    <button onclick="filterByDisease('Anti Cancer')" class="category-btn">💊 Anti Cancer Drugs</button>
-                    <button onclick="filterByDisease('Anti Diabetic')" class="category-btn">💊 Anti Diabetic Drugs</button>
-                    <button onclick="filterByDisease('Breast Cancer')" class="category-btn">💊 Breast Cancer</button>
-                    <button onclick="filterByDisease('Colorectal')" class="category-btn">💊 Colorectal Cancer</button>
-                    <button onclick="filterByDisease('Endometrial')" class="category-btn">💊 Endometrial Cancer</button>
-                    <button onclick="filterByDisease('Hepatitis')" class="category-btn">💊 Hepatitis C Virus</button>
-                    <button onclick="filterByDisease('Kidney')" class="category-btn">💊 Kidney Cancer</button>
-                    <button onclick="filterByDisease('Leukemia')" class="category-btn">💊 Leukemia</button>
-                    <button onclick="filterByDisease('All')" class="btn btn-dark btn-sm w-100 fw-bold mt-2">View All Products</button>
+    <!-- Hero Banner Section -->
+    <section id="home" class="relative text-white py-10 sm:py-14">
+        <div class="container mx-auto px-4 sm:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Side: Title, Text & Buttons -->
+                <div class="lg:col-span-7">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
+                        RIMO GLOBAL PHARMA
+                    </h1>
+                    <p class="text-xs sm:text-base text-sky-100 leading-relaxed font-medium mb-6 drop-shadow">
+                        We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
+                    </p>
+                    <div class="flex flex-wrap gap-3 sm:gap-4">
+                        <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm shadow-lg transition">
+                            Contact Us
+                        </a>
+                        <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-5 sm:px-6 py-2.5 rounded-lg text-xs sm:text-sm border border-sky-400/30 backdrop-blur-sm transition">
+                            View Products
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Right Side: Therapeutic Categories Menu -->
+                <div class="lg:col-span-5">
+                    <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-2xl p-3 sm:p-4 border border-sky-300/40 space-y-1.5">
+                        <div class="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-2 flex items-center justify-between">
+                            <span>Therapeutic Categories</span>
+                            <span class="text-xs">📂</span>
+                        </div>
+
+                        <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Cancer Drugs</span>
+                        </button>
+                        <button onclick="filterByDisease('Anti Diabetic')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Anti Diabetic Drugs</span>
+                        </button>
+                        <button onclick="filterByDisease('Breast Cancer')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Breast Cancer</span>
+                        </button>
+                        <button onclick="filterByDisease('Colorectal')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Colorectal Cancer</span>
+                        </button>
+                        <button onclick="filterByDisease('Endometrial')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Endometrial Cancer</span>
+                        </button>
+                        <button onclick="filterByDisease('Hepatitis')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Hepatitis C Virus</span>
+                        </button>
+                        <button onclick="filterByDisease('Kidney')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Kidney Cancer</span>
+                        </button>
+                        <button onclick="filterByDisease('Leukemia')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2.5 shadow-sm border border-sky-400/20">
+                            <span class="text-sm">💊</span>
+                            <span>Leukemia</span>
+                        </button>
+                        <button onclick="filterByDisease('All')" class="w-full text-left px-3.5 py-2 rounded-xl bg-sky-950/80 hover:bg-sky-900 text-xs font-bold text-sky-100 transition flex items-center gap-2.5 border border-sky-400/30 mt-2">
+                            <span class="text-sm">💊</span>
+                            <span>All Products</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- About Section -->
-    <div class="container mb-5" id="about">
-        <div class="bg-white p-4 p-md-5 rounded-3 shadow">
-            <h3 class="fw-bold text-dark mb-3">About Rimo Global Pharma</h3>
-            <p class="text-secondary mb-0">
+    <section id="about-section" class="container mx-auto px-3 sm:px-6 mb-8">
+        <div class="bg-white/95 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma</h2>
+            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                 RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh.
             </p>
         </div>
-    </div>
+    </section>
 
-    <!-- Product Section -->
-    <div class="container pb-5" id="products">
-        <div class="bg-white rounded-3 shadow overflow-hidden">
-            <div class="p-4 bg-primary text-white d-flex flex-wrap justify-content-between align-items-center gap-2">
-                <div>
-                    <h3 class="fw-bold mb-0">Product Portfolio</h3>
-                    <small>Export quality certified oncology and specialty medications.</small>
-                </div>
-                <div class="fs-5 bg-black bg-opacity-25 px-3 py-1 rounded">
-                    🇧🇩 🇺🇸 🇮🇳 🇷🇺 🇲🇽 🇬🇧
-                </div>
+    <!-- Main Content Area -->
+    <main id="products-section" class="container mx-auto px-2 sm:px-6 pb-16">
+        
+        <!-- Header Strip -->
+        <div class="bg-[#0284c7]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-300/40 shadow-xl backdrop-blur-md">
+            <div>
+                <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
+                <p class="text-[10px] sm:text-xs text-sky-100 mt-1">Export quality certified oncology and specialty medications.</p>
             </div>
-
-            <div class="p-4">
-                <!-- Search & Filters -->
-                <div class="row g-3 align-items-center mb-4">
-                    <div class="col-md-5">
-                        <input type="text" id="search-input" class="form-control" placeholder="Search medicine or generic...">
-                    </div>
-                    <div class="col-md-7 text-md-end">
-                        <button onclick="filterByCompany('All')" class="btn btn-sm btn-outline-primary active mb-1">All</button>
-                        <button onclick="filterByCompany('EVEREST')" class="btn btn-sm btn-outline-primary mb-1">Everest</button>
-                        <button onclick="filterByCompany('DRUGS INTERNATIONAL')" class="btn btn-sm btn-outline-primary mb-1">Drugs International</button>
-                        <button onclick="filterByCompany('INCEPTA')" class="btn btn-sm btn-outline-primary mb-1">Incepta</button>
-                        <button onclick="filterByCompany('GENERAL')" class="btn btn-sm btn-outline-primary mb-1">General</button>
-                        <button onclick="filterByCompany('ZISKA')" class="btn btn-sm btn-outline-primary mb-1">Ziska</button>
-                    </div>
-                </div>
-
-                <!-- Product Grid -->
-                <div id="product-grid-container" class="row g-3">
-                    <!-- Javascript Dynamic Content -->
-                </div>
-
-                <!-- Pagination -->
-                <div id="pagination-container" class="d-flex justify-content-center gap-2 mt-4">
-                    <!-- Dynamic Pagination -->
-                </div>
+            <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-sky-900/40 backdrop-blur-sm p-2 rounded-xl border border-sky-300/30">
+                <span title="Bangladesh">🇧🇩</span>
+                <span title="USA">🇺🇸</span>
+                <span title="India">🇮🇳</span>
+                <span title="Russia">🇷🇺</span>
+                <span title="Mexico">🇲🇽</span>
+                <span title="UK">🇬🇧</span>
             </div>
         </div>
+
+        <!-- Clean White Container -->
+        <div class="bg-white/95 backdrop-blur-md p-2 sm:p-6 rounded-b-2xl shadow-2xl border border-sky-100">
+            
+            <!-- Search & 5-Company Filters -->
+            <div class="mb-4 sm:mb-6 flex flex-col md:flex-row gap-3 justify-between items-center bg-sky-50/70 p-2 sm:p-4 rounded-xl border border-sky-100">
+                <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full md:w-80 px-3 py-2 border border-sky-200 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-sky-500 bg-white">
+                <div class="flex gap-1.5 flex-wrap w-full md:w-auto justify-start md:justify-end">
+                    <button onclick="filterByCompany('All')" class="company-btn px-2.5 py-1 bg-sky-700 text-white text-[11px] sm:text-xs font-semibold rounded-lg hover:bg-sky-800 transition">All Manufacturers</button>
+                    <button onclick="filterByCompany('EVEREST')" class="company-btn px-2.5 py-1 bg-white text-slate-700 text-[11px] sm:text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50 transition">Everest</button>
+                    <button onclick="filterByCompany('DRUGS INTERNATIONAL')" class="company-btn px-2.5 py-1 bg-white text-slate-700 text-[11px] sm:text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50 transition">Drugs International</button>
+                    <button onclick="filterByCompany('INCEPTA')" class="company-btn px-2.5 py-1 bg-white text-slate-700 text-[11px] sm:text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50 transition">Incepta</button>
+                    <button onclick="filterByCompany('GENERAL')" class="company-btn px-2.5 py-1 bg-white text-slate-700 text-[11px] sm:text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50 transition">General</button>
+                    <button onclick="filterByCompany('ZISKA')" class="company-btn px-2.5 py-1 bg-white text-slate-700 text-[11px] sm:text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50 transition">Ziska</button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
+                <!-- Dynamic Products loaded via JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
+                <!-- Dynamic Pagination Buttons -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="bg-[#061829]/95 text-slate-300 py-12 border-t border-sky-900">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-xs sm:text-sm">
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Rimo Global Pharma Ltd</h3>
+                <p class="text-slate-400 mb-4 leading-relaxed">Professional Oncology & Healthcare Product Distribution System.</p>
+                <p class="text-slate-500">&copy; 2026 All Rights Reserved.</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Direct Contact</h3>
+                <p class="mb-2 text-slate-300">✉️ Email: <a href="mailto:rimoglobalcompany@gmail.com" class="text-amber-400 hover:underline">rimoglobalcompany@gmail.com</a></p>
+                <p class="mb-2 text-slate-300">📱 Phone: <a href="tel:+8801742705183" class="text-amber-400 hover:underline">+880 1742-705183</a></p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold text-base mb-2">Social Connect</h3>
+                <a href="https://www.linkedin.com/in/rimo-global-pharmaltd-4a0644425/" target="_blank" class="inline-block bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-lg font-bold text-xs transition shadow">
+                    Visit LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Popup Widget -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        <!-- Expanded Vertical Icon Stack -->
+        <div id="contact-expanded" class="hidden flex flex-col items-center gap-3 mb-2 transition-all duration-300">
+            <a href="tel:+8801742705183" title="Phone Call" class="w-12 h-12 rounded-full bg-[#00e676] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </a>
+            <a href="https://wa.me/8801742705183" target="_blank" title="WhatsApp" class="w-12 h-12 rounded-full bg-[#25d366] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.003L2 22l5.127-1.341c1.463.8 3.111 1.22 4.881 1.221h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.176-2.922-7.062A9.925 9.925 0 0012.012 2zm0 18.158h-.003c-1.493 0-2.957-.401-4.233-1.157l-.304-.181-3.146.823.839-3.063-.198-.316c-.832-1.325-1.272-2.863-1.272-4.437.001-4.502 3.664-8.163 8.167-8.163 2.181 0 4.232.849 5.774 2.392 1.542 1.543 2.39 3.593 2.39 5.775 0 4.503-3.664 8.166-8.165 8.166z"/></svg>
+            </a>
+            <a href="https://business.facebook.com/latest/inbox/all/?nav_ref=manage_page_ap_plus_inbox_message_button&asset_id=1043140672226829&mailbox_id=1043140672226829&selected_item_id=100071589830187&thread_type=FB_MESSAGE" target="_blank" title="Messenger" class="w-12 h-12 rounded-full bg-[#0084ff] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.377 2 1.75 6.31 1.75 11.63c0 3.03 1.488 5.73 3.81 7.502V22l2.712-1.49c1.173.325 2.427.502 3.728.502 5.623 0 10.25-4.31 10.25-9.63S17.623 2 12 2zm1.025 12.98l-2.613-2.79-5.1 2.79 5.612-5.95 2.678 2.79 5.035-2.79-5.612 5.95z"/></svg>
+            </a>
+            <a href="https://t.me/+8801742705183" target="_blank" title="Telegram" class="w-12 h-12 rounded-full bg-[#0088cc] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.562 8.161c-.18.717-.962 4.084-1.362 5.771-.169.715-.433.954-.688.977-.557.051-.98-.368-1.52-.722-.845-.555-1.323-.9-2.143-1.44-.948-.624-.334-.967.207-1.53.141-.147 2.598-2.38 2.645-2.583.006-.025.01-.121-.045-.17-.056-.049-.138-.032-.198-.019-.085.019-1.444.918-4.076 2.697-.386.265-.735.395-1.049.388-.346-.007-1.011-.195-1.505-.356-.607-.197-1.089-.302-1.047-.638.022-.175.265-.355.729-.541 2.86-1.246 4.768-2.067 5.725-2.465 2.723-1.134 3.288-1.331 3.657-1.337.081-.001.262.019.379.114.098.08.125.188.138.264.014.096.02.215.013.33z"/></svg>
+            </a>
+            <a href="javascript:void(0)" onclick="alert('WeChat / WhatsApp Contact: +880 1742-705183')" title="WeChat" class="w-12 h-12 rounded-full bg-[#07c160] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.292.295a.326.326 0 0 0 .167-.048l1.902-1.102a.71.71 0 0 1 .613-.072c.904.27 1.874.42 2.875.42 4.8 0 8.69-3.287 8.69-7.342 0-4.055-3.89-7.343-8.625-7.343zm10.32 7.792c-3.957 0-7.164 2.71-7.164 6.056 0 3.346 3.207 6.056 7.164 6.056.825 0 1.623-.118 2.372-.34.17-.047.35.002.477.108l1.458.845a.254.254 0 0 0 .128.037.234.234 0 0 0 .235-.235c0-.056-.021-.111-.036-.166l-.302-1.14a.48.48 0 0 1 .17-.525c1.457-1.077 2.38-2.656 2.38-4.41 0-3.346-3.207-6.056-7.218-6.056z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/rimo-global-pharmaltd-4a0644425/" target="_blank" title="LinkedIn" class="w-12 h-12 rounded-full bg-[#0077b5] hover:scale-110 transition shadow-lg flex items-center justify-center text-white">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <button onclick="toggleContactWidget()" title="Close" class="w-12 h-12 rounded-full bg-[#81c784] hover:bg-[#66bb6a] transition shadow-lg flex items-center justify-center text-white cursor-pointer">
+                <svg class="w-6 h-6 stroke-current stroke-[3]" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Default Collapsed Button -->
+        <div id="contact-collapsed" class="flex items-center gap-2">
+            <div class="bg-white text-slate-800 px-3.5 py-1.5 rounded-full shadow-lg font-bold text-xs sm:text-sm border border-slate-100 flex items-center relative">
+                <span>Contact us</span>
+                <span class="absolute -right-1.5 top-1/2 -translate-y-1/2 w-0 h-0 border-y-4 border-y-transparent border-l-8 border-l-white"></span>
+            </div>
+            <button onclick="toggleContactWidget()" class="w-12 h-12 sm:w-14 sm:h-14 bg-[#81c784] hover:bg-[#66bb6a] rounded-full shadow-xl flex items-center justify-center text-white cursor-pointer transition transform hover:scale-105">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+            </button>
+        </div>
+
     </div>
 
-    <!-- Floating Contacts -->
-    <div class="floating-widget">
-        <a href="https://wa.me/8801742705183" target="_blank" class="contact-btn bg-success" title="WhatsApp">WA</a>
-        <a href="tel:+8801742705183" class="contact-btn bg-primary" title="Call">Call</a>
-    </div>
-
-    <!-- Script Engine -->
+    <!-- JavaScript Data Engine -->
     <script>
+        function toggleContactWidget() {
+            const collapsed = document.getElementById('contact-collapsed');
+            const expanded = document.getElementById('contact-expanded');
+            if (expanded.classList.contains('hidden')) {
+                expanded.classList.remove('hidden');
+                collapsed.classList.add('hidden');
+            } else {
+                expanded.classList.add('hidden');
+                collapsed.classList.remove('hidden');
+            }
+        }
+
+        // CORRECTED PRODUCT FILE MAPPINGS ACCORDING TO YOUR GITHUB REPO
         const productsData = [
-            { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", pack: "60 Capsules", company: "EVEREST PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
-            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", pack: "42 Tablets", company: "EVEREST PHARMACEUTICALS LTD.", image: "Adakras 200 mg.jpg" },
-            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", pack: "56 Capsules", company: "EVEREST PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
-            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", pack: "60 Capsules", company: "EVEREST PHARMACEUTICALS LTD.", image: "alkixen 150 mg.jpg" },
-            { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "150 mg", pack: "28 Tablets", company: "EVEREST PHARMACEUTICALS LTD.", image: "alpesib 150 mg.jpg" },
-            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", pack: "30 Tablets", company: "EVEREST PHARMACEUTICALS LTD.", image: "asciminib 40 mg.jpg" },
-            { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", pack: "28 Tablets", company: "EVEREST PHARMACEUTICALS LTD.", image: "avapag 20 mg.jpg" },
-            { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", pack: "14 Tablets", company: "EVEREST PHARMACEUTICALS LTD.", image: "azarest 300 mg.jpg" },
-            { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", pack: "90 Capsules", company: "EVEREST PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
-            { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", pack: "90 Capsules", company: "EVEREST PHARMACEUTICALS LTD.", image: "Caboxen 80 mg.jpg" },
-            { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", pack: "30 Tablets", company: "DRUGS INTERNATIONAL LTD.", image: "Osinib 80.jpg" },
-            { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", pack: "28 Tablets", company: "DRUGS INTERNATIONAL LTD.", image: "Avalet 20.jpg" }
+            // --- EVEREST PHARMACEUTICALS LTD. (1-54) ---
+            { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
+            { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Adakras 200 mg.jpg" },
+            { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
+            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alkixen 150 mg.jpg" },
+            { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alpesib 150 mg.jpg" },
+            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "asciminib 40 mg.jpg" },
+            { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "avapag 20 mg.jpg" },
+            { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "azarest 300 mg.jpg" },
+            { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
+            { serial: 10, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Caboxen 80 mg.jpg" },
+            { serial: 11, brand: "Capivast", generic: "Capivasertib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Capivast 200 mg.jpg" },
+            { serial: 12, brand: "Capmaxen", generic: "Capmatinib INN", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Capmaxen 200 mg.jpg" },
+            { serial: 13, brand: "Elopag 25", generic: "Eltrombopag INN", strength: "25 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Elopag 25 mg.jpg" },
+            { serial: 14, brand: "Elopag 50", generic: "Eltrombopag INN", strength: "50 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Elopag 50 mg.jpg" },
+            { serial: 15, brand: "Enasinib", generic: "Enasidenib", strength: "50 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Enasinib 50 mg.jpg" },
+            { serial: 16, brand: "Erdafixen", generic: "Erdafitinib INN", strength: "4 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Erdafixen 4 mg.jpg" },
+            { serial: 17, brand: "Eudaxen", generic: "Diazoxide BP", strength: "50 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Eudaxen 50 mg.jpg" },
+            { serial: 18, brand: "Fruquin", generic: "Fruquintinib INN", strength: "5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Fruquin 5 mg.jpg" },
+            { serial: 19, brand: "Gilternib", generic: "Gilteritinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Gilternib 40 mg.jpg" },
+            { serial: 20, brand: "Ibruxen", generic: "Ibrutinib", strength: "140 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ibruxen 140 mg.jpg" },
+            { serial: 21, brand: "Ivosenib", generic: "Ivosidenib", strength: "250 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ivosenib 250 mg.jpg" },
+            { serial: 22, brand: "Laronib 100", generic: "Larotrectinib", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Laronib 100.jpg" },
+            { serial: 23, brand: "Lazerib", generic: "Lazertinib", strength: "80 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Lazerib 80 mg.jpg" },
+            { serial: 24, brand: "Lenvaxen 10", generic: "Lenvatinib", strength: "10 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Lenvaxen 10 mg.jpg" },
+            { serial: 25, brand: "Lenvaxen 4", generic: "Lenvatinib", strength: "4 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Lenvaxen 4 mg.jpg" },
+            { serial: 26, brand: "Lorbrexen", generic: "Lorlatinib", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Lorbrexen 100 mg.jpg" },
+            { serial: 27, brand: "Moboxen", generic: "Mobocertinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Moboxen 40 mg.jpg" },
+            { serial: 28, brand: "Niranib", generic: "Niraparib", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Niranib 100 mg.jpg" },
+            { serial: 29, brand: "Olanib", generic: "Olaparib", strength: "50 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Olanib 50 mg.jpg" },
+            { serial: 30, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Olanib 150 mg.jpg" },
+            { serial: 31, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Pazorest 200 mg.jpg" },
+            { serial: 32, brand: "Pemitinib", generic: "Pemigatinib", strength: "13.5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Pemitinib 13.5 mg.jpg" },
+            { serial: 33, brand: "Palboxen", generic: "Palbociclib", strength: "125 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Palboxen 125 mg.jpg" },
+            { serial: 34, brand: "Ponaxen 15", generic: "Ponatinib", strength: "15 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ponaxen 15 mg.jpg" },
+            { serial: 35, brand: "Ponaxen 45", generic: "Ponatinib", strength: "45 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ponaxen 45 mg.jpg" },
+            { serial: 36, brand: "Prostaxen", generic: "Apalutamide", strength: "60 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Prostaxen 60 mg.jpg" },
+            { serial: 37, brand: "Quizar 17.7", generic: "Quizartinib", strength: "17.7 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Quizar 17.7 mg.jpg" },
+            { serial: 38, brand: "Quizar 26.5", generic: "Quizartinib", strength: "26.5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Quizar 26.5 mg.jpg" },
+            { serial: 39, brand: "Repotrex", generic: "Repotrectinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Repotrex 40 mg.jpg" },
+            { serial: 40, brand: "Resiliva", generic: "Resmetirom", strength: "80 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Resiliva 80 mg.jpg" },
+            { serial: 41, brand: "Ribokis", generic: "Ribociclib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ribokis 200 mg.jpg" },
+            { serial: 42, brand: "Ruxotor 10", generic: "Ruxolitinib", strength: "10 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor 10 mg.jpg" },
+            { serial: 43, brand: "Ruxotor Cream", generic: "Ruxolitinib Cream", strength: "1.50%", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor Cream.jpg" },
+            { serial: 44, brand: "Ruxotor S", generic: "Ruxolitinib", strength: "5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor S 5 mg.jpg" },
+            { serial: 45, brand: "Selcaxen 30's", generic: "Selpercatinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Selcaxen 40 mg.jpg" },
+            { serial: 46, brand: "Selinex", generic: "Selinexor", strength: "20 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Selinex 20 mg.jpg" },
+            { serial: 47, brand: "Sotoxen", generic: "Sotorasib", strength: "120 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Sotoxen 120 mg.jpg" },
+            { serial: 48, brand: "Talaparib", generic: "Talazoparib", strength: "1 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Talaparib 1 mg.jpg" },
+            { serial: 49, brand: "Tivoxen", generic: "Tivozanib", strength: "1.34 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Tivoxen 1.34 mg.jpg" },
+            { serial: 50, brand: "Tofaxen", generic: "Tofacitinib", strength: "5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Tofaxen 5 mg.jpg" },
+            { serial: 51, brand: "Trifluxen", generic: "Trifluridine & Tipiracil", strength: "15 mg & 6.14 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Trifluxen.jpg" },
+            { serial: 52, brand: "Tucaxen", generic: "Tucatinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Tucaxen 150 mg.jpg" },
+            { serial: 53, brand: "Upajak", generic: "Upadacitinib", strength: "15 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Upajak 15 mg.jpg" },
+            { serial: 54, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" },
+
+            // --- DRUGS INTERNATIONAL LTD. (55-64) ---
+            { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Osinib 80.jpg" },
+            { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Avalet 20.jpg" },
+            { serial: 57, brand: "Tocit-5", generic: "Tofacitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Tocit 5.jpg" },
+            { serial: 58, brand: "Tocit-XR", generic: "Tofacitinib", strength: "11 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Tocit XR.jpg" },
+            { serial: 59, brand: "Barinib 2", generic: "Baricitinib", strength: "2 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Barinib 2.jpg" },
+            { serial: 60, brand: "Cerinib", generic: "Ceritinib", strength: "150 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Cerinib 150.jpg" },
+            { serial: 61, brand: "Rematib 15", generic: "Upadacitinib", strength: "15 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rematib 15.jpg" },
+            { serial: 62, brand: "Dabranib 75", generic: "Dabrafenib", strength: "75 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Dabranib 75.jpg" },
+            { serial: 63, brand: "Breze-100", generic: "Abemaciclib", strength: "100 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Breze 100.jpg" },
+            { serial: 64, brand: "Breze-150", generic: "Abemaciclib", strength: "150 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Breze 150.jpg" },
+
+            // --- INCEPTA PHARMACEUTICALS LTD. (65-84) ---
+            { serial: 65, brand: "Palboxen", generic: "Palbociclib", strength: "125 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Palboxen 125 mg.jpg" },
+            { serial: 66, brand: "Cabanib 20", generic: "Cabozantinib", strength: "20 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
+            { serial: 67, brand: "Cabanib 80", generic: "Cabozantinib", strength: "80 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Caboxen 80 mg.jpg" },
+            { serial: 68, brand: "Olanib 50", generic: "Olaparib", strength: "50 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Olanib 50 mg.jpg" },
+            { serial: 69, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Olanib 150 mg.jpg" },
+            { serial: 70, brand: "Lenvaxen 4", generic: "Lenvatinib", strength: "4 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Lenvaxen 4 mg.jpg" },
+            { serial: 71, brand: "Lenvaxen 10", generic: "Lenvatinib", strength: "10 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Lenvaxen 10 mg.jpg" },
+            { serial: 72, brand: "Niranib", generic: "Niraparib", strength: "100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Niranib 100 mg.jpg" },
+            { serial: 73, brand: "Acaluxen", generic: "Acalabrutinib", strength: "100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
+            { serial: 74, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
+            { serial: 75, brand: "Ibruxen", generic: "Ibrutinib", strength: "140 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ibruxen 140 mg.jpg" },
+            { serial: 76, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Pazorest 200 mg.jpg" },
+            { serial: 77, brand: "Ruxotor 10", generic: "Ruxolitinib", strength: "10 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ruxotor 10 mg.jpg" },
+            { serial: 78, brand: "Sotoxen", generic: "Sotorasib", strength: "120 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Sotoxen 120 mg.jpg" },
+            { serial: 79, brand: "Tofaxen", generic: "Tofacitinib", strength: "5 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Tofaxen 5 mg.jpg" },
+            { serial: 80, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" },
+            { serial: 81, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "alkixen 150 mg.jpg" },
+            { serial: 82, brand: "Lorbrexen", generic: "Lorlatinib", strength: "100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Lorbrexen 100 mg.jpg" },
+            { serial: 83, brand: "Prostaxen", generic: "Apalutamide", strength: "60 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Prostaxen 60 mg.jpg" },
+            { serial: 84, brand: "Ribokis", generic: "Ribociclib", strength: "200 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ribokis 200 mg.jpg" },
+
+            // --- GENERAL PHARMACEUTICALS LTD. (85-98) ---
+            { serial: 85, brand: "Palboxen", generic: "Palbociclib", strength: "125 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Palboxen 125 mg.jpg" },
+            { serial: 86, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
+            { serial: 87, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Caboxen 80 mg.jpg" },
+            { serial: 88, brand: "Olanib 50", generic: "Olaparib", strength: "50 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Olanib 50 mg.jpg" },
+            { serial: 89, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Olanib 150 mg.jpg" },
+            { serial: 90, brand: "Lenvaxen 4", generic: "Lenvatinib", strength: "4 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Lenvaxen 4 mg.jpg" },
+            { serial: 91, brand: "Lenvaxen 10", generic: "Lenvatinib", strength: "10 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Lenvaxen 10 mg.jpg" },
+            { serial: 92, brand: "Niranib", generic: "Niraparib", strength: "100 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Niranib 100 mg.jpg" },
+            { serial: 93, brand: "Acaluxen", generic: "Acalabrutinib", strength: "100 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
+            { serial: 94, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
+            { serial: 95, brand: "Ibruxen", generic: "Ibrutinib", strength: "140 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Ibruxen 140 mg.jpg" },
+            { serial: 96, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Pazorest 200 mg.jpg" },
+            { serial: 97, brand: "Sotoxen", generic: "Sotorasib", strength: "120 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Sotoxen 120 mg.jpg" },
+            { serial: 98, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" },
+
+            // --- ZISKA PHARMACEUTICALS LTD. (99-112) ---
+            { serial: 99, brand: "Palboxen", generic: "Palbociclib", strength: "125 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Palboxen 125 mg.jpg" },
+            { serial: 100, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
+            { serial: 101, brand: "Caboxen 80", generic: "Cabozantinib", strength: "80 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Caboxen 80 mg.jpg" },
+            { serial: 102, brand: "Olanib 50", generic: "Olaparib", strength: "50 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Olanib 50 mg.jpg" },
+            { serial: 103, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Olanib 150 mg.jpg" },
+            { serial: 104, brand: "Lenvaxen 4", generic: "Lenvatinib", strength: "4 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvaxen 4 mg.jpg" },
+            { serial: 105, brand: "Lenvaxen 10", generic: "Lenvatinib", strength: "10 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvaxen 10 mg.jpg" },
+            { serial: 106, brand: "Niranib", generic: "Niraparib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Niranib 100 mg.jpg" },
+            { serial: 107, brand: "Acaluxen", generic: "Acalabrutinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
+            { serial: 108, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
+            { serial: 109, brand: "Ibruxen", generic: "Ibrutinib", strength: "140 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ibruxen 140 mg.jpg" },
+            { serial: 110, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Pazorest 200 mg.jpg" },
+            { serial: 111, brand: "Sotoxen", generic: "Sotorasib", strength: "120 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Sotoxen 120 mg.jpg" },
+            { serial: 112, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" }
         ];
 
-        let currentFilteredProducts = [...productsData];
+        let filteredProducts = [...productsData];
         let currentPage = 1;
-        const itemsPerPage = 8;
+        const itemsPerPage = 12;
 
-        function renderProducts(page = 1) {
-            currentPage = page;
+        // Render Functions
+        function renderProducts() {
             const grid = document.getElementById('product-grid-container');
             grid.innerHTML = '';
 
-            const startIndex = (page - 1) * itemsPerPage;
-            const endIndex = startIndex + itemsPerPage;
-            const paginatedItems = currentFilteredProducts.slice(startIndex, endIndex);
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = filteredProducts.slice(start, end);
 
-            paginatedItems.forEach(item => {
-                const col = document.createElement('div');
-                col.className = "col-6 col-md-4 col-lg-3";
-                col.innerHTML = `
-                    <div class="product-card">
-                        <div class="product-img-box">
-                            <img src="${item.image}" alt="${item.brand}" onerror="this.src='https://via.placeholder.com/200x200?text=Medicine';">
+            if (paginatedItems.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-semibold text-sm">No products found matching your search.</div>`;
+                renderPagination();
+                return;
+            }
+
+            paginatedItems.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-xl border border-sky-100 p-3 flex flex-col justify-between hover:shadow-xl transition transform hover:-translate-y-1 group";
+                
+                // Smart image fallback handler to handle spaces and formatting
+                const encodedImg = encodeURIComponent(prod.image);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="w-full h-36 sm:h-44 bg-slate-50 rounded-lg overflow-hidden mb-2.5 flex items-center justify-center p-2 border border-slate-100">
+                            <img src="${encodedImg}" alt="${prod.brand}" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-300" onerror="handleImageError(this, '${prod.brand}')">
                         </div>
-                        <div class="p-3">
-                            <small class="text-primary font-weight-bold d-block text-uppercase text-truncate" style="font-size:10px;">${item.company}</small>
-                            <h6 class="fw-bold mb-0 text-dark">${item.brand}</h6>
-                            <small class="text-muted d-block text-truncate mb-2">${item.generic}</small>
-                            <div class="d-flex justify-content-between align-items-center border-top pt-2">
-                                <span class="fw-bold text-dark small">${item.strength}</span>
-                                <span class="badge bg-light text-dark border">${item.pack}</span>
-                            </div>
-                        </div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-sky-600 mb-0.5 truncate">${prod.company}</div>
+                        <h3 class="font-extrabold text-sm sm:text-base text-slate-800 leading-snug line-clamp-1">${prod.brand}</h3>
+                        <p class="text-xs text-slate-500 italic mb-2 line-clamp-1">${prod.generic}</p>
+                        <div class="inline-block bg-sky-50 text-sky-700 text-[11px] font-bold px-2 py-0.5 rounded border border-sky-100 mb-3">${prod.strength}</div>
                     </div>
+                    <a href="https://wa.me/8801742705183?text=Inquiry%20for%20${encodeURIComponent(prod.brand)}" target="_blank" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-1.5 px-2 rounded-lg text-xs text-center transition flex items-center justify-center gap-1 shadow-sm">
+                        <span>Inquire Now</span>
+                    </a>
                 `;
-                grid.appendChild(col);
+                grid.appendChild(card);
             });
 
-            renderPagination(Math.ceil(currentFilteredProducts.length / itemsPerPage));
+            renderPagination();
         }
 
-        function renderPagination(totalPages) {
+        // Image Failover Handler
+        function handleImageError(img, brandName) {
+            // Try unencoded URL if encoded failed
+            if (!img.dataset.retried) {
+                img.dataset.retried = "true";
+                const cleanName = brandName.split(' ')[0];
+                img.src = cleanName + '.jpg';
+            } else {
+                img.src = 'https://via.placeholder.com/200x200?text=' + encodeURIComponent(brandName);
+            }
+        }
+
+        function renderPagination() {
             const container = document.getElementById('pagination-container');
             container.innerHTML = '';
+
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
             if (totalPages <= 1) return;
 
+            // Prev Button
+            const prevBtn = document.createElement('button');
+            prevBtn.innerText = '« Prev';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.className = `px-3 py-1.5 text-xs font-bold rounded-lg border transition ${currentPage === 1 ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-sky-200 hover:bg-sky-50'}`;
+            prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; renderProducts(); } };
+            container.appendChild(prevBtn);
+
+            // Page Numbers
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
                 btn.innerText = i;
-                btn.className = `btn btn-sm ${i === currentPage ? 'btn-primary' : 'btn-outline-secondary'}`;
-                btn.onclick = () => renderProducts(i);
+                btn.className = `px-3 py-1.5 text-xs font-bold rounded-lg border transition ${i === currentPage ? 'bg-sky-600 text-white border-sky-600' : 'bg-white text-slate-700 border-sky-200 hover:bg-sky-50'}`;
+                btn.onclick = () => { currentPage = i; renderProducts(); };
                 container.appendChild(btn);
             }
+
+            // Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.innerText = 'Next »';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.className = `px-3 py-1.5 text-xs font-bold rounded-lg border transition ${currentPage === totalPages ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed' : 'bg-white text-slate-700 border-sky-200 hover:bg-sky-50'}`;
+            nextBtn.onclick = () => { if(currentPage < totalPages) { currentPage++; renderProducts(); } };
+            container.appendChild(nextBtn);
         }
 
+        // Filtering
         function filterByCompany(companyName) {
+            currentPage = 1;
+            document.querySelectorAll('.company-btn').forEach(btn => {
+                btn.classList.remove('bg-sky-700', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('bg-sky-700', 'text-white');
+
             if (companyName === 'All') {
-                currentFilteredProducts = [...productsData];
+                filteredProducts = [...productsData];
             } else {
-                currentFilteredProducts = productsData.filter(p => p.company.toUpperCase().includes(companyName.toUpperCase()));
+                filteredProducts = productsData.filter(p => p.company.toUpperCase().includes(companyName.toUpperCase()));
             }
-            renderProducts(1);
+            renderProducts();
         }
 
-        function filterByDisease(category) {
-            if (category === 'All') {
-                currentFilteredProducts = [...productsData];
+        function filterByDisease(diseaseKeyword) {
+            currentPage = 1;
+            if (diseaseKeyword === 'All') {
+                filteredProducts = [...productsData];
             } else {
-                currentFilteredProducts = productsData.filter(p => 
-                    p.brand.toLowerCase().includes(category.toLowerCase()) || 
-                    p.generic.toLowerCase().includes(category.toLowerCase())
+                filteredProducts = productsData.filter(p => 
+                    p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
+                    p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase())
                 );
             }
-            renderProducts(1);
+            renderProducts();
+            document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        document.getElementById('search-input').addEventListener('input', (e) => {
+        // Search Input Listener
+        document.getElementById('search-input').addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
-            currentFilteredProducts = productsData.filter(p => 
+            currentPage = 1;
+            filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) || 
-                p.generic.toLowerCase().includes(query)
+                p.generic.toLowerCase().includes(query) ||
+                p.company.toLowerCase().includes(query)
             );
-            renderProducts(1);
+            renderProducts();
         });
 
-        renderProducts(1);
+        // Initial Load
+        renderProducts();
     </script>
 </body>
 </html>
