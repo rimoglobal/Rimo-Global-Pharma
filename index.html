@@ -26,6 +26,7 @@
                 <a href="#about-section" class="hover:text-sky-600 transition">About Us</a>
                 <a href="#categories-section" class="hover:text-sky-600 transition">Categories</a>
                 <a href="#products-section" class="hover:text-sky-600 transition">Products</a>
+                <a href="#map-section" class="hover:text-sky-600 transition">Location</a>
                 <a href="#contact" class="hover:text-sky-600 transition">Contact</a>
             </nav>
         </div>
@@ -61,7 +62,7 @@
         </div>
     </section>
 
-    <!-- Therapeutic Categories Section (Moved Below About Us) -->
+    <!-- Therapeutic Categories Section -->
     <section id="categories-section" class="container mx-auto px-3 sm:px-6 mb-8">
         <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-xl p-5 sm:p-6 border border-sky-300/40">
             <div class="px-2 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-4 flex items-center justify-between">
@@ -120,7 +121,7 @@
     </section>
 
     <!-- Main Content Area -->
-    <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
+    <main id="products-section" class="container mx-auto px-3 sm:px-6 mb-8">
         
         <!-- Water Blue / Sky Header Strip -->
         <div class="bg-[#0284c7]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-300/40 shadow-xl backdrop-blur-md">
@@ -158,12 +159,38 @@
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
 
-            <!-- Pagination Controls -->
+            <!-- Pagination Controls (1, 2, 3...) -->
             <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
                 <!-- Dynamic Pagination Buttons -->
             </div>
         </div>
     </main>
+
+    <!-- Map Section (Placed Exactly Between Products List & Footer) -->
+    <section id="map-section" class="container mx-auto px-3 sm:px-6 mb-12">
+        <div class="bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl border border-sky-100">
+            <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="text-xl">📍</span>
+                    <h3 class="text-base sm:text-xl font-extrabold text-slate-900 tracking-tight">Our Office Location</h3>
+                </div>
+                <span class="text-xs text-sky-600 font-semibold bg-sky-50 px-3 py-1 rounded-full border border-sky-100">Dhaka, Bangladesh</span>
+            </div>
+            
+            <!-- Responsive Google Map Embed Container -->
+            <div class="w-full h-72 sm:h-96 rounded-xl overflow-hidden border border-slate-200 shadow-inner">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.0097779313!2d90.3371881881729!3d23.780777712395562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026cd1%3A0x4a9ba2707532d5d6!2sDhaka!5e0!3m2!1sen!2sbd!4v1710000000000!5m2!1sen!2sbd" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <!-- Everest-Style Footer Section for Rimo Global Pharma Ltd -->
     <footer id="contact" class="bg-[#374352] text-slate-200 pt-10 pb-6 border-t border-slate-600/50">
