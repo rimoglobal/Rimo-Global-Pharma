@@ -24,27 +24,27 @@
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-700">
                 <a href="#home" class="hover:text-sky-600 transition">Home</a>
                 <a href="#about-section" class="hover:text-sky-600 transition">About Us</a>
-                <a href="#categories-section" class="hover:text-sky-600 transition">Categories</a>
+                <a href="#global-presence" class="hover:text-sky-600 transition">Global Network</a>
                 <a href="#products-section" class="hover:text-sky-600 transition">Products</a>
                 <a href="#contact" class="hover:text-sky-600 transition">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Banner Section (Clean & Full Background View) -->
-    <section id="home" class="relative text-white py-20 sm:py-28">
+    <!-- Hero Banner Section (Clean Background Theme View) -->
+    <section id="home" class="relative text-white py-16 sm:py-24">
         <div class="container mx-auto px-4 sm:px-8 text-center max-w-4xl">
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
+            <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-white drop-shadow-lg">
                 RIMO GLOBAL PHARMA
             </h1>
-            <p class="text-sm sm:text-lg text-sky-100 leading-relaxed font-medium mb-8 drop-shadow max-w-2xl mx-auto">
+            <p class="text-xs sm:text-lg text-sky-100 leading-relaxed font-medium mb-8 drop-shadow max-w-2xl mx-auto">
                 We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-xl transition">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm shadow-xl transition">
                     Contact Us
                 </a>
-                <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-8 py-3 rounded-xl text-sm border border-sky-400/30 backdrop-blur-sm transition">
+                <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm border border-sky-400/30 backdrop-blur-sm transition">
                     View Products
                 </a>
             </div>
@@ -53,7 +53,7 @@
 
     <!-- About Rimo Global Pharma Section -->
     <section id="about-section" class="container mx-auto px-3 sm:px-6 mb-8">
-        <div class="bg-white/95 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
+        <div class="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma</h2>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                 RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients.
@@ -61,65 +61,127 @@
         </div>
     </section>
 
-    <!-- Therapeutic Categories Section (Moved Below About Us) -->
+    <!-- Modern Upgraded Therapeutic Categories Section -->
     <section id="categories-section" class="container mx-auto px-3 sm:px-6 mb-8">
-        <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-xl p-5 sm:p-6 border border-sky-300/40">
-            <div class="px-2 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-4 flex items-center justify-between">
-                <span>Therapeutic Categories</span>
-                <span>📂</span>
+        <div class="bg-[#0284c7]/30 backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 border border-sky-300/40">
+            <div class="px-1 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-4 flex items-center justify-between">
+                <span class="flex items-center gap-2">
+                    <span class="text-sky-300">📂</span> Therapeutic Categories
+                </span>
+                <span class="text-xs font-semibold bg-sky-900/60 text-sky-200 px-2.5 py-1 rounded-full border border-sky-400/30">Verified Portfolio</span>
             </div>
 
             <!-- Grid Layout for Category Buttons -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                <button onclick="filterByDisease('Anti Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Anti Cancer Drugs</span>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-3">
+                <button onclick="filterByDisease('Anti Cancer')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Anti Cancer Drugs</span>
                 </button>
 
-                <button onclick="filterByDisease('Anti Diabetic')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Anti Diabetic Drugs</span>
+                <button onclick="filterByDisease('Anti Diabetic')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Anti Diabetic Drugs</span>
                 </button>
 
-                <button onclick="filterByDisease('Breast Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Breast Cancer</span>
+                <button onclick="filterByDisease('Breast Cancer')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Breast Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Colorectal')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Colorectal Cancer</span>
+                <button onclick="filterByDisease('Colorectal')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Colorectal Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Endometrial')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Endometrial Cancer</span>
+                <button onclick="filterByDisease('Endometrial')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Endometrial Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Hepatitis')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Hepatitis C Virus</span>
+                <button onclick="filterByDisease('Hepatitis')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Hepatitis C Virus</span>
                 </button>
 
-                <button onclick="filterByDisease('Kidney')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Kidney Cancer</span>
+                <button onclick="filterByDisease('Kidney')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Kidney Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Leukemia')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
-                    <span>💊</span>
-                    <span class="truncate">Leukemia</span>
+                <button onclick="filterByDisease('Leukemia')" class="text-left px-3 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/30 hover:scale-[1.02]">
+                    <span>💊</span> <span class="truncate">Leukemia</span>
                 </button>
 
-                <button onclick="filterByDisease('All')" class="col-span-2 sm:col-span-1 text-left px-3.5 py-2.5 rounded-xl bg-sky-950/80 hover:bg-sky-900 text-xs font-bold text-sky-100 transition flex items-center gap-2 border border-sky-400/30">
-                    <span>💊</span>
-                    <span class="truncate">All Products</span>
+                <button onclick="filterByDisease('All')" class="col-span-2 sm:col-span-1 text-left px-3 py-2.5 rounded-xl bg-sky-950/90 hover:bg-sky-900 text-xs font-bold text-sky-100 transition flex items-center gap-2 border border-sky-400/40 hover:scale-[1.02]">
+                    <span>🌐</span> <span class="truncate">All Products</span>
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Area -->
+    <!-- Incepta-style "Our Global Presence" (World Map & Exporting Network) -->
+    <section id="global-presence" class="container mx-auto px-3 sm:px-6 mb-8">
+        <div class="bg-white/95 backdrop-blur-md p-5 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
+            <div class="text-center max-w-2xl mx-auto mb-6">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Our Global Presence</h2>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 font-medium">
+                    Delivering Bangladeshi WHO-GMP quality Oncology & Specialty medicines to over <strong class="text-sky-700">50+ countries</strong> across Asia, Middle East, Africa, and Latin America.
+                </p>
+            </div>
+
+            <!-- World Map Container with SVG Overlay -->
+            <div class="relative bg-slate-900/90 rounded-2xl overflow-hidden p-4 sm:p-8 border border-sky-800 shadow-inner">
+                <div class="flex justify-center items-center py-4">
+                    <!-- Interactive Stylized World Map SVG -->
+                    <svg class="w-full h-auto max-h-[380px] opacity-90" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stylized Continents Outlines -->
+                        <path d="M150,120 Q200,80 300,100 T400,160 Q350,240 250,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+                        <path d="M280,260 Q340,250 380,320 T300,450 Q240,400 250,320 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+                        <path d="M480,140 Q580,100 680,120 T750,200 Q650,260 520,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+                        <path d="M490,230 Q580,220 620,300 T540,420 Q480,350 480,280 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+                        <path d="M700,150 Q850,120 920,200 T820,340 Q720,320 700,220 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+                        <path d="M800,350 Q880,340 900,420 T820,450 Z" fill="#1e293b" stroke="#0284c7" stroke-width="1.5"/>
+
+                        <!-- 50+ Global Supply Hub Dots (Yellow = Exporting, Cyan = Expansion) -->
+                        <g id="export-dots">
+                            <!-- Asia & Middle East -->
+                            <circle cx="710" cy="220" r="5" fill="#facc15" class="animate-pulse"><title>Bangladesh (HQ)</title></circle>
+                            <circle cx="730" cy="240" r="4" fill="#facc15"><title>Myanmar / Philippines / Vietnam</title></circle>
+                            <circle cx="690" cy="230" r="4" fill="#facc15"><title>Sri Lanka / Maldives</title></circle>
+                            <circle cx="660" cy="200" r="4" fill="#facc15"><title>Uzbekistan / Afghanistan / Tajikistan</title></circle>
+                            <circle cx="620" cy="220" r="4" fill="#facc15"><title>UAE / Saudi Arabia / Oman / Qatar</title></circle>
+                            
+                            <!-- Africa Region -->
+                            <circle cx="560" cy="280" r="4" fill="#facc15"><title>Kenya / Uganda / Tanzania</title></circle>
+                            <circle cx="510" cy="290" r="4" fill="#facc15"><title>Nigeria / Ghana / Sudan</title></circle>
+                            <circle cx="550" cy="350" r="4" fill="#facc15"><title>South Africa / Zimbabwe</title></circle>
+
+                            <!-- Latin America -->
+                            <circle cx="260" cy="200" r="4" fill="#facc15"><title>Mexico</title></circle>
+                            <circle cx="310" cy="320" r="4" fill="#facc15"><title>Bolivia / Colombia / Peru</title></circle>
+
+                            <!-- Future Expansion Markets (Cyan Dots) -->
+                            <circle cx="220" cy="150" r="4" fill="#38bdf8"><title>USA (Target Expansion)</title></circle>
+                            <circle cx="500" cy="150" r="4" fill="#38bdf8"><title>UK / Germany (Target Expansion)</title></circle>
+                            <circle cx="840" cy="380" r="4" fill="#38bdf8"><title>Australia (Target Expansion)</title></circle>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Legend & Stats Strip -->
+                <div class="mt-4 pt-4 border-t border-slate-800 flex flex-wrap justify-between items-center gap-4 text-xs text-slate-300">
+                    <div class="flex items-center gap-4 flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                            <span class="font-medium">Active Exporting Countries (50+)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-sky-400"></span>
+                            <span class="font-medium">Future Expansion Target</span>
+                        </div>
+                    </div>
+                    <div class="text-sky-300 font-extrabold text-xs sm:text-sm">
+                        Global Logistics Support & Fast Customs Clearance ✈️📦
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area (Product Portfolio) -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 pb-16">
         
         <!-- Water Blue / Sky Header Strip -->
@@ -153,8 +215,8 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area (Full Width) -->
-            <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Product Grid Area: Mobile shows 2 columns (grid-cols-2), desktop shows 4 columns (lg:grid-cols-4) -->
+            <div id="product-grid-container" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
 
@@ -196,7 +258,7 @@
                     <ul class="space-y-1.5 text-slate-300 text-xs mb-6">
                         <li><a href="#about-section" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Terms & Conditions</a></li>
-                        <li><a href="#about-section" class="hover:text-white transition">Global Distribution Region</a></li>
+                        <li><a href="#global-presence" class="hover:text-white transition">Global Distribution Region</a></li>
                         <li><a href="#products-section" class="hover:text-white transition">Search Products</a></li>
                         <li><a href="#products-section" class="hover:text-white transition">Sitemap</a></li>
                     </ul>
@@ -219,7 +281,7 @@
                         <li><a href="#about-section" class="hover:text-white transition">Quality Policy</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Leadership</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Sourcing Facilities</a></li>
-                        <li><a href="#about-section" class="hover:text-white transition">Global Logistics</a></li>
+                        <li><a href="#global-presence" class="hover:text-white transition">Global Logistics</a></li>
                     </ul>
 
                     <h3 class="text-white text-base font-normal">Contact Us</h3>
@@ -370,40 +432,40 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-4";
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-2.5 sm:p-4";
                 
                 card.innerHTML = `
                     <div>
                         <!-- Medicine Image Container -->
-                        <div class="w-full h-36 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-2">
+                        <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
                         </div>
 
-                        <!-- Medical Bullet + Medical Blue Company Name -->
-                        <div class="flex items-center gap-1.5 mb-2">
-                            <span class="text-xs">💊</span>
-                            <span class="text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
+                        <!-- Medical Bullet + Company Name -->
+                        <div class="flex items-center gap-1 mb-1 sm:mb-2">
+                            <span class="text-[10px] sm:text-xs">💊</span>
+                            <span class="text-[9px] sm:text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
                                 ${product.company}
                             </span>
                         </div>
 
                         <!-- Product Title and Strength -->
-                        <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-tight">
-                            ${product.brand} <span class="font-normal text-slate-500">(${product.strength})</span>
+                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight truncate">
+                            ${product.brand} <span class="font-normal text-slate-500 text-[10px] sm:text-xs">(${product.strength})</span>
                         </h3>
 
                         <!-- Generic Name -->
-                        <p class="text-xs text-slate-500 italic font-medium mt-1 truncate">
-                            Generic: ${product.generic}
+                        <p class="text-[10px] sm:text-xs text-slate-500 italic font-medium mt-0.5 sm:mt-1 truncate">
+                            ${product.generic}
                         </p>
                     </div>
 
                     <!-- Bottom Bar: Verified Badge + Message Button -->
-                    <div class="mt-5 pt-3 flex justify-between items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-700 text-[11px] font-bold px-2.5 py-1 rounded border border-sky-100">
+                    <div class="mt-3 sm:mt-5 pt-2 sm:pt-3 flex justify-between items-center border-t border-slate-100 gap-1">
+                        <span class="bg-sky-50 text-sky-700 text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded border border-sky-100 hidden sm:inline-block">
                             Verified
                         </span>
-                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold px-3.5 py-1.5 rounded transition shadow-sm">
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="w-full sm:w-auto text-center bg-sky-600 hover:bg-sky-700 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3.5 py-1 sm:py-1.5 rounded transition shadow-sm">
                             Message
                         </a>
                     </div>
@@ -424,7 +486,7 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
-                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-sky-600 text-white' : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-100'}`;
+                btn.className = `px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-sky-600 text-white' : 'bg-white text-slate-700 border border-slate-300 hover:bg-slate-100'}`;
                 btn.innerText = i;
                 btn.onclick = () => {
                     renderProducts(i);
