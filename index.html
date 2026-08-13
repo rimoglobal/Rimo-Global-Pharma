@@ -9,13 +9,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
+
+        /* Mobile & Desktop Responsive Background Layer */
+        .bg-cancer-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -50;
+            background-image: url('cell-bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        /* Mobile Fix: Adjust focal point so cancer cell stays perfectly visible on narrow screens */
+        @media (max-width: 768px) {
+            .bg-cancer-layer {
+                background-size: cover;
+                background-position: 65% center; /* Adjusts image offset for mobile screens */
+            }
+        }
     </style>
 </head>
-<!-- Soft Light Blue Transparent Overlay with Exact File Name cell-bg.jpg -->
-<body class="text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.25), rgba(12, 74, 110, 0.35)), url('cell-bg.jpg'); background-attachment: fixed; background-size: cover; background-position: center;">
+<body class="text-slate-800 bg-slate-950 min-h-screen relative">
+
+    <!-- Responsive Fixed Background without any overlay color -->
+    <div class="bg-cancer-layer"></div>
 
     <!-- Top Navigation Bar -->
-    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-sky-100">
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-sky-100">
         <div class="container mx-auto px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
@@ -38,23 +62,23 @@
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6 text-white drop-shadow-lg">
                 RIMO GLOBAL PHARMA
             </h1>
-            <p class="text-sm sm:text-lg text-sky-100 leading-relaxed font-medium mb-8 drop-shadow max-w-2xl mx-auto">
+            <p class="text-sm sm:text-lg text-slate-100 leading-relaxed font-medium mb-8 drop-shadow-lg max-w-2xl mx-auto">
                 We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-500 hover:bg-sky-600 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-xl transition">
+                <a href="https://wa.me/8801742705183" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-xl transition">
                     Contact Us
                 </a>
-                <a href="#products-section" class="bg-sky-950/70 hover:bg-sky-900 text-white font-bold px-8 py-3 rounded-xl text-sm border border-sky-400/30 backdrop-blur-sm transition">
+                <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-white font-bold px-8 py-3 rounded-xl text-sm border border-slate-400/30 backdrop-blur-sm transition">
                     View Products
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About Rimo Global Pharma Section -->
+    <!-- About Rimo Global Pharma Section (Clean White Background) -->
     <section id="about-section" class="container mx-auto px-3 sm:px-6 mb-8">
-        <div class="bg-white/90 backdrop-blur-md p-6 sm:p-8 rounded-2xl shadow-xl border border-sky-100">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-slate-200">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma</h2>
             <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
                 RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients.
@@ -62,57 +86,57 @@
         </div>
     </section>
 
-    <!-- Therapeutic Categories Section -->
+    <!-- Therapeutic Categories Section (Clean White Background) -->
     <section id="categories-section" class="container mx-auto px-3 sm:px-6 mb-8">
-        <div class="bg-[#0284c7]/40 backdrop-blur-md rounded-2xl shadow-xl p-5 sm:p-6 border border-sky-300/40">
-            <div class="px-2 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-sky-100 border-b border-sky-300/30 mb-4 flex items-center justify-between">
+        <div class="bg-white rounded-2xl shadow-xl p-5 sm:p-6 border border-slate-200">
+            <div class="px-2 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-slate-800 border-b border-slate-100 mb-4 flex items-center justify-between">
                 <span>Therapeutic Categories</span>
                 <span>📂</span>
             </div>
 
             <!-- Grid Layout for Category Buttons -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                <button onclick="filterByDisease('Anti Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Anti Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Anti Cancer Drugs</span>
                 </button>
 
-                <button onclick="filterByDisease('Anti Diabetic')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Anti Diabetic')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Anti Diabetic Drugs</span>
                 </button>
 
-                <button onclick="filterByDisease('Breast Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Breast Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Breast Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Colorectal')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Colorectal')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Colorectal Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Endometrial')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Endometrial')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Endometrial Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Hepatitis')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Hepatitis')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Hepatitis C Virus</span>
                 </button>
 
-                <button onclick="filterByDisease('Kidney')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Kidney')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Kidney Cancer</span>
                 </button>
 
-                <button onclick="filterByDisease('Leukemia')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600/80 hover:bg-sky-500 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm border border-sky-400/20">
+                <button onclick="filterByDisease('Leukemia')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
                     <span>💊</span>
                     <span class="truncate">Leukemia</span>
                 </button>
 
-                <button onclick="filterByDisease('All')" class="col-span-2 sm:col-span-1 text-left px-3.5 py-2.5 rounded-xl bg-sky-950/80 hover:bg-sky-900 text-xs font-bold text-sky-100 transition flex items-center gap-2 border border-sky-400/30">
+                <button onclick="filterByDisease('All')" class="col-span-2 sm:col-span-1 text-left px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-xs font-bold text-white transition flex items-center gap-2">
                     <span>💊</span>
                     <span class="truncate">All Products</span>
                 </button>
@@ -123,14 +147,14 @@
     <!-- Main Content Area (Product Portfolio) -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 mb-12">
         
-        <!-- Water Blue / Sky Header Strip -->
-        <div class="bg-[#0284c7]/90 text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-300/40 shadow-xl backdrop-blur-md">
+        <!-- Header Strip -->
+        <div class="bg-[#0284c7] text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-xl">
             <div>
                 <h2 class="text-xl sm:text-3xl font-extrabold tracking-tight">Product Portfolio</h2>
                 <p class="text-[10px] sm:text-xs text-sky-100 mt-1">Export quality certified oncology and specialty medications.</p>
             </div>
             <!-- Country Flags -->
-            <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-sky-900/40 backdrop-blur-sm p-2 rounded-xl border border-sky-300/30">
+            <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-sky-900/30 p-2 rounded-xl border border-sky-300/30">
                 <span title="Bangladesh">🇧🇩</span>
                 <span title="USA">🇺🇸</span>
                 <span title="India">🇮🇳</span>
@@ -140,17 +164,17 @@
             </div>
         </div>
 
-        <!-- Clean White Overlay Container -->
-        <div class="bg-white/90 backdrop-blur-md p-2.5 sm:p-6 rounded-b-2xl shadow-2xl border border-sky-100">
+        <!-- Clean White Container -->
+        <div class="bg-white p-2.5 sm:p-6 rounded-b-2xl shadow-2xl border border-slate-200">
             
             <!-- Search & Manufacturer Filter Bar -->
-            <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-sky-50/70 p-3 sm:p-4 rounded-xl border border-sky-100">
-                <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-sky-200 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-sky-500 bg-white">
+            <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
+                <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-sky-500 bg-white">
                 <div class="flex gap-1.5 flex-wrap w-full sm:w-auto">
                     <button onclick="filterByCompany('All')" class="px-3 py-1.5 bg-sky-700 text-white text-xs font-semibold rounded-lg hover:bg-sky-800">All Manufacturers</button>
-                    <button onclick="filterByCompany('EVEREST')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50">Everest</button>
-                    <button onclick="filterByCompany('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50">Incepta</button>
-                    <button onclick="filterByCompany('ZISKA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-sky-200 hover:bg-sky-50">Ziska</button>
+                    <button onclick="filterByCompany('EVEREST')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Everest</button>
+                    <button onclick="filterByCompany('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Incepta</button>
+                    <button onclick="filterByCompany('ZISKA')" class="px-3 py-1.5 bg-white text-slate-700 text-xs font-semibold rounded-lg border border-slate-300 hover:bg-slate-100">Ziska</button>
                 </div>
             </div>
 
@@ -166,9 +190,9 @@
         </div>
     </main>
 
-    <!-- Global Export & Distribution Network Map Section -->
+    <!-- Global Export & Distribution Network Map Section (White Background) -->
     <section id="map-section" class="container mx-auto px-3 sm:px-6 mb-16">
-        <div class="bg-white/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl border border-sky-100">
+        <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-2xl border border-slate-200">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 pb-3 border-b border-slate-100 gap-2">
                 <div>
                     <div class="flex items-center gap-2">
@@ -231,7 +255,7 @@
 
     <!-- Floating Contact Popup Widget -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-sky-100 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
+        <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-slate-200 rounded-2xl shadow-2xl p-3 w-56 flex flex-col gap-2 transition-all transform origin-bottom-right">
             <div class="text-xs font-bold text-slate-900 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
                 <span>Contact Us Directly</span>
                 <span class="text-[10px] text-emerald-600 font-semibold">Online</span>
