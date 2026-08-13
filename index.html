@@ -294,15 +294,15 @@
             menu.classList.toggle('hidden');
         }
 
-        // PDF v3.0 Exact 112 Products Data Array
+        // Exact 112 Products Data Array
         const productsData = [
             // EVEREST PHARMACEUTICALS LTD. (1 to 54)
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Adakras 200 mg.jpg" },
             { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
-            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alkixen 250 mg.jpg" },
+            { serial: 4, brand: "Alkixen", generic: "Crizotinib", strength: "250 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Alkixen 250 mg.jpg" },
             { serial: 5, brand: "Alpesib", generic: "Alpelisib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alpesib 150 mg.jpg" },
-            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "ascimib 40 mg.jpg" },
+            { serial: 6, brand: "Ascimib", generic: "Asciminib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ascimib 40 mg.jpg" },
             { serial: 7, brand: "Avapag", generic: "Avatrombopag INN", strength: "20 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "avapag 20 mg.jpg" },
             { serial: 8, brand: "Azarest", generic: "Azacitidine INN", strength: "300 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "azarest 300 mg.jpg" },
             { serial: 9, brand: "Caboxen 20", generic: "Cabozantinib", strength: "20 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Caboxen 20 mg.jpg" },
@@ -389,155 +389,155 @@
             { serial: 82, brand: "Avatropag 20", generic: "Avatrombopag", strength: "20 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Avatropag 20.jpg" },
             { serial: 83, brand: "Tukanic 150", generic: "Tucatinib", strength: "150 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tukanic 150.jpg" },
             { serial: 84, brand: "Ventex 100", generic: "Venetoclax", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ventex 100.jpg" },
-            { serial: 85, brand: "Tirzepatide 2.5", generic: "Tirzepatide", strength: "2.5 mg/0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 2.5.jpg" },
-            { serial: 86, brand: "Tirzepatide 5", generic: "Tirzepatide", strength: "5 mg / 0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 5.jpg" },
-            { serial: 87, brand: "Tirzepatide 7.5", generic: "Tirzepatide", strength: "7.5 mg / 0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 7.5.jpg" },
-            { serial: 88, brand: "Tirzepatide 10", generic: "Tirzepatide", strength: "10 mg / 0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 10.jpg" },
-            { serial: 89, brand: "Tirzepatide 12.5", generic: "Tirzepatide", strength: "12.5 mg / 0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 12.5.jpg" },
-            { serial: 90, brand: "Tirzepatide 15", generic: "Tirzepatide", strength: "15 mg / 0.5 ml", company: "ZISKA PHARMACEUTICALS LTD.", image: "Tirzepatide 15.jpg" },
-            { serial: 91, brand: "Lenvakin 4", generic: "Lenvatinib", strength: "4 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvakin 4.jpg" },
-            { serial: 92, brand: "Lenvakin 10", generic: "Lenvatinib", strength: "10 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvakin 10.jpg" },
-            { serial: 93, brand: "Palbokin 125", generic: "Palbociclib", strength: "125 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Palbokin 125.jpg" },
-            { serial: 94, brand: "Osikin 80", generic: "Osimertinib", strength: "80 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Osikin 80.jpg" },
-            { serial: 95, brand: "Filgotin 100", generic: "Filgotinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Filgotin 100.jpg" },
-            { serial: 96, brand: "Peminib 13.5", generic: "Pemigatinib", strength: "13.5 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Peminib 13.5.jpg" },
-            { serial: 97, brand: "Ascimib 40", generic: "Asciminib", strength: "40 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ascimib 40.jpg" },
-            { serial: 98, brand: "Prestoni 100", generic: "Pralsetinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Prestoni 100.jpg" },
-            { serial: 99, brand: "Acatinib 100", generic: "Acalabrutinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Acatinib 100.jpg" },
-            { serial: 100, brand: "Deucrava 6", generic: "Deucravacitinib", strength: "6 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Deucrava 6.jpg" },
-            { serial: 101, brand: "Caboxib 20", generic: "Cabozantinib", strength: "20 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Caboxib 20.jpg" },
-            { serial: 102, brand: "Caboxib 80", generic: "Cabozantinib", strength: "80 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Caboxib 80.jpg" },
-            { serial: 103, brand: "Olakin 150", generic: "Olaparib", strength: "150 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Olakin 150.jpg" },
-            { serial: 104, brand: "Brutini 140", generic: "Ibrutinib", strength: "140 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Brutini 140.jpg" },
-            { serial: 105, brand: "Anlotib 12", generic: "Anlotinib", strength: "12 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Anlotib 12.jpg" },
-            { serial: 106, brand: "Trombola 25", generic: "Eltrombopag", strength: "25 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Trombola 25.jpg" },
-            { serial: 107, brand: "Trombola 50", generic: "Eltrombopag", strength: "50 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Trombola 50.jpg" },
-            { serial: 108, brand: "Mobonib 40", generic: "Mobocertinib", strength: "40 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Mobonib 40.jpg" },
-            { serial: 109, brand: "Ruxonib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ruxonib Cream.jpg" },
-            { serial: 110, brand: "Nivomab 100", generic: "Nivolumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Nivomab 100.jpg" },
-            { serial: 111, brand: "Nivomab 40", generic: "Nivolumab", strength: "40 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Nivomab 40.jpg" },
-            { serial: 112, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Pemromab 100.jpg" }
+            { serial: 85, brand: "Abira 250", generic: "Abiraterone Acetate", strength: "250 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Abira 250.jpg" },
+            { serial: 86, brand: "Acala 100", generic: "Acalabrutinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Acala 100.jpg" },
+            { serial: 87, brand: "Apalu 60", generic: "Apalutamide", strength: "60 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Apalu 60.jpg" },
+            { serial: 88, brand: "Axizis 5", generic: "Axitinib", strength: "5 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Axizis 5.jpg" },
+            { serial: 89, brand: "Cabozis 20", generic: "Cabozantinib", strength: "20 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Cabozis 20.jpg" },
+            { serial: 90, brand: "Cabozis 80", generic: "Cabozantinib", strength: "80 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Cabozis 80.jpg" },
+            { serial: 91, brand: "Dabrazis 75", generic: "Dabrafenib", strength: "75 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Dabrazis 75.jpg" },
+            { serial: 92, brand: "Dasazis 50", generic: "Dasatinib", strength: "50 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Dasazis 50.jpg" },
+            { serial: 93, brand: "Dasazis 100", generic: "Dasatinib", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Dasazis 100.jpg" },
+            { serial: 94, brand: "Eltrom 25", generic: "Eltrombopag", strength: "25 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Eltrom 25.jpg" },
+            { serial: 95, brand: "Eltrom 50", generic: "Eltrombopag", strength: "50 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Eltrom 50.jpg" },
+            { serial: 96, brand: "Enzazis 40", generic: "Enzalutamide", strength: "40 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Enzazis 40.jpg" },
+            { serial: 97, brand: "Everozis 10", generic: "Everolimus", strength: "10 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Everozis 10.jpg" },
+            { serial: 98, brand: "Gefizis 250", generic: "Gefitinib", strength: "250 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Gefizis 250.jpg" },
+            { serial: 99, brand: "Ibruzis 140", generic: "Ibrutinib", strength: "140 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ibruzis 140.jpg" },
+            { serial: 100, brand: "Imatizis 400", generic: "Imatinib", strength: "400 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Imatizis 400.jpg" },
+            { serial: 101, brand: "Lapazis 250", generic: "Lapatinib", strength: "250 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lapazis 250.jpg" },
+            { serial: 102, brand: "Lenvazis 4", generic: "Lenvatinib", strength: "4 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvazis 4.jpg" },
+            { serial: 103, brand: "Lenvazis 10", generic: "Lenvatinib", strength: "10 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Lenvazis 10.jpg" },
+            { serial: 104, brand: "Nilozis 200", generic: "Nilotinib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Nilozis 200.jpg" },
+            { serial: 105, brand: "Olazis 150", generic: "Olaparib", strength: "150 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Olazis 150.jpg" },
+            { serial: 106, brand: "Osizis 80", generic: "Osimertinib", strength: "80 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Osizis 80.jpg" },
+            { serial: 107, brand: "Palbozis 125", generic: "Palbociclib", strength: "125 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Palbozis 125.jpg" },
+            { serial: 108, brand: "Pazozis 200", generic: "Pazopanib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Pazozis 200.jpg" },
+            { serial: 109, brand: "Ponazis 15", generic: "Ponatinib", strength: "15 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ponazis 15.jpg" },
+            { serial: 110, brand: "Ribozis 200", generic: "Ribociclib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ribozis 200.jpg" },
+            { serial: 111, brand: "Ruxozis 10", generic: "Ruxolitinib", strength: "10 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ruxozis 10.jpg" },
+            { serial: 112, brand: "Sunizis 50", generic: "Sunitinib", strength: "50 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Sunizis 50.jpg" }
         ];
 
+        let currentCompany = 'All';
+        let currentDisease = 'All';
+        let searchQuery = '';
         let currentPage = 1;
-        const itemsPerPage = 8;
-        let filteredProducts = [...productsData];
+        const itemsPerPage = 12;
 
-        function renderProducts(page = 1) {
-            currentPage = page;
-            const container = document.getElementById('product-grid-container');
-            if (!container) return;
+        function getFilteredProducts() {
+            return productsData.filter(product => {
+                const matchCompany = (currentCompany === 'All') || product.company.toUpperCase().includes(currentCompany.toUpperCase());
+                const matchSearch = product.brand.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    product.generic.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchCompany && matchSearch;
+            });
+        }
+
+        function renderProducts() {
+            const filtered = getFilteredProducts();
+            const totalPages = Math.ceil(filtered.length / itemsPerPage) || 1;
             
-            container.innerHTML = '';
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
 
-            const start = (page - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const pageProducts = filteredProducts.slice(start, end);
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const paginatedItems = filtered.slice(startIndex, startIndex + itemsPerPage);
 
-            if (pageProducts.length === 0) {
-                container.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-medium">No products found.</div>`;
-                renderPagination();
+            const gridContainer = document.getElementById('product-grid-container');
+            
+            if (filtered.length === 0) {
+                gridContainer.innerHTML = `<div class="col-span-full text-center py-12 text-slate-500 font-semibold">No products found matching your criteria.</div>`;
+                renderPagination(0);
                 return;
             }
 
-            pageProducts.forEach(product => {
-                const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-2.5 sm:p-4";
-                
-                card.innerHTML = `
-                    <div>
-                        <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
-                            <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
-                        </div>
+            gridContainer.innerHTML = paginatedItems.map(product => {
+                const encodedImgPath = encodeURI(product.image);
+                const lowercaseImgPath = encodeURI(product.image.toLowerCase());
 
-                        <div class="flex items-center gap-1 mb-1">
-                            <span class="text-[10px] sm:text-xs">💊</span>
-                            <span class="text-[9px] sm:text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
-                                ${product.company}
-                            </span>
-                        </div>
-
-                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight truncate">
-                            ${product.brand} <span class="font-semibold text-slate-600 block sm:inline text-[10px] sm:text-xs">(${product.strength})</span>
-                        </h3>
-
-                        <p class="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 truncate">
-                            Generic: ${product.generic}
-                        </p>
+                return `
+                <div class="bg-white rounded-xl border border-slate-200 p-3 shadow-sm hover:shadow-md transition flex flex-col justify-between group">
+                    <div class="relative w-full h-36 sm:h-44 rounded-lg bg-slate-50 overflow-hidden mb-3 border border-slate-100 flex items-center justify-center">
+                        <img src="${encodedImgPath}" 
+                             alt="${product.brand}" 
+                             class="max-h-full max-w-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                             onerror="if(!this.dataset.tried){this.dataset.tried='1'; this.src='${lowercaseImgPath}';} else {this.onerror=null; this.src='logo.png';}">
+                        <span class="absolute top-2 left-2 bg-slate-900/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">#${product.serial}</span>
                     </div>
-
-                    <div class="mt-3 sm:mt-5 pt-2 sm:pt-3 flex flex-col sm:flex-row gap-1.5 sm:gap-0 justify-between items-stretch sm:items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-800 text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded border border-sky-200 text-center">
-                            Verified
-                        </span>
-                        <a href="https://wa.me/8801944887517?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3.5 py-1 sm:py-1.5 rounded transition shadow-sm text-center">
-                            Message
-                        </a>
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div>
+                            <h4 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug">${product.brand}</h4>
+                            <p class="text-xs text-sky-700 font-semibold mt-0.5">${product.generic}</p>
+                            <p class="text-[11px] text-slate-500 font-medium">${product.strength}</p>
+                        </div>
+                        <div class="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-[9px] font-bold uppercase tracking-wider text-slate-400 truncate max-w-[120px]">${product.company.replace(' PHARMACEUTICALS LTD.', '')}</span>
+                            <a href="https://wa.me/8801944887517?text=Inquiry%20about%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg transition flex items-center gap-1">
+                                Order 💬
+                            </a>
+                        </div>
                     </div>
-                `;
-                container.appendChild(card);
-            });
+                </div>
+            `}).join('');
 
-            renderPagination();
+            renderPagination(totalPages);
         }
 
-        function renderPagination() {
+        function renderPagination(totalPages) {
             const container = document.getElementById('pagination-container');
-            if (!container) return;
-            container.innerHTML = '';
+            if (totalPages <= 1) {
+                container.innerHTML = '';
+                return;
+            }
 
-            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-            if (totalPages <= 1) return;
+            let html = `<button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold ${currentPage === 1 ? 'opacity-50 cursor-not-allowed bg-slate-100' : 'hover:bg-slate-100 bg-white'}">Prev</button>`;
 
             for (let i = 1; i <= totalPages; i++) {
-                const btn = document.createElement('button');
-                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-sky-600 text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}`;
-                btn.innerText = i;
-                btn.onclick = () => {
-                    renderProducts(i);
-                    document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
-                };
-                container.appendChild(btn);
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    html += `<button onclick="goToPage(${i})" class="px-3 py-1.5 rounded-lg text-xs font-bold ${i === currentPage ? 'bg-sky-600 text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}">${i}</button>`;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    html += `<span class="px-1 text-slate-400 text-xs font-bold">...</span>`;
+                }
             }
+
+            html += `<button onclick="goToPage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''} class="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed bg-slate-100' : 'hover:bg-slate-100 bg-white'}">Next</button>`;
+
+            container.innerHTML = html;
         }
 
-        function filterByCompany(companyKeyword) {
-            if (companyKeyword === 'All') {
-                filteredProducts = [...productsData];
-            } else {
-                filteredProducts = productsData.filter(p => 
-                    p.company.toLowerCase().includes(companyKeyword.toLowerCase())
-                );
-            }
-            renderProducts(1);
-        }
-
-        function filterByDisease(diseaseKeyword) {
-            if (diseaseKeyword === 'All') {
-                filteredProducts = [...productsData];
-            } else {
-                filteredProducts = productsData.filter(p => 
-                    p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
-                    p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase()) ||
-                    p.company.toLowerCase().includes(diseaseKeyword.toLowerCase())
-                );
-            }
-            renderProducts(1);
+        function goToPage(page) {
+            currentPage = page;
+            renderProducts();
             document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        document.getElementById('search-input')?.addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-            filteredProducts = productsData.filter(p => 
-                p.brand.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().includes(query) ||
-                p.company.toLowerCase().includes(query)
-            );
-            renderProducts(1);
+        function filterByCompany(company) {
+            currentCompany = company;
+            currentPage = 1;
+            renderProducts();
+        }
+
+        function filterByDisease(disease) {
+            currentDisease = disease;
+            if (disease === 'All') {
+                searchQuery = '';
+            } else {
+                searchQuery = disease;
+            }
+            document.getElementById('search-input').value = searchQuery;
+            currentPage = 1;
+            renderProducts();
+        }
+
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            currentPage = 1;
+            renderProducts();
         });
 
-        // Initialize Render
-        renderProducts(1);
+        // Initial Render
+        renderProducts();
     </script>
 </body>
 </html>
