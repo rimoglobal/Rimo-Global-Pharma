@@ -12,7 +12,7 @@
     </style>
 </head>
 <!-- Soft Sky / Water Blue Transparent Overlay to highlight Cancer Cell Background -->
-<body class="bg-[#0e2a47] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.55), rgba(12, 74, 110, 0.65)), url('cancer-cell-bg.jpg.png');">
+<body class="bg-[#0e2a47] text-slate-800 bg-fixed bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(14, 42, 71, 0.75), rgba(12, 74, 110, 0.85)), url('cancer-cell-bg.jpg.png'); background-attachment: fixed; background-size: cover; background-position: center;">
 
     <!-- Top Navigation Bar -->
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-sky-100">
@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area (Updated to grid-cols-2 for Mobile View) -->
+            <!-- Product Grid Area -->
             <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
@@ -166,7 +166,7 @@
         </div>
     </main>
 
-    <!-- Global Export & Distribution Network Map Section (White Background Version) -->
+    <!-- Global Export & Distribution Network Map Section -->
     <section id="map-section" class="container mx-auto px-3 sm:px-6 mb-16">
         <div class="bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl border border-sky-100">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 pb-3 border-b border-slate-100 gap-2">
@@ -203,21 +203,19 @@
                 </div>
             </div>
 
-            <!-- Multi-Column Grid Layout matching Everest Style -->
+            <!-- Multi-Column Grid Layout -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs sm:text-sm mb-12">
                 
                 <!-- Column 1: Follow Us & Social -->
                 <div>
                     <h3 class="text-white text-lg font-normal mb-4">Follow us</h3>
                     
-                    <!-- Social Media Circle Buttons -->
                     <div class="flex items-center gap-2.5 mb-5">
                         <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">f</a>
                         <a href="https://wa.me/8801742705183" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">💬</a>
                         <a href="mailto:rimoglobalpharma@gmail.com" class="w-8 h-8 rounded-full bg-white text-slate-800 flex items-center justify-center font-bold text-xs hover:bg-sky-400 transition">in</a>
                     </div>
 
-                    <!-- Links List -->
                     <ul class="space-y-1.5 text-slate-300 text-xs mb-6">
                         <li><a href="#about-section" class="hover:text-white transition">Privacy Policy</a></li>
                         <li><a href="#about-section" class="hover:text-white transition">Terms & Conditions</a></li>
@@ -226,7 +224,6 @@
                         <li><a href="#products-section" class="hover:text-white transition">Sitemap</a></li>
                     </ul>
 
-                    <!-- Outline Box (Career / Info Box) -->
                     <div class="border border-white/80 p-3.5 max-w-[220px]">
                         <h4 class="text-white font-medium text-sm mb-1">Rimo Global</h4>
                         <p class="text-[11px] text-slate-300 italic leading-snug">
@@ -261,7 +258,6 @@
                         <li><a href="https://wa.me/8801742705183" target="_blank" class="hover:text-white transition">Doctors Query</a></li>
                     </ul>
 
-                    <!-- Outline Box (Webmail Box) -->
                     <div class="border border-white/80 p-3.5 max-w-[220px]">
                         <h4 class="text-white font-medium text-sm mb-1">Webmail</h4>
                         <p class="text-[11px] text-slate-300 italic leading-snug">
@@ -487,16 +483,15 @@
         document.getElementById('search-input')?.addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
-                p.brand.toLowerCase().includes(query) || 
+                p.brand.toLowerCase().includes(query) ||
                 p.generic.toLowerCase().includes(query) ||
                 p.company.toLowerCase().includes(query)
             );
             renderProducts(1);
         });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts(1);
-        });
+        // Initialize Render
+        renderProducts(1);
     </script>
 </body>
 </html>
