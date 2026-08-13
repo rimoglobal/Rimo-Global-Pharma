@@ -1,15 +1,47 @@
-// ZISKA PHARMACEUTICALS LTD. (Continued)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 p-4 sm:p-8">
+
+    <!-- Search & Filter Controls -->
+    <div id="products-section" class="max-w-7xl mx-auto mb-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <input type="text" id="search-input" placeholder="Search by brand or generic name..." class="w-full md:w-96 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500">
+        
+        <div class="flex gap-2">
+            <button onclick="filterByCompany('All')" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-xs font-bold rounded-lg">All Companies</button>
+            <button onclick="filterByCompany('ZISKA PHARMACEUTICALS LTD.')" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-xs font-bold rounded-lg">Ziska</button>
+        </div>
+    </div>
+
+    <!-- Product Grid Container -->
+    <div id="product-grid-container" class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- JS renders products here -->
+    </div>
+
+    <!-- Pagination Container -->
+    <div id="pagination-container" class="max-w-7xl mx-auto mt-8 flex justify-center gap-2">
+        <!-- JS renders pagination here -->
+    </div>
+
+    <!-- JavaScript Code inside Script Tag -->
+    <script>
+        const productsData = [
             { serial: 84, brand: "Ventex 100", generic: "Venetoclax", strength: "100 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "Ventex 100.jpg" }
-            // Additional products (85-112) can be added following this exact object structure
+            // Add more product objects here
         ];
 
         let currentPage = 1;
         const itemsPerPage = 12;
         let filteredProducts = [...productsData];
 
-        // Render Product Cards
         function renderProducts(page = 1) {
             const grid = document.getElementById('product-grid-container');
+            if (!grid) return;
             grid.innerHTML = '';
 
             const start = (page - 1) * itemsPerPage;
@@ -45,9 +77,9 @@
             renderPagination(Math.ceil(filteredProducts.length / itemsPerPage));
         }
 
-        // Render Pagination Controls
         function renderPagination(totalPages) {
             const container = document.getElementById('pagination-container');
+            if (!container) return;
             container.innerHTML = '';
 
             if (totalPages <= 1) return;
@@ -59,13 +91,12 @@
                 btn.onclick = () => {
                     currentPage = i;
                     renderProducts(currentPage);
-                    document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth' });
                 };
                 container.appendChild(btn);
             }
         }
 
-        // Search Filter
         document.getElementById('search-input')?.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
             filteredProducts = productsData.filter(p => 
@@ -76,7 +107,6 @@
             renderProducts(currentPage);
         });
 
-        // Manufacturer Filter
         function filterByCompany(company) {
             if (company === 'All') {
                 filteredProducts = [...productsData];
@@ -87,21 +117,6 @@
             renderProducts(currentPage);
         }
 
-        // Category / Disease Filter
-        function filterByDisease(category) {
-            if (category === 'All') {
-                filteredProducts = [...productsData];
-            } else {
-                filteredProducts = productsData.filter(p => 
-                    p.brand.toLowerCase().includes(category.toLowerCase()) || 
-                    p.generic.toLowerCase().includes(category.toLowerCase())
-                );
-            }
-            currentPage = 1;
-            renderProducts(currentPage);
-        }
-
-        // Initialize on Load
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts(1);
         });
