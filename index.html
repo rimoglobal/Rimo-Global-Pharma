@@ -146,8 +146,8 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area -->
-            <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
+            <!-- Product Grid Area (কাস্টমাইজড: মোবাইলে ১টি, ট্যাবলেটে ৩টি, ডেক্সটপে ৪টি প্রোডাক্ট দেখাবে) -->
+            <div id="product-grid-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
 
@@ -376,7 +376,7 @@
         ];
 
         let currentPage = 1;
-        const itemsPerPage = 12; // Adjusted to show 12 items per page for clean grid alignment
+        const itemsPerPage = 12;
         let filteredProducts = [...productsData];
 
         function renderProducts(page = 1) {
@@ -398,34 +398,35 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-2.5 sm:p-4";
+                /* প্রোডাক্ট কার্ডটি মোবাইলে সুন্দর ও বড় দেখাবে */
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between p-4 sm:p-4";
                 
                 card.innerHTML = `
                     <div>
-                        <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
+                        <div class="w-full h-48 sm:h-36 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-2">
                             <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
                         </div>
 
                         <div class="flex items-center gap-1 mb-1">
-                            <span class="text-[9px] sm:text-[11px] font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
+                            <span class="text-xs font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
                                 ${product.company}
                             </span>
                         </div>
 
-                        <h3 class="font-extrabold text-slate-900 text-xs sm:text-base leading-tight truncate">
-                            ${product.brand} <span class="font-semibold text-slate-600 block sm:inline text-[10px] sm:text-xs">(${product.strength})</span>
+                        <h3 class="font-extrabold text-slate-900 text-lg sm:text-base leading-tight truncate">
+                            ${product.brand} <span class="font-semibold text-slate-600 text-sm sm:text-xs">(${product.strength})</span>
                         </h3>
 
-                        <p class="text-[10px] sm:text-xs text-slate-600 font-medium mt-0.5 truncate">
+                        <p class="text-sm sm:text-xs text-slate-600 font-medium mt-1 truncate">
                             Generic: ${product.generic}
                         </p>
                     </div>
 
-                    <div class="mt-3 sm:mt-5 pt-2 sm:pt-3 flex flex-col sm:flex-row gap-1.5 sm:gap-0 justify-between items-stretch sm:items-center border-t border-slate-100">
-                        <span class="bg-sky-50 text-sky-800 text-[9px] sm:text-[11px] font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded border border-sky-200 text-center">
+                    <div class="mt-4 sm:mt-5 pt-3 flex flex-col sm:flex-row gap-2 sm:gap-0 justify-between items-stretch sm:items-center border-t border-slate-100">
+                        <span class="bg-sky-50 text-sky-800 text-xs sm:text-[11px] font-bold px-3 py-1 rounded border border-sky-200 text-center">
                             Verified
                         </span>
-                        <a href="https://wa.me/8801944887517?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3.5 py-1 sm:py-1.5 rounded transition shadow-sm text-center">
+                        <a href="https://wa.me/8801944887517?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-xs font-bold px-4 py-2 rounded transition shadow-sm text-center">
                             Message
                         </a>
                     </div>
