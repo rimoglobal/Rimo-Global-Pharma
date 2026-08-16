@@ -40,11 +40,11 @@
         </div>
     </header>
 
-    <!-- SAIF PHARMA Style Full-Width Banner Layout -->
+    <!-- Banner Layout -->
     <section id="home" class="w-full py-0">
         <div class="w-full flex flex-col lg:flex-row bg-[#1d5fa8] shadow-lg overflow-hidden">
             
-            <!-- Left Sidebar Navigation (Full Height) -->
+            <!-- Left Sidebar Navigation -->
             <div id="categories-section" class="w-full lg:w-80 bg-[#185294] border-b lg:border-b-0 lg:border-r border-sky-700/30 p-3 sm:p-4 flex flex-col shrink-0 justify-center">
                 <div class="space-y-1.5">
                     <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-4 py-3.5 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <!-- Right Hero Banner (Bigger Height & Full Width) -->
+            <!-- Right Hero Banner -->
             <div class="grow relative flex items-center justify-center p-8 sm:p-20 text-center min-h-[500px] sm:min-h-[650px] bg-cover bg-center" style="background-image: url('cell-bg.png');">
                 <div class="max-w-4xl mx-auto z-10">
                     <h1 class="text-4xl sm:text-7xl font-black text-white tracking-tight uppercase mb-6 text-glow-sharp">
@@ -110,7 +110,7 @@
         </div>
     </section>
 
-    <!-- Main Content Area (Product Portfolio) -->
+    <!-- Main Content Area -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 mb-12">
         
         <!-- Header Strip -->
@@ -250,9 +250,7 @@
             menu.classList.toggle('hidden');
         }
 
-        // PDF v3.0 Exact 112 Products Data Array
         const productsData = [
-            // EVEREST PHARMACEUTICALS LTD. (1 to 54)
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Adakras 200 mg.jpg" },
             { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
@@ -307,8 +305,6 @@
             { serial: 52, brand: "Tucaxen", generic: "Tucatinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Tucaxen 150 mg.jpg" },
             { serial: 53, brand: "Upajak", generic: "Upadacitinib", strength: "15 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Upajak 15 mg.jpg" },
             { serial: 54, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" },
-
-            // DRUGS INTERNATIONAL LTD. (55 to 64)
             { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Osinib 80 mg.png" },
             { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Avalet-20 mg.png" },
             { serial: 57, brand: "Tocit-5", generic: "Tofacitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Tocit-5 mg.png" },
@@ -319,20 +315,14 @@
             { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Venex 100 mg.png" },
             { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib-5 mg.png" },
             { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib D" },
-
-            // INCEPTA PHARMACEUTICALS LTD. (65 to 70)
             { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Crizocent" },
             { serial: 66, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ibrucent 140 mg.jpg" },
             { serial: 67, brand: "Osicent 80", generic: "Osimertinib", strength: "80 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Osicent 80 mg.webp" },
             { serial: 68, brand: "Palbocent 125", generic: "Palbociclib", strength: "125 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "palbocent" },
             { serial: 69, brand: "Panovir", generic: "Sofosbuvir & Velpatasvir", strength: "400 mg / 100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Panovir" },
             { serial: 70, brand: "Tofacent 5", generic: "Tofacitinib", strength: "5 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Tofacent 5 mg.jpg" },
-
-            // GENERAL PHARMACEUTICALS LTD. (71 to 72)
             { serial: 71, brand: "Barigen 2", generic: "Baricitinib", strength: "2 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Barigen 2 mg.jfif" },
             { serial: 72, brand: "Barigen 4", generic: "Baricitinib", strength: "4 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Barigen 4 mg.jpg" },
-
-            // ZISKA PHARMACEUTICALS LTD. (73 to 112)
             { serial: 73, brand: "Upanib 15", generic: "Upadacitinib", strength: "15 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "1.png" },
             { serial: 74, brand: "Pmatinib 200", generic: "Capmatinib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "2.jpg" },
             { serial: 75, brand: "Crizona 250", generic: "Crizotinib", strength: "250 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "3.jpg" },
@@ -376,7 +366,7 @@
         ];
 
         let currentPage = 1;
-        const itemsPerPage = 12; // Adjusted to show 12 items per page for clean grid alignment
+        const itemsPerPage = 12;
         let filteredProducts = [...productsData];
 
         function renderProducts(page = 1) {
@@ -402,8 +392,9 @@
                 
                 card.innerHTML = `
                     <div>
-                        <div class="w-full h-28 sm:h-36 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
-                            <img src="${product.image}" alt="${product.brand}" class="max-h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
+                        <!-- প্রোডাক্ট ইমেজের কন্টেইনার সাইজ বাড়ানো হয়েছে -->
+                        <div class="w-full h-44 sm:h-60 bg-slate-50 rounded-lg mb-2 sm:mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1.5 sm:p-2">
+                            <img src="${product.image}" alt="${product.brand}" class="w-full h-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
                         </div>
 
                         <div class="flex items-center gap-1 mb-1">
