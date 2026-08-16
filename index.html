@@ -27,7 +27,6 @@
             background-size: cover;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .bg-cancer-layer {
                 background-size: cover;
@@ -35,7 +34,6 @@
             }
         }
 
-        /* Extreme Text Glow & Shadow to eliminate box/card and keep cell 100% visible */
         .text-glow-sharp {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 
                          0 4px 12px rgba(0, 0, 0, 0.9),
@@ -66,23 +64,72 @@
         </div>
     </header>
 
-    <!-- Hero Banner Section -->
-    <section id="home" class="relative py-20 sm:py-32">
-        <div class="container mx-auto px-4 sm:px-8 text-center max-w-4xl">
-            <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-4 text-white text-glow-sharp">
-                RIMO GLOBAL PHARMA
-            </h1>
-            <p class="text-sm sm:text-lg text-white leading-relaxed font-semibold mb-8 text-glow-sharp max-w-2xl mx-auto">
-                We are a trusted supplier of high-quality oncology medicines sourced directly from top-tier Bangladeshi manufacturers, delivering safe and reliable healthcare solutions worldwide.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-2xl transition border border-sky-400/30">
-                    Contact Us
-                </a>
-                <a href="#products-section" class="bg-slate-900/90 hover:bg-slate-950 text-white font-bold px-8 py-3 rounded-xl text-sm border border-slate-700/80 shadow-2xl backdrop-blur-sm transition">
-                    View Products
-                </a>
+    <!-- SAIF PHARMA Style Layout Block (Sidebar Categories + Hero Banner) -->
+    <section id="home" class="container mx-auto px-0 sm:px-6 py-4 sm:py-8">
+        <div class="flex flex-col lg:flex-row bg-[#0f3d7a]/90 backdrop-blur-md rounded-none sm:rounded-2xl shadow-2xl overflow-hidden border border-sky-900/50">
+            
+            <!-- Left Sidebar Navigation -->
+            <div id="categories-section" class="w-full lg:w-72 bg-[#0c3162] border-b lg:border-b-0 lg:border-r border-sky-800/40 p-2 sm:p-3 flex flex-col shrink-0">
+                <div class="space-y-1">
+                    <button onclick="filterByDisease('Anti Cancer')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Anti Cancer Drugs</span>
+                    </button>
+                    <button onclick="filterByDisease('Anti Diabetic')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Anti Diabetic Drugs</span>
+                    </button>
+                    <button onclick="filterByDisease('Breast Cancer')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Breast Cancer</span>
+                    </button>
+                    <button onclick="filterByDisease('Colorectal')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Colorectal Cancer</span>
+                    </button>
+                    <button onclick="filterByDisease('Endometrial')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Endometrial Cancer</span>
+                    </button>
+                    <button onclick="filterByDisease('Hepatitis')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Hepatitis C Virus</span>
+                    </button>
+                    <button onclick="filterByDisease('Kidney')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Kidney Cancer</span>
+                    </button>
+                    <button onclick="filterByDisease('Leukemia')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3 border-b border-sky-800/30">
+                        <span>💊</span>
+                        <span class="truncate">Leukemia</span>
+                    </button>
+                    <button onclick="filterByDisease('All')" class="w-full text-left px-4 py-3 rounded-lg hover:bg-sky-700/50 text-white text-xs sm:text-sm font-bold transition flex items-center gap-3">
+                        <span>💊</span>
+                        <span class="truncate">All Products</span>
+                    </button>
+                </div>
             </div>
+
+            <!-- Right Hero Banner -->
+            <div class="grow relative flex items-center justify-center p-8 sm:p-16 text-center min-h-[350px] sm:min-h-[480px]">
+                <div class="max-w-2xl mx-auto z-10">
+                    <h1 class="text-3xl sm:text-6xl font-black text-white tracking-tight uppercase mb-4 text-glow-sharp">
+                        RIMO GLOBAL PHARMA
+                    </h1>
+                    <p class="text-base sm:text-2xl font-bold text-white leading-snug text-glow-sharp mb-8">
+                        Best Oncology Medicines Supplier In Bangladesh
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-2xl transition border border-sky-400/30">
+                            Contact Us
+                        </a>
+                        <a href="#products-section" class="bg-slate-900/90 hover:bg-slate-950 text-white font-bold px-8 py-3 rounded-xl text-sm border border-slate-700/80 shadow-2xl backdrop-blur-sm transition">
+                            View Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -93,64 +140,6 @@
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium">
                 RIMO GLOBAL PHARMA LIMITED is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients.
             </p>
-        </div>
-    </section>
-
-    <!-- Therapeutic Categories Section -->
-    <section id="categories-section" class="container mx-auto px-3 sm:px-6 mb-8">
-        <div class="bg-white rounded-2xl shadow-xl p-5 sm:p-6 border border-slate-200">
-            <div class="px-2 pb-3 text-sm sm:text-base font-extrabold uppercase tracking-wider text-slate-900 border-b border-slate-100 mb-4 flex items-center justify-between">
-                <span>Therapeutic Categories</span>
-                <span>📂</span>
-            </div>
-
-            <!-- Grid Layout for Category Buttons -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                <button onclick="filterByDisease('Anti Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Anti Cancer Drugs</span>
-                </button>
-
-                <button onclick="filterByDisease('Anti Diabetic')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Anti Diabetic Drugs</span>
-                </button>
-
-                <button onclick="filterByDisease('Breast Cancer')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Breast Cancer</span>
-                </button>
-
-                <button onclick="filterByDisease('Colorectal')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Colorectal Cancer</span>
-                </button>
-
-                <button onclick="filterByDisease('Endometrial')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Endometrial Cancer</span>
-                </button>
-
-                <button onclick="filterByDisease('Hepatitis')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Hepatitis C Virus</span>
-                </button>
-
-                <button onclick="filterByDisease('Kidney')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Kidney Cancer</span>
-                </button>
-
-                <button onclick="filterByDisease('Leukemia')" class="text-left px-3.5 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-xs font-bold text-white transition flex items-center gap-2 shadow-sm">
-                    <span>💊</span>
-                    <span class="truncate">Leukemia</span>
-                </button>
-
-                <button onclick="filterByDisease('All')" class="col-span-2 sm:col-span-1 text-left px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-950 text-xs font-bold text-white transition flex items-center gap-2">
-                    <span>💊</span>
-                    <span class="truncate">All Products</span>
-                </button>
-            </div>
         </div>
     </section>
 
@@ -214,9 +203,9 @@
                     <p class="text-xs text-slate-600 mt-1 font-medium">Exporting High-Quality Oncology & Specialty Medicines Worldwide.</p>
                 </div>
                 <div class="flex items-center gap-2">
-    <span class="inline-block w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
-    <span class="text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
-</div>
+                    <span class="inline-block w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
+                </div>
             </div>
 
             <!-- Embedded Interactive Map -->
@@ -363,7 +352,6 @@
             { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Venex 100 mg.png" },
             { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib-5 mg.png" },
             { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib D" },
-
 
             // INCEPTA PHARMACEUTICALS LTD. (65 to 70)
             { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Crizocent" },
