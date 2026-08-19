@@ -13,61 +13,32 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
         }
 
-        .text-glow-sharp {
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9), 
-                         0 4px 12px rgba(0, 0, 0, 0.9),
-                         0 0 20px rgba(0, 0, 0, 0.8);
-        }
-
-        /* 3D Blue Effect for RIMO */
-        .rimo-blue-3d {
+        /* Clean & Modern Brand Colors (Shadow & Glow Removed) */
+        .brand-blue {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            background: linear-gradient(180deg, #00d2ff 0%, #0066eb 50%, #003785 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(1px 1px 0px #002255)
-                    drop-shadow(2px 2px 0px #001538)
-                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+            color: #0052b4;
+            letter-spacing: 0.5px;
         }
 
-        /* 3D Bright Gold Effect for GLOBAL */
-        .rimo-gold-3d {
+        .brand-dark {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            background: linear-gradient(180deg, #fff3a1 0%, #f1b70e 45%, #bf8100 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(1px 1px 0px #704b00)
-                    drop-shadow(2px 2px 0px #422c00)
-                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
-        }
-
-        /* 3D Metallic Gold Effect for PHARMA & LIMITED */
-        .rimo-metallic-gold-3d {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            background: linear-gradient(180deg, #ffe082 0%, #d4af37 40%, #aa7c11 70%, #6b4c00 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(1px 1px 0px #4a3400)
-                    drop-shadow(2px 2px 0px #291d00)
-                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
 <body class="text-slate-900 bg-white min-h-screen relative">
 
     <!-- Top Navigation Bar -->
-    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-md border-b border-sky-100">
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-sky-100">
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
-                <div class="text-xl sm:text-2xl font-extrabold tracking-tight flex items-center gap-1.5 flex-wrap">
-                    <span class="rimo-blue-3d">RIMO</span>
-                    <span class="rimo-gold-3d">GLOBAL</span>
-                    <span class="rimo-metallic-gold-3d">PHARMA</span>
-                    <span class="rimo-metallic-gold-3d">LIMITED</span>
+                <div class="text-xl sm:text-2xl font-extrabold tracking-tight flex items-center gap-2 flex-wrap">
+                    <span class="brand-blue">RIMO</span>
+                    <span class="brand-dark">GLOBAL PHARMA LIMITED</span>
                 </div>
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-800">
@@ -118,18 +89,18 @@
                 </div>
             </div>
 
-            <!-- Right Hero Banner (Bigger Height & Full Width) -->
+            <!-- Right Hero Banner -->
             <div class="grow relative flex items-center justify-center p-8 sm:p-20 text-center min-h-[500px] sm:min-h-[650px] bg-cover bg-center" style="background-image: url('cell-bg.png');">
                 <div class="max-w-4xl mx-auto z-10">
-                   <h1 class="text-3xl sm:text-6xl font-[900] text-white tracking-[0.25em] uppercase mb-4 text-glow-sharp" style="font-family: 'Montserrat', sans-serif;">
-    RIMO GLOBAL PHARMA LTD
-</h1>
-<p class="text-sm sm:text-xl font-extrabold text-white tracking-[0.15em] uppercase mb-3 text-glow-sharp" style="font-family: 'Montserrat', sans-serif;">
-    GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
-</p>
-<p class="text-xs sm:text-lg font-semibold text-slate-100 tracking-[0.05em] mb-10 text-glow-sharp" style="font-family: 'Montserrat', sans-serif;">
-    Best Oncology Medicines Supplier In Bangladesh
-</p>
+                    <h1 class="text-3xl sm:text-6xl font-[900] text-white tracking-[0.20em] uppercase mb-4" style="font-family: 'Montserrat', sans-serif;">
+                        RIMO GLOBAL PHARMA LTD
+                    </h1>
+                    <p class="text-sm sm:text-xl font-extrabold text-white tracking-[0.10em] uppercase mb-3" style="font-family: 'Montserrat', sans-serif;">
+                        GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
+                    </p>
+                    <p class="text-xs sm:text-lg font-semibold text-slate-100 tracking-[0.05em] mb-10" style="font-family: 'Montserrat', sans-serif;">
+                        Best Oncology Medicines Supplier In Bangladesh
+                    </p>
                     <div class="flex flex-wrap justify-center gap-5">
                         <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white font-bold px-10 py-4 rounded-xl text-base shadow-2xl transition border border-sky-400/30">
                             Contact Us
@@ -234,22 +205,22 @@
                     <h3 class="text-white text-lg font-bold mb-4">Follow us</h3>
                     <div class="flex items-center gap-2.5 mb-5">
                         <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">f</a>
-                      <a href="https://wa.me/8801742705183" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">💬</a>
+                        <a href="https://wa.me/8801742705183" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center font-bold text-sm hover:bg-sky-400 transition">💬</a>
                         <a href="mailto:rimoglobalcompany@gmail.com" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center font-bold text-xs hover:bg-sky-400 transition">in</a>
                     </div>
                 </div>
-<div>
-    <h3 class="text-white text-base font-bold mb-3">Office Address</h3>
-    <ul class="space-y-2 font-medium text-slate-300 text-xs">
-        <li class="text-white font-bold">Rimo Global Pharma Limited</li>
-        <li>📍 Shagutta New Rd (R9PH+237), Dhaka, Bangladesh</li>
-        <li>🇧🇩 Main Hub: Dhaka, Bangladesh</li>
-    </ul>
-</div>
+                <div>
+                    <h3 class="text-white text-base font-bold mb-3">Office Address</h3>
+                    <ul class="space-y-2 font-medium text-slate-300 text-xs">
+                        <li class="text-white font-bold">Rimo Global Pharma Limited</li>
+                        <li>📍 Shagutta New Rd (R9PH+237), Dhaka, Bangladesh</li>
+                        <li>🇧🇩 Main Hub: Dhaka, Bangladesh</li>
+                    </ul>
+                </div>
                 <div>
                     <h3 class="text-white text-base font-bold mb-3">Doctors & Clients</h3>
                     <ul class="space-y-1.5 font-medium text-slate-300 text-xs mb-6">
-                       <li><a href="https://wa.me/8801742705183" target="_blank" class="hover:text-white transition">Doctors Query</a></li>
+                        <li><a href="https://wa.me/8801742705183" target="_blank" class="hover:text-white transition">Doctors Query</a></li>
                     </ul>
                 </div>
                 <div>
@@ -273,7 +244,7 @@
                 <span>Contact Us Directly</span>
                 <span class="text-[10px] text-emerald-600 font-semibold">Online</span>
             </div>
-          <a href="https://wa.me/8801742705183" target="_blank" class="flex items-center gap-3 p-2 hover:bg-emerald-50 rounded-xl transition text-xs font-semibold text-slate-700">
+            <a href="https://wa.me/8801742705183" target="_blank" class="flex items-center gap-3 p-2 hover:bg-emerald-50 rounded-xl transition text-xs font-semibold text-slate-700">
                 <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shadow">📱</span>
                 <div>
                     <p class="text-slate-900 font-bold">WhatsApp</p>
