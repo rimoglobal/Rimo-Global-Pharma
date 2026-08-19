@@ -6,8 +6,8 @@
     <title>Rimo Global Pharma Ltd - Oncology & Specialty Medicine</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Premium Font: Plus Jakarta Sans -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Premium Font: Plus Jakarta Sans & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
@@ -18,6 +18,16 @@
                          0 4px 12px rgba(0, 0, 0, 0.9),
                          0 0 20px rgba(0, 0, 0, 0.8);
         }
+
+        /* Gradient & 3D Effect for Header Logo Text */
+        .rimo-gradient-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: linear-gradient(180deg, #38B6FF 0%, #004AAD 45%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.5));
+        }
     </style>
 </head>
 <body class="text-slate-900 bg-white min-h-screen relative">
@@ -27,7 +37,7 @@
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
-           <span class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">RIMO GLOBAL PHARMA LTD</span>
+                <span class="text-xl sm:text-2xl font-extrabold tracking-tight rimo-gradient-text">RIMO GLOBAL PHARMA LIMITED</span>
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-800">
                 <a href="#home" class="hover:text-sky-600 transition">Home</a>
@@ -149,7 +159,7 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area (কাস্টমাইজড: মোবাইলে ১টি, ট্যাবলেটে ৩টি, ডেক্সটপে ৪টি প্রোডাক্ট দেখাবে) -->
+            <!-- Product Grid Area -->
             <div id="product-grid-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Dynamic Products loaded via JavaScript -->
             </div>
@@ -254,9 +264,7 @@
             menu.classList.toggle('hidden');
         }
 
-        // PDF v3.0 Exact 112 Products Data Array
         const productsData = [
-            // EVEREST PHARMACEUTICALS LTD. (1 to 54)
             { serial: 1, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Acaluxen 100 mg.jpg" },
             { serial: 2, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Adakras 200 mg.jpg" },
             { serial: 3, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "alecnib 150 mg.jpg" },
@@ -311,8 +319,6 @@
             { serial: 52, brand: "Tucaxen", generic: "Tucatinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Tucaxen 150 mg.jpg" },
             { serial: 53, brand: "Upajak", generic: "Upadacitinib", strength: "15 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Upajak 15 mg.jpg" },
             { serial: 54, brand: "Ventoxen", generic: "Venetoclax", strength: "100 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ventoxen 100 mg.jpg" },
-
-            // DRUGS INTERNATIONAL LTD. (55 to 64)
             { serial: 55, brand: "Osinib", generic: "Osimertinib", strength: "80 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Osinib 80 mg.png" },
             { serial: 56, brand: "Avalet-20", generic: "Avatrombopag", strength: "20 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Avalet-20 mg.png" },
             { serial: 57, brand: "Tocit-5", generic: "Tofacitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Tocit-5 mg.png" },
@@ -323,20 +329,14 @@
             { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Venex 100 mg.png" },
             { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib-5 mg.png" },
             { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib D" },
-
-            // INCEPTA PHARMACEUTICALS LTD. (65 to 70)
             { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Crizocent" },
             { serial: 66, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ibrucent 140 mg.jpg" },
             { serial: 67, brand: "Osicent 80", generic: "Osimertinib", strength: "80 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Osicent 80 mg.webp" },
             { serial: 68, brand: "Palbocent 125", generic: "Palbociclib", strength: "125 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "palbocent" },
             { serial: 69, brand: "Panovir", generic: "Sofosbuvir & Velpatasvir", strength: "400 mg / 100 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Panovir" },
             { serial: 70, brand: "Tofacent 5", generic: "Tofacitinib", strength: "5 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Tofacent 5 mg.jpg" },
-
-            // GENERAL PHARMACEUTICALS LTD. (71 to 72)
             { serial: 71, brand: "Barigen 2", generic: "Baricitinib", strength: "2 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Barigen 2 mg.jfif" },
             { serial: 72, brand: "Barigen 4", generic: "Baricitinib", strength: "4 mg", company: "GENERAL PHARMACEUTICALS LTD.", image: "Barigen 4 mg.jpg" },
-
-            // ZISKA PHARMACEUTICALS LTD. (73 to 112)
             { serial: 73, brand: "Upanib 15", generic: "Upadacitinib", strength: "15 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "1.png" },
             { serial: 74, brand: "Pmatinib 200", generic: "Capmatinib", strength: "200 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "2.jpg" },
             { serial: 75, brand: "Crizona 250", generic: "Crizotinib", strength: "250 mg", company: "ZISKA PHARMACEUTICALS LTD.", image: "3.jpg" },
@@ -402,14 +402,13 @@
 
             pageProducts.forEach(product => {
                 const card = document.createElement('div');
-          /* Product Card Image Container */
-        card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col p-4";
+                card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col p-4";
 
-        card.innerHTML = `
-            <div>
-                <div class="w-full h-72 sm:h-60 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1">
-                    <img src="${product.image}" alt="${product.brand}" class="max-h-full w-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
-                </div>
+                card.innerHTML = `
+                    <div>
+                        <div class="w-full h-72 sm:h-60 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1">
+                            <img src="${product.image}" alt="${product.brand}" class="max-h-full w-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Medicine+Image'">
+                        </div>
                         <div class="flex items-center gap-1 mb-1">
                             <span class="text-xs font-extrabold text-[#0284c7] uppercase tracking-wide truncate">
                                 ${product.company}
@@ -429,7 +428,7 @@
                         <span class="bg-sky-50 text-sky-800 text-xs sm:text-[11px] font-bold px-3 py-1 rounded border border-sky-200 text-center">
                             Verified
                         </span>
-                      <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-xs font-bold px-4 py-2 rounded transition shadow-sm text-center">}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-xs font-bold px-4 py-2 rounded transition shadow-sm text-center">
+                        <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white text-xs sm:text-xs font-bold px-4 py-2 rounded transition shadow-sm text-center">
                             Message
                         </a>
                     </div>
