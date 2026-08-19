@@ -19,14 +19,40 @@
                          0 0 20px rgba(0, 0, 0, 0.8);
         }
 
-        /* Gradient & 3D Effect for Header Logo Text */
-        .rimo-gradient-text {
+        /* 3D Blue Effect for RIMO */
+        .rimo-blue-3d {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            background: linear-gradient(180deg, #38B6FF 0%, #004AAD 45%, #FFD700 100%);
+            background: linear-gradient(180deg, #00d2ff 0%, #0066eb 50%, #003785 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.5));
+            filter: drop-shadow(1px 1px 0px #002255)
+                    drop-shadow(2px 2px 0px #001538)
+                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+        }
+
+        /* 3D Bright Gold Effect for GLOBAL */
+        .rimo-gold-3d {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: linear-gradient(180deg, #fff3a1 0%, #f1b70e 45%, #bf8100 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(1px 1px 0px #704b00)
+                    drop-shadow(2px 2px 0px #422c00)
+                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+        }
+
+        /* 3D Metallic Gold Effect for PHARMA & LIMITED */
+        .rimo-metallic-gold-3d {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            background: linear-gradient(180deg, #ffe082 0%, #d4af37 40%, #aa7c11 70%, #6b4c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(1px 1px 0px #4a3400)
+                    drop-shadow(2px 2px 0px #291d00)
+                    drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
         }
     </style>
 </head>
@@ -37,7 +63,12 @@
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
-                <span class="text-xl sm:text-2xl font-extrabold tracking-tight rimo-gradient-text">RIMO GLOBAL PHARMA LIMITED</span>
+                <div class="text-xl sm:text-2xl font-extrabold tracking-tight flex items-center gap-1.5 flex-wrap">
+                    <span class="rimo-blue-3d">RIMO</span>
+                    <span class="rimo-gold-3d">GLOBAL</span>
+                    <span class="rimo-metallic-gold-3d">PHARMA</span>
+                    <span class="rimo-metallic-gold-3d">LIMITED</span>
+                </div>
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-800">
                 <a href="#home" class="hover:text-sky-600 transition">Home</a>
@@ -305,7 +336,7 @@
             { serial: 38, brand: "Quizar 26.5", generic: "Quizartinib", strength: "26.5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Quizar 26.5 mg.jpg" },
             { serial: 39, brand: "Repotrex", generic: "Repotrectinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Repotrex 40 mg.jpg" },
             { serial: 40, brand: "Resiliva", generic: "Resmetirom", strength: "80 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Resiliva 80 mg.jpg" },
-            { serial: 41, brand: "Ribokis", generic: "Ribociclib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ribokis E" },
+            { serial: 41, brand: "Ribokis", generic: "Ribociclib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ribokis E.jpg" },
             { serial: 42, brand: "Ruxotor 10", generic: "Ruxolitinib", strength: "10 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor 10 mg.jpg" },
             { serial: 43, brand: "Ruxotor Cream", generic: "Ruxolitinib Cream", strength: "1.50%", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor Cream 1.50%.jpg" },
             { serial: 44, brand: "Ruxotor S", generic: "Ruxolitinib", strength: "5 mg", company: "EVEREST PHARMACEUTICALS LTD.", image: "Ruxotor S 5 mg.jpg" },
@@ -328,7 +359,7 @@
             { serial: 61, brand: "Rematib 15", generic: "Upadacitinib", strength: "15 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rematib 15 mg.png" },
             { serial: 62, brand: "Venex 100", generic: "Venetoclax", strength: "100 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Venex 100 mg.png" },
             { serial: 63, brand: "Rutinib-5", generic: "Ruxolitinib", strength: "5 mg", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib-5 mg.png" },
-            { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib D" },
+            { serial: 64, brand: "Rutinib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "DRUGS INTERNATIONAL LTD.", image: "Rutinib D.png" },
             { serial: 65, brand: "Crizocent 250", generic: "Crizotinib", strength: "250 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Crizocent" },
             { serial: 66, brand: "Ibrucent 140", generic: "Ibrutinib", strength: "140 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Ibrucent 140 mg.jpg" },
             { serial: 67, brand: "Osicent 80", generic: "Osimertinib", strength: "80 mg", company: "INCEPTA PHARMACEUTICALS LTD.", image: "Osicent 80 mg.webp" },
