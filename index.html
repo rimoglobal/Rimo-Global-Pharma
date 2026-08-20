@@ -26,6 +26,15 @@
             color: #1e293b;
             letter-spacing: 0.5px;
         }
+
+        /* Dynamic Slider Styling */
+        .slide-item {
+            display: none;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .slide-item.active {
+            display: flex;
+        }
     </style>
 </head>
 <body class="text-slate-900 bg-slate-50 min-h-screen relative">
@@ -100,40 +109,97 @@
                 </div>
             </div>
 
-            <!-- Right Hero Banner with Controlled Lighting & Professional Typography -->
-            <div class="grow relative flex items-center justify-center p-8 sm:p-20 text-center min-h-[480px] sm:min-h-[580px] bg-cover bg-center overflow-hidden" style="background-image: url('cell-bg.png');">
+            <!-- Dynamic Slider Area Without Dark Overlay -->
+            <div class="grow relative min-h-[480px] sm:min-h-[580px] overflow-hidden flex items-center justify-center">
                 
-                <!-- Dark Overlay for Light Control -->
-                <div class="absolute inset-0 bg-slate-950/75"></div>
-                
-                <div class="max-w-4xl mx-auto z-10 relative">
-                    <!-- Subtle Badge -->
-                    <div class="inline-flex items-center gap-2 bg-sky-950/80 border border-sky-500/30 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-sky-300 tracking-wider uppercase mb-6">
-                        <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-                        Trusted Global Exporter
-                    </div>
-
-                    <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight" style="font-family: 'Montserrat', sans-serif;">
-                        RIMO GLOBAL PHARMA LTD
-                    </h1>
-                    
-                    <p class="text-xs sm:text-base font-bold text-slate-300 tracking-widest uppercase mb-2 max-w-2xl mx-auto">
-                        Global Supplier of WHO-GMP Certified Oncology Medicines
-                    </p>
-                    
-                    <p class="text-xs sm:text-sm font-medium text-slate-400 mb-8">
-                        Leading Pharmaceutical Sourcing & Export Facilitator in Bangladesh
-                    </p>
-                    
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition shadow-lg border border-sky-400/20">
-                            Contact Us
-                        </a>
-                        <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white font-bold px-8 py-3.5 rounded-xl text-sm border border-slate-700 transition">
-                            View Products
-                        </a>
+                <!-- Slide 1 -->
+                <div class="slide-item active absolute inset-0 bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('cell-bg.png');">
+                    <div class="max-w-4xl mx-auto z-10 relative drop-shadow-md">
+                        <div class="inline-flex items-center gap-2 bg-sky-900/60 backdrop-blur-sm border border-sky-400/40 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-sky-200 tracking-wider uppercase mb-6">
+                            <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                            Trusted Global Exporter
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight shadow-black drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                            RIMO GLOBAL PHARMA LTD
+                        </h1>
+                        <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
+                            Global Supplier of WHO-GMP Certified Oncology Medicines
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-200 mb-8 drop-shadow">
+                            Leading Pharmaceutical Sourcing & Export Facilitator in Bangladesh
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition shadow-lg border border-sky-400/20">
+                                Contact Us
+                            </a>
+                            <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white font-bold px-8 py-3.5 rounded-xl text-sm border border-slate-700 transition">
+                                View Products
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Slide 2 -->
+                <div class="slide-item absolute inset-0 bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('images/slide2.jpg');">
+                    <div class="max-w-4xl mx-auto z-10 relative drop-shadow-md">
+                        <div class="inline-flex items-center gap-2 bg-sky-900/60 backdrop-blur-sm border border-sky-400/40 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-sky-200 tracking-wider uppercase mb-6">
+                            <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                            Reliable Supply Chain
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight shadow-black drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                            End-to-End Pharma Sourcing
+                        </h1>
+                        <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
+                            Connecting Healthcare Demands Globally
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-200 mb-8 drop-shadow">
+                            High-Quality Certified Manufacturers in Bangladesh
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition shadow-lg border border-sky-400/20">
+                                Contact Us
+                            </a>
+                            <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white font-bold px-8 py-3.5 rounded-xl text-sm border border-slate-700 transition">
+                                View Products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide-item absolute inset-0 bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('images/slide3.jpg');">
+                    <div class="max-w-4xl mx-auto z-10 relative drop-shadow-md">
+                        <div class="inline-flex items-center gap-2 bg-sky-900/60 backdrop-blur-sm border border-sky-400/40 px-3.5 py-1.5 rounded-full text-[11px] font-bold text-sky-200 tracking-wider uppercase mb-6">
+                            <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                            Oncology & Specialty Drugs
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight shadow-black drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                            Accessible Global Healthcare
+                        </h1>
+                        <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
+                            Facilitating Procurement & Export Logistics
+                        </p>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-200 mb-8 drop-shadow">
+                            Delivering High Quality Medicines Worldwide
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://wa.me/8801944887517" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition shadow-lg border border-sky-400/20">
+                                Contact Us
+                            </a>
+                            <a href="#products-section" class="bg-slate-900/80 hover:bg-slate-900 text-slate-200 hover:text-white font-bold px-8 py-3.5 rounded-xl text-sm border border-slate-700 transition">
+                                View Products
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Indicators (Beacon Style Bars) -->
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                    <button onclick="setSlide(0)" class="slide-bar w-8 h-1 bg-white/40 rounded-full transition-all"></button>
+                    <button onclick="setSlide(1)" class="slide-bar w-8 h-1 bg-white/40 rounded-full transition-all"></button>
+                    <button onclick="setSlide(2)" class="slide-bar w-8 h-1 bg-white/40 rounded-full transition-all"></button>
+                </div>
+
             </div>
 
         </div>
@@ -283,8 +349,40 @@
         </button>
     </div>
 
-    <!-- JavaScript Data Engine -->
+    <!-- JavaScript Engine -->
     <script>
+        // Auto Slider Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide-item');
+        const bars = document.querySelectorAll('.slide-bar');
+
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            bars.forEach((bar, index) => {
+                if (index === currentSlide) {
+                    bar.classList.add('bg-white', 'w-12');
+                    bar.classList.remove('bg-white/40', 'w-8');
+                } else {
+                    bar.classList.add('bg-white/40', 'w-8');
+                    bar.classList.remove('bg-white', 'w-12');
+                }
+            });
+        }
+
+        function setSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }, 5000);
+
+        updateSlider();
+
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
             menu.classList.toggle('hidden');
