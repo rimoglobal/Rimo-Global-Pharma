@@ -21,17 +21,24 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
         }
 
-        .brand-blue {
+        .brand-font {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            color: #0088cc;
-            letter-spacing: 0.5px;
         }
 
-        .brand-dark {
+        /* Blue Color for RIMO */
+        .brand-blue {
+            color: #0088cc;
+        }
+
+        /* Golden Color for GLOBAL PHARMA LIMITED (Matching the logo subtext) */
+        .brand-gold {
+            color: #d4af37;
+        }
+
+        .header-logo-text {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            color: #1e293b;
+            font-weight: 900;
             letter-spacing: 0.5px;
         }
 
@@ -49,11 +56,6 @@
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-        }
-
-        /* Text Shadow for high contrast readability without background boxes */
-        .hero-text-shadow {
-            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.75), 0px 4px 16px rgba(0, 0, 0, 0.5);
         }
 
         /* Typing Cursor Animation */
@@ -74,9 +76,10 @@
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" loading="eager" decoding="async" onerror="this.style.display='none'">
-                <div class="text-xl sm:text-2xl font-extrabold tracking-tight flex items-center gap-2 flex-wrap">
+                <!-- Header Logo Text Matched with Golden Accent -->
+                <div class="text-xl sm:text-2xl header-logo-text tracking-tight flex items-center gap-2 flex-nowrap whitespace-nowrap">
                     <span class="brand-blue">RIMO</span>
-                    <span class="brand-dark">GLOBAL PHARMA LIMITED</span>
+                    <span class="brand-gold">GLOBAL PHARMA LIMITED</span>
                 </div>
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-800">
@@ -99,28 +102,27 @@
                 
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <!-- Overlay for enhanced image contrast -->
-                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="absolute inset-0 bg-black/40"></div>
 
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             TRUSTED GLOBAL EXPORTER
                         </div>
                         
-                        <!-- Main Headline -->
-                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
-                            RIMO GLOBAL PHARMA LTD
+                        <!-- Main Headline Matched with Logo Golden Subtext -->
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl tracking-tight uppercase leading-tight mb-4 whitespace-nowrap">
+                            <span class="text-[#0088cc]">RIMO</span> <span class="text-[#d4af37]">GLOBAL PHARMA LTD</span>
                         </h1>
 
                         <!-- Subtitle -->
-                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3">
                             GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
                         </p>
 
                         <!-- Tagline -->
-                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                        <p class="text-[11px] sm:text-xs font-bold text-slate-200 mb-6">
                             Leading Pharmaceutical Sourcing & Export Facilitator in Bangladesh
                         </p>
                     </div>
@@ -128,10 +130,9 @@
 
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('slide2.jpeg');">
-                    <!-- Overlay for enhanced image contrast -->
-                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="absolute inset-0 bg-black/40"></div>
 
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
@@ -139,17 +140,17 @@
                         </div>
 
                         <!-- Main Headline -->
-                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase leading-tight mb-4 whitespace-nowrap">
                             END-TO-END PHARMA SOURCING
                         </h1>
 
                         <!-- Subtitle -->
-                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3">
                             CONNECTING HEALTHCARE DEMANDS GLOBALLY
                         </p>
 
                         <!-- Tagline -->
-                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                        <p class="text-[11px] sm:text-xs font-bold text-slate-200 mb-6">
                             High-Quality Certified Manufacturers in Bangladesh
                         </p>
                     </div>
@@ -157,10 +158,9 @@
 
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('slide3.jpeg');">
-                    <!-- Overlay for enhanced image contrast -->
-                    <div class="absolute inset-0 bg-black/30"></div>
+                    <div class="absolute inset-0 bg-black/40"></div>
 
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
@@ -168,17 +168,17 @@
                         </div>
 
                         <!-- Main Headline -->
-                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase leading-tight mb-4 whitespace-nowrap">
                             ACCESSIBLE GLOBAL HEALTHCARE
                         </h1>
 
                         <!-- Subtitle -->
-                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3">
                             FACILITATING PROCUREMENT & EXPORT LOGISTICS
                         </p>
 
                         <!-- Tagline -->
-                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                        <p class="text-[11px] sm:text-xs font-bold text-slate-200 mb-6">
                             Delivering High Quality Medicines Worldwide
                         </p>
                     </div>
@@ -284,7 +284,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs sm:text-sm mb-12">
                 <div>
                     <h3 class="text-white text-base font-bold mb-4 flex items-center gap-2">
-                        <span class="text-sky-400">RIMO</span> GLOBAL PHARMA
+                        <span class="text-sky-400">RIMO</span> <span class="text-[#d4af37]">GLOBAL PHARMA</span>
                     </h3>
                     <p class="text-slate-400 text-xs mb-4 leading-relaxed">Leading global supplier & exporter of high-quality certified oncology and specialty healthcare products.</p>
                     <div class="flex items-center gap-3">
