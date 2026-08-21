@@ -33,7 +33,7 @@
             inset: 0;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
             pointer-events: none;
         }
         .slide-item.active {
@@ -76,11 +76,11 @@
         </div>
     </header>
 
-    <!-- Professional Light-Blue Theme Full-Width Hero Banner -->
+    <!-- Professional Hero Banner Slider -->
     <section id="home" class="w-full py-0">
         <div class="w-full bg-[#0088cc] overflow-hidden">
 
-            <!-- Dynamic Slider Area (Full Width) -->
+            <!-- Dynamic Slider Area -->
             <div class="w-full relative h-[480px] sm:h-[580px] overflow-hidden flex items-center justify-center">
                 
                 <!-- Slide 1 -->
@@ -90,7 +90,7 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Trusted Global Exporter
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="slider-title text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
                             RIMO GLOBAL PHARMA LTD
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
@@ -117,8 +117,8 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Reliable Supply Chain
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
-                            End-to-End Pharma Sourcing
+                        <h1 class="slider-title text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
+                            END-TO-END PHARMA SOURCING
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
                             Connecting Healthcare Demands Globally
@@ -144,8 +144,8 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Oncology & Specialty Drugs
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
-                            Accessible Global Healthcare
+                        <h1 class="slider-title text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
+                            ACCESSIBLE GLOBAL HEALTHCARE
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
                             Facilitating Procurement & Export Logistics
@@ -337,10 +337,18 @@
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide-item');
         const bars = document.querySelectorAll('.slide-bar');
+        let slideTimer;
         let typingTimeout;
 
-        // Typewriter Effect Function
-        function typeWriter(text, element, speed = 40, callback) {
+        // Store original titles permanently at start
+        const originalTitles = [
+            "RIMO GLOBAL PHARMA LTD",
+            "END-TO-END PHARMA SOURCING",
+            "ACCESSIBLE GLOBAL HEALTHCARE"
+        ];
+
+        function typeWriter(text, element, speed = 50) {
+            clearTimeout(typingTimeout);
             let i = 0;
             element.innerHTML = '';
             element.classList.add('typing-text');
@@ -352,31 +360,25 @@
                     typingTimeout = setTimeout(type, speed);
                 } else {
                     element.classList.remove('typing-text');
-                    if (callback) callback();
                 }
             }
             type();
         }
 
         function updateSlider() {
-            clearTimeout(typingTimeout);
-
             slides.forEach((slide, index) => {
-                const titleEl = slide.querySelector('h1');
+                const titleEl = slide.querySelector('h1.slider-title');
                 
-                // Save original title text
-                if (!titleEl.dataset.originalText) {
-                    titleEl.dataset.originalText = titleEl.innerText.trim();
-                }
-
                 if (index === currentSlide) {
                     slide.classList.add('active');
-                    // Trigger Typing Animation on Active Slide Title
-                    const fullText = titleEl.dataset.originalText;
-                    typeWriter(fullText, titleEl, 40);
+                    // Type current slide's title
+                    typeWriter(originalTitles[index], titleEl, 45);
                 } else {
                     slide.classList.remove('active');
-                    titleEl.innerHTML = '';
+                    if (titleEl) {
+                        titleEl.innerHTML = '';
+                        titleEl.classList.remove('typing-text');
+                    }
                 }
             });
 
@@ -393,15 +395,24 @@
 
         function setSlide(index) {
             currentSlide = index;
+            resetSlideInterval();
             updateSlider();
         }
 
-        setInterval(() => {
+        function nextSlide() {
             currentSlide = (currentSlide + 1) % slides.length;
             updateSlider();
-        }, 6000);
+        }
 
+        function resetSlideInterval() {
+            clearInterval(slideTimer);
+            // Changed to 9000ms (9 Seconds) for slow & comfortable viewing
+            slideTimer = setInterval(nextSlide, 9000); 
+        }
+
+        // Initialize Slider
         updateSlider();
+        resetSlideInterval();
 
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
@@ -638,7 +649,7 @@
             renderProducts(1);
         });
 
-        // Initialize Render
+        // Initialize Product Grid Render
         renderProducts(1);
     </script>
 </body>
