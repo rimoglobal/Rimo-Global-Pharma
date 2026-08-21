@@ -41,6 +41,16 @@
             visibility: visible;
             pointer-events: auto;
         }
+
+        /* Typing Cursor Animation */
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="text-slate-900 bg-slate-50 min-h-screen relative">
@@ -80,7 +90,7 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Trusted Global Exporter
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
                             RIMO GLOBAL PHARMA LTD
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
@@ -107,7 +117,7 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Reliable Supply Chain
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
                             End-to-End Pharma Sourcing
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
@@ -134,7 +144,7 @@
                             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
                             Oncology & Specialty Drugs
                         </div>
-                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg" style="font-family: 'Montserrat', sans-serif;">
+                        <h1 class="text-3xl sm:text-5xl font-[900] text-white tracking-wider uppercase mb-4 leading-tight drop-shadow-lg min-h-[1.2em]" style="font-family: 'Montserrat', sans-serif;">
                             Accessible Global Healthcare
                         </h1>
                         <p class="text-xs sm:text-base font-bold text-slate-100 tracking-widest uppercase mb-2 max-w-2xl mx-auto drop-shadow">
@@ -324,19 +334,52 @@
 
     <!-- JavaScript Engine -->
     <script>
-        // Fixed Auto Slider Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide-item');
         const bars = document.querySelectorAll('.slide-bar');
+        let typingTimeout;
+
+        // Typewriter Effect Function
+        function typeWriter(text, element, speed = 40, callback) {
+            let i = 0;
+            element.innerHTML = '';
+            element.classList.add('typing-text');
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    typingTimeout = setTimeout(type, speed);
+                } else {
+                    element.classList.remove('typing-text');
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
 
         function updateSlider() {
+            clearTimeout(typingTimeout);
+
             slides.forEach((slide, index) => {
+                const titleEl = slide.querySelector('h1');
+                
+                // Save original title text
+                if (!titleEl.dataset.originalText) {
+                    titleEl.dataset.originalText = titleEl.innerText.trim();
+                }
+
                 if (index === currentSlide) {
                     slide.classList.add('active');
+                    // Trigger Typing Animation on Active Slide Title
+                    const fullText = titleEl.dataset.originalText;
+                    typeWriter(fullText, titleEl, 40);
                 } else {
                     slide.classList.remove('active');
+                    titleEl.innerHTML = '';
                 }
             });
+
             bars.forEach((bar, index) => {
                 if (index === currentSlide) {
                     bar.classList.add('bg-white', 'w-12');
@@ -356,7 +399,7 @@
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             updateSlider();
-        }, 5000);
+        }, 6000);
 
         updateSlider();
 
