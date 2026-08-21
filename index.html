@@ -51,10 +51,9 @@
             pointer-events: auto;
         }
 
-        /* Highlighting Blue Background Style like Images */
-        .bg-banner-blue {
-            background-color: #1d4ed8;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        /* Text Shadow for high contrast readability without background boxes */
+        .hero-text-shadow {
+            text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.75), 0px 4px 16px rgba(0, 0, 0, 0.5);
         }
 
         /* Typing Cursor Animation */
@@ -100,6 +99,9 @@
                 
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('cell-bg.png');">
+                    <!-- Overlay for enhanced image contrast -->
+                    <div class="absolute inset-0 bg-black/30"></div>
+
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
@@ -107,31 +109,28 @@
                             TRUSTED GLOBAL EXPORTER
                         </div>
                         
-                        <!-- Main Headline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-6 py-3 rounded-md mb-4 shadow-lg">
-                            <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight" style="font-family: 'Montserrat', sans-serif;">
-                                RIMO GLOBAL PHARMA LTD
-                            </h1>
-                        </div>
+                        <!-- Main Headline -->
+                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
+                            RIMO GLOBAL PHARMA LTD
+                        </h1>
 
-                        <!-- Subtitle with Blue Background -->
-                        <div class="inline-block bg-[#1e40af] px-4 py-2 rounded-md mb-3 shadow">
-                            <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase">
-                                GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
-                            </p>
-                        </div>
+                        <!-- Subtitle -->
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                            GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
+                        </p>
 
-                        <!-- Tagline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-3 py-1.5 rounded shadow-sm mb-6">
-                            <p class="text-[11px] sm:text-xs font-bold text-white">
-                                Leading Pharmaceutical Sourcing & Export Facilitator in Bangladesh
-                            </p>
-                        </div>
+                        <!-- Tagline -->
+                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                            Leading Pharmaceutical Sourcing & Export Facilitator in Bangladesh
+                        </p>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('slide2.jpeg');">
+                    <!-- Overlay for enhanced image contrast -->
+                    <div class="absolute inset-0 bg-black/30"></div>
+
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
@@ -139,31 +138,28 @@
                             RELIABLE SUPPLY CHAIN
                         </div>
 
-                        <!-- Main Headline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-6 py-3 rounded-md mb-4 shadow-lg">
-                            <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight" style="font-family: 'Montserrat', sans-serif;">
-                                END-TO-END PHARMA SOURCING
-                            </h1>
-                        </div>
+                        <!-- Main Headline -->
+                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
+                            END-TO-END PHARMA SOURCING
+                        </h1>
 
-                        <!-- Subtitle with Blue Background -->
-                        <div class="inline-block bg-[#1e40af] px-4 py-2 rounded-md mb-3 shadow">
-                            <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase">
-                                CONNECTING HEALTHCARE DEMANDS GLOBALLY
-                            </p>
-                        </div>
+                        <!-- Subtitle -->
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                            CONNECTING HEALTHCARE DEMANDS GLOBALLY
+                        </p>
 
-                        <!-- Tagline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-3 py-1.5 rounded shadow-sm mb-6">
-                            <p class="text-[11px] sm:text-xs font-bold text-white">
-                                High-Quality Certified Manufacturers in Bangladesh
-                            </p>
-                        </div>
+                        <!-- Tagline -->
+                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                            High-Quality Certified Manufacturers in Bangladesh
+                        </p>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-8 sm:p-20 text-center" style="background-image: url('slide3.jpeg');">
+                    <!-- Overlay for enhanced image contrast -->
+                    <div class="absolute inset-0 bg-black/30"></div>
+
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#0284c7] border border-cyan-300 px-4 py-1.5 rounded-full text-[11px] font-bold text-white tracking-wider uppercase mb-6 shadow-md">
@@ -171,26 +167,20 @@
                             ONCOLOGY & SPECIALTY DRUGS
                         </div>
 
-                        <!-- Main Headline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-6 py-3 rounded-md mb-4 shadow-lg">
-                            <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight" style="font-family: 'Montserrat', sans-serif;">
-                                ACCESSIBLE GLOBAL HEALTHCARE
-                            </h1>
-                        </div>
+                        <!-- Main Headline -->
+                        <h1 class="slider-title text-2xl sm:text-5xl font-[900] text-white tracking-wider uppercase leading-tight mb-4 hero-text-shadow" style="font-family: 'Montserrat', sans-serif;">
+                            ACCESSIBLE GLOBAL HEALTHCARE
+                        </h1>
 
-                        <!-- Subtitle with Blue Background -->
-                        <div class="inline-block bg-[#1e40af] px-4 py-2 rounded-md mb-3 shadow">
-                            <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase">
-                                FACILITATING PROCUREMENT & EXPORT LOGISTICS
-                            </p>
-                        </div>
+                        <!-- Subtitle -->
+                        <p class="text-xs sm:text-sm font-extrabold text-white tracking-widest uppercase mb-3 hero-text-shadow">
+                            FACILITATING PROCUREMENT & EXPORT LOGISTICS
+                        </p>
 
-                        <!-- Tagline with Blue Background -->
-                        <div class="inline-block bg-[#1d4ed8] px-3 py-1.5 rounded shadow-sm mb-6">
-                            <p class="text-[11px] sm:text-xs font-bold text-white">
-                                Delivering High Quality Medicines Worldwide
-                            </p>
-                        </div>
+                        <!-- Tagline -->
+                        <p class="text-[11px] sm:text-xs font-bold text-white hero-text-shadow mb-6">
+                            Delivering High Quality Medicines Worldwide
+                        </p>
                     </div>
                 </div>
 
