@@ -23,13 +23,13 @@
             font-weight: 900;[cite: 1]
         }
 
-        /* Clean Fade Animation without typing effect */
+        /* Slide item styling */
         .slide-item {
             position: absolute;[cite: 1]
             inset: 0;[cite: 1]
             opacity: 0;[cite: 1]
             visibility: hidden;[cite: 1]
-            transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;[cite: 1]
+            transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;[cite: 1]
             pointer-events: none;[cite: 1]
         }
 
@@ -37,6 +37,28 @@
             opacity: 1;[cite: 1]
             visibility: visible;[cite: 1]
             pointer-events: auto;[cite: 1]
+        }
+
+        /* Clean Letter Typing Animation Styles without annoying cursor lines */
+        .typing-container {
+            display: inline-block;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .animate-letter {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(10px);
+            animation: letterAppear 0.4s forwards ease-out;
+        }
+
+        @keyframes letterAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -69,36 +91,24 @@
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">[cite: 1]
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">[cite: 1]
-                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl tracking-tight uppercase leading-tight mb-3 text-white drop-shadow-lg w-full">
-                            RIMO GLOBAL PHARMA LTD
-                        </h1>
-                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
-                        </p>
+                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl tracking-tight uppercase leading-tight mb-3 text-white drop-shadow-lg w-full typing-title" data-text="RIMO GLOBAL PHARMA LTD"></h1>
+                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug typing-subtitle" data-text="GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES"></p>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">[cite: 1]
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">[cite: 1]
-                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
-                            END-TO-END PHARMA SOURCING
-                        </h1>
-                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            CONNECTING HEALTHCARE DEMANDS GLOBALLY
-                        </p>
+                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full typing-title" data-text="END-TO-END PHARMA SOURCING"></h1>
+                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug typing-subtitle" data-text="CONNECTING HEALTHCARE DEMANDS GLOBALLY"></p>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">[cite: 1]
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">[cite: 1]
-                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
-                            ACCESSIBLE GLOBAL HEALTHCARE
-                        </h1>
-                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            FACILITATING PROCUREMENT & EXPORT LOGISTICS
-                        </p>
+                        <h1 class="brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full typing-title" data-text="ACCESSIBLE GLOBAL HEALTHCARE"></h1>
+                        <p class="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug typing-subtitle" data-text="FACILITATING PROCUREMENT & EXPORT LOGISTICS"></p>
                     </div>
                 </div>
 
@@ -339,10 +349,43 @@
         const bars = document.querySelectorAll('.slide-bar');[cite: 1]
         let slideTimer;[cite: 1]
 
+        function prepareLetters() {
+            slides.forEach(slide => {
+                const title = slide.querySelector('.typing-title');
+                const subtitle = slide.querySelector('.typing-subtitle');
+
+                if (title && !title.dataset.prepared) {
+                    const text = title.getAttribute('data-text');
+                    title.innerHTML = text.split('').map((char, i) => 
+                        char === ' ' ? ' ' : `<span class="animate-letter" style="animation-delay: ${i * 0.03}s">${char}</span>`
+                    ).join('');
+                    title.dataset.prepared = "true";
+                }
+
+                if (subtitle && !subtitle.dataset.prepared) {
+                    const text = subtitle.getAttribute('data-text');
+                    subtitle.innerHTML = text.split('').map((char, i) => 
+                        char === ' ' ? ' ' : `<span class="animate-letter" style="animation-delay: ${0.3 + (i * 0.015)}s">${char}</span>`
+                    ).join('');
+                    subtitle.dataset.prepared = "true";
+                }
+            });
+        }
+
+        function restartSlideAnimation(slide) {
+            const letters = slide.querySelectorAll('.animate-letter');
+            letters.forEach(letter => {
+                letter.style.animation = 'none';
+                void letter.offsetWidth; // trigger reflow
+                letter.style.animation = '';
+            });
+        }
+
         function updateSlider() {
             slides.forEach((slide, index) => {
                 if (index === currentSlide) {
                     slide.classList.add('active');[cite: 1]
+                    restartSlideAnimation(slide);
                 } else {
                     slide.classList.remove('active');[cite: 1]
                 }
@@ -375,6 +418,7 @@
             slideTimer = setInterval(nextSlide, 7000);[cite: 1]
         }
 
+        prepareLetters();
         updateSlider();[cite: 1]
         resetSlideInterval();[cite: 1]
 
@@ -593,7 +637,7 @@
             if (diseaseKeyword === 'All') {
                 filteredProducts = [...productsData];[cite: 1]
             } else {
-                filteredProducts = productsData.filter(p => 
+                filteredProducts = filteredProducts = productsData.filter(p => 
                     p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
                     p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase()) ||
                     p.company.toLowerCase().includes(diseaseKeyword.toLowerCase())
