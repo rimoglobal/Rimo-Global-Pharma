@@ -66,7 +66,7 @@
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
                 <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-10 sm:h-12 object-contain" loading="eager" decoding="async" onerror="this.style.display='none'">
-                <!-- Header Logo Text -->
+                <!-- Header Logo Text (Blue & Gold with Company Name) -->
                 <div class="text-xl sm:text-2xl header-logo-text tracking-tight flex items-center gap-2 flex-nowrap whitespace-nowrap">
                     <span class="brand-blue">RIMO</span>
                     <span class="brand-gold">GLOBAL PHARMA LTD</span>
@@ -83,14 +83,14 @@
         </div>
     </header>
 
-    <!-- Professional Hero Banner Slider (Dark overlay reduced for clear images) -->
+    <!-- Professional Hero Banner Slider -->
     <section id="home" class="w-full py-0">
         <div class="w-full bg-slate-900 overflow-hidden">
-            <!-- Dynamic Slider Area -->
             <div class="w-full relative h-[420px] sm:h-[520px] lg:h-[680px] overflow-hidden flex items-center justify-center">
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
                     <div class="absolute inset-0 bg-black/20"></div>
+                    <!-- Top Left Logo Badge inside Banner matching 2nd image style -->
                     <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 hidden sm:flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
                         <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-6 sm:h-8 object-contain" onerror="this.style.display='none'">
                         <div class="text-xs sm:text-sm font-extrabold tracking-tight flex items-center gap-1.5">
@@ -196,10 +196,9 @@
         </div>
     </section>
 
-    <!-- About Rimo Global Pharma Ltd Section & How We Work -->
+    <!-- About Section & How We Work -->
     <section id="about-section" class="container mx-auto px-3 sm:px-6 mb-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- About Box -->
             <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma Ltd</h2>
@@ -212,7 +211,6 @@
                 </div>
             </div>
 
-            <!-- How We Work Box -->
             <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 flex flex-col justify-between">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4">How We Work</h2>
@@ -253,13 +251,11 @@
 
     <!-- Main Content Area (Product Portfolio) -->
     <main id="products-section" class="container mx-auto px-3 sm:px-6 mb-12">
-        <!-- Header Strip -->
         <div class="bg-[#0088cc] text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-400/30">
             <div>
                 <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight">Product Portfolio</h2>
                 <p class="text-[10px] sm:text-xs text-sky-100 mt-1 font-medium">Export quality certified oncology and specialty medications.</p>
             </div>
-            <!-- Country Flags -->
             <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-[#0077b5] p-2 rounded-xl border border-sky-300/30">
                 <span title="Bangladesh">🇧🇩</span>
                 <span title="USA">🇺🇸</span>
@@ -270,9 +266,7 @@
             </div>
         </div>
 
-        <!-- Clean White Container -->
         <div class="bg-white p-2.5 sm:p-6 rounded-b-2xl shadow-sm border border-slate-200 border-t-0">
-            <!-- Search & Manufacturer Filter Bar -->
             <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
                 <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#0088cc] bg-white font-medium">
                 <div class="flex gap-1.5 flex-wrap w-full sm:w-auto">
@@ -285,19 +279,13 @@
                 </div>
             </div>
 
-            <!-- Product Grid Area -->
-            <div id="product-grid-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <!-- Dynamic Products -->
-            </div>
+            <div id="product-grid-container" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
 
-            <!-- Pagination Controls -->
-            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap">
-                <!-- Dynamic Pagination -->
-            </div>
+            <div id="pagination-container" class="mt-8 flex justify-center items-center gap-1.5 flex-wrap"></div>
         </div>
     </main>
 
-    <!-- Global Export & Distribution Network Map Section -->
+    <!-- Global Network Map Section -->
     <section id="map-section" class="container mx-auto px-3 sm:px-6 mb-16">
         <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 pb-3 border-b border-slate-100 gap-2">
@@ -314,14 +302,13 @@
                 </div>
             </div>
 
-            <!-- Embedded Interactive Map -->
             <div class="w-full h-[450px] sm:h-[550px] rounded-xl overflow-hidden border border-slate-200 bg-white">
                 <iframe src="map.html" class="w-full h-full border-0" loading="lazy" title="Global Network Map"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Medical Dark Navy Theme Footer Section -->
+    <!-- Footer Section -->
     <footer id="contact" class="bg-[#0f172a] text-slate-400 pt-12 pb-6 border-t border-slate-800">
         <div class="container mx-auto px-4 sm:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-xs sm:text-sm mb-12">
@@ -676,7 +663,6 @@
             renderProducts(1);
         });
 
-        // Initialize Product Grid Render
         renderProducts(1);
     </script>
 </body>
