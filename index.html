@@ -91,36 +91,36 @@
         <div class="w-full bg-slate-900 overflow-hidden">
             <div class="w-full relative h-[420px] sm:h-[520px] lg:h-[680px] overflow-hidden flex items-center justify-center">
                 <!-- Slide 1 -->
-                <div class="slide-item active bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight uppercase leading-tight mb-3 sm:mb-4 text-white px-2 drop-shadow-lg typing-title">
+                <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
+                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-3 sm:mb-4 text-white drop-shadow-lg typing-title">
                             RIMO GLOBAL PHARMA LTD
                         </h1>
-                        <p class="text-xs sm:text-base md:text-lg font-extrabold text-white tracking-wider sm:tracking-widest uppercase mb-2 sm:mb-3 px-2 drop-shadow-md typing-subtitle">
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
                             GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
                         </p>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="slide-item bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
-                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 px-2 drop-shadow-lg typing-title">
+                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
+                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 drop-shadow-lg typing-title">
                             END-TO-END PHARMA SOURCING
                         </h1>
-                        <p class="text-xs sm:text-base md:text-lg font-extrabold text-white tracking-wider sm:tracking-widest uppercase mb-2 sm:mb-3 px-2 drop-shadow-md typing-subtitle">
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
                             CONNECTING HEALTHCARE DEMANDS GLOBALLY
                         </p>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="slide-item bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
-                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 px-2 drop-shadow-lg typing-title">
+                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
+                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 drop-shadow-lg typing-title">
                             ACCESSIBLE GLOBAL HEALTHCARE
                         </h1>
-                        <p class="text-xs sm:text-base md:text-lg font-extrabold text-white tracking-wider sm:tracking-widest uppercase mb-2 sm:mb-3 px-2 drop-shadow-md typing-subtitle">
+                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
                             FACILITATING PROCUREMENT & EXPORT LOGISTICS
                         </p>
                     </div>
@@ -371,12 +371,11 @@
             slides.forEach((slide, index) => {
                 if (index === currentSlide) {
                     slide.classList.add('active');
-                    // Restart typing animation by replacing inner content/classes if needed
                     const title = slide.querySelector('.typing-title');
                     const subtitle = slide.querySelector('.typing-subtitle');
                     if(title) {
                         title.style.animation = 'none';
-                        title.offsetHeight; // trigger reflow
+                        title.offsetHeight;
                         title.style.animation = null;
                     }
                     if(subtitle) {
@@ -599,62 +598,62 @@
             renderPagination();
         }
 
-    function renderPagination() {
-        const container = document.getElementById('pagination-container');
-        if (!container) return;
-        container.innerHTML = '';
+        function renderPagination() {
+            const container = document.getElementById('pagination-container');
+            if (!container) return;
+            container.innerHTML = '';
 
-        const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
-        if (totalPages <= 1) return;
+            const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+            if (totalPages <= 1) return;
 
-        for (let i = 1; i <= totalPages; i++) {
-            const btn = document.createElement('button');
-            btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-[#0088cc] text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}`;
-            btn.innerText = i;
-            btn.onclick = () => {
-                renderProducts(i);
-                document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
-            };
-            container.appendChild(btn);
+            for (let i = 1; i <= totalPages; i++) {
+                const btn = document.createElement('button');
+                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-[#0088cc] text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}`;
+                btn.innerText = i;
+                btn.onclick = () => {
+                    renderProducts(i);
+                    document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
+                };
+                container.appendChild(btn);
+            }
         }
-    }
 
-    function filterByCompany(companyKeyword) {
-        if (companyKeyword === 'All') {
-            filteredProducts = [...productsData];
-        } else {
+        function filterByCompany(companyKeyword) {
+            if (companyKeyword === 'All') {
+                filteredProducts = [...productsData];
+            } else {
+                filteredProducts = productsData.filter(p => 
+                    p.company.toLowerCase().includes(companyKeyword.toLowerCase())
+                );
+            }
+            renderProducts(1);
+        }
+
+        function filterByDisease(diseaseKeyword) {
+            if (diseaseKeyword === 'All') {
+                filteredProducts = [...productsData];
+            } else {
+                filteredProducts = productsData.filter(p => 
+                    p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
+                    p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase()) ||
+                    p.company.toLowerCase().includes(diseaseKeyword.toLowerCase())
+                );
+            }
+            renderProducts(1);
+            document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('search-input')?.addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
-                p.company.toLowerCase().includes(companyKeyword.toLowerCase())
+                p.brand.toLowerCase().includes(query) ||
+                p.generic.toLowerCase().includes(query) ||
+                p.company.toLowerCase().includes(query)
             );
-        }
-        renderProducts(1);
-    }
+            renderProducts(1);
+        });
 
-    function filterByDisease(diseaseKeyword) {
-        if (diseaseKeyword === 'All') {
-            filteredProducts = [...productsData];
-        } else {
-            filteredProducts = productsData.filter(p => 
-                p.brand.toLowerCase().includes(diseaseKeyword.toLowerCase()) || 
-                p.generic.toLowerCase().includes(diseaseKeyword.toLowerCase()) ||
-                p.company.toLowerCase().includes(diseaseKeyword.toLowerCase())
-            );
-        }
         renderProducts(1);
-        document.getElementById('products-section').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    document.getElementById('search-input')?.addEventListener('input', function(e) {
-        const query = e.target.value.toLowerCase().trim();
-        filteredProducts = productsData.filter(p => 
-            p.brand.toLowerCase().includes(query) ||
-            p.generic.toLowerCase().includes(query) ||
-            p.company.toLowerCase().includes(query)
-        );
-        renderProducts(1);
-    });
-
-    renderProducts(1);
-</script>
+    </script>
 </body>
 </html>
