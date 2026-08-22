@@ -26,7 +26,7 @@
             font-weight: 900;
         }
 
-        /* Smooth Slider & Slow Animation Styling */
+        /* Smooth Slider Styling */
         .slide-item {
             position: absolute;
             inset: 0;
@@ -43,36 +43,20 @@
             pointer-events: auto;
         }
 
-        /* Text Entrance Animation (Slower & Smoother) */
-        .slide-item.active .hero-title {
-            animation: slideDownText 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        /* Typing Effect Styling & Blinking Cursor */
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid rgba(255, 255, 255, 0.8);
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+            animation: blink-caret 0.75s step-end infinite;
+            max-width: 100%;
         }
 
-        .slide-item.active .hero-subtitle {
-            animation: slideUpText 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
-            opacity: 0;
-        }
-
-        @keyframes slideDownText {
-            0% {
-                opacity: 0;
-                transform: translateY(-40px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUpText {
-            0% {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgba(255, 255, 255, 0.8); }
         }
     </style>
 </head>
@@ -105,11 +89,11 @@
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-4 text-white drop-shadow-lg">
-                            RIMO GLOBAL PHARMA LTD
+                        <h1 class="hero-title brand-font text-xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight uppercase leading-tight mb-4 text-white drop-shadow-lg min-h-[1.5em]">
+                            <span class="typing-effect" data-text="RIMO GLOBAL PHARMA LTD"></span>
                         </h1>
-                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
-                            GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
+                        <p class="hero-subtitle text-xs sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md min-h-[1.5em]">
+                            <span class="typing-effect" data-text="GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES"></span>
                         </p>
                     </div>
                 </div>
@@ -117,11 +101,11 @@
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
-                            END-TO-END PHARMA SOURCING
+                        <h1 class="hero-title brand-font text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg min-h-[1.5em]">
+                            <span class="typing-effect" data-text="END-TO-END PHARMA SOURCING"></span>
                         </h1>
-                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
-                            CONNECTING HEALTHCARE DEMANDS GLOBALLY
+                        <p class="hero-subtitle text-xs sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md min-h-[1.5em]">
+                            <span class="typing-effect" data-text="CONNECTING HEALTHCARE DEMANDS GLOBALLY"></span>
                         </p>
                     </div>
                 </div>
@@ -129,11 +113,11 @@
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
-                            ACCESSIBLE GLOBAL HEALTHCARE
+                        <h1 class="hero-title brand-font text-xl sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg min-h-[1.5em]">
+                            <span class="typing-effect" data-text="ACCESSIBLE GLOBAL HEALTHCARE"></span>
                         </h1>
-                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
-                            FACILITATING PROCUREMENT & EXPORT LOGISTICS
+                        <p class="hero-subtitle text-xs sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md min-h-[1.5em]">
+                            <span class="typing-effect" data-text="FACILITATING PROCUREMENT & EXPORT LOGISTICS"></span>
                         </p>
                     </div>
                 </div>
@@ -374,11 +358,57 @@
         const slides = document.querySelectorAll('.slide-item');
         const bars = document.querySelectorAll('.slide-bar');
         let slideTimer;
+        let typingTimeouts = [];
+
+        function clearAllTimeouts() {
+            typingTimeouts.forEach(t => clearTimeout(t));
+            typingTimeouts = [];
+        }
+
+        function typeWriter(element, text, i = 0, speed = 55, callback) {
+            if (i === 0) {
+                element.innerHTML = '';
+            }
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                let timeout = setTimeout(() => {
+                    typeWriter(element, text, i + 1, speed, callback);
+                }, speed);
+                typingTimeouts.push(timeout);
+            } else if (callback) {
+                callback();
+            }
+        }
+
+        function playSlideTyping(slideElement) {
+            clearAllTimeouts();
+            
+            // Reset all typing spans in other slides
+            slides.forEach(s => {
+                s.querySelectorAll('.typing-effect').forEach(span => {
+                    span.innerHTML = '';
+                });
+            });
+
+            const titleSpan = slideElement.querySelector('.hero-title .typing-effect');
+            const subtitleSpan = slideElement.querySelector('.hero-subtitle .typing-effect');
+
+            if (titleSpan) {
+                const titleText = titleSpan.getAttribute('data-text');
+                typeWriter(titleSpan, titleText, 0, 50, () => {
+                    if (subtitleSpan) {
+                        const subtitleText = subtitleSpan.getAttribute('data-text');
+                        typeWriter(subtitleSpan, subtitleText, 0, 35);
+                    }
+                });
+            }
+        }
 
         function updateSlider() {
             slides.forEach((slide, index) => {
                 if (index === currentSlide) {
                     slide.classList.add('active');
+                    playSlideTyping(slide);
                 } else {
                     slide.classList.remove('active');
                 }
@@ -408,7 +438,7 @@
 
         function resetSlideInterval() {
             clearInterval(slideTimer);
-            slideTimer = setInterval(nextSlide, 7000); // স্লাইড পরিবর্তনের সময় ৭ সেকেন্ড করা হয়েছে
+            slideTimer = setInterval(nextSlide, 7000); // ৭ সেকেন্ড পর পর স্লাইড বদলাবে
         }
 
         updateSlider();
