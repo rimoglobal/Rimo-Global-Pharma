@@ -14,7 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Optimized Font Loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <style>
         body { 
@@ -26,20 +26,53 @@
             font-weight: 900;
         }
 
-        /* Fixed Slider Styling */
+        /* Smooth Slider & Slow Animation Styling */
         .slide-item {
             position: absolute;
             inset: 0;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            transition: opacity 2.5s ease-in-out, visibility 2.5s ease-in-out;
             pointer-events: none;
             will-change: opacity, visibility;
         }
+
         .slide-item.active {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
+        }
+
+        /* Text Entrance Animation (Slower & Smoother) */
+        .slide-item.active .hero-title {
+            animation: slideDownText 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .slide-item.active .hero-subtitle {
+            animation: slideUpText 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideDownText {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUpText {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -72,10 +105,10 @@
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-4 text-white drop-shadow-lg">
+                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-4 text-white drop-shadow-lg">
                             RIMO GLOBAL PHARMA LTD
                         </h1>
-                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
+                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
                         </p>
                     </div>
@@ -84,10 +117,10 @@
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
+                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
                             END-TO-END PHARMA SOURCING
                         </h1>
-                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
+                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             CONNECTING HEALTHCARE DEMANDS GLOBALLY
                         </p>
                     </div>
@@ -96,10 +129,10 @@
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
+                        <h1 class="hero-title brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
                             ACCESSIBLE GLOBAL HEALTHCARE
                         </h1>
-                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
+                        <p class="hero-subtitle text-base sm:text-xl md:text-2xl lg:text-3xl font-bold italic text-white tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             FACILITATING PROCUREMENT & EXPORT LOGISTICS
                         </p>
                     </div>
@@ -118,7 +151,6 @@
     <!-- Core Features Cards Strip (01 to 04) -->
     <section class="container mx-auto px-3 sm:px-6 mt-6 sm:mt-8 relative z-30 mb-8">
         <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-md border border-slate-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Feature 1 -->
             <div class="flex items-start gap-3.5">
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">01</div>
                 <div>
@@ -126,7 +158,6 @@
                     <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We source from leading WHO-GMP certified pharmaceutical manufacturers in Bangladesh.</p>
                 </div>
             </div>
-            <!-- Feature 2 -->
             <div class="flex items-start gap-3.5">
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">02</div>
                 <div>
@@ -134,7 +165,6 @@
                     <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">Quality is our priority. We ensure authentic products with complete quality documentation.</p>
                 </div>
             </div>
-            <!-- Feature 3 -->
             <div class="flex items-start gap-3.5">
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">03</div>
                 <div>
@@ -142,7 +172,6 @@
                     <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We provide end-to-end export support including documentation & logistics coordination.</p>
                 </div>
             </div>
-            <!-- Feature 4 -->
             <div class="flex items-start gap-3.5">
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">04</div>
                 <div>
@@ -379,7 +408,7 @@
 
         function resetSlideInterval() {
             clearInterval(slideTimer);
-            slideTimer = setInterval(nextSlide, 5000);
+            slideTimer = setInterval(nextSlide, 7000); // স্লাইড পরিবর্তনের সময় ৭ সেকেন্ড করা হয়েছে
         }
 
         updateSlider();
