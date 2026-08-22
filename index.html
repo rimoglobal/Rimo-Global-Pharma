@@ -41,28 +41,6 @@
             visibility: visible;
             pointer-events: auto;
         }
-
-        /* Typing Effect CSS */
-        .typing-title {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end) forwards;
-        }
-
-        .typing-subtitle {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3s steps(40, end) 0.5s forwards;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
     </style>
 </head>
 <body class="text-slate-900 bg-slate-50 min-h-screen relative">
@@ -93,11 +71,11 @@
                 
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-3 sm:mb-4 text-white drop-shadow-lg typing-title">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-4 text-white drop-shadow-lg">
                             RIMO GLOBAL PHARMA LTD
                         </h1>
-                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
+                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES
                         </p>
                     </div>
@@ -105,11 +83,11 @@
 
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
-                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 drop-shadow-lg typing-title">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
                             END-TO-END PHARMA SOURCING
                         </h1>
-                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
+                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             CONNECTING HEALTHCARE DEMANDS GLOBALLY
                         </p>
                     </div>
@@ -117,11 +95,11 @@
 
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
-                    <div class="max-w-6xl mx-auto z-10 relative flex flex-col items-center px-2">
-                        <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 drop-shadow-lg typing-title">
+                    <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center px-2">
+                        <h1 class="brand-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-4 drop-shadow-lg">
                             ACCESSIBLE GLOBAL HEALTHCARE
                         </h1>
-                        <p class="text-sm sm:text-lg md:text-xl lg:text-2xl font-extrabold text-white tracking-wide sm:tracking-widest uppercase mb-2 sm:mb-3 drop-shadow-md typing-subtitle">
+                        <p class="text-base sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-sky-300 tracking-wide sm:tracking-wider uppercase drop-shadow-md">
                             FACILITATING PROCUREMENT & EXPORT LOGISTICS
                         </p>
                     </div>
@@ -129,9 +107,9 @@
 
                 <!-- Slide Indicators -->
                 <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                    <button onclick="setSlide(0)" aria-label="Slide 1" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all"></button>
-                    <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all"></button>
-                    <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all"></button>
+                    <button onclick="setSlide(0)" aria-label="Slide 1" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
+                    <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
+                    <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                 </div>
             </div>
         </div>
@@ -249,12 +227,12 @@
             <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center bg-slate-50 p-3 sm:p-4 rounded-xl border border-slate-200">
                 <input type="text" id="search-input" placeholder="Search medicine or generic..." class="w-full sm:w-80 px-4 py-2 border border-slate-300 rounded-lg text-xs sm:text-sm focus:outline-none focus:border-[#0088cc] bg-white font-medium">
                 <div class="flex gap-1.5 flex-wrap w-full sm:w-auto">
-                    <button onclick="filterByCompany('All')" class="px-3 py-1.5 bg-[#0088cc] text-white text-xs font-bold rounded-lg hover:bg-[#0077b5]">All Manufacturers</button>
-                    <button onclick="filterByCompany('EVEREST')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100">Everest</button>
-                    <button onclick="filterByCompany('DRUGS INTERNATIONAL')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100">Drugs Int.</button>
-                    <button onclick="filterByCompany('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100">Incepta</button>
-                    <button onclick="filterByCompany('GENERAL')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100">General</button>
-                    <button onclick="filterByCompany('ZISKA')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100">Ziska</button>
+                    <button onclick="filterByCompany('All')" class="px-3 py-1.5 bg-[#0088cc] text-white text-xs font-bold rounded-lg hover:bg-[#0077b5] cursor-pointer">All Manufacturers</button>
+                    <button onclick="filterByCompany('EVEREST')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 cursor-pointer">Everest</button>
+                    <button onclick="filterByCompany('DRUGS INTERNATIONAL')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 cursor-pointer">Drugs Int.</button>
+                    <button onclick="filterByCompany('INCEPTA')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 cursor-pointer">Incepta</button>
+                    <button onclick="filterByCompany('GENERAL')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 cursor-pointer">General</button>
+                    <button onclick="filterByCompany('ZISKA')" class="px-3 py-1.5 bg-white text-slate-800 text-xs font-bold rounded-lg border border-slate-300 hover:bg-slate-100 cursor-pointer">Ziska</button>
                 </div>
             </div>
 
@@ -372,18 +350,6 @@
             slides.forEach((slide, index) => {
                 if (index === currentSlide) {
                     slide.classList.add('active');
-                    const title = slide.querySelector('.typing-title');
-                    const subtitle = slide.querySelector('.typing-subtitle');
-                    if(title) {
-                        title.style.animation = 'none';
-                        title.offsetHeight;
-                        title.style.animation = null;
-                    }
-                    if(subtitle) {
-                        subtitle.style.animation = 'none';
-                        subtitle.offsetHeight;
-                        subtitle.style.animation = null;
-                    }
                 } else {
                     slide.classList.remove('active');
                 }
@@ -413,7 +379,7 @@
 
         function resetSlideInterval() {
             clearInterval(slideTimer);
-            slideTimer = setInterval(nextSlide, 12000);
+            slideTimer = setInterval(nextSlide, 5000);
         }
 
         updateSlider();
@@ -609,7 +575,7 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const btn = document.createElement('button');
-                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition ${i === currentPage ? 'bg-[#0088cc] text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}`;
+                btn.className = `px-3 py-1.5 rounded text-xs font-bold transition cursor-pointer ${i === currentPage ? 'bg-[#0088cc] text-white' : 'bg-white text-slate-800 border border-slate-300 hover:bg-slate-100'}`;
                 btn.innerText = i;
                 btn.onclick = () => {
                     renderProducts(i);
