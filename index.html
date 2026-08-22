@@ -36,12 +36,6 @@
             color: #d4af37;
         }
 
-        .header-logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            letter-spacing: 0.5px;
-        }
-
         /* Fixed Slider Styling */
         .slide-item {
             position: absolute;
@@ -65,12 +59,9 @@
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-200">
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
-                <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-10 sm:h-12 object-contain" loading="eager" decoding="async" onerror="this.style.display='none'">
-                <!-- Header Logo Text (Blue & Gold with Company Name) -->
-                <div class="text-xl sm:text-2xl header-logo-text tracking-tight flex items-center gap-2 flex-nowrap whitespace-nowrap">
-                    <span class="brand-blue">RIMO</span>
-                    <span class="brand-gold">GLOBAL PHARMA LTD</span>
-                </div>
+                <a href="#home">
+                    <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-10 sm:h-12 object-contain" loading="eager" decoding="async" onerror="this.style.display='none'">
+                </a>
             </div>
             <nav class="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm font-bold text-slate-800">
                 <a href="#home" class="hover:text-[#0088cc] transition">Home</a>
@@ -90,14 +81,6 @@
                 <!-- Slide 1 -->
                 <div class="slide-item active bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
                     <div class="absolute inset-0 bg-black/20"></div>
-                    <!-- Top Left Logo Badge inside Banner matching 2nd image style -->
-                    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 hidden sm:flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
-                        <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-6 sm:h-8 object-contain" onerror="this.style.display='none'">
-                        <div class="text-xs sm:text-sm font-extrabold tracking-tight flex items-center gap-1.5">
-                            <span class="text-[#0088cc]">RIMO</span>
-                            <span class="text-[#d4af37]">GLOBAL PHARMA LTD</span>
-                        </div>
-                    </div>
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl tracking-tight uppercase leading-tight mb-3 sm:mb-4 text-white px-2 drop-shadow-md">
                             RIMO GLOBAL PHARMA LTD
@@ -111,13 +94,6 @@
                 <!-- Slide 2 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
                     <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 hidden sm:flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
-                        <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-6 sm:h-8 object-contain" onerror="this.style.display='none'">
-                        <div class="text-xs sm:text-sm font-extrabold tracking-tight flex items-center gap-1.5">
-                            <span class="text-[#0088cc]">RIMO</span>
-                            <span class="text-[#d4af37]">GLOBAL PHARMA LTD</span>
-                        </div>
-                    </div>
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 px-2 drop-shadow-md">
                             END-TO-END PHARMA SOURCING
@@ -131,13 +107,6 @@
                 <!-- Slide 3 -->
                 <div class="slide-item bg-cover bg-center flex items-center justify-center p-6 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
                     <div class="absolute inset-0 bg-black/20"></div>
-                    <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 hidden sm:flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
-                        <img src="logo.png" alt="Rimo Global Pharma Ltd Logo" class="h-6 sm:h-8 object-contain" onerror="this.style.display='none'">
-                        <div class="text-xs sm:text-sm font-extrabold tracking-tight flex items-center gap-1.5">
-                            <span class="text-[#0088cc]">RIMO</span>
-                            <span class="text-[#d4af37]">GLOBAL PHARMA LTD</span>
-                        </div>
-                    </div>
                     <div class="max-w-5xl mx-auto z-10 relative flex flex-col items-center">
                         <h1 class="brand-font text-xl sm:text-3xl md:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-tight mb-3 sm:mb-4 px-2 drop-shadow-md">
                             ACCESSIBLE GLOBAL HEALTHCARE
@@ -166,7 +135,7 @@
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">01</div>
                 <div>
                     <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wide">Global Sourcing</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We source from leading WHO-GMP certified pharmaceutical manufacturers in Bangladesh.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We source from leading WHO-GMP certified pharmaceutical manufacturers in Bangladesh[cite: 1].</p>
                 </div>
             </div>
             <!-- Feature 2 -->
@@ -174,7 +143,7 @@
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">02</div>
                 <div>
                     <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wide">Quality Focused</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">Quality is our priority. We ensure authentic products with complete quality documentation.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">Quality is our priority. We ensure authentic products with complete quality documentation[cite: 1].</p>
                 </div>
             </div>
             <!-- Feature 3 -->
@@ -182,7 +151,7 @@
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">03</div>
                 <div>
                     <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wide">Export Support</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We provide end-to-end export support including documentation & logistics coordination.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">We provide end-to-end export support including documentation & logistics coordination[cite: 1].</p>
                 </div>
             </div>
             <!-- Feature 4 -->
@@ -190,7 +159,7 @@
                 <div class="w-10 h-10 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-extrabold text-sm shrink-0 shadow-sm">04</div>
                 <div>
                     <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wide">Global Network</h4>
-                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">Building long-term partnerships with buyers across the globe with reliability and trust.</p>
+                    <p class="text-[11px] sm:text-xs text-slate-600 mt-1 font-medium leading-relaxed">Building long-term partnerships with buyers across the globe with reliability and trust[cite: 1].</p>
                 </div>
             </div>
         </div>
@@ -203,7 +172,7 @@
                 <div>
                     <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">About Rimo Global Pharma Ltd</h2>
                     <p class="text-slate-700 text-xs sm:text-sm leading-relaxed font-medium">
-                        RIMO GLOBAL PHARMA LTD is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients.
+                        RIMO GLOBAL PHARMA LTD is a premier pharmaceutical sourcing and export facilitation company based in Dhaka, Bangladesh[cite: 1]. We specialize in sourcing high-quality pharmaceutical products directly from leading and WHO-GMP certified manufacturers in Bangladesh and providing end-to-end export logistics, international trade support, and procurement facilitation for global clients[cite: 1].
                     </p>
                 </div>
                 <div class="mt-6">
@@ -219,28 +188,28 @@
                             <span class="w-7 h-7 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
                             <div>
                                 <h4 class="text-xs font-bold text-slate-900">Requirement</h4>
-                                <p class="text-[11px] text-slate-600 mt-0.5">We understand your product requirement in detail.</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">We understand your product requirement in detail[cite: 1].</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <span class="w-7 h-7 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
                             <div>
                                 <h4 class="text-xs font-bold text-slate-900">Sourcing</h4>
-                                <p class="text-[11px] text-slate-600 mt-0.5">We source from trusted WHO-GMP certified partners.</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">We source from trusted WHO-GMP certified partners[cite: 1].</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <span class="w-7 h-7 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-bold text-xs shrink-0">3</span>
                             <div>
                                 <h4 class="text-xs font-bold text-slate-900">Quality & Docs</h4>
-                                <p class="text-[11px] text-slate-600 mt-0.5">Quality check & documentation provided for compliance.</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">Quality check & documentation provided for compliance[cite: 1].</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-3 bg-slate-50 p-3 rounded-xl border border-slate-100">
                             <span class="w-7 h-7 rounded-full bg-[#0088cc] text-white flex items-center justify-center font-bold text-xs shrink-0">4</span>
                             <div>
                                 <h4 class="text-xs font-bold text-slate-900">Export & Delivery</h4>
-                                <p class="text-[11px] text-slate-600 mt-0.5">Safe packaging, shipping & delivery to your destination.</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">Safe packaging, shipping & delivery to your destination[cite: 1].</p>
                             </div>
                         </div>
                     </div>
@@ -254,7 +223,7 @@
         <div class="bg-[#0088cc] text-white rounded-t-2xl p-4 sm:p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 border-b border-sky-400/30">
             <div>
                 <h2 class="text-xl sm:text-2xl font-extrabold tracking-tight">Product Portfolio</h2>
-                <p class="text-[10px] sm:text-xs text-sky-100 mt-1 font-medium">Export quality certified oncology and specialty medications.</p>
+                <p class="text-[10px] sm:text-xs text-sky-100 mt-1 font-medium">Export quality certified oncology and specialty medications[cite: 1].</p>
             </div>
             <div class="flex items-center gap-1.5 sm:gap-2 text-base sm:text-xl bg-[#0077b5] p-2 rounded-xl border border-sky-300/30">
                 <span title="Bangladesh">🇧🇩</span>
@@ -294,7 +263,7 @@
                         <span class="text-2xl">🌐</span>
                         <h3 class="text-lg sm:text-2xl font-extrabold text-slate-900 tracking-tight">Global Export & Distribution Network</h3>
                     </div>
-                    <p class="text-xs text-slate-600 mt-1 font-medium">Exporting High-Quality Oncology & Specialty Medicines Worldwide.</p>
+                    <p class="text-xs text-slate-600 mt-1 font-medium">Exporting High-Quality Oncology & Specialty Medicines Worldwide[cite: 1].</p>
                 </div>
                 <div class="flex items-center gap-2">
                     <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
@@ -316,7 +285,7 @@
                     <h3 class="text-white text-base font-bold mb-4 flex items-center gap-2">
                         <span class="text-sky-400">RIMO</span> <span class="text-[#d4af37]">GLOBAL PHARMA LTD</span>
                     </h3>
-                    <p class="text-slate-400 text-xs mb-4 leading-relaxed">Leading global supplier & exporter of high-quality certified oncology and specialty healthcare products.</p>
+                    <p class="text-slate-400 text-xs mb-4 leading-relaxed">Leading global supplier & exporter of high-quality certified oncology and specialty healthcare products[cite: 1].</p>
                     <div class="flex items-center gap-3">
                         <a href="https://www.facebook.com/rimoglobalpharma" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-slate-800 text-sky-400 hover:bg-sky-500 hover:text-white flex items-center justify-center font-bold text-sm transition border border-slate-700">f</a>
                         <a href="https://wa.me/8801742705183" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-slate-800 text-sky-400 hover:bg-sky-500 hover:text-white flex items-center justify-center font-bold text-sm transition border border-slate-700">💬</a>
@@ -326,12 +295,12 @@
                 <div>
                     <h3 class="text-white text-base font-bold mb-4">Office Address</h3>
                     <ul class="space-y-2.5 text-slate-400 text-xs">
-                        <li class="text-slate-200 font-semibold">Rimo Global Pharma Ltd</li>
+                        <li class="text-slate-200 font-semibold">Rimo Global Pharma Ltd[cite: 1]</li>
                         <li class="flex items-start gap-2">
-                            <span class="text-sky-400">📍</span> Shagutta New Rd (R9PH+237), Dhaka, Bangladesh
+                            <span class="text-sky-400">📍</span> Shagutta New Rd (R9PH+237), Dhaka, Bangladesh[cite: 1]
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-sky-400">🇧🇩</span> Main Hub: Dhaka, Bangladesh
+                            <span class="text-sky-400">🇧🇩</span> Main Hub: Dhaka, Bangladesh[cite: 1]
                         </li>
                     </ul>
                 </div>
@@ -355,7 +324,7 @@
             </div>
 
             <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500 space-y-1">
-                <p>Copyright © 2026 <strong class="text-slate-300">RIMO GLOBAL PHARMA LTD</strong> | All Rights Reserved</p>
+                <p>Copyright © 2026 <strong class="text-slate-300">RIMO GLOBAL PHARMA LTD</strong> | All Rights Reserved[cite: 1]</p>
             </div>
         </div>
     </footer>
@@ -371,7 +340,7 @@
                 <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shadow">📱</span>
                 <div>
                     <p class="text-slate-900 font-bold">WhatsApp</p>
-                    <p class="text-[10px] text-slate-500">+880 1742-705183</p>
+                    <p class="text-[10px] text-slate-500">+880 1742-705183[cite: 1]</p>
                 </div>
             </a>
         </div>
