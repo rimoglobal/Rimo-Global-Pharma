@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: #000;
         }
 
         .hero-container {
@@ -26,7 +26,7 @@
             align-items: center;
         }
 
-        /* Background Slider / Images */
+        /* Hero Slides */
         .hero-slide {
             position: absolute;
             top: 0;
@@ -49,7 +49,7 @@
             opacity: 1;
         }
 
-        /* Dark Overlay */
+        /* Dark Overlay for better contrast */
         .hero-slide::before {
             content: '';
             position: absolute;
@@ -57,61 +57,80 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.55);
             z-index: 1;
         }
 
-        /* Content Boxes */
+        /* Main Title Box */
         .main-title-box {
             position: relative;
             z-index: 2;
-            background: rgba(15, 15, 15, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 40px;
-            border-radius: 12px;
-            max-width: 900px;
+            background: rgba(20, 18, 15, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 35px 50px;
+            border-radius: 14px;
+            max-width: 950px;
             width: 100%;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
         }
 
         .main-title-box h1 {
             color: #0099ff;
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 800;
             text-transform: uppercase;
-            line-height: 1.2;
-            letter-spacing: 1px;
+            line-height: 1.15;
+            letter-spacing: 1.5px;
         }
 
+        /* Sub Title Box - Fixed width and padding */
         .sub-title-box {
             position: relative;
             z-index: 2;
-            background: rgba(20, 20, 20, 0.85);
-            padding: 12px 30px;
-            border-radius: 30px;
+            background: rgba(25, 22, 18, 0.85);
+            padding: 14px 35px;
+            border-radius: 35px;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
         }
 
         .sub-title-box p {
             color: #ffffff;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            white-space: nowrap;
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .main-title-box h1 {
-                font-size: 2.2rem;
-            }
-            .main-title-box {
-                padding: 20px;
+                font-size: 2.8rem;
             }
             .sub-title-box p {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title-box {
+                padding: 20px 15px;
+            }
+            .main-title-box h1 {
+                font-size: 2rem;
+            }
+            .sub-title-box {
+                padding: 10px 20px;
+            }
+            .sub-title-box p {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+                white-space: normal;
             }
         }
     </style>
@@ -120,9 +139,9 @@
 
     <div class="hero-container">
         <!-- Slide 1 -->
-        <div class="hero-slide active" style="background-image: url('image1.jpg');">
+        <div class="hero-slide active" style="background-image: url('your-image-1.jpg');">
             <div class="main-title-box">
-                <h1>Rimo Global Pharma Ltd</h1>
+                <h1>Rimo Global Pharma<br>Ltd</h1>
             </div>
             <div class="sub-title-box">
                 <p>Global Supplier of WHO-GMP Certified Oncology Medicines</p>
@@ -130,7 +149,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="hero-slide" style="background-image: url('image2.jpg');">
+        <div class="hero-slide" style="background-image: url('your-image-2.jpg');">
             <div class="main-title-box">
                 <h1>End-To-End Pharma Sourcing</h1>
             </div>
@@ -140,7 +159,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="hero-slide" style="background-image: url('image3.jpg');">
+        <div class="hero-slide" style="background-image: url('your-image-3.jpg');">
             <div class="main-title-box">
                 <h1>Accessible Global Healthcare</h1>
             </div>
@@ -151,7 +170,7 @@
     </div>
 
     <script>
-        // Optional automatic slide switcher script
+        // Automatic slide switcher script
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
 
@@ -161,7 +180,7 @@
             slides[currentSlide].classList.add('active');
         }
 
-        setInterval(nextSlide, 4000); // Change slide every 4 seconds
+        setInterval(nextSlide, 4500); // Change slide every 4.5 seconds
     </script>
 
 </body>
