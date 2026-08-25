@@ -1,0 +1,197 @@
+<style>
+  .rgp-map-wrap{
+    --teal-1:#0d9488; --teal-2:#2dd4bf; --teal-3:#5eead4;
+    --violet:#a78bfa; --coral:#f97316;
+    --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+    font-family:'Poppins','Segoe UI',system-ui,sans-serif;
+    padding:1.25rem 0;
+    max-width:960px; margin:0 auto;
+  }
+  .rgp-map-head{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    gap:10px; margin-bottom:12px; flex-wrap:wrap;
+  }
+  .rgp-map-head h1{
+    margin:0; font-size:22px; font-weight:700; color:var(--ink);
+    letter-spacing:-0.01em; line-height:1.25;
+  }
+  .rgp-map-head .rgp-sub{
+    margin:2px 0 0; font-size:13px; color:var(--muted); font-weight:500;
+  }
+  #rgp-count{
+    font-size:12.5px; font-weight:700; color:#fff;
+    background:linear-gradient(135deg,var(--teal-1),var(--teal-2));
+    padding:6px 12px; border-radius:999px; white-space:nowrap;
+    box-shadow:0 4px 12px -2px rgba(13,148,136,.45);
+  }
+  .rgp-map-card{
+    width:100%; position:relative; overflow:hidden;
+    border-radius:18px; border:1px solid var(--line);
+    background:linear-gradient(180deg,#f8fafc 0%, #eef2f7 100%);
+    box-shadow:0 8px 30px -10px rgba(15,23,42,.15);
+  }
+  .rgp-map-card svg{ display:block; width:100%; height:auto; }
+  .rgp-tooltip{
+    position:absolute; pointer-events:none; opacity:0; z-index:6;
+    background:var(--ink); color:#fff; font-size:12px; font-weight:600;
+    padding:6px 10px; border-radius:8px; transform:translate(-50%,-115%);
+    box-shadow:0 6px 16px -4px rgba(0,0,0,.35); transition:opacity .1s ease;
+    white-space:nowrap;
+  }
+  .rgp-tooltip:after{
+    content:''; position:absolute; left:50%; bottom:-5px; transform:translateX(-50%);
+    border-width:5px 5px 0 5px; border-style:solid;
+    border-color:var(--ink) transparent transparent transparent;
+  }
+  .rgp-controls{
+    position:absolute; top:10px; left:10px; z-index:5;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .rgp-controls button{
+    width:30px; height:30px; border-radius:9px; border:1px solid var(--line);
+    background:rgba(255,255,255,.92); color:var(--ink); font-size:16px; font-weight:700;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 2px 8px -2px rgba(15,23,42,.2); backdrop-filter:blur(4px);
+  }
+  .rgp-controls button:active{ transform:scale(.94); }
+  .rgp-badge{
+    position:absolute; top:10px; right:10px; z-index:5;
+    background:linear-gradient(135deg,var(--coral),#fb923c);
+    color:#fff; font-size:11px; font-weight:700; padding:5px 10px;
+    border-radius:999px; box-shadow:0 4px 10px -2px rgba(249,115,22,.45);
+    display:flex; align-items:center; gap:5px;
+  }
+  .rgp-badge:before{ content:''; width:6px; height:6px; border-radius:50%; background:#fff; }
+  .rgp-legend{
+    display:flex; gap:10px; margin-top:12px; font-size:12.5px; font-weight:600;
+    color:var(--muted); flex-wrap:wrap;
+  }
+  .rgp-legend span.item{
+    display:flex; align-items:center; gap:7px; background:#fff;
+    border:1px solid var(--line); padding:6px 12px; border-radius:999px;
+  }
+  .rgp-legend .dot{ width:11px; height:11px; border-radius:4px; flex-shrink:0; }
+  .rgp-legend .dot.exp{ background:linear-gradient(135deg,var(--teal-1),var(--teal-2)); }
+  .rgp-legend .dot.fut{ background:var(--violet); }
+  .rgp-legend .dot.hub{ background:linear-gradient(135deg,var(--coral),#fb923c); }
+
+  @media (max-width:520px){
+    .rgp-map-wrap{ padding:.85rem 0; }
+    .rgp-map-head{ flex-direction:column; align-items:flex-start; gap:8px; margin-bottom:10px; }
+    .rgp-map-head h1{ font-size:18px; }
+    .rgp-map-head .rgp-sub{ font-size:12px; }
+    #rgp-count{ font-size:11.5px; padding:5px 10px; }
+    .rgp-map-card{ border-radius:14px; }
+    .rgp-controls{ top:8px; left:8px; }
+    .rgp-controls button{ width:26px; height:26px; font-size:14px; border-radius:7px; }
+    .rgp-badge{ top:8px; right:8px; font-size:10px; padding:4px 8px; }
+    .rgp-legend{ gap:6px; margin-top:10px; }
+    .rgp-legend span.item{ font-size:11px; padding:5px 9px; }
+    .rgp-legend .dot{ width:9px; height:9px; }
+    .rgp-tooltip{ font-size:11px; padding:5px 8px; }
+  }
+</style>
+
+<div class="rgp-map-wrap">
+  <div class="rgp-map-head">
+    <div>
+      <h1>Rimo Global Pharma — our global presence</h1>
+      <p class="rgp-sub">Bangladesh-based sourcing, exporting worldwide</p>
+    </div>
+    <span id="rgp-count">exporting to 40 countries</span>
+  </div>
+
+  <div id="rgp-map" class="rgp-map-card">
+    <div class="rgp-badge">Bangladesh · Export Hub</div>
+  </div>
+
+  <div class="rgp-legend">
+    <span class="item"><span class="dot exp"></span>Exporting countries</span>
+    <span class="item"><span class="dot fut"></span>Future plan</span>
+    <span class="item"><span class="dot hub"></span>Bangladesh (hub)</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+(function(){
+  const EXPORTING = ["India","Pakistan","Nepal","Sri Lanka","Myanmar","Malaysia","Indonesia","Philippines","Vietnam","Cambodia","United Arab Emirates","Saudi Arabia","Qatar","Oman","Yemen","Turkey","Ukraine","Georgia","Armenia","Azerbaijan","Serbia","Bosnia and Herz.","Kenya","Uganda","Tanzania","Nigeria","South Africa","Ghana","Ethiopia","Sudan","Somalia","Rwanda","Zambia","Zimbabwe","Malawi","Mozambique","Senegal","Egypt","Morocco","Algeria"];
+  const AFRICA_ALL = ["Tanzania","W. Sahara","Dem. Rep. Congo","Somalia","Kenya","Sudan","Chad","South Africa","Lesotho","Zimbabwe","Botswana","Namibia","Senegal","Mali","Mauritania","Benin","Niger","Nigeria","Cameroon","Togo","Ghana","Cote d'Ivoire","Côte d'Ivoire","Guinea","Guinea-Bissau","Liberia","Sierra Leone","Burkina Faso","Central African Rep.","Congo","Gabon","Eq. Guinea","Zambia","Malawi","Mozambique","eSwatini","Angola","Burundi","Madagascar","Tunisia","Algeria","Morocco","Libya","Egypt","Ethiopia","Djibouti","Somaliland","Uganda","Rwanda","S. Sudan","Eritrea","Gambia"];
+  const ASIA_ALL = ["Kazakhstan","Uzbekistan","Indonesia","Israel","Lebanon","Palestine","Jordan","United Arab Emirates","Qatar","Kuwait","Iraq","Oman","Cambodia","Thailand","Laos","Myanmar","Vietnam","North Korea","South Korea","Mongolia","India","Bangladesh","Bhutan","Nepal","Pakistan","Afghanistan","Tajikistan","Kyrgyzstan","Turkmenistan","Iran","Syria","Armenia","China","Taiwan","Azerbaijan","Georgia","Philippines","Malaysia","Brunei","Sri Lanka","Japan","Yemen","Saudi Arabia","Cyprus","N. Cyprus","Timor-Leste"];
+  const EUROPE_SOME = ["Turkey","Ukraine","Serbia","Bosnia and Herz.","Albania","Moldova","Kosovo"];
+  const exportSet = new Set(EXPORTING);
+  const futureSet = new Set([...AFRICA_ALL,...ASIA_ALL,...EUROPE_SOME].filter(n => !exportSet.has(n) && n !== "Bangladesh"));
+
+  document.getElementById('rgp-count').textContent = 'exporting to ' + EXPORTING.length + ' countries';
+
+  const width = 900, height = 460;
+  const container = document.getElementById('rgp-map');
+  const svg = d3.select(container).append('svg')
+    .attr('viewBox','0 0 '+width+' '+height)
+    .attr('preserveAspectRatio','xMidYMid meet');
+
+  const defs = svg.append('defs');
+  const gradExp = defs.append('linearGradient').attr('id','rgpGradExp').attr('x1','0%').attr('y1','0%').attr('x2','100%').attr('y2','100%');
+  gradExp.append('stop').attr('offset','0%').attr('stop-color','#0d9488');
+  gradExp.append('stop').attr('offset','100%').attr('stop-color','#2dd4bf');
+  const gradHub = defs.append('radialGradient').attr('id','rgpGradHub');
+  gradHub.append('stop').attr('offset','0%').attr('stop-color','#fb923c');
+  gradHub.append('stop').attr('offset','100%').attr('stop-color','#ea580c');
+
+  const g = svg.append('g');
+  const projection = d3.geoNaturalEarth1().scale(150).translate([width/2, height/2+8]);
+  const path = d3.geoPath(projection);
+
+  const tooltip = d3.select(container).append('div').attr('class','rgp-tooltip');
+
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(function(world){
+    const countries = topojson.feature(world, world.objects.countries).features;
+
+    g.selectAll('path').data(countries).join('path')
+      .attr('d', path)
+      .style('stroke', '#f8fafc')
+      .style('stroke-width', 0.7)
+      .attr('fill', function(d){
+        const name = d.properties.name;
+        if (name === 'Bangladesh') return 'url(#rgpGradHub)';
+        if (exportSet.has(name)) return 'url(#rgpGradExp)';
+        if (futureSet.has(name)) return '#a78bfa';
+        return '#dbe3ea';
+      })
+      .style('cursor', function(d){
+        const n = d.properties.name;
+        return (n === 'Bangladesh' || exportSet.has(n) || futureSet.has(n)) ? 'pointer' : 'default';
+      })
+      .on('mouseenter', function(){ d3.select(this).style('opacity', 0.85); })
+      .on('mouseleave', function(){ d3.select(this).style('opacity', 1); tooltip.style('opacity','0'); })
+      .on('mousemove', function(event, d){
+        const name = d.properties.name;
+        let label = null;
+        if (name === 'Bangladesh') label = name + ' — Export Hub';
+        else if (exportSet.has(name)) label = name + ' — Exporting';
+        else if (futureSet.has(name)) label = name + ' — Future Plan';
+        if (!label){ tooltip.style('opacity','0'); return; }
+        const rect = container.getBoundingClientRect();
+        tooltip.style('opacity','1').text(label)
+          .style('left', (event.clientX - rect.left) + 'px')
+          .style('top', (event.clientY - rect.top) + 'px');
+      })
+      .on('click', function(event, d){
+        const name = d.properties.name;
+        if (exportSet.has(name) || futureSet.has(name) || name === 'Bangladesh'){
+          if (typeof sendPrompt === 'function'){
+            sendPrompt('Rimo Global Pharma export status details ' + name + ' er jonno bolo');
+          }
+        }
+      });
+
+    const zoom = d3.zoom().scaleExtent([1,6]).on('zoom', function(event){ g.attr('transform', event.transform); });
+    svg.call(zoom);
+
+    const controls = d3.select(container).append('div').attr('class','rgp-controls');
+    controls.append('button').text('+').on('click', function(){ svg.transition().call(zoom.scaleBy, 1.5); });
+    controls.append('button').text('−').on('click', function(){ svg.transition().call(zoom.scaleBy, 0.67); });
+  });
+})();
+</script>
