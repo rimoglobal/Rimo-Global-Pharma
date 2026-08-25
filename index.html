@@ -43,21 +43,14 @@
             pointer-events: auto;
         }
 
-        /* Typing Effect Styling & Blinking Cursor */
+        /* Typing Effect Styling (লম্বালম্বি দাগ বা বর্ডার রিমুভ করা হয়েছে) */
         .typing-effect {
             display: inline-block;
             overflow: hidden;
-            border-right: 3px solid rgba(255, 255, 255, 0.8);
             letter-spacing: 0.05em;
-            animation: blink-caret 0.75s step-end infinite;
             max-width: 100%;
-            white-space: normal; /* Allows text to wrap into multiple lines */
+            white-space: normal;
             word-break: break-word;
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: rgba(255, 255, 255, 0.8); }
         }
     </style>
 </head>
@@ -132,7 +125,7 @@
             </div>
         </div>
 
-        <!-- 🚀 স্লাইডারের ঠিক নিচে চলমান টেক্সট (Marquee Bar) -->
+        <!-- Marquee Bar -->
         <div class="bg-slate-900 border-t border-slate-800 py-3 px-4 shadow-inner">
             <div class="max-w-7xl mx-auto overflow-hidden whitespace-nowrap">
                 <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
@@ -397,7 +390,6 @@
         function playSlideTyping(slideElement) {
             clearAllTimeouts();
             
-            // Reset all typing spans in other slides
             slides.forEach(s => {
                 s.querySelectorAll('.typing-effect').forEach(span => {
                     span.innerHTML = '';
