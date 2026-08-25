@@ -43,13 +43,21 @@
             pointer-events: auto;
         }
 
-        /* Typing Effect Styling without side line/caret */
+        /* Typing Effect Styling & Blinking Cursor */
         .typing-effect {
             display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid rgba(255, 255, 255, 0.8);
             letter-spacing: 0.05em;
+            animation: blink-caret 0.75s step-end infinite;
             max-width: 100%;
             white-space: normal; /* Allows text to wrap into multiple lines */
             word-break: break-word;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgba(255, 255, 255, 0.8); }
         }
     </style>
 </head>
@@ -121,6 +129,19 @@
                     <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                     <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                 </div>
+            </div>
+        </div>
+
+        <!-- 🚀 স্লাইডারের ঠিক নিচে চলমান টেক্সট (Marquee Bar) -->
+        <div class="bg-slate-900 border-t border-slate-800 py-3 px-4 shadow-inner">
+            <div class="max-w-7xl mx-auto overflow-hidden whitespace-nowrap">
+                <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
+                    <span class="text-sky-400 mr-8">🚀 RIMO GLOBAL PHARMA LIMITED</span> 
+                    <span class="text-rose-500 mr-8">|</span> 
+                    <span class="mr-8">Accessible Global Healthcare — Facilitating Procurement & Export Logistics</span>
+                    <span class="text-rose-500 mr-8">|</span>
+                    <span class="text-emerald-400">Exporting High-Quality Oncology & Specialty Medicines Worldwide</span>
+                </marquee>
             </div>
         </div>
     </section>
@@ -260,8 +281,8 @@
                     <p class="text-xs text-slate-600 mt-1 font-medium">Exporting High-Quality Oncology & Specialty Medicines Worldwide.</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#0088cc]"></span>
-                    <span class="text-xs text-[#0088cc] font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
                 </div>
             </div>
 
@@ -666,9 +687,8 @@
             const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().src?.toLowerCase().includes(query) ||
-                p.company.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().includes(query)
+                p.generic.toLowerCase().includes(query) ||
+                p.company.toLowerCase().includes(query)
             );
             renderProducts(1);
         });
