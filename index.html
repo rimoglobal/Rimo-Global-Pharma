@@ -77,13 +77,11 @@
     <!-- Professional Hero Banner Slider -->
     <section id="home" class="w-full py-0">
         <div class="w-full bg-slate-900 overflow-hidden">
-            <div class="w-full relative h-[320px] sm:h-[400px] lg:h-[480px] overflow-hidden flex items-center justify-center">
+            <div class="w-full relative h-[320px] sm:h-[420px] lg:h-[500px] overflow-hidden flex items-center justify-center">
                 
-                <!-- Slide 1 (Fixed background sizing so full logo and text are visible without cropping) -->
-                <div class="slide-item active bg-[length:100%_100%] sm:bg-[length:100%_100%] bg-center bg-no-repeat flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <!-- Slide 1 content removed -->
-                    </div>
+                <!-- Slide 1 (Fixed using <img> tag so it never stretches or looks distorted/cepta) -->
+                <div class="slide-item active bg-slate-900 flex items-center justify-center overflow-hidden">
+                    <img src="cell-bg.png" alt="Rimo Global Pharma Overview" class="w-full h-full object-contain sm:object-cover">
                 </div>
 
                 <!-- Slide 2 -->
@@ -111,7 +109,7 @@
                 </div>
 
                 <!-- Slide Indicators -->
-                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                     <button onclick="setSlide(0)" aria-label="Slide 1" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                     <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                     <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
@@ -661,9 +659,8 @@
             const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().src?.toLowerCase().includes(query) ||
-                p.company.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().includes(query)
+                p.generic.toLowerCase().includes(query) ||
+                p.company.toLowerCase().includes(query)
             );
             renderProducts(1);
         });
