@@ -35,9 +35,6 @@
             transition: opacity 2.5s ease-in-out, visibility 2.5s ease-in-out;
             pointer-events: none;
             will-change: opacity, visibility;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         .slide-item.active {
@@ -51,7 +48,7 @@
             display: inline-block;
             letter-spacing: 0.05em;
             max-width: 100%;
-            white-space: normal;
+            white-space: normal; /* Allows text to wrap into multiple lines */
             word-break: break-word;
         }
     </style>
@@ -82,22 +79,15 @@
         <div class="w-full bg-slate-900 overflow-hidden">
             <div class="w-full relative h-[320px] sm:h-[400px] lg:h-[480px] overflow-hidden flex items-center justify-center">
                 
-                <!-- Slide 1 -->
-                <div class="slide-item active flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <div class="absolute inset-0 bg-black/30"></div>
+                <!-- Slide 1 (Typing text removed as requested) -->
+            <div class="slide-item active bg-cover bg-center bg-no-repeat flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
-                            <span class="typing-effect" data-text="GLOBAL PHARMACEUTICAL SOURCING PARTNER"></span>
-                        </h1>
-                        <p class="hero-subtitle text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            <span class="typing-effect" data-text="DELIVERING QUALITY MEDICINES WORLDWIDE"></span>
-                        </p>
+                        <!-- Slide 1 content removed -->
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="slide-item flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
-                    <div class="absolute inset-0 bg-black/30"></div>
+                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
                         <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
                             <span class="typing-effect" data-text="END-TO-END PHARMA SOURCING"></span>
@@ -109,8 +99,7 @@
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="slide-item flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
-                    <div class="absolute inset-0 bg-black/30"></div>
+                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
                         <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
                             <span class="typing-effect" data-text="ACCESSIBLE GLOBAL HEALTHCARE"></span>
@@ -382,6 +371,7 @@
         function playSlideTyping(slideElement) {
             clearAllTimeouts();
             
+            // Reset all typing spans in other slides
             slides.forEach(s => {
                 s.querySelectorAll('.typing-effect').forEach(span => {
                     span.innerHTML = '';
@@ -671,6 +661,7 @@
             const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) ||
+                p.generic.toLowerCase().src?.toLowerCase().includes(query) ||
                 p.company.toLowerCase().includes(query) ||
                 p.generic.toLowerCase().includes(query)
             );
