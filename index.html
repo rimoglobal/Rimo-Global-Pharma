@@ -79,10 +79,10 @@
         <div class="w-full bg-slate-900 overflow-hidden">
             <div class="w-full relative h-[320px] sm:h-[400px] lg:h-[480px] overflow-hidden flex items-center justify-center">
                 
-                <!-- Slide 1 (Typing text removed as requested) -->
-           <div class="slide-item active bg-center bg-no-repeat flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg_2.png'); background-size: 100% 100%;">
+                <!-- Slide 1 -->
+                <div class="slide-item active bg-center bg-no-repeat flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg_2.png'); background-size: 100% 100%;">
                     <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <!-- Slide 1 content removed -->
+                        <!-- Slide 1 content removed as requested -->
                     </div>
                 </div>
 
@@ -661,7 +661,6 @@
             const query = e.target.value.toLowerCase().trim();
             filteredProducts = productsData.filter(p => 
                 p.brand.toLowerCase().includes(query) ||
-                p.generic.toLowerCase().src?.toLowerCase().includes(query) ||
                 p.company.toLowerCase().includes(query) ||
                 p.generic.toLowerCase().includes(query)
             );
