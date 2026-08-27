@@ -43,12 +43,13 @@
             pointer-events: auto;
         }
 
-        /* Typing Effect Styling without side line/caret */
+        /* Typing Effect Styling */
         .typing-effect {
             display: inline-block;
+            overflow: hidden;
             letter-spacing: 0.05em;
             max-width: 100%;
-            white-space: normal; /* Allows text to wrap into multiple lines */
+            white-space: normal;
             word-break: break-word;
         }
     </style>
@@ -77,11 +78,18 @@
     <!-- Professional Hero Banner Slider -->
     <section id="home" class="w-full py-0">
         <div class="w-full bg-slate-900 overflow-hidden">
-            <div class="w-full relative aspect-[1670/941] overflow-hidden flex items-center justify-center">
+            <div class="w-full relative h-[420px] sm:h-[520px] lg:h-[680px] overflow-hidden flex items-center justify-center">
                 
-                <!-- Slide 1 (Fixed using <img> tag so it never stretches or looks distorted/cepta) -->
-                <div class="slide-item active bg-slate-900 flex items-center justify-center overflow-hidden">
-                    <img src="cell-bg.png" alt="Rimo Global Pharma Overview" class="w-full h-full object-contain">
+                <!-- Slide 1 -->
+                <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
+                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
+                        <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl tracking-tight uppercase leading-tight mb-3 text-white drop-shadow-lg w-full">
+                            <span class="typing-effect" data-text="RIMO GLOBAL PHARMA LTD"></span>
+                        </h1>
+                        <p class="hero-subtitle text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
+                            <span class="typing-effect" data-text="GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES"></span>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Slide 2 -->
@@ -109,11 +117,24 @@
                 </div>
 
                 <!-- Slide Indicators -->
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
                     <button onclick="setSlide(0)" aria-label="Slide 1" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                     <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                     <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Marquee Bar -->
+        <div class="bg-slate-900 border-t border-slate-800 py-3 px-4 shadow-inner">
+            <div class="max-w-7xl mx-auto overflow-hidden whitespace-nowrap">
+                <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
+                    <span class="text-sky-400 mr-8">🚀 RIMO GLOBAL PHARMA LIMITED</span> 
+                    <span class="text-rose-500 mr-8">|</span> 
+                    <span class="mr-8">Accessible Global Healthcare — Facilitating Procurement & Export Logistics</span>
+                    <span class="text-rose-500 mr-8">|</span>
+                    <span class="text-emerald-400">Exporting High-Quality Oncology & Specialty Medicines Worldwide</span>
+                </marquee>
             </div>
         </div>
     </section>
@@ -253,8 +274,8 @@
                     <p class="text-xs text-slate-600 mt-1 font-medium">Exporting High-Quality Oncology & Specialty Medicines Worldwide.</p>
                 </div>
                 <div class="flex items-center gap-2">
-                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#0088cc]"></span>
-                    <span class="text-xs text-[#0088cc] font-bold bg-sky-50 px-3 py-1 rounded-full border border-sky-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="text-xs text-emerald-700 font-bold bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Main Hub: Dhaka, Bangladesh 🇧🇩</span>
                 </div>
             </div>
 
@@ -369,7 +390,6 @@
         function playSlideTyping(slideElement) {
             clearAllTimeouts();
             
-            // Reset all typing spans in other slides
             slides.forEach(s => {
                 s.querySelectorAll('.typing-effect').forEach(span => {
                     span.innerHTML = '';
