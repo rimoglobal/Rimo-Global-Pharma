@@ -66,22 +66,22 @@
             z-index: 10;
         }
 
-        /* Company Name Badge on Top of Banner */
+        /* Medical Blue Tag above Banner Typing Text */
         .company-top-tag {
-            font-size: clamp(0.75rem, 1.2vw, 1rem);
+            font-size: clamp(0.75rem, 1.2vw, 0.95rem);
             font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #2563eb;
+            letter-spacing: 0.1em;
+            color: #1e40af; /* Deep Medical Royal Blue */
             text-transform: uppercase;
             margin-bottom: clamp(6px, 1vw, 12px);
             display: inline-block;
-            background-color: rgba(37, 99, 235, 0.08);
-            padding: 4px 12px;
-            rounded-radius: 6px;
-            border-radius: 6px;
+            background-color: #eff6ff; /* Soft Ice Blue */
+            border: 1px solid #bfdbfe;
+            padding: 5px 14px;
+            border-radius: 20px;
         }
 
-        /* Main Heading (No Italic, Clean Bold) */
+        /* Main Headings */
         .home-brand {
             font-weight: 800;
             font-size: clamp(1.4rem, 3vw, 3rem);
@@ -96,7 +96,7 @@
             font-weight: 600;
             font-size: clamp(0.85rem, 1.6vw, 1.4rem);
             margin: 0 0 clamp(6px, 1vw, 10px);
-            color: #1e3a8a;
+            color: #1d4ed8;
         }
 
         .typing-effect {
@@ -105,7 +105,7 @@
             word-break: normal;
         }
 
-        /* Clean Ticker Bar */
+        /* Ticker Bar */
         .new-ticker-bar {
             background: #0f172a;
             border-top: 1px solid #1e293b;
@@ -136,7 +136,7 @@
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
 
-    <!-- Header Navigation -->
+    <!-- 1. Header Navigation -->
     <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm">
         <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center space-x-3">
@@ -155,7 +155,7 @@
         </div>
     </header>
 
-    <!-- Home Banner Section -->
+    <!-- 2. Home Banner & Running Bar Section -->
     <section id="home" class="w-full py-0">
         <div class="home-banner">
             <img src="home-banner.png" alt="Rimo Global Pharma Ltd">
@@ -165,8 +165,8 @@
 
             <!-- Banner Text Layer -->
             <div class="home-banner-typing">
-                <!-- Company Name Tag on Top -->
-                <div class="company-top-tag">RIMO GLOBAL PHARMA LTD</div>
+                <!-- Medical Royal Blue Tag -->
+                <div class="company-top-tag">✦ RIMO GLOBAL PHARMA LTD</div>
 
                 <div class="home-brand">
                     <span id="brand-typing" class="typing-effect"></span>
@@ -182,11 +182,12 @@
             </div>
         </div>
 
-        <!-- Announcement Bar -->
+        <!-- Announcement / Running Bar -->
         <div class="new-ticker-bar">
             <div class="max-w-7xl mx-auto overflow-hidden whitespace-nowrap">
                 <marquee behavior="scroll" direction="left" scrollamount="4" class="text-slate-300 font-medium text-xs sm:text-sm">
-                    <span class="text-teal-400 font-bold mr-4">✦ RIMO GLOBAL PHARMA LIMITED</span>
+                    <!-- Beautiful Medical Blue Accent inside Ticker Bar -->
+                    <span class="text-blue-400 font-bold mr-4">✦ RIMO GLOBAL PHARMA LIMITED</span>
                     <span class="text-slate-600 mr-4">•</span>
                     <span class="text-slate-200 font-medium mr-4">Strict Cold Chain Management</span>
                     <span class="text-slate-600 mr-4">•</span>
@@ -198,7 +199,7 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- 3. Products & Categories Section -->
     <section id="products-section" class="container mx-auto px-4 py-16">
         <div class="text-center mb-12">
             <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-3">Products & Oncology Categories</h2>
@@ -224,7 +225,7 @@
         </div>
     </section>
 
-    <!-- Global Network Section -->
+    <!-- 4. Global Network & Map Section -->
     <section id="map-section" class="bg-slate-100 py-16 border-t border-slate-200/80">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl sm:text-3xl font-bold text-slate-800 mb-3">Global Supply Network</h2>
@@ -237,7 +238,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 5. Footer Section -->
     <footer id="contact" class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -263,7 +264,7 @@
         </div>
     </footer>
 
-    <!-- Floating Contact Button -->
+    <!-- 6. Floating Contact Us Button -->
     <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
         <div id="contact-popup-menu" class="hidden mb-3 bg-white border border-slate-200 rounded-2xl shadow-xl p-3.5 w-60 flex flex-col gap-2 transition-all">
             <div class="text-xs font-bold text-slate-800 px-2 py-1 border-b border-slate-100 flex justify-between items-center">
