@@ -26,31 +26,73 @@
             font-weight: 900;
         }
 
-        /* Smooth Slider Styling */
-        .slide-item {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 2.5s ease-in-out, visibility 2.5s ease-in-out;
-            pointer-events: none;
-            will-change: opacity, visibility;
-        }
-
-        .slide-item.active {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        /* Typing Effect Styling */
-        .typing-effect {
-            display: inline-block;
+        /* New Home Banner - 1920x1080 image */
+        .home-banner {
+            position: relative;
+            width: 100%;
             overflow: hidden;
-            letter-spacing: 0.05em;
-            max-width: 100%;
+            background: #07558f;
+            line-height: 0;
+        }
+
+        .home-banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .home-banner-typing {
+            position: absolute;
+            top: 50%;
+            right: 7%;
+            transform: translateY(-50%);
+            width: 48%;
+            text-align: center;
+            line-height: 1.15;
+            color: white;
+        }
+
+        .home-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.5rem, 3.2vw, 4rem);
+            letter-spacing: 0.025em;
+            margin-bottom: clamp(14px, 2vw, 28px);
+            text-shadow: 0 3px 10px rgba(0,0,0,.22);
+        }
+
+        .home-typing-line {
+            min-height: 1.35em;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: clamp(.8rem, 1.65vw, 2rem);
+            letter-spacing: .015em;
+            margin: 0 0 clamp(12px, 1.7vw, 24px);
+            text-shadow: 0 2px 7px rgba(0,0,0,.20);
+        }
+
+        /* No cursor/vertical typing line */
+        .typing-effect {
+            display: inline;
             white-space: normal;
-            word-break: break-word;
+            word-break: normal;
+        }
+
+        @media (max-width: 768px) {
+            .home-banner-typing {
+                right: 4%;
+                width: 53%;
+            }
+
+            .home-brand {
+                font-size: clamp(1rem, 4.5vw, 1.7rem);
+                margin-bottom: 9px;
+            }
+
+            .home-typing-line {
+                font-size: clamp(.52rem, 2.25vw, .9rem);
+                margin-bottom: 8px;
+            }
         }
     </style>
 </head>
@@ -75,62 +117,48 @@
         </div>
     </header>
 
-    <!-- Professional Hero Banner Slider -->
+    <!-- Home Page Hero Banner -->
     <section id="home" class="w-full py-0">
-        <div class="w-full bg-slate-900 overflow-hidden">
-            <div class="w-full relative h-[420px] sm:h-[520px] lg:h-[680px] overflow-hidden flex items-center justify-center">
-                
-                <!-- Slide 1 -->
-                <div class="slide-item active bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('cell-bg.png');">
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl tracking-tight uppercase leading-tight mb-3 text-white drop-shadow-lg w-full">
-                            <span class="typing-effect" data-text="RIMO GLOBAL PHARMA LTD"></span>
-                        </h1>
-                        <p class="hero-subtitle text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            <span class="typing-effect" data-text="GLOBAL SUPPLIER OF WHO-GMP CERTIFIED ONCOLOGY MEDICINES"></span>
-                        </p>
-                    </div>
+        <div class="home-banner">
+            <img src="home-banner.png"
+                 alt="Rimo Global Pharma Ltd - Oncology Medicine Sourcing"
+                 loading="eager"
+                 decoding="async">
+
+            <!-- Live typing stays on the empty right side of the banner -->
+            <div class="home-banner-typing">
+                <div class="home-brand">
+                    <span id="brand-typing" class="typing-effect"></span>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide2.jpeg');">
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
-                            <span class="typing-effect" data-text="END-TO-END PHARMA SOURCING"></span>
-                        </h1>
-                        <p class="hero-subtitle text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            <span class="typing-effect" data-text="CONNECTING HEALTHCARE DEMANDS GLOBALLY"></span>
-                        </p>
-                    </div>
+                <div class="home-typing-line">
+                    <span id="line-1" class="typing-effect"></span>
                 </div>
 
-                <!-- Slide 3 -->
-                <div class="slide-item bg-cover bg-center flex items-center justify-center p-4 sm:p-12 lg:p-20 text-center" style="background-image: url('slide3.jpeg');">
-                    <div class="max-w-4xl mx-auto z-10 relative flex flex-col items-center px-4 w-full">
-                        <h1 class="hero-title brand-font text-lg sm:text-3xl md:text-4xl lg:text-5xl text-white tracking-tight uppercase leading-tight mb-3 drop-shadow-lg w-full">
-                            <span class="typing-effect" data-text="ACCESSIBLE GLOBAL HEALTHCARE"></span>
-                        </h1>
-                        <p class="hero-subtitle text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold italic text-white tracking-wide uppercase drop-shadow-md w-full max-w-2xl leading-snug">
-                            <span class="typing-effect" data-text="FACILITATING PROCUREMENT & EXPORT LOGISTICS"></span>
-                        </p>
-                    </div>
+                <div class="home-typing-line">
+                    <span id="line-2" class="typing-effect"></span>
                 </div>
 
-                <!-- Slide Indicators -->
-                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-                    <button onclick="setSlide(0)" aria-label="Slide 1" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
-                    <button onclick="setSlide(1)" aria-label="Slide 2" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
-                    <button onclick="setSlide(2)" aria-label="Slide 3" class="slide-bar w-8 h-1.5 bg-white/50 rounded-full transition-all cursor-pointer"></button>
+                <div class="home-typing-line">
+                    <span id="line-3" class="typing-effect"></span>
+                </div>
+
+                <div class="home-typing-line">
+                    <span id="line-4" class="typing-effect"></span>
+                </div>
+
+                <div class="home-typing-line">
+                    <span id="line-5" class="typing-effect"></span>
                 </div>
             </div>
         </div>
 
-        <!-- Marquee Bar -->
+        <!-- Existing moving text bar kept unchanged -->
         <div class="bg-slate-900 border-t border-slate-800 py-3 px-4 shadow-inner">
             <div class="max-w-7xl mx-auto overflow-hidden whitespace-nowrap">
                 <marquee behavior="scroll" direction="left" scrollamount="5" class="text-white font-bold text-xs sm:text-sm uppercase tracking-wider">
-                    <span class="text-sky-400 mr-8">🚀 RIMO GLOBAL PHARMA LIMITED</span> 
-                    <span class="text-rose-500 mr-8">|</span> 
+                    <span class="text-sky-400 mr-8">🚀 RIMO GLOBAL PHARMA LIMITED</span>
+                    <span class="text-rose-500 mr-8">|</span>
                     <span class="mr-8">Accessible Global Healthcare — Facilitating Procurement & Export Logistics</span>
                     <span class="text-rose-500 mr-8">|</span>
                     <span class="text-emerald-400">Exporting High-Quality Oncology & Specialty Medicines Worldwide</span>
@@ -361,94 +389,53 @@
 
     <!-- JavaScript Engine -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide-item');
-        const bars = document.querySelectorAll('.slide-bar');
-        let slideTimer;
-        let typingTimeouts = [];
+        // Home banner live typing — no cursor/vertical line.
+        const typingSequence = [
+            { id: 'brand-typing', text: 'RIMO GLOBAL PHARMA LTD', speed: 65, pause: 900 },
+            { id: 'line-1', text: 'Oncology Medicine Sourcing', speed: 48, pause: 700 },
+            { id: 'line-2', text: 'Oncology & Cancer Medicines Worldwide', speed: 42, pause: 700 },
+            { id: 'line-3', text: 'EU-GMP & Global Standard Pharmaceuticals', speed: 40, pause: 700 },
+            { id: 'line-4', text: 'Strict Cold Chain Management', speed: 45, pause: 700 },
+            { id: 'line-5', text: 'Temperature-Controlled Oncology Logistics', speed: 40, pause: 1400 }
+        ];
 
-        function clearAllTimeouts() {
-            typingTimeouts.forEach(t => clearTimeout(t));
-            typingTimeouts = [];
+        const typingElements = typingSequence
+            .map(item => document.getElementById(item.id))
+            .filter(Boolean);
+
+        function clearTypingText() {
+            typingElements.forEach(el => el.textContent = '');
         }
 
-        function typeWriter(element, text, i = 0, speed = 55, callback) {
-            if (i === 0) {
-                element.innerHTML = '';
-            }
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                let timeout = setTimeout(() => {
-                    typeWriter(element, text, i + 1, speed, callback);
-                }, speed);
-                typingTimeouts.push(timeout);
-            } else if (callback) {
-                callback();
-            }
-        }
-
-        function playSlideTyping(slideElement) {
-            clearAllTimeouts();
-            
-            slides.forEach(s => {
-                s.querySelectorAll('.typing-effect').forEach(span => {
-                    span.innerHTML = '';
-                });
-            });
-
-            const titleSpan = slideElement.querySelector('.hero-title .typing-effect');
-            const subtitleSpan = slideElement.querySelector('.hero-subtitle .typing-effect');
-
-            if (titleSpan) {
-                const titleText = titleSpan.getAttribute('data-text');
-                typeWriter(titleSpan, titleText, 0, 50, () => {
-                    if (subtitleSpan) {
-                        const subtitleText = subtitleSpan.getAttribute('data-text');
-                        typeWriter(subtitleSpan, subtitleText, 0, 35);
+        function typeText(element, text, speed) {
+            return new Promise(resolve => {
+                let i = 0;
+                const timer = setInterval(() => {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    if (i >= text.length) {
+                        clearInterval(timer);
+                        resolve();
                     }
-                });
+                }, speed);
+            });
+        }
+
+        async function playHomeTyping() {
+            while (true) {
+                clearTypingText();
+
+                for (const item of typingSequence) {
+                    const element = document.getElementById(item.id);
+                    if (!element) continue;
+
+                    await typeText(element, item.text, item.speed);
+                    await new Promise(resolve => setTimeout(resolve, item.pause));
+                }
             }
         }
 
-        function updateSlider() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                    playSlideTyping(slide);
-                } else {
-                    slide.classList.remove('active');
-                }
-            });
-
-            bars.forEach((bar, index) => {
-                if (index === currentSlide) {
-                    bar.classList.add('bg-white', 'w-12');
-                    bar.classList.remove('bg-white/50', 'w-8');
-                } else {
-                    bar.classList.add('bg-white/50', 'w-8');
-                    bar.classList.remove('bg-white', 'w-12');
-                }
-            });
-        }
-
-        function setSlide(index) {
-            currentSlide = index;
-            resetSlideInterval();
-            updateSlider();
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            updateSlider();
-        }
-
-        function resetSlideInterval() {
-            clearInterval(slideTimer);
-            slideTimer = setInterval(nextSlide, 7000);
-        }
-
-        updateSlider();
-        resetSlideInterval();
+        playHomeTyping();
 
         function toggleContactMenu() {
             const menu = document.getElementById('contact-popup-menu');
