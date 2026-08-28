@@ -44,31 +44,36 @@
         .home-banner-typing {
             position: absolute;
             top: 50%;
-            right: 7%;
+            right: 5%;
             transform: translateY(-50%);
-            width: 48%;
+            width: 52%;
             text-align: center;
-            line-height: 1.15;
+            line-height: 1.25;
             color: white;
         }
 
+        /* Upgraded Brand Title Styling (Larger & More Prominent) */
         .home-brand {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(1.5rem, 3.2vw, 4rem);
-            letter-spacing: 0.025em;
-            margin-bottom: clamp(14px, 2vw, 28px);
-            text-shadow: 0 3px 10px rgba(0,0,0,.22);
+            font-size: clamp(1.8rem, 4vw, 4.8rem);
+            letter-spacing: 0.03em;
+            margin-bottom: clamp(16px, 2.5vw, 32px);
+            text-shadow: 0 4px 14px rgba(0,0,0,.35);
+            color: #ffffff;
+            text-transform: uppercase;
         }
 
+        /* Upgraded Typing Lines Styling (Larger Font & Premium Spacing) */
         .home-typing-line {
-            min-height: 1.35em;
+            min-height: 1.45em;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 800;
-            font-size: clamp(.8rem, 1.65vw, 2rem);
-            letter-spacing: .015em;
-            margin: 0 0 clamp(12px, 1.7vw, 24px);
-            text-shadow: 0 2px 7px rgba(0,0,0,.20);
+            font-size: clamp(0.95rem, 2.2vw, 2.4rem);
+            letter-spacing: .02em;
+            margin: 0 0 clamp(10px, 1.8vw, 22px);
+            text-shadow: 0 2px 8px rgba(0,0,0,.30);
+            color: #f1f5f9;
         }
 
         /* No cursor/vertical typing line */
@@ -80,18 +85,18 @@
 
         @media (max-width: 768px) {
             .home-banner-typing {
-                right: 4%;
-                width: 53%;
+                right: 3%;
+                width: 58%;
             }
 
             .home-brand {
-                font-size: clamp(1rem, 4.5vw, 1.7rem);
-                margin-bottom: 9px;
+                font-size: clamp(1.15rem, 5vw, 2rem);
+                margin-bottom: 8px;
             }
 
             .home-typing-line {
-                font-size: clamp(.52rem, 2.25vw, .9rem);
-                margin-bottom: 8px;
+                font-size: clamp(.65rem, 2.8vw, 1.1rem);
+                margin-bottom: 6px;
             }
         }
     </style>
