@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rimoglobal.github.io/Rimo-Global-Pharma/sitemap.xml
