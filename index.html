@@ -369,29 +369,29 @@
     <!-- 6. Products & Oncology Therapeutic Areas Section -->
     <section id="products-section" class="container mx-auto px-4 py-16">
         <div class="text-center mb-10">
-            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">Therapeutic Focus</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Oncology Therapeutic Areas & Products</h2>
-            <p class="text-sm text-slate-500 max-w-2xl mx-auto">Explore specialty oncology therapeutics categorized by indications. Formulations (Tablets, Injections, Capsules) are listed directly within product specs.</p>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">Therapeutic Spectrum</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Specialty & Oncology Therapeutic Categories</h2>
+            <p class="text-sm text-slate-500 max-w-2xl mx-auto">Browse specialized pharmaceutical categories designed for international B2B procurement and hospital sourcing.</p>
         </div>
 
         <!-- Search Bar -->
         <div class="mb-5 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-3 justify-between items-center">
-            <input type="text" id="search-input" placeholder="Search product brand, generic name, or manufacturer..." class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600 bg-white font-medium">
+            <input type="text" id="search-input" placeholder="Search product brand, generic name, category or manufacturer..." class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600 bg-white font-medium">
         </div>
 
-        <!-- Oncology Therapeutic Area Filter Buttons -->
+        <!-- Professional 10 Therapeutic Categories Filter Buttons -->
         <div class="mb-6 flex gap-2 overflow-x-auto pb-2 scrollbar-thin" id="therapeutic-filter-container">
-            <button onclick="filterByTherapeuticArea('All')" class="therapeutic-btn active-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-blue-700 text-white border-blue-700 cursor-pointer">All Therapeutic Areas</button>
-            <button onclick="filterByTherapeuticArea('Lung Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Lung Cancer</button>
-            <button onclick="filterByTherapeuticArea('Breast Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Breast Cancer</button>
-            <button onclick="filterByTherapeuticArea('Blood Cancers / Hematologic Malignancies')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Blood Cancers / Hematologic</button>
-            <button onclick="filterByTherapeuticArea('Colorectal & Gastrointestinal Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Colorectal & GI Cancers</button>
-            <button onclick="filterByTherapeuticArea('Liver Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Liver Cancer</button>
-            <button onclick="filterByTherapeuticArea('Kidney & Renal Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Kidney & Renal Cancers</button>
-            <button onclick="filterByTherapeuticArea('Ovarian & Gynecologic Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Ovarian & Gynecologic</button>
-            <button onclick="filterByTherapeuticArea('Prostate & Urologic Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Prostate & Urologic</button>
-            <button onclick="filterByTherapeuticArea('Head & Neck Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Head & Neck Cancers</button>
-            <button onclick="filterByTherapeuticArea('Other Solid Tumors')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Other Solid Tumors & Specialty</button>
+            <button onclick="filterByTherapeuticArea('All')" class="therapeutic-btn active-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-blue-700 text-white border-blue-700 cursor-pointer">All Categories</button>
+            <button onclick="filterByTherapeuticArea('Lung Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Thoracic & Lung Oncology</button>
+            <button onclick="filterByTherapeuticArea('Breast Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Breast Cancer Therapeutics</button>
+            <button onclick="filterByTherapeuticArea('Blood Cancers / Hematologic Malignancies')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Hematology & Blood Disorders</button>
+            <button onclick="filterByTherapeuticArea('Colorectal & Gastrointestinal Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Gastrointestinal Oncology</button>
+            <button onclick="filterByTherapeuticArea('Kidney & Renal Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Renal & Urological Therapeutics</button>
+            <button onclick="filterByTherapeuticArea('Liver Cancer')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Hepatocellular & Liver Care</button>
+            <button onclick="filterByTherapeuticArea('Ovarian & Gynecologic Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Gynecologic Oncology</button>
+            <button onclick="filterByTherapeuticArea('Prostate & Urologic Cancers')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Prostate & Endocrine Oncology</button>
+            <button onclick="filterByTherapeuticArea('Immuno-Oncology')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Immuno-Oncology & Biologics</button>
+            <button onclick="filterByTherapeuticArea('Other Solid Tumors')" class="therapeutic-btn px-4 py-2 text-xs font-bold rounded-xl whitespace-nowrap transition border bg-white text-slate-700 border-slate-300 hover:bg-slate-100 cursor-pointer">Targeted & Specialty Therapies</button>
         </div>
 
         <!-- Manufacturer Sub-filter Controls -->
