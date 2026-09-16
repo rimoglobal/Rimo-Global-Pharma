@@ -175,12 +175,23 @@
  </div>
  </section>
 
- <!-- 6. Products & Portfolio Section (122 Products) -->
+ <!-- 6. Products & Portfolio Section (122 Products with Company Filters) -->
  <section id="products-section" class="container mx-auto px-4 py-16">
  <div class="text-center mb-10">
  <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">Therapeutic Spectrum</span>
  <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">Specialty & Oncology Portfolio</h2>
  <p class="text-sm text-slate-500 max-w-2xl mx-auto">Browse specialized pharmaceutical categories designed for international B2B procurement and hospital sourcing.</p>
+ </div>
+
+ <!-- Company Filter Buttons -->
+ <div id="company-filters" class="flex flex-wrap gap-2 mb-4 justify-center">
+ <button onclick="filterByCompany('all', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-700 text-white transition shadow-sm">All Companies</button>
+ <button onclick="filterByCompany('BEACON', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Beacon</button>
+ <button onclick="filterByCompany('EVEREST', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Everest</button>
+ <button onclick="filterByCompany('DRUGS INTERNATIONAL', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Drugs Int.</button>
+ <button onclick="filterByCompany('INCEPTA', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Incepta</button>
+ <button onclick="filterByCompany('GENERAL', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">General</button>
+ <button onclick="filterByCompany('ZISKA', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Ziska</button>
  </div>
 
  <div class="mb-5 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-3 justify-between items-center">
@@ -434,7 +445,33 @@
  let currentPage = 1;
  const itemsPerPage = 12;
  let searchQuery = '';
+ let selectedCompany = 'all';
  let filteredProducts = [...productsData];
+
+ function filterProducts() {
+ searchQuery = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
+ filteredProducts = productsData.filter(p => {
+ const matchesSearch = p.brand.toLowerCase().includes(searchQuery) || 
+                       p.generic.toLowerCase().includes(searchQuery) || 
+                       p.company.toLowerCase().includes(searchQuery);
+ const matchesCompany = selectedCompany === 'all' || p.company.toUpperCase().includes(selectedCompany.toUpperCase());
+ return matchesSearch && matchesCompany;
+ });
+ renderProducts(1);
+ }
+
+ function filterByCompany(company, btn) {
+ selectedCompany = company;
+ document.querySelectorAll('.company-btn').forEach(b => {
+ b.classList.remove('bg-blue-700', 'text-white');
+ b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+ });
+ if(btn) {
+ btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+ btn.classList.add('bg-blue-700', 'text-white');
+ }
+ filterProducts();
+ }
 
  function renderProducts(page = 1) {
  currentPage = page;
@@ -489,11 +526,7 @@
  }
  }
 
- document.getElementById('search-input')?.addEventListener('input', function(e) {
- searchQuery = e.target.value.toLowerCase().trim();
- filteredProducts = productsData.filter(p => p.brand.toLowerCase().includes(searchQuery) || p.generic.toLowerCase().includes(searchQuery) || p.company.toLowerCase().includes(searchQuery));
- renderProducts(1);
- });
+ document.getElementById('search-input')?.addEventListener('input', filterProducts);
 
  renderProducts(1);
  </script>
