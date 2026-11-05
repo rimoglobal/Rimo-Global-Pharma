@@ -34,27 +34,42 @@
  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
  @media (max-width: 768px) { .home-banner-typing { left: 4%; width: 75%; } }
 
+ 
+ /* Mobile header and Saif Pharma-inspired category layout */
+ .mobile-menu-toggle{display:none;}
+ @media(max-width:767px){
+  .site-header-inner{min-height:68px;padding:10px 16px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;}
+  .brand-wrap{margin-right:auto;flex:0 1 auto;min-width:0;}.brand-link{display:flex;align-items:center;}
+  .brand-link img{display:block;height:42px;width:auto;max-width:190px;object-fit:contain;object-position:left center;}
+  .mobile-menu-toggle{display:flex;flex:0 0 42px;width:42px;height:42px;padding:10px;border:1px solid #dbe3ee;border-radius:11px;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;}
+  .mobile-menu-toggle span{display:block;width:19px;height:2px;border-radius:2px;background:#1e3a8a;transition:transform .2s ease,opacity .2s ease;}
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}.mobile-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}.mobile-menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .primary-navigation{display:none;width:100%;padding:8px 0 10px;margin:0;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;border-top:1px solid #e8edf4;}
+  .primary-navigation.is-open{display:flex;}.primary-navigation a{display:block;width:100%;padding:12px 8px;font-size:14px;line-height:1.25;border-bottom:1px solid #f1f5f9;}.primary-navigation a:last-child{border-bottom:0;}
+  .mobile-therapy-layout{display:grid;grid-template-columns:51% 49%;width:calc(100% + 2rem);margin:0 -1rem 22px;min-height:500px;background:#20558f;overflow:hidden;}
+  .mobile-therapy-sidebar{background:#20558f;padding:12px 20px 12px 22px;display:flex;flex-direction:column;gap:3px;min-width:0;}
+  .therapy-category-btn{width:100%;min-height:53px;display:flex;align-items:center;gap:12px;padding:9px 12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.035);color:#fff;font-family:inherit;font-size:13px;font-weight:600;line-height:1.25;text-align:left;cursor:pointer;}
+  .therapy-category-btn .therapy-icon{color:#071d34;font-size:21px;line-height:1;flex:0 0 20px;}.therapy-category-btn.active,.therapy-category-btn:focus-visible{background:rgba(255,255,255,.15);outline:none;}
+  .mobile-therapy-image{position:relative;min-width:0;min-height:500px;overflow:hidden;background:#183d70;}.mobile-therapy-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .therapy-image-overlay{position:absolute;inset:auto 0 0;padding:34px 10px 18px;color:#fff;background:linear-gradient(transparent,rgba(5,25,55,.88));}.therapy-image-overlay span{font-size:8px;font-weight:800;letter-spacing:.08em;}.therapy-image-overlay h3{margin-top:5px;font-size:14px;line-height:1.25;font-weight:800;}
+  #company-filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;white-space:nowrap;padding:2px 1px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}#company-filters::-webkit-scrollbar{display:none;}#company-filters .company-btn{flex:0 0 auto;}
+  #products-section{padding-top:38px;padding-bottom:48px;}#products-section>.text-center{margin-bottom:24px;}#products-section>.text-center h2{font-size:25px;line-height:1.2;}
+  #product-grid-container{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}#product-grid-container>div{padding:10px;min-width:0;}#product-grid-container>div .h-56{height:145px;}#product-grid-container h3{font-size:13px;}#product-grid-container p{font-size:11px;}#product-grid-container a{font-size:10px;padding:6px 8px;}
+ }
+ @media(max-width:380px){.brand-link img{max-width:158px;height:38px;}.mobile-therapy-sidebar{padding-left:9px;padding-right:7px;}.therapy-category-btn{min-height:49px;gap:7px;padding:7px;font-size:11px;}.therapy-category-btn .therapy-icon{flex-basis:17px;font-size:18px;}.therapy-image-overlay h3{font-size:12px;}}
+
  </style>
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
 
  <!-- 1. Header Navigation -->
  <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/80 shadow-sm">
- <div class="w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
- <div class="flex items-center space-x-3">
- <a href="#home">
- <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'">
- </a>
- </div>
- <nav class="flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-600">
- <a href="#home" class="hover:text-blue-700 transition">Home</a>
- <a href="#new-launch-section" class="hover:text-blue-700 transition">New Launch</a>
- <a href="#products-section" class="hover:text-blue-700 transition">Products & Portfolio</a>
- <a href="#map-section" class="hover:text-blue-700 transition">Global Network</a>
- <a href="#contact" class="hover:text-blue-700 transition">Contact</a>
- </nav>
- </div>
- </header>
+ <div class="site-header-inner w-full px-4 sm:px-8 py-3.5 flex flex-col md:flex-row justify-between items-center gap-4">
+ <div class="brand-wrap flex items-center space-x-3"><a href="#home" class="brand-link"><img src="logo.png" alt="Rimo Global Pharma Logo" class="h-10 sm:h-12 object-contain" onerror="this.style.display='none'"></a></div>
+ <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span><span></span></button>
+ <nav id="primary-navigation" class="primary-navigation flex flex-wrap justify-center gap-4 sm:gap-8 text-xs sm:text-sm font-semibold text-slate-600">
+ <a href="#home" class="hover:text-blue-700 transition">Home</a><a href="#new-launch-section" class="hover:text-blue-700 transition">New Launch</a><a href="#products-section" class="hover:text-blue-700 transition">Products & Portfolio</a><a href="#map-section" class="hover:text-blue-700 transition">Global Network</a><a href="#contact" class="hover:text-blue-700 transition">Contact</a>
+ </nav></div></header>
 
  <!-- 2. Home Banner & Running Bar Section -->
  <section id="home" class="w-full py-0">
@@ -140,6 +155,23 @@
  <p class="text-sm text-slate-500 max-w-2xl mx-auto">Browse specialized pharmaceutical categories designed for international B2B procurement and hospital sourcing.</p>
  </div>
 
+ <!-- Mobile Saif Pharma-inspired therapeutic category panel -->
+ <div class="mobile-therapy-layout" aria-label="Therapeutic categories">
+  <div class="mobile-therapy-sidebar">
+   <button type="button" class="therapy-category-btn active" onclick="filterByTherapy('all-cancer', this)"><span class="therapy-icon">♧</span><span>Anti Cancer Drugs</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('diabetic', this)"><span class="therapy-icon">♧</span><span>Anti Diabetic Drugs</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('breast', this)"><span class="therapy-icon">♧</span><span>Breast Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('colorectal', this)"><span class="therapy-icon">♧</span><span>Colorectal Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('kidney', this)"><span class="therapy-icon">♧</span><span>Kidney Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('lung', this)"><span class="therapy-icon">♧</span><span>Lung Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('liver', this)"><span class="therapy-icon">♧</span><span>Liver Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('blood', this)"><span class="therapy-icon">♧</span><span>Leukemia</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('gynecologic', this)"><span class="therapy-icon">♧</span><span>Gynecologic Cancer</span></button>
+   <button type="button" class="therapy-category-btn" onclick="filterByTherapy('all', this)"><span class="therapy-icon">♧</span><span>All Products</span></button>
+  </div>
+  <div class="mobile-therapy-image"><img src="oncology.jpg" alt="Oncology and specialty medicine portfolio" loading="lazy" onerror="this.onerror=null;this.src='anti-cancer.png';"><div class="therapy-image-overlay"><span>RIMO GLOBAL PHARMA</span><h3>Oncology &amp; Specialty Portfolio</h3></div></div>
+ </div>
+
  <!-- Company Filter Buttons -->
  <div id="company-filters" class="flex flex-wrap gap-2 mb-4 justify-center">
  <button onclick="filterByCompany('all', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-700 text-white transition shadow-sm">All Companies</button>
@@ -212,6 +244,23 @@
 
  <!-- Scripts -->
  <script>
+ /* Mobile navigation menu */
+ const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+ const primaryNavigation = document.getElementById('primary-navigation');
+ if (mobileMenuToggle && primaryNavigation) {
+  mobileMenuToggle.addEventListener('click', () => {
+   const open = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+   mobileMenuToggle.setAttribute('aria-expanded', String(!open));
+   mobileMenuToggle.setAttribute('aria-label', open ? 'Open navigation menu' : 'Close navigation menu');
+   primaryNavigation.classList.toggle('is-open', !open);
+  });
+  primaryNavigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+   mobileMenuToggle.setAttribute('aria-expanded', 'false');
+   mobileMenuToggle.setAttribute('aria-label', 'Open navigation menu');
+   primaryNavigation.classList.remove('is-open');
+  }));
+ }
+
  /* Typing Script */
  const typingSequence = [
  { id: 'brand-typing', text: 'Oncology Medicine Sourcing ', speed: 95, pause: 1200 },
@@ -402,31 +451,53 @@
  const itemsPerPage = 12;
  let searchQuery = '';
  let selectedCompany = 'all';
+ let selectedTherapy = 'all-cancer';
  let filteredProducts = [...productsData];
 
+ function matchesTherapyCategory(product, category) {
+  const area = (product.therapeuticArea || '').toLowerCase();
+  if (category === 'all') return true;
+  if (category === 'all-cancer') return !product.generic.toLowerCase().includes('tirzepatide');
+  if (category === 'diabetic') return product.generic.toLowerCase().includes('tirzepatide');
+  if (category === 'breast') return area.includes('breast');
+  if (category === 'colorectal') return area.includes('colorectal') || area.includes('gastrointestinal');
+  if (category === 'kidney') return area.includes('kidney') || area.includes('renal');
+  if (category === 'lung') return area.includes('lung');
+  if (category === 'liver') return area.includes('liver');
+  if (category === 'blood') return area.includes('blood cancer');
+  if (category === 'gynecologic') return area.includes('gynecologic') || area.includes('ovarian');
+  return true;
+ }
+
  function filterProducts() {
- searchQuery = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
- filteredProducts = productsData.filter(p => {
- const matchesSearch = p.brand.toLowerCase().includes(searchQuery) || 
-                       p.generic.toLowerCase().includes(searchQuery) || 
-                       p.company.toLowerCase().includes(searchQuery);
- const matchesCompany = selectedCompany === 'all' || p.company.toUpperCase().includes(selectedCompany.toUpperCase());
- return matchesSearch && matchesCompany;
- });
- renderProducts(1);
+  searchQuery = document.getElementById('search-input')?.value.toLowerCase().trim() || '';
+  filteredProducts = productsData.filter(p => {
+   const matchesSearch = p.brand.toLowerCase().includes(searchQuery) || p.generic.toLowerCase().includes(searchQuery) || p.company.toLowerCase().includes(searchQuery) || (p.therapeuticArea || '').toLowerCase().includes(searchQuery);
+   const matchesCompany = selectedCompany === 'all' || p.company.toUpperCase().includes(selectedCompany.toUpperCase());
+   const matchesTherapy = matchesTherapyCategory(p, selectedTherapy);
+   return matchesSearch && matchesCompany && matchesTherapy;
+  });
+  renderProducts(1);
+ }
+
+ function filterByTherapy(category, btn) {
+  selectedTherapy = category;
+  document.querySelectorAll('.therapy-category-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  filterProducts();
  }
 
  function filterByCompany(company, btn) {
- selectedCompany = company;
- document.querySelectorAll('.company-btn').forEach(b => {
- b.classList.remove('bg-blue-700', 'text-white');
- b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
- });
- if(btn) {
- btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
- btn.classList.add('bg-blue-700', 'text-white');
- }
- filterProducts();
+  selectedCompany = company;
+  document.querySelectorAll('.company-btn').forEach(b => {
+   b.classList.remove('bg-blue-700', 'text-white');
+   b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+  });
+  if(btn) {
+   btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+   btn.classList.add('bg-blue-700', 'text-white');
+  }
+  filterProducts();
  }
 
  function renderProducts(page = 1) {
