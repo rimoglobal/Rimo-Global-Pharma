@@ -89,18 +89,6 @@
      <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Contact</a>
    </div>
  </header>
-     </div>
-   </div>
-
-   <!-- Mobile Dropdown Menu -->
-   <div id="mobile-menu" class="hidden md:hidden bg-slate-900 text-white px-4 py-4 space-y-3 text-xs font-semibold uppercase border-t border-slate-800">
-     <a href="#home" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Home</a>
-     <a href="#new-launch-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">New Launch</a>
-     <a href="#products-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Products & Portfolio</a>
-     <a href="#map-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Global Network</a>
-     <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Contact</a>
-   </div>
- </header>
 
   <!-- 2. Home Section Layout -->
  <section id="home" class="w-full py-0">
@@ -114,7 +102,8 @@
        <div class="home-typing-line text-slate-600"><span id="line-2" class="typing-effect"></span></div>
      </div>
    </div>
-  <!-- Video Banner Section (Placed below Hero Banner & above Therapeutic Categories) -->
+
+  <!-- Video Banner Section (Placed below Hero Banner) -->
   <div class="w-full bg-slate-900 py-6 border-b border-slate-800">
     <div class="max-w-4xl mx-auto px-4">
       <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden shadow-2xl">
@@ -131,20 +120,28 @@
           </iframe>
         </div>
 
-        <!-- Video Title & Description -->
-        <div class="p-4 sm:p-6">
-          <h3 class="text-white font-bold text-base sm:text-lg mb-2">
-            Rimo Global Pharma - Secure Global Medicine Export &amp; Logistics
-          </h3>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Ensuring secure dispatch and temperature-controlled logistics for vital oncology and specialty medicines, bridging borders and connecting international healthcare partners with trust.
-          </p>
-        </div>
-
       </div>
     </div>
   </div>
-   <!-- 2nd: Therapeutic Product Categories (Directly Below Inquire Now - Saif Pharma Blue Color & Compact Size) -->
+
+  <!-- 3 Featured Banners (Placed directly below YouTube Video) -->
+  <section class="bg-white pt-6 pb-2">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+          <img src="anti-cancer.png" alt="Anti Cancer Medicine" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+          <img src="delivery.jpeg" alt="Worldwide Delivery" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
+          <img src="oncology.jpg" alt="Oncology Medicine" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- Therapeutic Product Categories (Placed below the 3 Banners) -->
    <div class="bg-[#113867] py-6 px-4 border-t border-blue-800/40">
      <div class="max-w-2xl mx-auto">
        <h2 class="text-white text-center font-bold text-sm sm:text-base uppercase tracking-wider mb-4 flex items-center justify-center gap-2">
@@ -232,23 +229,6 @@
  </div>
  </section>
 
- <!-- 5. Featured Highlights - Immediately Above Products -->
- <section class="bg-white pt-10 pb-2">
- <div class="container mx-auto px-4">
- <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
- <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
- <img src="anti-cancer.png" alt="Anti Cancer Medicine" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
- </div>
- <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
- <img src="delivery.jpeg" alt="Worldwide Delivery" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
- </div>
- <div class="rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white">
- <img src="oncology.jpg" alt="Oncology Medicine" class="w-full h-[200px] object-cover block" onerror="this.style.display='none'">
- </div>
- </div>
- </div>
- </section>
-
  <!-- 6. Products & Portfolio Section (122 Products with Company Filters) -->
  <section id="products-section" class="container mx-auto px-4 py-16">
  <div class="text-center mb-10">
@@ -303,21 +283,18 @@
  <!-- 8. Footer Section -->
  <footer id="contact" class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
  <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
- <footer id="contact" class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-<div>
-  <h4 class="text-white font-bold text-base mb-3">RIMO GLOBAL PHARMA</h4>
-  
-  <!-- Original Description -->
-  <p class="text-xs leading-relaxed text-slate-400 mb-4">
-    Facilitating global healthcare access with temperature-controlled logistics and certified pharmaceutical sourcing across therapeutic areas.
-  </p>
+ <div>
+   <h4 class="text-white font-bold text-base mb-3">RIMO GLOBAL PHARMA</h4>
+   
+   <p class="text-xs leading-relaxed text-slate-400 mb-4">
+     Facilitating global healthcare access with temperature-controlled logistics and certified pharmaceutical sourcing across therapeutic areas.
+   </p>
 
-  <!-- New Italic Styled Compact Text -->
-  <p class="text-[11px] leading-snug text-blue-300 italic border-t border-slate-800 pt-3">
-    <strong class="text-white not-italic font-semibold">Global Procurement Excellence:</strong> Global Sourcing Partner for High-Quality Oncology &amp; Specialty Pharmaceuticals with full cold-chain support.
-  </p>
-</div>
+   <p class="text-[11px] leading-snug text-blue-300 italic border-t border-slate-800 pt-3">
+     <strong class="text-white not-italic font-semibold">Global Procurement Excellence:</strong> Global Sourcing Partner for High-Quality Oncology &amp; Specialty Pharmaceuticals with full cold-chain support.
+   </p>
+ </div>
+ <div>
  <h4 class="text-white font-bold text-base mb-3">Quick Links</h4>
  <ul class="text-xs space-y-2">
  <li><a href="#home" class="hover:text-white transition">Home</a></li>
