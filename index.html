@@ -29,7 +29,7 @@
  .new-ticker-bar { background: #0f172a; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b; padding: 10px 16px; }
  .beacon-layout-strip { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%); position: relative; overflow: hidden; }
  .custom-float-btn { background: #0f172a; color: #f8fafc; border: 1px solid #334155; transition: all 0.3s ease; }
- .custom-float-btn:hover { background: #1e293b; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25); }
+ .custom-float-btn:hover { background: #1e293b; shadow: 0 8px 20px rgba(15, 23, 42, 0.25); }
  .hide-scrollbar::-webkit-scrollbar { display: none; }
  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
  @media (max-width: 768px) { .home-banner-typing { left: 4%; width: 75%; } }
@@ -208,23 +208,49 @@
    </div>
  </section>
 
- <!-- Video Banner Section (Placed directly below 3 Banners, Text Removed) -->
- <div class="w-full bg-slate-900 py-6 border-b border-slate-800">
-   <div class="max-w-4xl mx-auto px-4">
-     <div class="bg-slate-800 border border-slate-700 rounded-xl overflow-hidden shadow-2xl">
-       <div class="relative w-full aspect-video bg-black">
-         <iframe 
-           class="absolute top-0 left-0 w-full h-full"
-           src="https://www.youtube.com/embed/HuNYdHIMOVM" 
-           title="Rimo Global Pharma - Secure Global Medicine Export &amp; Logistics" 
-           frameborder="0" 
-           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-           allowfullscreen>
-         </iframe>
+ <!-- About Rimo Global Pharma & Video Section (Side-by-Side Split Layout) -->
+ <section class="w-full bg-white py-16 border-t border-b border-slate-200">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+       
+       <!-- Left Side: Professional Description Content -->
+       <div class="lg:col-span-6 space-y-5 text-left">
+         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+           About Rimo Global Pharma
+         </h2>
+         
+         <p class="text-slate-700 font-semibold text-base sm:text-lg leading-relaxed">
+           Rimo Global Pharma is a premier international pharmaceutical sourcing and export enterprise based in Dhaka, Bangladesh.
+         </p>
+
+         <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+           We specialize in facilitating global access to high-quality WHO-GMP and EU-GMP certified oncology, specialty, and lifesaving therapeutics. Operating with strict temperature-controlled cold-chain management and end-to-end export logistics, we bridge international healthcare providers, hospitals, and distributors with reliable, cost-effective pharmaceutical solutions worldwide.
+         </p>
+
+         <div class="pt-2">
+           <a href="#contact" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3.5 rounded-lg shadow-md transition duration-200">
+             VIEW DETAILS
+           </a>
+         </div>
        </div>
+
+       <!-- Right Side: Embedded YouTube Video Banner Container -->
+       <div class="lg:col-span-6">
+         <div class="relative bg-slate-900 border-4 border-blue-900 rounded-2xl overflow-hidden shadow-xl aspect-video">
+           <iframe 
+             class="absolute top-0 left-0 w-full h-full"
+             src="https://www.youtube.com/embed/HuNYdHIMOVM" 
+             title="Rimo Global Pharma - Secure Global Medicine Export &amp; Logistics" 
+             frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+             allowfullscreen>
+           </iframe>
+         </div>
+       </div>
+
      </div>
    </div>
- </div>
+ </section>
 
  <!-- 6. Products & Portfolio Section (122 Products with Company Filters) -->
  <section id="products-section" class="container mx-auto px-4 py-16">
