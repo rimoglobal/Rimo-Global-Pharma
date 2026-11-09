@@ -331,40 +331,55 @@
  </div>
  </footer>
 
- <!-- Dynamic Product Details Modal Container (Saif Pharma Style Popup) -->
+ <!-- Dynamic Product Details Modal Container (Saif Pharma Style Popup with Description Box) -->
  <div id="product-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
-   <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden border border-slate-200 relative animate-fadeIn">
-     <button onclick="closeProductModal()" class="absolute top-3 right-3 bg-slate-100 hover:bg-slate-200 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition">✕</button>
+   <div class="bg-white w-full max-w-xl rounded-2xl shadow-2xl overflow-hidden border border-slate-200 relative max-h-[90vh] flex flex-col">
      
-     <div class="p-6 bg-slate-50 border-b border-slate-200 flex items-center gap-4">
-       <img id="modal-img" src="" alt="Product" class="w-28 h-28 object-contain bg-white rounded-xl border border-slate-200 p-2 flex-shrink-0">
+     <!-- Close Button -->
+     <button onclick="closeProductModal()" class="absolute top-3 right-3 z-10 bg-slate-100 hover:bg-slate-200 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition">✕</button>
+     
+     <!-- Modal Content Header -->
+     <div class="p-5 sm:p-6 bg-slate-50 border-b border-slate-200 flex items-center gap-4 flex-shrink-0">
+       <img id="modal-img" src="" alt="Product" class="w-24 h-24 sm:w-28 sm:h-28 object-contain bg-white rounded-xl border border-slate-200 p-2 flex-shrink-0">
        <div>
-         <span id="modal-company" class="text-[10px] font-bold text-blue-700 uppercase tracking-wider block"></span>
-         <h3 id="modal-brand" class="text-xl font-extrabold text-slate-900 leading-tight"></h3>
+         <span id="modal-company" class="text-[10px] sm:text-xs font-bold text-blue-700 uppercase tracking-wider block mb-0.5"></span>
+         <h3 id="modal-brand" class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-tight"></h3>
          <p id="modal-strength" class="text-xs font-semibold text-slate-500 mt-0.5"></p>
        </div>
      </div>
 
-     <div class="p-6 space-y-3 text-xs sm:text-sm">
-       <div class="flex justify-between border-b border-slate-100 pb-2">
-         <span class="text-slate-500 font-medium">Generic Name:</span>
-         <span id="modal-generic" class="font-bold text-slate-800"></span>
+     <!-- Scrollable Modal Body -->
+     <div class="p-5 sm:p-6 overflow-y-auto space-y-4 text-xs sm:text-sm flex-grow">
+       <div class="space-y-2.5">
+         <div class="flex justify-between border-b border-slate-100 pb-2">
+           <span class="text-slate-500 font-medium">Generic Name:</span>
+           <span id="modal-generic" class="font-bold text-slate-800"></span>
+         </div>
+         <div class="flex justify-between border-b border-slate-100 pb-2">
+           <span class="text-slate-500 font-medium">Dosage Form:</span>
+           <span id="modal-dosage" class="font-bold text-slate-800"></span>
+         </div>
+         <div class="flex justify-between border-b border-slate-100 pb-2">
+           <span class="text-slate-500 font-medium">Therapeutic Class:</span>
+           <span id="modal-area" class="font-bold text-blue-800"></span>
+         </div>
+         <div class="flex justify-between border-b border-slate-100 pb-2">
+           <span class="text-slate-500 font-medium">Global Supply:</span>
+           <span class="font-bold text-emerald-700">WHO-GMP & EU-GMP Certified</span>
+         </div>
        </div>
-       <div class="flex justify-between border-b border-slate-100 pb-2">
-         <span class="text-slate-500 font-medium">Dosage Form:</span>
-         <span id="modal-dosage" class="font-bold text-slate-800"></span>
-       </div>
-       <div class="flex justify-between border-b border-slate-100 pb-2">
-         <span class="text-slate-500 font-medium">Therapeutic Class:</span>
-         <span id="modal-area" class="font-bold text-blue-800"></span>
-       </div>
-       <div class="flex justify-between border-b border-slate-100 pb-2">
-         <span class="text-slate-500 font-medium">Global Supply:</span>
-         <span class="font-bold text-emerald-700">WHO-GMP & EU-GMP Certified</span>
+
+       <!-- Dynamic Product Description & Uses Section -->
+       <div class="pt-2">
+         <h4 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+           <span>📋</span> Description & Medical Indication
+         </h4>
+         <div id="modal-description" class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-xs text-slate-600 leading-relaxed max-h-48 overflow-y-auto"></div>
        </div>
      </div>
 
-     <div class="p-4 bg-slate-50 border-t border-slate-200 flex gap-3">
+     <!-- Modal Action Footer -->
+     <div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-shrink-0">
        <a id="modal-wa-btn" href="#" target="_blank" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl text-center shadow-md transition">
          Inquire via WhatsApp →
        </a>
@@ -677,6 +692,11 @@
    document.getElementById('modal-company').innerText = product.company;
    document.getElementById('modal-dosage').innerText = product.dosageForm || 'Medicine';
    document.getElementById('modal-area').innerText = product.therapeuticArea || 'Specialty Oncology';
+
+   // Dynamic Professional Medical Description & Indication Text
+   const defaultDesc = `${product.brand} (${product.generic} ${product.strength}) manufactured by ${product.company} is a targeted therapeutic medicine prescribed under specialist supervision. It is primarily indicated for targeted management within the ${product.therapeuticArea || 'Oncology'} spectrum. Sourced directly in Bangladesh under strict WHO-GMP quality protocols and stored within temperature-controlled cold-chain logistics for international healthcare export.`;
+   
+   document.getElementById('modal-description').innerText = product.description || defaultDesc;
 
    const waMessage = `Hello Rimo Global Pharma, I would like to inquire about product details and sourcing for: ${product.brand} (${product.generic} ${product.strength})`;
    document.getElementById('modal-wa-btn').href = `https://wa.me/8801742705183?text=${encodeURIComponent(waMessage)}`;
