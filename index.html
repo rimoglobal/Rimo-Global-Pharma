@@ -21,7 +21,7 @@
  .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #ffffff; line-height: 0; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); }
  .home-banner img { display: block; width: 100%; height: auto; object-fit: cover; }
  .banner-white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.90) 38%, rgba(255, 255, 255, 0.45) 65%, rgba(255, 255, 255, 0) 100%); pointer-events: none; }
- .home-banner-typing { position: absolute; top: 50%; left: 6%; transform: translateY(-50%); width: 50%; text-align: left; line-height: 1.25; z-index: 10; }
+ .home-banner-typing { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; text-align: center; line-height: 1.25; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; }
  .company-top-tag { font-size: clamp(0.75rem, 1.2vw, 0.95rem); font-weight: 700; letter-spacing: 0.1em; color: #1e40af; text-transform: uppercase; margin-bottom: clamp(6px, 1vw, 12px); display: inline-block; background-color: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 14px; border-radius: 20px; }
  .home-brand { font-weight: 800; font-size: clamp(1.4rem, 3vw, 3rem); letter-spacing: -0.02em; margin-bottom: clamp(8px, 1.4vw, 16px); color: #0f172a; text-transform: uppercase; }
  .home-typing-line { min-height: 1.3em; font-weight: 600; font-size: clamp(0.85rem, 1.6vw, 1.4rem); margin: 0 0 clamp(6px, 1vw, 10px); color: #1d4ed8; }
@@ -32,7 +32,7 @@
  .custom-float-btn:hover { background: #1e293b; shadow: 0 8px 20px rgba(15, 23, 42, 0.25); }
  .hide-scrollbar::-webkit-scrollbar { display: none; }
  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
- @media (max-width: 768px) { .home-banner-typing { left: 4%; width: 75%; } }
+ @media (max-width: 768px) { .home-banner-typing { width: 90%; } }
 
  </style>
 </head>
