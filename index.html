@@ -353,9 +353,6 @@
  /* Typing Script */
  const typingSequence = [
  { id: 'brand-typing', text: 'Best Oncology Medicine Supplier in Bangladesh  ', speed: 95, pause: 1200 },
- { id: 'line-1', text: ' Cancer Medicines Worldwide', speed: 75, pause: 500 },
- { id: 'line-2', text: 'WHO-GMP & Global Pharmaceuticals', speed: 70, pause: 1200 }
- ];
  function clearTypingText() { typingSequence.forEach(item => { const el = document.getElementById(item.id); if(el) el.textContent = ''; }); }
  function typeText(element, text, speed) {
  return new Promise(resolve => {
