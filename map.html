@@ -73,9 +73,10 @@
     <script>
         const map = L.map('map', { zoomControl: false }).setView([25.0, 55.0], 3);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{z}.png', {
+        // Standard OpenStreetMap Tile Layer (No API Key Required)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: '&copy; Rimo Global Pharma Ltd'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         L.control.zoom({ position: 'topright' }).addTo(map);
