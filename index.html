@@ -32,7 +32,6 @@
  .hide-scrollbar::-webkit-scrollbar { display: none; }
  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
  @media (max-width: 768px) { .home-banner-typing { width: 90%; } }
-
  </style>
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
@@ -332,6 +331,47 @@
  </div>
  </footer>
 
+ <!-- Dynamic Product Details Modal Container (Saif Pharma Style Popup) -->
+ <div id="product-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+   <div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden border border-slate-200 relative animate-fadeIn">
+     <button onclick="closeProductModal()" class="absolute top-3 right-3 bg-slate-100 hover:bg-slate-200 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition">✕</button>
+     
+     <div class="p-6 bg-slate-50 border-b border-slate-200 flex items-center gap-4">
+       <img id="modal-img" src="" alt="Product" class="w-28 h-28 object-contain bg-white rounded-xl border border-slate-200 p-2 flex-shrink-0">
+       <div>
+         <span id="modal-company" class="text-[10px] font-bold text-blue-700 uppercase tracking-wider block"></span>
+         <h3 id="modal-brand" class="text-xl font-extrabold text-slate-900 leading-tight"></h3>
+         <p id="modal-strength" class="text-xs font-semibold text-slate-500 mt-0.5"></p>
+       </div>
+     </div>
+
+     <div class="p-6 space-y-3 text-xs sm:text-sm">
+       <div class="flex justify-between border-b border-slate-100 pb-2">
+         <span class="text-slate-500 font-medium">Generic Name:</span>
+         <span id="modal-generic" class="font-bold text-slate-800"></span>
+       </div>
+       <div class="flex justify-between border-b border-slate-100 pb-2">
+         <span class="text-slate-500 font-medium">Dosage Form:</span>
+         <span id="modal-dosage" class="font-bold text-slate-800"></span>
+       </div>
+       <div class="flex justify-between border-b border-slate-100 pb-2">
+         <span class="text-slate-500 font-medium">Therapeutic Class:</span>
+         <span id="modal-area" class="font-bold text-blue-800"></span>
+       </div>
+       <div class="flex justify-between border-b border-slate-100 pb-2">
+         <span class="text-slate-500 font-medium">Global Supply:</span>
+         <span class="font-bold text-emerald-700">WHO-GMP & EU-GMP Certified</span>
+       </div>
+     </div>
+
+     <div class="p-4 bg-slate-50 border-t border-slate-200 flex gap-3">
+       <a id="modal-wa-btn" href="#" target="_blank" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider py-3 rounded-xl text-center shadow-md transition">
+         Inquire via WhatsApp →
+       </a>
+     </div>
+   </div>
+ </div>
+
  <!-- Scripts -->
  <script>
  function toggleMobileMenu() {
@@ -406,7 +446,7 @@
  container.innerHTML = '';
  newlyLaunchedProducts.forEach(item => {
  const card = document.createElement('div');
- card.className = "min-w-[280px] max-w-[280px] flex-shrink-0 bg-white border border-slate-200 rounded-2xl p-4 flex flex-col items-center text-center shadow-sm";
+ card.className = "min-w-[280px] max-w-[280px] flex-shrink-0 bg-white border border-slate-200 rounded-2xl p-4 flex flex-col items-center text-center shadow-sm cursor-pointer hover:border-blue-500 transition";
  card.innerHTML = `
  <div class="w-full h-48 bg-slate-50 rounded-xl mb-4 overflow-hidden flex items-center justify-center p-2">
  <img src="${item.image}" alt="${item.name}" class="max-h-full w-full object-contain" onerror="this.src='https://via.placeholder.com/150?text=Product'">
@@ -604,25 +644,48 @@
 
  pageProducts.forEach(product => {
  const card = document.createElement('div');
- card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col p-4";
+ card.className = "bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col p-4 cursor-pointer group";
+ card.onclick = () => openProductModal(product.serial);
  card.innerHTML = `
  <div>
- <div class="w-full h-56 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1 relative">
+ <div class="w-full h-56 bg-slate-50 rounded-lg mb-3 overflow-hidden border border-slate-100 flex items-center justify-center p-1 relative group-hover:scale-[1.02] transition duration-200">
  <img src="${product.image}" alt="${product.brand}" class="max-h-full w-full object-contain" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=Medicine'">
  <span class="absolute top-2 left-2 bg-blue-900/90 text-white text-[10px] font-extrabold px-2 py-0.5 rounded shadow">${product.dosageForm || 'Medicine'}</span>
  </div>
  <div class="mb-1"><span class="text-[10px] font-bold text-blue-700 uppercase tracking-wide truncate block">${product.company}</span></div>
- <h3 class="font-extrabold text-slate-900 text-base leading-tight truncate">${product.brand} <span class="font-semibold text-slate-600 text-xs">(${product.strength})</span></h3>
+ <h3 class="font-extrabold text-slate-900 text-base leading-tight truncate group-hover:text-blue-700 transition">${product.brand} <span class="font-semibold text-slate-600 text-xs">(${product.strength})</span></h3>
  <p class="text-xs text-slate-600 font-medium mt-1 truncate">Generic: ${product.generic}</p>
  </div>
  <div class="mt-4 pt-3 flex justify-between items-center border-t border-slate-100">
- <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2 py-0.5 rounded border border-emerald-200">Verified</span>
- <a href="https://wa.me/8801742705183?text=Hello,%20I%20am%20interested%20in%20${encodeURIComponent(product.brand)}" target="_blank" rel="noopener" class="bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-3 py-1.5 rounded transition shadow-sm">Message</a>
+ <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2 py-0.5 rounded border border-emerald-200">Details & Search</span>
+ <button onclick="event.stopPropagation(); openProductModal(${product.serial})" class="bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-3 py-1.5 rounded transition shadow-sm">View Details</button>
  </div>
  `;
  container.appendChild(card);
  });
  renderPagination();
+ }
+
+ function openProductModal(serial) {
+   const product = productsData.find(p => p.serial === serial);
+   if (!product) return;
+
+   document.getElementById('modal-img').src = product.image;
+   document.getElementById('modal-brand').innerText = product.brand;
+   document.getElementById('modal-strength').innerText = `(${product.strength})`;
+   document.getElementById('modal-generic').innerText = product.generic;
+   document.getElementById('modal-company').innerText = product.company;
+   document.getElementById('modal-dosage').innerText = product.dosageForm || 'Medicine';
+   document.getElementById('modal-area').innerText = product.therapeuticArea || 'Specialty Oncology';
+
+   const waMessage = `Hello Rimo Global Pharma, I would like to inquire about product details and sourcing for: ${product.brand} (${product.generic} ${product.strength})`;
+   document.getElementById('modal-wa-btn').href = `https://wa.me/8801742705183?text=${encodeURIComponent(waMessage)}`;
+
+   document.getElementById('product-modal').classList.remove('hidden');
+ }
+
+ function closeProductModal() {
+   document.getElementById('product-modal').classList.add('hidden');
  }
 
  function renderPagination() {
