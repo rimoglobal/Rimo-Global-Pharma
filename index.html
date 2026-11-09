@@ -97,9 +97,7 @@
      <img src="home-banner.png" alt="Rimo Global Pharma">
      <div class="banner-white-overlay"></div>
      <div class="home-banner-typing">
-     <div class="home-brand"><span id="brand-typing" class="typing-effect"></span></div>
-       <div class="home-typing-line"><span id="line-1" class="typing-effect"></span></div>
-       <div class="home-typing-line text-slate-600"><span id="line-2" class="typing-effect"></span></div>
+       <div class="home-brand"><span id="brand-typing" class="typing-effect"></span></div>
      </div>
    </div>
 
@@ -228,7 +226,7 @@
          </p>
 
          <div class="pt-2">
-           <a href="#contact" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3.5 rounded-lg shadow-md transition duration-200">
+           <a href="about.html" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3.5 rounded-lg shadow-md transition duration-200">
              VIEW DETAILS
            </a>
          </div>
@@ -352,24 +350,40 @@
 
  /* Typing Script */
  const typingSequence = [
- { id: 'brand-typing', text: 'Best Oncology Medicine Supplier in Bangladesh  ', speed: 95, pause: 1200 },
- function clearTypingText() { typingSequence.forEach(item => { const el = document.getElementById(item.id); if(el) el.textContent = ''; }); }
+   { id: 'brand-typing', text: 'Best Oncology Medicine Supplier in Bangladesh', speed: 95, pause: 1200 }
+ ];
+
+ function clearTypingText() { 
+   typingSequence.forEach(item => { 
+     const el = document.getElementById(item.id); 
+     if(el) el.textContent = ''; 
+   }); 
+ }
+
  function typeText(element, text, speed) {
- return new Promise(resolve => {
- let i = 0;
- const timer = setInterval(() => { element.textContent += text.charAt(i); i++; if (i >= text.length) { clearInterval(timer); resolve(); } }, speed);
- });
+   return new Promise(resolve => {
+     let i = 0;
+     const timer = setInterval(() => { 
+       element.textContent += text.charAt(i); 
+       i++; 
+       if (i >= text.length) { 
+         clearInterval(timer); 
+         resolve(); 
+       } 
+     }, speed);
+   });
  }
+
  async function playHomeTyping() {
- while (true) {
- clearTypingText();
- for (const item of typingSequence) {
- const element = document.getElementById(item.id);
- if (!element) continue;
- await typeText(element, item.text, item.speed);
- await new Promise(resolve => setTimeout(resolve, item.pause));
- }
- }
+   while (true) {
+     clearTypingText();
+     for (const item of typingSequence) {
+       const element = document.getElementById(item.id);
+       if (!element) continue;
+       await typeText(element, item.text, item.speed);
+       await new Promise(resolve => setTimeout(resolve, item.pause));
+     }
+   }
  }
  playHomeTyping();
 
@@ -447,7 +461,7 @@
  { serial: 36, brand: "Lorbrexen", generic: "Lorlatinib", strength: "100 mg", company: "EVEREST PHARMACEUTICALS.", image: "Lorbrexen 100 mg.jpg", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
  { serial: 37, brand: "Moboxen", generic: "Mobocertinib", strength: "40 mg", company: "EVEREST PHARMACEUTICALS.", image: "Moboxen 40 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
  { serial: 38, brand: "Niranib", generic: "Niraparib", strength: "100 mg", company: "EVEREST PHARMACEUTICALS.", image: "Niranib 100 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Ovarian & Gynecologic Cancers" },
-  { serial: 64, brand: "Osimert", generic: "Osimertinib", strength: "80 mg", company: "EVEREST PHARMACEUTICALS.", image: "Osimert 80.jpg", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 64, brand: "Osimert", generic: "Osimertinib", strength: "80 mg", company: "EVEREST PHARMACEUTICALS.", image: "Osimert 80.jpg", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
  { serial: 39, brand: "Olanib", generic: "Olaparib", strength: "50 mg", company: "EVEREST PHARMACEUTICALS.", image: "Olanib 50 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Ovarian & Gynecologic Cancers" },
  { serial: 40, brand: "Olanib 150", generic: "Olaparib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS.", image: "Olanib 150 mg.jpg", dosageForm: "Tablet", therapeuticArea: "Ovarian & Gynecologic Cancers" },
  { serial: 41, brand: "Pazorest", generic: "Pazopanib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS.", image: "Pazorest 200 mg.jpg", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
