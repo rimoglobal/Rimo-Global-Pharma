@@ -52,7 +52,8 @@
          <a href="#home" class="hover:text-blue-800 transition">Home</a>
          <a href="#new-launch-section" class="hover:text-blue-800 transition">New Launch</a>
          <a href="#products-section" class="hover:text-blue-800 transition">Products & Portfolio</a>
-         <a href="#about-section" class="hover:text-blue-800 transition">About Us</a>
+         <a href="#why-choose-us" class="hover:text-blue-800 transition">Why Choose Us</a>
+         <a href="#how-it-works" class="hover:text-blue-800 transition">How It Works</a>
          <a href="#map-section" class="hover:text-blue-800 transition">Global Network</a>
          <a href="#contact" class="hover:text-blue-800 transition">Contact</a>
        </nav>
@@ -84,7 +85,8 @@
      <a href="#home" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Home</a>
      <a href="#new-launch-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">New Launch</a>
      <a href="#products-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Products & Portfolio</a>
-     <a href="#about-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">About Us</a>
+     <a href="#why-choose-us" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Why Choose Us</a>
+     <a href="#how-it-works" onclick="toggleMobileMenu()" class="block hover:text-blue-400">How It Works</a>
      <a href="#map-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Global Network</a>
      <a href="#contact" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Contact</a>
    </div>
@@ -202,10 +204,10 @@
    </div>
  </section>
 
- <!-- About Rimo Global Pharma, Strengths & How It Works (Combined Compact Section) -->
- <section id="about-section" class="w-full bg-white py-16 border-t border-b border-slate-200">
+ <!-- About Rimo Global Pharma & Video Section (Side-by-Side Split Layout) -->
+ <section class="w-full bg-white py-16 border-t border-b border-slate-200">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
        
        <!-- Left Side: Professional Description Content -->
        <div class="lg:col-span-6 space-y-5 text-left">
@@ -235,6 +237,12 @@
          <p class="text-xs text-slate-500 italic">
            Every order is handled with strict cold-chain temperature control and dispatched worldwide via trusted partners like DHL and Air Cargo to guarantee product integrity and efficacy.
          </p>
+
+         <div class="pt-2">
+           <a href="about.html" class="inline-block bg-[#1e40af] hover:bg-[#1d4ed8] text-white font-bold text-xs sm:text-sm uppercase tracking-wider px-7 py-3.5 rounded-lg shadow-md transition duration-200">
+             VIEW DETAILS
+           </a>
+         </div>
        </div>
 
        <!-- Right Side: Embedded YouTube Video Banner Container -->
@@ -250,90 +258,94 @@
        </div>
 
      </div>
+   </div>
+ </section>
 
-     <!-- Integrated Inside About: Why Choose Us (4 Key Pillars) -->
-     <div class="mt-12 pt-12 border-t border-slate-200">
-       <div class="text-center max-w-3xl mx-auto mb-10">
-         <span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider border border-blue-100">Our Strengths</span>
-         <h3 class="text-2xl font-extrabold text-slate-900 mt-2">Why Choose Us</h3>
+ <!-- 3. Why Choose Us (4 Key Pillars Section) -->
+ <section id="why-choose-us" class="bg-slate-50 py-16 border-t border-slate-200">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center max-w-3xl mx-auto mb-12">
+       <span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider border border-blue-100">Our Strengths</span>
+       <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Why Choose Us</h2>
+       <p class="text-sm text-slate-500 mt-1">Key pillars ensuring safety, authenticity, and global reliability.</p>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+         <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">🛡️</div>
+         <h3 class="font-bold text-slate-900 text-base mb-2">WHO-GMP & EU-GMP Certified</h3>
+         <p class="text-xs text-slate-600 leading-relaxed">100% authentic oncology, Hepatitis C, and specialty medicines sourced directly from top-regulated pharmaceutical manufacturers.</p>
        </div>
-       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">🛡️</div>
-           <h4 class="font-bold text-slate-900 text-base mb-2">WHO-GMP & EU-GMP Certified</h4>
-           <p class="text-xs text-slate-600 leading-relaxed">100% authentic oncology, Hepatitis C, and specialty medicines sourced directly from top-regulated pharmaceutical manufacturers.</p>
-         </div>
-         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">❄️</div>
-           <h4 class="font-bold text-slate-900 text-base mb-2">Strict Cold-Chain Logistics</h4>
-           <p class="text-xs text-slate-600 leading-relaxed">Temperature-controlled packaging and validated shipping worldwide via DHL Express and Air Cargo.</p>
-         </div>
-         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">📦</div>
-           <h4 class="font-bold text-slate-900 text-base mb-2">B2C Door-to-Door Patient Care</h4>
-           <p class="text-xs text-slate-600 leading-relaxed">Hassle-free home delivery for international patients upon verification of a valid medical prescription.</p>
-         </div>
-         <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
-           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">🌐</div>
-           <h4 class="font-bold text-slate-900 text-base mb-2">Global B2B Wholesale Supply</h4>
-           <p class="text-xs text-slate-600 leading-relaxed">Dedicated bulk export and regulatory documentation support for global hospitals, clinics, and distributors.</p>
-         </div>
+       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+         <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">❄️</div>
+         <h3 class="font-bold text-slate-900 text-base mb-2">Strict Cold-Chain Logistics</h3>
+         <p class="text-xs text-slate-600 leading-relaxed">Temperature-controlled packaging and validated shipping worldwide via DHL Express and Air Cargo.</p>
+       </div>
+       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+         <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">📦</div>
+         <h3 class="font-bold text-slate-900 text-base mb-2">B2C Door-to-Door Patient Care</h3>
+         <p class="text-xs text-slate-600 leading-relaxed">Hassle-free home delivery for international patients upon verification of a valid medical prescription.</p>
+       </div>
+       <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+         <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg mb-4">🌐</div>
+         <h3 class="font-bold text-slate-900 text-base mb-2">Global B2B Wholesale Supply</h3>
+         <p class="text-xs text-slate-600 leading-relaxed">Dedicated bulk export and regulatory documentation support for global hospitals, clinics, and distributors.</p>
        </div>
      </div>
+   </div>
+ </section>
 
-     <!-- Integrated Inside About: How It Works (B2C vs B2B) -->
-     <div class="mt-12 pt-12 border-t border-slate-200">
-       <div class="text-center max-w-3xl mx-auto mb-10">
-         <span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider border border-blue-100">Simple Process</span>
-         <h3 class="text-2xl font-extrabold text-slate-900 mt-2">How It Works</h3>
-         <p class="text-xs text-slate-500 mt-1">Easy ordering steps for individual patients and institutional partners.</p>
+ <!-- 4. How It Works (B2C vs B2B Section) -->
+ <section id="how-it-works" class="bg-white py-16 border-t border-slate-200">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center max-w-3xl mx-auto mb-12">
+       <span class="px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider border border-blue-100">Simple Process</span>
+       <h2 class="text-3xl font-extrabold text-slate-900 mt-2">How It Works</h2>
+       <p class="text-sm text-slate-500 mt-1">Easy ordering steps for individual patients and institutional partners.</p>
+     </div>
+     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+       <!-- B2C Patients -->
+       <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+         <h3 class="text-lg font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+           <span class="bg-blue-700 text-white w-7 h-7 rounded-lg flex items-center justify-center text-xs">👤</span>
+           For B2C Patients (Prescription Orders)
+         </h3>
+         <ol class="space-y-4 text-xs sm:text-sm text-slate-700">
+           <li class="flex gap-3">
+             <span class="font-bold text-blue-700">1.</span>
+             <div><strong class="text-slate-900 block">Send Prescription:</strong> Share your valid doctor’s prescription and delivery address via WhatsApp or Email.</div>
+           </li>
+           <li class="flex gap-3">
+             <span class="font-bold text-blue-700">2.</span>
+             <div><strong class="text-slate-900 block">Verify & Confirm:</strong> Our pharmacy team confirms medicine availability, cold-chain requirements, and total cost.</div>
+           </li>
+           <li class="flex gap-3">
+             <span class="font-bold text-blue-700">3.</span>
+             <div><strong class="text-slate-900 block">Doorstep Delivery:</strong> Receive your temperature-controlled package safely at your home via DHL.</div>
+           </li>
+         </ol>
        </div>
-       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-         <!-- B2C Patients -->
-         <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
-           <h4 class="text-base font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-             <span class="bg-blue-700 text-white w-7 h-7 rounded-lg flex items-center justify-center text-xs">👤</span>
-             For B2C Patients (Prescription Orders)
-           </h4>
-           <ol class="space-y-3 text-xs sm:text-sm text-slate-700">
-             <li class="flex gap-3">
-               <span class="font-bold text-blue-700">1.</span>
-               <div><strong class="text-slate-900 block">Send Prescription:</strong> Share your valid doctor’s prescription and delivery address via WhatsApp or Email.</div>
-             </li>
-             <li class="flex gap-3">
-               <span class="font-bold text-blue-700">2.</span>
-               <div><strong class="text-slate-900 block">Verify & Confirm:</strong> Our pharmacy team confirms medicine availability, cold-chain requirements, and total cost.</div>
-             </li>
-             <li class="flex gap-3">
-               <span class="font-bold text-blue-700">3.</span>
-               <div><strong class="text-slate-900 block">Doorstep Delivery:</strong> Receive your temperature-controlled package safely at your home via DHL.</div>
-             </li>
-           </ol>
-         </div>
-         <!-- B2B Partners -->
-         <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
-           <h4 class="text-base font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-             <span class="bg-slate-900 text-white w-7 h-7 rounded-lg flex items-center justify-center text-xs">🏢</span>
-             For B2B Partners (Wholesale & Institutional Orders)
-           </h4>
-           <ol class="space-y-3 text-xs sm:text-sm text-slate-700">
-             <li class="flex gap-3">
-               <span class="font-bold text-slate-900">1.</span>
-               <div><strong class="text-slate-900 block">Submit Inquiry:</strong> Share your required product list (INN/Generic names) and target destination.</div>
-             </li>
-             <li class="flex gap-3">
-               <span class="font-bold text-slate-900">2.</span>
-               <div><strong class="text-slate-900 block">Quotation & Compliance:</strong> Receive competitive export pricing along with COA, GMP, and export documentation details.</div>
-             </li>
-             <li class="flex gap-3">
-               <span class="font-bold text-slate-900">3.</span>
-               <div><strong class="text-slate-900 block">Global Dispatch:</strong> Fast air cargo or courier dispatch with complete cold-chain assurance.</div>
-             </li>
-           </ol>
-         </div>
+       <!-- B2B Partners -->
+       <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200">
+         <h3 class="text-lg font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+           <span class="bg-slate-900 text-white w-7 h-7 rounded-lg flex items-center justify-center text-xs">🏢</span>
+           For B2B Partners (Wholesale & Institutional Orders)
+         </h3>
+         <ol class="space-y-4 text-xs sm:text-sm text-slate-700">
+           <li class="flex gap-3">
+             <span class="font-bold text-slate-900">1.</span>
+             <div><strong class="text-slate-900 block">Submit Inquiry:</strong> Share your required product list (INN/Generic names) and target destination.</div>
+           </li>
+           <li class="flex gap-3">
+             <span class="font-bold text-slate-900">2.</span>
+             <div><strong class="text-slate-900 block">Quotation & Compliance:</strong> Receive competitive export pricing along with COA, GMP, and export documentation details.</div>
+           </li>
+           <li class="flex gap-3">
+             <span class="font-bold text-slate-900">3.</span>
+             <div><strong class="text-slate-900 block">Global Dispatch:</strong> Fast air cargo or courier dispatch with complete cold-chain assurance.</div>
+           </li>
+         </ol>
        </div>
      </div>
-
    </div>
  </section>
 
@@ -408,7 +420,8 @@
  <li><a href="#home" class="hover:text-white transition">Home</a></li>
  <li><a href="#new-launch-section" class="hover:text-white transition">New Launch</a></li>
  <li><a href="#products-section" class="hover:text-white transition">Products & Portfolio</a></li>
- <li><a href="#about-section" class="hover:text-white transition">About Us</a></li>
+ <li><a href="#why-choose-us" class="hover:text-white transition">Why Choose Us</a></li>
+ <li><a href="#how-it-works" class="hover:text-white transition">How It Works</a></li>
  <li><a href="#map-section" class="hover:text-white transition">Global Network</a></li>
  </ul>
  </div>
