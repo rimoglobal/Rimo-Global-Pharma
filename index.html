@@ -18,12 +18,11 @@
  
  <style>
  body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
- .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #ffffff; line-height: 0; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05); }
+ .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #ffffff; line-height: 0; }
  .home-banner img { display: block; width: 100%; height: auto; object-fit: cover; }
- .banner-white-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.90) 38%, rgba(255, 255, 255, 0.45) 65%, rgba(255, 255, 255, 0) 100%); pointer-events: none; }
- .home-banner-typing { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; text-align: center; line-height: 1.25; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; }
- .company-top-tag { font-size: clamp(0.75rem, 1.2vw, 0.95rem); font-weight: 700; letter-spacing: 0.1em; color: #1e40af; text-transform: uppercase; margin-bottom: clamp(6px, 1vw, 12px); display: inline-block; background-color: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 14px; border-radius: 20px; }
- .home-brand { font-weight: 800; font-size: clamp(1.2rem, 2.5vw, 2.4rem); letter-spacing: -0.02em; margin-bottom: clamp(8px, 1.4vw, 16px); color: #0f172a; text-transform: uppercase; }
+ .home-banner-content { background-color: #ffffff; padding: clamp(24px, 4vw, 44px) 16px; text-align: center; border-bottom: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04); }
+ .company-top-tag { font-size: clamp(0.75rem, 1.2vw, 0.9rem); font-weight: 700; letter-spacing: 0.1em; color: #1e40af; text-transform: uppercase; margin-bottom: 10px; display: inline-block; background-color: #eff6ff; border: 1px solid #bfdbfe; padding: 5px 16px; border-radius: 20px; }
+ .home-brand { font-weight: 800; font-size: clamp(1.35rem, 2.6vw, 2.3rem); letter-spacing: -0.02em; margin-bottom: 8px; color: #0f172a; text-transform: uppercase; line-height: 1.25; }
  .typing-effect { display: inline; white-space: normal; word-break: normal; }
  .new-ticker-bar { background: #0f172a; border-top: 1px solid #1e293b; border-bottom: 1px solid #1e293b; padding: 10px 16px; }
  .beacon-layout-strip { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%); position: relative; overflow: hidden; }
@@ -31,7 +30,6 @@
  .custom-float-btn:hover { background: #1e293b; }
  .hide-scrollbar::-webkit-scrollbar { display: none; }
  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
- @media (max-width: 768px) { .home-banner-typing { width: 92%; } }
  </style>
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
@@ -94,22 +92,35 @@
 
   <!-- 2. Home Section Layout -->
  <section id="home" class="w-full py-0">
-   <!-- Hero Banner Section -->
+   <!-- Pure Hero Banner Image (No White Overlay) -->
    <div class="home-banner">
      <img src="home-banner.png" alt="Rimo Global Pharma">
-     <div class="banner-white-overlay"></div>
-     <div class="home-banner-typing">
+   </div>
+
+   <!-- Hero Banner Text & Action Buttons Below Image -->
+   <div class="home-banner-content">
+     <div class="max-w-4xl mx-auto flex flex-col items-center">
        <span class="company-top-tag">Rimo Global Pharma</span>
-       <div class="home-brand"><span id="brand-typing" class="typing-effect">Global B2C & B2B Supplier of Life-Saving Oncology & Specialty Medicine</span></div>
-       <p class="text-slate-700 text-xs sm:text-sm font-medium max-w-2xl mb-5 leading-relaxed hidden sm:block">
-         Safe door-to-door delivery for B2C patients with a valid prescription, and reliable WHO-GMP certified wholesale sourcing for global hospitals, pharmacies, and distributors—shipped worldwide via strict cold-chain logistics (DHL & Air Cargo).
+       
+       <h1 class="home-brand">
+         <span id="brand-typing" class="typing-effect">Global B2C & B2B Supplier of Life-Saving Oncology & Specialty Medicine</span>
+       </h1>
+       
+       <p class="text-slate-800 font-semibold text-sm sm:text-base mb-3">
+         For Patients &amp; Healthcare Businesses Worldwide
        </p>
-       <div class="flex flex-wrap gap-3 justify-center">
-         <a href="https://wa.me/8801742705183?text=Hello%20Rimo%20Global%20Pharma,%20I%20would%20like%20to%20order%20with%20a%20valid%20prescription%20(B2C)." target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase px-5 py-3 rounded-xl shadow-md transition">
-           Order with Prescription (B2C Patients)
+       
+       <p class="text-slate-600 text-xs sm:text-sm font-medium max-w-3xl mb-6 leading-relaxed">
+         Access to quality pharmaceutical products sourced from WHO-GMP and EU-GMP compliant manufacturers in Bangladesh, with international supply support. Safe door-to-door delivery for B2C patients with a valid prescription, and reliable WHO-GMP certified wholesale sourcing for global hospitals, pharmacies, and distributors—shipped worldwide via strict cold-chain logistics (DHL &amp; Air Cargo).
+       </p>
+
+       <!-- Action Buttons (B2B First, Then B2C) -->
+       <div class="flex flex-col sm:flex-row flex-wrap gap-3 justify-center w-full max-w-2xl">
+         <a href="https://wa.me/8801742705183?text=Hello%20Rimo%20Global%20Pharma,%20I%20have%20a%20Wholesale%20%26%20Bulk%20Inquiry%20(B2B%20Partners)." target="_blank" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-xl shadow-md transition text-center">
+           Wholesale &amp; Bulk Inquiry (B2B Partners)
          </a>
-         <a href="https://wa.me/8801742705183?text=Hello%20Rimo%20Global%20Pharma,%20I%20have%20a%20Wholesale%20%26%20Bulk%20Inquiry%20(B2B%20Partners)." target="_blank" class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase px-5 py-3 rounded-xl shadow-md transition">
-           Wholesale & Bulk Inquiry (B2B Partners)
+         <a href="https://wa.me/8801742705183?text=Hello%20Rimo%20Global%20Pharma,%20I%20would%20like%20to%20order%20with%20a%20valid%20prescription%20(B2C)." target="_blank" class="flex-1 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs uppercase px-6 py-3.5 rounded-xl shadow-md transition text-center">
+           Order with Prescription (B2C Patients)
          </a>
        </div>
      </div>
@@ -119,7 +130,7 @@
    <div class="bg-[#113867] py-6 px-4 border-t border-blue-800/40">
      <div class="max-w-2xl mx-auto">
        <h2 class="text-white text-center font-bold text-sm sm:text-base uppercase tracking-wider mb-4 flex items-center justify-center gap-2">
-         <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+         <svg class="w-4 h-4 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
          Therapeutic Product Categories
        </h2>
        
