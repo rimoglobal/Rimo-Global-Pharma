@@ -17,7 +17,18 @@
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
  
  <style>
- body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+ /* Layout Shift & Jitter Fixes */
+ html, body { 
+   font-family: 'Inter', sans-serif; 
+   background-color: #f8fafc; 
+   color: #334155; 
+   overflow-x: hidden;
+   -webkit-text-size-adjust: 100%;
+   scroll-behavior: smooth;
+ }
+ *, ::before, ::after {
+   box-sizing: border-box;
+ }
  .home-banner-wrapper { max-width: 1280px; margin: 0 auto; }
  .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #235993; line-height: 0; }
  .home-banner img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; object-position: center; }
@@ -28,7 +39,7 @@
  .company-top-tag { font-size: clamp(0.75rem, 1.1vw, 0.875rem); font-weight: 700; letter-spacing: 0.1em; color: #ffffff; text-transform: uppercase; margin-bottom: 12px; display: inline-block; background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.35); padding: 6px 16px; border-radius: 9999px; }
  .home-brand { font-weight: 800; font-size: clamp(1.35rem, 2.5vw, 2.25rem); letter-spacing: -0.02em; margin-bottom: 10px; color: #ffffff; text-transform: uppercase; line-height: 1.25; }
  .typing-effect { display: inline; white-space: normal; word-break: normal; }
- .new-ticker-bar { background: #14375e; border: 1px solid rgba(255, 255, 255, 0.2); padding: 11px 16px; }
+ .new-ticker-bar { background: #14375e; border: 1px solid rgba(255, 255, 255, 0.2); padding: 11px 16px; overflow: hidden; }
  .beacon-layout-strip { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%); position: relative; overflow: hidden; }
  .custom-float-btn { background: #0f172a; color: #f8fafc; border: 1px solid #334155; transition: all 0.3s ease; }
  .custom-float-btn:hover { background: #1e293b; }
@@ -38,14 +49,13 @@
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
 
-<!-- 1. Header Navigation (Logo & Search Niche - Unchanged) -->
+<!-- 1. Header Navigation -->
  <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-xs">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
      <a href="#home" class="flex items-center">
        <img src="logo.png" alt="Rimo Global Pharma Logo" class="h-14 sm:h-16 object-contain py-1" onerror="this.style.display='none'">
      </a>
 
-     <!-- Navigation Menu & Mobile Toggle -->
      <div class="flex items-center gap-3">
        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-700 focus:outline-none p-2">
          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -62,7 +72,6 @@
      </div>
    </div>
 
-   <!-- Search Bar (Desktop - Logo-er Niche) -->
    <div class="hidden md:flex px-4 sm:px-6 lg:px-8 pb-3.5 max-w-3xl mx-auto items-center">
      <div class="flex flex-1 items-center border border-slate-300 rounded-xl overflow-hidden bg-slate-50 shadow-sm">
        <input type="text" id="header-search-input" onkeyup="syncSearch(this.value)" placeholder="Search product brand, generic name, category..." class="w-full px-4 py-2.5 text-sm text-slate-700 bg-transparent focus:outline-none">
@@ -72,7 +81,6 @@
      </div>
    </div>
 
-   <!-- Mobile Search Bar (Logo-er Niche) -->
    <div class="md:hidden px-4 pb-3 flex items-center border-t border-slate-100 pt-2.5">
      <div class="flex flex-1 items-center border border-slate-300 rounded-lg overflow-hidden bg-slate-50">
        <input type="text" id="header-search-input-mobile" onkeyup="syncSearch(this.value)" placeholder="Search..." class="w-full px-3 py-2 text-xs text-slate-700 bg-transparent focus:outline-none">
@@ -82,7 +90,6 @@
      </div>
    </div>
 
-   <!-- Mobile Dropdown Menu -->
    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 text-white px-4 py-4 space-y-3 text-xs font-semibold uppercase border-t border-slate-800">
      <a href="#home" onclick="toggleMobileMenu()" class="block hover:text-blue-400">Home</a>
      <a href="#new-launch-section" onclick="toggleMobileMenu()" class="block hover:text-blue-400">New Launch</a>
@@ -94,18 +101,15 @@
    </div>
  </header>
 
-  <!-- 2. Home Section Layout (Saif Pharma Blue Background & Mobile Responsive Sizing) -->
+  <!-- 2. Home Section Layout -->
  <section id="home" class="w-full bg-[#235993] pt-5 pb-8 px-3 sm:px-6 lg:px-8">
    <div class="max-w-7xl mx-auto space-y-6">
      
-     <!-- Framed Hero Banner Card (Image + Text + Buttons in Saif Pharma Blue) -->
      <div class="bg-[#235993] rounded-2xl border border-blue-300/30 shadow-lg overflow-hidden">
-       <!-- Pure Hero Banner Image -->
        <div class="home-banner border-b border-blue-300/25">
          <img src="home-banner.png" alt="Rimo Global Pharma">
        </div>
 
-       <!-- Hero Banner Text & Action Buttons Below Image -->
        <div class="home-banner-content">
          <div class="max-w-4xl mx-auto flex flex-col items-center">
            <span class="company-top-tag">Rimo Global Pharma</span>
@@ -122,7 +126,6 @@
              Access to quality pharmaceutical products sourced from WHO-GMP and EU-GMP compliant manufacturers in Bangladesh, with international supply support. Safe door-to-door delivery for B2C patients with a valid prescription, and reliable WHO-GMP certified wholesale sourcing for global hospitals, pharmacies, and distributors—shipped worldwide via strict cold-chain logistics (DHL &amp; Air Cargo).
            </p>
 
-           <!-- Action Buttons (B2B First, Then B2C - Equal Sizing) -->
            <div class="flex flex-col sm:flex-row gap-3.5 justify-center w-full max-w-2xl">
              <a href="https://wa.me/8801742705183?text=Hello%20Rimo%20Global%20Pharma,%20I%20have%20a%20Wholesale%20%26%20Bulk%20Inquiry%20(B2B%20Partners)." target="_blank" class="flex-1 bg-[#0f294a] hover:bg-[#0a1d36] text-white font-bold text-xs uppercase tracking-wide px-6 py-3.5 rounded-xl border border-blue-300/30 shadow-sm transition text-center">
                Wholesale &amp; Bulk Inquiry (B2B Partners)
@@ -135,7 +138,6 @@
        </div>
      </div>
 
-     <!-- Therapeutic Product Categories (Saif Pharma Matching Blue Shade) -->
      <div class="bg-[#1b4778] rounded-2xl border border-blue-300/30 shadow-lg py-7 px-4 sm:px-8">
        <div class="max-w-4xl mx-auto">
          <h2 class="text-white text-center font-bold text-sm sm:text-base uppercase tracking-wider mb-5 flex items-center justify-center gap-2">
@@ -176,7 +178,6 @@
        </div>
      </div>
 
-     <!-- Running Marquee Ticker Bar (Aligned Box) -->
      <div class="new-ticker-bar rounded-xl shadow-sm">
        <div class="overflow-hidden whitespace-nowrap">
          <marquee behavior="scroll" direction="left" scrollamount="4" class="text-blue-100 font-medium text-xs sm:text-sm">
@@ -226,12 +227,11 @@
    </div>
  </section>
 
- <!-- About Rimo Global Pharma & Video Section (Side-by-Side Split Layout) -->
+ <!-- About Rimo Global Pharma & Video Section -->
  <section class="w-full bg-white py-16 border-t border-b border-slate-200">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
        
-       <!-- Left Side: Professional Description Content -->
        <div class="lg:col-span-6 space-y-5 text-left">
          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
            About Rimo Global Pharma
@@ -267,7 +267,6 @@
          </div>
        </div>
 
-       <!-- Right Side: Embedded YouTube Video Banner Container -->
        <div class="lg:col-span-6">
          <div class="relative bg-slate-900 border-4 border-blue-900 rounded-2xl overflow-hidden shadow-lg aspect-video">
           <iframe class="absolute top-0 left-0 w-full h-full" 
@@ -283,7 +282,7 @@
    </div>
  </section>
 
- <!-- 3. Why Choose Us (4 Key Pillars Section) -->
+ <!-- Why Choose Us -->
  <section id="why-choose-us" class="bg-slate-50 py-16 border-b border-slate-200">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      <div class="text-center max-w-3xl mx-auto mb-12">
@@ -316,7 +315,7 @@
    </div>
  </section>
 
- <!-- 4. How It Works (B2C vs B2B Section) -->
+ <!-- How It Works -->
  <section id="how-it-works" class="bg-white py-16 border-b border-slate-200">
    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
      <div class="text-center max-w-3xl mx-auto mb-12">
@@ -325,7 +324,6 @@
        <p class="text-sm text-slate-500 mt-1">Easy ordering steps for individual patients and institutional partners.</p>
      </div>
      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-       <!-- B2C Patients -->
        <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
          <h3 class="text-lg font-extrabold text-slate-900 mb-5 flex items-center gap-2.5">
            <span class="bg-blue-700 text-white w-8 h-8 rounded-xl flex items-center justify-center text-xs shadow-xs">👤</span>
@@ -346,7 +344,7 @@
            </li>
          </ol>
        </div>
-       <!-- B2B Partners -->
+       
        <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
          <h3 class="text-lg font-extrabold text-slate-900 mb-5 flex items-center gap-2.5">
            <span class="bg-slate-900 text-white w-8 h-8 rounded-xl flex items-center justify-center text-xs shadow-xs">🏢</span>
@@ -371,7 +369,7 @@
    </div>
  </section>
 
- <!-- 6. Products & Portfolio Section (122 Products with Company Filters) -->
+ <!-- Products & Portfolio Section -->
  <section id="products-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
  <div class="text-center mb-10">
  <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-3">Therapeutic Spectrum</span>
@@ -379,7 +377,6 @@
  <p class="text-sm text-slate-500 max-w-2xl mx-auto">Browse specialized pharmaceutical categories designed for international B2B procurement and hospital sourcing.</p>
  </div>
 
- <!-- Company Filter Buttons -->
  <div id="company-filters" class="flex flex-wrap gap-2 mb-5 justify-center">
  <button onclick="filterByCompany('all', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-700 text-white transition shadow-sm">All Companies</button>
  <button onclick="filterByCompany('BEACON', this)" class="company-btn px-4 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 transition shadow-sm">Beacon</button>
@@ -394,12 +391,11 @@
  <input type="text" id="search-input" placeholder="Search product brand, generic name, category or manufacturer..." class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600 bg-white font-medium">
  </div>
 
- <!-- Product Cards Grid Container -->
  <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
  <div id="pagination-container" class="mt-10 flex justify-center items-center gap-2 flex-wrap"></div>
  </section>
 
- <!-- 7. Global Supply Network (Map) -->
+ <!-- Global Supply Network -->
  <section id="map-section" class="bg-slate-100 py-16 border-t border-slate-200">
  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
@@ -422,16 +418,14 @@
  </div>
  </section>
 
- <!-- 8. Footer Section -->
+ <!-- Footer Section -->
  <footer id="contact" class="bg-slate-900 text-slate-400 py-14 border-t border-slate-800">
  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
  <div>
    <h4 class="text-white font-bold text-base mb-3">RIMO GLOBAL PHARMA</h4>
-   
    <p class="text-xs leading-relaxed text-slate-400 mb-4">
      Rimo Global Pharma — Your trusted global partner for B2C prescription delivery and B2B wholesale sourcing of WHO-GMP certified oncology and specialty medicine.
    </p>
-
    <p class="text-[11px] leading-snug text-slate-300 border-t border-slate-800 pt-3 mb-3">
      <strong class="text-white not-italic font-semibold">Medical &amp; Regulatory Disclaimer:</strong> All B2C patient orders strictly require a valid prescription from a licensed healthcare professional. We adhere to international pharmaceutical export regulations and maintain validated cold-chain standards for all temperature-sensitive shipments.
    </p>
@@ -459,7 +453,7 @@
  </div>
  </footer>
 
- <!-- Dynamic Product Details Modal Container -->
+ <!-- Modal Container -->
  <div id="product-modal" class="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-sm hidden flex items-center justify-center p-4">
    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-slate-200 relative max-h-[92vh] flex flex-col">
      <button onclick="closeProductModal()" class="absolute top-3 right-3 z-10 bg-slate-100 hover:bg-slate-200 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm transition">✕</button>
@@ -540,7 +534,6 @@
    }
  }
 
- /* Typing Script */
  const typingSequence = [
    { id: 'brand-typing', text: 'Global B2B & B2C Supplier of Life-Saving Oncology & Specialty Medicine', speed: 85, pause: 1400 }
  ];
@@ -579,7 +572,6 @@
  }
  playHomeTyping();
 
- /* New Launch Slider Data */
  const newlyLaunchedProducts = [
  { name: "Osimertinib", image: "Osimert 80.jpg" },
  { name: "Pembrolizumab", image: "Peblimab.png" },
@@ -613,7 +605,6 @@
  renderNewLaunchProducts();
  function scrollNewLaunch(dir) { document.getElementById('new-launch-grid').scrollBy({ left: dir * 300, behavior: 'smooth' }); }
 
- /* Products Data Structure (122 Products Intact) */
  const productsData = [
  { serial: 1, brand: "Afanix", generic: "Afatinib", strength: "40 mg", company: "BEACON PHARMACEUTICALS.", image: "Afanix 40 mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
  { serial: 2, brand: "Alecinix", generic: "Alectinib", strength: "150 mg", company: "BEACON PHARMACEUTICALS.", image: "Alecinix 150mg.jfif", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
