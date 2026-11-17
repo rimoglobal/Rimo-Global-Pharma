@@ -15,7 +15,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
+ <style>
   /* Layout Shift & Jitter Fixes */
   html, body {
     font-family: 'Inter', sans-serif;
@@ -29,6 +29,21 @@
     box-sizing: border-box;
   }
   .home-banner-wrapper { max-width: 1280px; margin: 0 auto; }
+  .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #235993; line-height: 0; }
+  .home-banner img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; object-position: center; }
+  @media (max-width: 640px) {
+    .home-banner img { max-height: none; object-fit: contain; }
+  }
+  .home-banner-content { background-color: #235993; padding: clamp(24px, 4vw, 44px) 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .company-top-tag { font-size: clamp(0.75rem, 1.1vw, 0.875rem); font-weight: 700; letter-spacing: 0.1em; color: #ffffff; text-transform: uppercase; margin-bottom: 12px; display: inline-block; background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.35); padding: 6px 16px; border-radius: 9999px; }
+  .home-brand { font-weight: 800; font-size: clamp(1.35rem, 2.5vw, 2.25rem); letter-spacing: -0.02em; margin-bottom: 10px; color: #ffffff; text-transform: uppercase; line-height: 1.25; }
+  .typing-effect { display: inline; white-space: normal; word-break: normal; }
+  .new-ticker-bar { background: #14375e; border: 1px solid rgba(255, 255, 255, 0.2); padding: 11px 16px; overflow: hidden; }
+  .beacon-layout-strip { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%); position: relative; overflow: hidden; }
+  .custom-float-btn { background: #0f172a; color: #f8fafc; border: 1px solid #334155; transition: all 0.3s ease; }
+  .custom-float-btn:hover { background: #1e293b; }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
   /* Ticker Animation Styles */
   .ticker-wrapper {
@@ -58,35 +73,6 @@
       transform: translate3d(-100%, 0, 0);
     }
   }
-</style>
- /* Layout Shift & Jitter Fixes */
- html, body { 
-   font-family: 'Inter', sans-serif; 
-   background-color: #f8fafc; 
-   color: #334155; 
-   overflow-x: hidden;
-   -webkit-text-size-adjust: 100%;
-   scroll-behavior: smooth;
- }
- *, ::before, ::after {
-   box-sizing: border-box;
- }
- .home-banner-wrapper { max-width: 1280px; margin: 0 auto; }
- .home-banner { position: relative; width: 100%; overflow: hidden; background-color: #235993; line-height: 0; }
- .home-banner img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; object-position: center; }
- @media (max-width: 640px) {
-   .home-banner img { max-height: none; object-fit: contain; }
- }
- .home-banner-content { background-color: #235993; padding: clamp(24px, 4vw, 44px) 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
- .company-top-tag { font-size: clamp(0.75rem, 1.1vw, 0.875rem); font-weight: 700; letter-spacing: 0.1em; color: #ffffff; text-transform: uppercase; margin-bottom: 12px; display: inline-block; background-color: rgba(255, 255, 255, 0.14); border: 1px solid rgba(255, 255, 255, 0.35); padding: 6px 16px; border-radius: 9999px; }
- .home-brand { font-weight: 800; font-size: clamp(1.35rem, 2.5vw, 2.25rem); letter-spacing: -0.02em; margin-bottom: 10px; color: #ffffff; text-transform: uppercase; line-height: 1.25; }
- .typing-effect { display: inline; white-space: normal; word-break: normal; }
- .new-ticker-bar { background: #14375e; border: 1px solid rgba(255, 255, 255, 0.2); padding: 11px 16px; overflow: hidden; }
- .beacon-layout-strip { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0284c7 100%); position: relative; overflow: hidden; }
- .custom-float-btn { background: #0f172a; color: #f8fafc; border: 1px solid #334155; transition: all 0.3s ease; }
- .custom-float-btn:hover { background: #1e293b; }
- .hide-scrollbar::-webkit-scrollbar { display: none; }
- .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
  </style>
 </head>
 <body class="min-h-screen relative flex flex-col justify-between">
