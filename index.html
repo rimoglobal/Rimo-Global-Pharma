@@ -428,7 +428,8 @@
  <input type="text" id="search-input" placeholder="Search product brand, generic name, category or manufacturer..." class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600 bg-white font-medium">
  </div>
 
- <div id="product-grid-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+ <!-- মোবাইল স্ক্রিনে পাশাপাশি ২টি কার্ড দেখানোর জন্য grid-cols-2 করা হয়েছে -->
+ <div id="product-grid-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"></div>
  <div id="pagination-container" class="mt-10 flex justify-center items-center gap-2 flex-wrap"></div>
  </section>
 
@@ -604,17 +605,8 @@
  renderNewLaunchProducts();
  function scrollNewLaunch(dir) { document.getElementById('new-launch-grid').scrollBy({ left: dir * 300, behavior: 'smooth' }); }
 
+ // এখানে Beacon Pharma-র প্রথম দিকের প্রোডাক্টগুলোকে অ্যারের শেষের দিকে শিফট করা হয়েছে যাতে প্রথম ১০টি প্রোডাক্টের মধ্যে Beacon Pharma আগে না থাকে।
  const productsData = [
-    { serial: 1, brand: "Afanix", generic: "Afatinib", strength: "40 mg", company: "BEACON PHARMACEUTICALS.", image: "Afanix 40 mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 2, brand: "Alecinix", generic: "Alectinib", strength: "150 mg", company: "BEACON PHARMACEUTICALS.", image: "Alecinix 150mg.jfif", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
- { serial: 3, brand: "Apalunix", generic: "Apalutamide", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Apalunix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Prostate & Urologic Cancers" },
- { serial: 4, brand: "Axinix", generic: "Axitinib", strength: "5 mg", company: "BEACON PHARMACEUTICALS.", image: "Axinix 5mg.jpg", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
- { serial: 5, brand: "Baricinix 2", generic: "Baricitinib", strength: "2 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 2mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
- { serial: 6, brand: "Baricinix 4", generic: "Baricitinib", strength: "4 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 4mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
- { serial: 7, brand: "Briganix 90", generic: "Brigatinib", strength: "90 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 90mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 8, brand: "Briganix 180", generic: "Brigatinib", strength: "180 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 180mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 9, brand: "Cabozanix 20", generic: "Cabozantinib", strength: "20 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 20mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
- { serial: 10, brand: "Cabozanix 60", generic: "Cabozantinib", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" }
  { serial: 11, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS.", image: "Acaluxen 100 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Blood Cancers" },
  { serial: 12, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS.", image: "Adakras 200 mg.jpg", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
  { serial: 13, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS.", image: "alecnib 150 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
@@ -727,8 +719,18 @@
  { serial: 119, brand: "Ruxonib Cream", generic: "Ruxolitinib", strength: "1.5%", company: "ZISKA PHARMACEUTICALS.", image: "37.jpg", dosageForm: "Topical Cream", therapeuticArea: "Other Solid Tumors" },
  { serial: 120, brand: "Nivomab 100", generic: "Nivolumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS.", image: "38.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" },
  { serial: 121, brand: "Nivomab 40", generic: "Nivolumab", strength: "40 mg", company: "ZISKA PHARMACEUTICALS.", image: "39.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" },
- { serial: 122, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS.", image: "40.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" }
-,
+ { serial: 122, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS.", image: "40.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" },
+ // Beacon Pharma-র ওষুধগুলোকে প্রথম ১০টি থেকে সরিয়ে সবার শেষে নিয়ে আসা হলো:
+ { serial: 1, brand: "Afanix", generic: "Afatinib", strength: "40 mg", company: "BEACON PHARMACEUTICALS.", image: "Afanix 40 mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 2, brand: "Alecinix", generic: "Alectinib", strength: "150 mg", company: "BEACON PHARMACEUTICALS.", image: "Alecinix 150mg.jfif", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
+ { serial: 3, brand: "Apalunix", generic: "Apalutamide", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Apalunix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Prostate & Urologic Cancers" },
+ { serial: 4, brand: "Axinix", generic: "Axitinib", strength: "5 mg", company: "BEACON PHARMACEUTICALS.", image: "Axinix 5mg.jpg", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
+ { serial: 5, brand: "Baricinix 2", generic: "Baricitinib", strength: "2 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 2mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
+ { serial: 6, brand: "Baricinix 4", generic: "Baricitinib", strength: "4 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 4mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
+ { serial: 7, brand: "Briganix 90", generic: "Brigatinib", strength: "90 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 90mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 8, brand: "Briganix 180", generic: "Brigatinib", strength: "180 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 180mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 9, brand: "Cabozanix 20", generic: "Cabozantinib", strength: "20 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 20mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
+ { serial: 10, brand: "Cabozanix 60", generic: "Cabozantinib", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" }
  ];
 
  let currentPage = 1;
@@ -788,21 +790,21 @@
 
  pageProducts.forEach(product => {
  const card = document.createElement('div');
- card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-300 transition flex flex-col p-4 cursor-pointer group";
+ card.className = "bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-blue-300 transition flex flex-col p-3 sm:p-4 cursor-pointer group";
  card.onclick = () => openProductModal(product.serial);
  card.innerHTML = `
  <div>
- <div class="w-full h-56 bg-slate-50 rounded-xl mb-3.5 overflow-hidden border border-slate-100 flex items-center justify-center p-2 relative group-hover:scale-[1.02] transition duration-200">
+ <div class="w-full h-40 sm:h-56 bg-slate-50 rounded-xl mb-3.5 overflow-hidden border border-slate-100 flex items-center justify-center p-2 relative group-hover:scale-[1.02] transition duration-200">
  <img src="${product.image}" alt="${product.brand}" class="max-h-full w-full object-contain" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=Medicine'">
- <span class="absolute top-2.5 left-2.5 bg-blue-900/90 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-md shadow-xs">${product.dosageForm || 'Medicine'}</span>
+ <span class="absolute top-2 left-2 bg-blue-900/90 text-white text-[9px] sm:text-[10px] font-extrabold px-2 py-0.5 rounded-md shadow-xs">${product.dosageForm || 'Medicine'}</span>
  </div>
- <div class="mb-1"><span class="text-[10px] font-bold text-blue-700 uppercase tracking-wide truncate block">${product.company}</span></div>
- <h3 class="font-extrabold text-slate-900 text-base leading-tight truncate group-hover:text-blue-700 transition">${product.brand} <span class="font-semibold text-slate-600 text-xs">(${product.strength})</span></h3>
- <p class="text-xs text-slate-600 font-medium mt-1 truncate">Generic: ${product.generic}</p>
+ <div class="mb-1"><span class="text-[9px] sm:text-[10px] font-bold text-blue-700 uppercase tracking-wide truncate block">${product.company}</span></div>
+ <h3 class="font-extrabold text-slate-900 text-sm sm:text-base leading-tight truncate group-hover:text-blue-700 transition">${product.brand} <span class="font-semibold text-slate-600 text-[11px] sm:text-xs">(${product.strength})</span></h3>
+ <p class="text-[11px] sm:text-xs text-slate-600 font-medium mt-1 truncate">Generic: ${product.generic}</p>
  </div>
- <div class="mt-4 pt-3 flex justify-between items-center border-t border-slate-100">
- <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2.5 py-0.5 rounded-md border border-emerald-200">Details & Search</span>
- <button onclick="event.stopPropagation(); openProductModal(${product.serial})" class="bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg transition shadow-xs">View Details</button>
+ <div class="mt-3 pt-2.5 flex justify-between items-center border-t border-slate-100">
+ <span class="hidden sm:inline-block bg-emerald-50 text-emerald-700 text-[11px] font-bold px-2.5 py-0.5 rounded-md border border-emerald-200">Details & Search</span>
+ <button onclick="event.stopPropagation(); openProductModal(${product.serial})" class="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white text-[11px] sm:text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-xs text-center">View Details</button>
  </div>
  `;
  container.appendChild(card);
