@@ -605,6 +605,16 @@
  function scrollNewLaunch(dir) { document.getElementById('new-launch-grid').scrollBy({ left: dir * 300, behavior: 'smooth' }); }
 
  const productsData = [
+    { serial: 1, brand: "Afanix", generic: "Afatinib", strength: "40 mg", company: "BEACON PHARMACEUTICALS.", image: "Afanix 40 mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 2, brand: "Alecinix", generic: "Alectinib", strength: "150 mg", company: "BEACON PHARMACEUTICALS.", image: "Alecinix 150mg.jfif", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
+ { serial: 3, brand: "Apalunix", generic: "Apalutamide", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Apalunix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Prostate & Urologic Cancers" },
+ { serial: 4, brand: "Axinix", generic: "Axitinib", strength: "5 mg", company: "BEACON PHARMACEUTICALS.", image: "Axinix 5mg.jpg", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
+ { serial: 5, brand: "Baricinix 2", generic: "Baricitinib", strength: "2 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 2mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
+ { serial: 6, brand: "Baricinix 4", generic: "Baricitinib", strength: "4 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 4mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
+ { serial: 7, brand: "Briganix 90", generic: "Brigatinib", strength: "90 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 90mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 8, brand: "Briganix 180", generic: "Brigatinib", strength: "180 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 180mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
+ { serial: 9, brand: "Cabozanix 20", generic: "Cabozantinib", strength: "20 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 20mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
+ { serial: 10, brand: "Cabozanix 60", generic: "Cabozantinib", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" }
  { serial: 11, brand: "Acaluxen", generic: "Acalabrutinib INN", strength: "100 mg", company: "EVEREST PHARMACEUTICALS.", image: "Acaluxen 100 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Blood Cancers" },
  { serial: 12, brand: "Adakras", generic: "Adagrasib", strength: "200 mg", company: "EVEREST PHARMACEUTICALS.", image: "Adakras 200 mg.jpg", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
  { serial: 13, brand: "Alecnib", generic: "Alectinib", strength: "150 mg", company: "EVEREST PHARMACEUTICALS.", image: "alecnib 150 mg.jpg", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
@@ -718,16 +728,7 @@
  { serial: 120, brand: "Nivomab 100", generic: "Nivolumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS.", image: "38.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" },
  { serial: 121, brand: "Nivomab 40", generic: "Nivolumab", strength: "40 mg", company: "ZISKA PHARMACEUTICALS.", image: "39.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" },
  { serial: 122, brand: "Pemromab 100", generic: "Pembrolizumab", strength: "100 mg", company: "ZISKA PHARMACEUTICALS.", image: "40.jpg", dosageForm: "Injection", therapeuticArea: "Lung Cancer" }
-  { serial: 1, brand: "Afanix", generic: "Afatinib", strength: "40 mg", company: "BEACON PHARMACEUTICALS.", image: "Afanix 40 mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 2, brand: "Alecinix", generic: "Alectinib", strength: "150 mg", company: "BEACON PHARMACEUTICALS.", image: "Alecinix 150mg.jfif", dosageForm: "Capsule", therapeuticArea: "Lung Cancer" },
- { serial: 3, brand: "Apalunix", generic: "Apalutamide", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Apalunix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Prostate & Urologic Cancers" },
- { serial: 4, brand: "Axinix", generic: "Axitinib", strength: "5 mg", company: "BEACON PHARMACEUTICALS.", image: "Axinix 5mg.jpg", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
- { serial: 5, brand: "Baricinix 2", generic: "Baricitinib", strength: "2 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 2mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
- { serial: 6, brand: "Baricinix 4", generic: "Baricitinib", strength: "4 mg", company: "BEACON PHARMACEUTICALS.", image: "Baricinix 4mg.jpg", dosageForm: "Tablet", therapeuticArea: "Other Solid Tumors" },
- { serial: 7, brand: "Briganix 90", generic: "Brigatinib", strength: "90 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 90mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 8, brand: "Briganix 180", generic: "Brigatinib", strength: "180 mg", company: "BEACON PHARMACEUTICALS.", image: "Briganix 180mg.jfif", dosageForm: "Tablet", therapeuticArea: "Lung Cancer" },
- { serial: 9, brand: "Cabozanix 20", generic: "Cabozantinib", strength: "20 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 20mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
- { serial: 10, brand: "Cabozanix 60", generic: "Cabozantinib", strength: "60 mg", company: "BEACON PHARMACEUTICALS.", image: "Cabozanix 60mg.jfif", dosageForm: "Tablet", therapeuticArea: "Kidney & Renal Cancers" },
+,
  ];
 
  let currentPage = 1;
